@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" width="100%" height="100%">
+  <defs>
+    <style>
+      .text-bold { font-family: 'Montserrat', sans-serif; font-weight: 700; fill: #1C1C1C; font-size: 32px; }
+      .text-sub { font-family: 'Montserrat', sans-serif; font-weight: 600; fill: #5A5551; font-size: 20px; letter-spacing: 1px; }
+      .petal-orange { fill: #EF7B38; stroke: #1C1C1C; stroke-width: 2.5; stroke-linejoin: round; }
+      .center-dark { fill: #222222; }
+    </style>
+  </defs>
+
+  <!-- Isotipo Flor de Virutas de Lápiz -->
+  <g transform="translate(390, 80) scale(1.1)">
+    <!-- 5 Pétalos de viruta de lápiz en abanico girasol -->
+    <path class="petal-orange" d="M0,0 L-18,-62 C-10,-68 10,-68 18,-62 Z" transform="rotate(0)" />
+    <path class="petal-orange" d="M0,0 L-18,-62 C-10,-68 10,-68 18,-62 Z" transform="rotate(60)" />
+    <path class="petal-orange" d="M0,0 L-18,-62 C-10,-68 10,-68 18,-62 Z" transform="rotate(120)" />
+    <path class="petal-orange" d="M0,0 L-18,-62 C-10,-68 10,-68 18,-62 Z" transform="rotate(180)" />
+    <path class="petal-orange" d="M0,0 L-18,-62 C-10,-68 10,-68 18,-62 Z" transform="rotate(240)" />
+    <path class="petal-orange" d="M0,0 L-18,-62 C-10,-68 10,-68 18,-62 Z" transform="rotate(300)" />
+    
+    <!-- Centro Negro Carbón -->
+    <circle class="center-dark" cx="0" cy="0" r="22" />
+  </g>
+
+  <!-- Logotipo Tipográfico -->
+  <text x="20" y="70" class="text-bold">Letras y Voces</text>
+  <text x="20" y="108" class="text-sub">de Tabasco, A.C.</text>
+</svg>
