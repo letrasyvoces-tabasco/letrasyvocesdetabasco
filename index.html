@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Configuración de Colores y Tipografías de Marca LVT (Regla 70/20/10) -->
+    
+    <!-- Configuración Tailwind CSS - Paleta 70/20/10 LVT -->
     <script>
         tailwind.config = {
             theme: {
@@ -20,12 +21,13 @@
                             DEFAULT: '#FDFBF7',
                             50: '#FFFFFF',
                             100: '#FDFBF7',
-                            200: '#F5EFE6',
+                            200: '#F4ECE1',
+                            300: '#E8DCCE',
                         },
                         carbon: {
                             DEFAULT: '#222222',
-                            light: '#333333',
-                            dark: '#111111',
+                            light: '#3A3A3A',
+                            dark: '#141414',
                         },
                         grafito: {
                             DEFAULT: '#555555',
@@ -33,14 +35,29 @@
                         },
                         naranja: {
                             DEFAULT: '#EF7B38',
-                            hover: '#D96A27',
+                            hover: '#D96627',
                             light: '#FDF0E9',
+                            glow: 'rgba(239, 123, 56, 0.25)',
                         }
                     },
                     fontFamily: {
                         montserrat: ['Montserrat', 'sans-serif'],
                         garamond: ['EB Garamond', 'serif'],
                         inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseSubtle: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        }
                     }
                 }
             }
@@ -51,6 +68,7 @@
             background-color: #FDFBF7;
             color: #222222;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
         h1, h2, h3, h4, .font-title {
             font-family: 'Montserrat', sans-serif;
@@ -58,49 +76,98 @@
         .font-quote {
             font-family: 'EB Garamond', serif;
         }
+
+        /* Estilos Glassmorphism Premium */
+        .glass-panel {
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 236, 225, 0.8);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(244, 236, 225, 0.9);
+        }
+
+        /* Efectos de Revelado al Desplazar (Scroll Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Microinteracciones de Tarjetas */
+        .hover-lift {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(34, 34, 34, 0.08);
+        }
+
+        /* Transiciones Suaves de Acordeón */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+            opacity: 0;
+        }
+        .accordion-content.open {
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body class="bg-crema text-carbon antialiased selection:bg-naranja selection:text-white flex flex-col min-h-screen">
 
-    <!-- Navegación Institucional -->
-    <header class="sticky top-0 z-50 bg-crema-100/95 backdrop-blur-md border-b border-crema-200 transition-all duration-300">
+    <!-- Navegación Flotante Glassmorphism -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-crema-200 transition-all duration-300 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logotipo e Isotipo -->
-                <a href="#inicio" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-lg bg-naranja flex items-center justify-center text-white font-montserrat font-bold text-xl shadow-md group-hover:bg-naranja-hover transition-colors">
+                <a href="#inicio" class="flex items-center space-x-3.5 group">
+                    <div class="w-11 h-11 rounded-xl bg-naranja flex items-center justify-center text-white font-montserrat font-extrabold text-xl shadow-md group-hover:scale-105 group-hover:bg-naranja-hover transition-all duration-300">
                         LVT
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-montserrat font-bold text-lg leading-tight tracking-tight text-carbon">Letras y Voces</span>
-                        <span class="font-montserrat text-xs tracking-wider text-grafito uppercase">de Tabasco, A.C.</span>
+                        <span class="font-montserrat font-bold text-lg leading-tight tracking-tight text-carbon group-hover:text-naranja transition-colors">Letras y Voces</span>
+                        <span class="font-montserrat text-[10px] tracking-widest text-grafito uppercase font-semibold">de Tabasco, A.C.</span>
                     </div>
                 </a>
 
-                <!-- Menú de Navegación Escritorio -->
-                <nav class="hidden md:flex items-center space-x-8 font-inter text-sm font-medium text-carbon-light">
-                    <a href="#inicio" class="hover:text-naranja transition-colors">Inicio</a>
-                    <a href="#rifa" class="hover:text-naranja transition-colors flex items-center gap-1">
-                        <span class="inline-block w-2 h-2 rounded-full bg-naranja animate-pulse"></span>
+                <!-- Navegación de Escritorio con Microinteracciones -->
+                <nav class="hidden lg:flex items-center space-x-7 font-inter text-sm font-medium text-carbon-light">
+                    <a href="#inicio" class="hover:text-naranja transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-naranja hover:after:w-full after:transition-all after:duration-300">Inicio</a>
+                    <a href="#rifa" class="hover:text-naranja transition-colors relative py-1 flex items-center gap-1.5 font-semibold text-naranja">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-naranja opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-naranja"></span>
+                        </span>
                         Rifa Pro-Fondos
                     </a>
-                    <a href="#quienes-somos" class="hover:text-naranja transition-colors">Quiénes Somos</a>
-                    <a href="#proyectos" class="hover:text-naranja transition-colors">Proyectos y Actividades</a>
-                    <a href="#transparencia" class="hover:text-naranja transition-colors">Transparencia</a>
-                    <a href="#contacto" class="hover:text-naranja transition-colors">Contacto</a>
+                    <a href="#quienes-somos" class="hover:text-naranja transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-naranja hover:after:w-full after:transition-all after:duration-300">Quiénes Somos</a>
+                    <a href="#proyectos" class="hover:text-naranja transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-naranja hover:after:w-full after:transition-all after:duration-300">Proyectos</a>
+                    <a href="#transparencia" class="hover:text-naranja transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-naranja hover:after:w-full after:transition-all after:duration-300">Transparencia</a>
+                    <a href="#contacto" class="hover:text-naranja transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-naranja hover:after:w-full after:transition-all after:duration-300">Contacto</a>
                 </nav>
 
-                <!-- Botón de Acción Principal (CTA) Navbar -->
+                <!-- Botón de Acción Principal (CTA) -->
                 <div class="hidden lg:block">
-                    <a href="#contacto" class="inline-flex items-center px-5 py-2.5 rounded-md bg-naranja text-white font-montserrat text-xs font-semibold uppercase tracking-wider hover:bg-naranja-hover shadow-sm hover:shadow transition-all">
+                    <a href="#contacto" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-naranja text-white font-montserrat text-xs font-bold uppercase tracking-wider hover:bg-naranja-hover shadow-md hover:shadow-naranja-glow hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
                         Unirse a la Asociación
                     </a>
                 </div>
 
                 <!-- Botón Menú Móvil -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" type="button" class="text-carbon hover:text-naranja focus:outline-none p-2" aria-label="Abrir menú de navegación">
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-carbon hover:text-naranja focus:outline-none p-2 rounded-lg transition-colors" aria-label="Abrir menú de navegación">
                         <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
                             <path id="menu-icon" fill-rule="evenodd" clip-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
                         </svg>
@@ -109,145 +176,194 @@
             </div>
         </div>
 
-        <!-- Desplegable Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-crema-50 border-b border-crema-200 px-4 pt-2 pb-6 space-y-3 font-inter text-base">
-            <a href="#inicio" class="block px-3 py-2 rounded-md hover:bg-crema-200 hover:text-naranja">Inicio</a>
-            <a href="#rifa" class="block px-3 py-2 rounded-md hover:bg-crema-200 hover:text-naranja font-semibold text-naranja">Rifa Pro-Fondos</a>
-            <a href="#quienes-somos" class="block px-3 py-2 rounded-md hover:bg-crema-200 hover:text-naranja">Quiénes Somos</a>
-            <a href="#proyectos" class="block px-3 py-2 rounded-md hover:bg-crema-200 hover:text-naranja">Proyectos y Actividades</a>
-            <a href="#transparencia" class="block px-3 py-2 rounded-md hover:bg-crema-200 hover:text-naranja">Transparencia y Asambleas</a>
-            <a href="#contacto" class="block px-3 py-2 rounded-md hover:bg-crema-200 hover:text-naranja">Contacto</a>
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-b border-crema-200 px-6 pt-3 pb-6 space-y-3 font-inter text-base shadow-lg transition-all">
+            <a href="#inicio" class="block px-3 py-2 rounded-lg hover:bg-crema-200 hover:text-naranja transition-colors">Inicio</a>
+            <a href="#rifa" class="block px-3 py-2 rounded-lg hover:bg-crema-200 text-naranja font-bold transition-colors">Rifa Pro-Fondos ($100 MXN)</a>
+            <a href="#quienes-somos" class="block px-3 py-2 rounded-lg hover:bg-crema-200 hover:text-naranja transition-colors">Quiénes Somos</a>
+            <a href="#proyectos" class="block px-3 py-2 rounded-lg hover:bg-crema-200 hover:text-naranja transition-colors">Proyectos y Actividades</a>
+            <a href="#transparencia" class="block px-3 py-2 rounded-lg hover:bg-crema-200 hover:text-naranja transition-colors">Transparencia y Asambleas</a>
+            <a href="#contacto" class="block px-3 py-2 rounded-lg hover:bg-crema-200 hover:text-naranja transition-colors">Contacto e Información Legal</a>
         </div>
     </header>
 
 
-    <!-- SECCIÓN 1: INICIO (HERO) -->
-    <section id="inicio" class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-crema-100 to-crema-200 border-b border-crema-200">
+    <!-- SECCIÓN 1: INICIO (HERO CULTURA Y PALABRA) -->
+    <section id="inicio" class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-crema-100 via-crema-50 to-crema-200 border-b border-crema-200">
+        <!-- Elementos Decorativos de Fondo -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-naranja/10 rounded-full blur-3xl pointer-events-none animate-pulse-subtle"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-crema-300/40 rounded-full blur-3xl pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl">
-                <!-- Distintivo Institucional -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-naranja-light border border-naranja/20 text-naranja text-xs font-montserrat font-semibold tracking-wider uppercase mb-6">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    <span>Asociación Civil Literaria de Tabasco</span>
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-8 reveal">
+                    <!-- Distintivo Institucional Flotante -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-naranja-light border border-naranja/20 text-naranja text-xs font-montserrat font-bold tracking-wider uppercase shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        <span>Sociedad de Escritores · Tabasco, México</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-extrabold text-carbon tracking-tight leading-[1.1]">
+                        Fomentamos la palabra, preservamos la memoria cultural.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl font-inter text-grafito leading-relaxed max-w-2xl">
+                        La <strong class="text-carbon font-semibold">Sociedad de Escritores Letras y Voces de Tabasco, A.C.</strong> es un espacio de encuentro, formación editorial y difusión literaria dedicado a impulsar a las y los narradores y poetas del Sureste.
+                    </p>
+
+                    <!-- Botones de Acción Principal -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#proyectos" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-naranja text-white font-montserrat text-sm font-bold hover:bg-naranja-hover shadow-lg hover:shadow-naranja-glow hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+                            Explorar Proyectos y Talleres
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                        <a href="#rifa" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-white border-2 border-crema-300 text-carbon font-montserrat text-sm font-bold hover:border-naranja hover:text-naranja shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+                            Adquirir Boletos de Rifa ($100 MXN)
+                        </a>
+                    </div>
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-extrabold text-carbon tracking-tight leading-none mb-6">
-                    Fomentamos la palabra, preservamos la memoria cultural.
-                </h1>
-
-                <p class="text-lg sm:text-xl font-inter text-grafito leading-relaxed mb-8">
-                    La <strong class="text-carbon font-semibold">Sociedad de Escritores Letras y Voces de Tabasco, A.C.</strong> es un espacio de encuentro, formación editorial y difusión literaria dedicado a impulsar a las y los narradores y poetas de nuestra región.
-                </p>
-
-                <!-- Botones de Acción -->
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#proyectos" class="inline-flex justify-center items-center px-7 py-3.5 rounded-md bg-naranja text-white font-montserrat text-sm font-semibold hover:bg-naranja-hover shadow-md hover:shadow-lg transition-all">
-                        Explorar Proyectos y Talleres
-                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                    <a href="#rifa" class="inline-flex justify-center items-center px-7 py-3.5 rounded-md bg-white border border-crema-200 text-carbon font-montserrat text-sm font-semibold hover:border-naranja hover:text-naranja shadow-sm transition-all">
-                        Apoyar con un Boleto ($100 MXN)
-                    </a>
+                <!-- Tarjeta Flotante Interactiva de la Asociación (Hero Feature) -->
+                <div class="lg:col-span-4 reveal">
+                    <div class="glass-card rounded-2xl p-8 border border-crema-300 shadow-xl relative overflow-hidden animate-float">
+                        <div class="absolute -right-8 -top-8 w-28 h-28 bg-naranja/10 rounded-full blur-xl pointer-events-none"></div>
+                        <span class="text-xs font-montserrat font-bold text-naranja uppercase tracking-widest block mb-2">Asociación Civil</span>
+                        <h3 class="text-2xl font-montserrat font-bold text-carbon mb-3">Compromiso Editorial</h3>
+                        <p class="text-sm font-garamond italic text-grafito leading-relaxed mb-6">
+                            «Uniendo la tradición oral con la creación lírica contemporánea para trascender las fronteras del trópico.»
+                        </p>
+                        
+                        <div class="space-y-3 pt-2 border-t border-crema-200 text-xs font-inter">
+                            <div class="flex justify-between items-center">
+                                <span class="text-grafito">Gestión Directiva:</span>
+                                <span class="font-bold text-carbon">Marzo 2026 – Presente</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-grafito">Sede Institucional:</span>
+                                <span class="font-bold text-carbon">Villahermosa, Tabasco</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-grafito">Estatus Legal:</span>
+                                <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 font-semibold font-montserrat text-[10px]">Asociación Civil A.C.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Adorno Estético Papel/Tropical -->
-        <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-1/4 translate-y-1/4">
-            <svg class="w-96 h-96 text-carbon" fill="currentColor" viewBox="0 0 200 200">
-                <path d="M45.7,-52.1C58.3,-41.8,67.1,-26.3,69.5,-9.7C71.8,6.8,67.8,24.4,57.7,37.3C47.6,50.2,31.4,58.4,14.1,62.8C-3.2,67.2,-21.6,67.8,-37.2,60.2C-52.8,52.6,-65.6,36.8,-70.1,18.8C-74.6,0.8,-70.8,-19.4,-60.7,-32.8C-50.6,-46.2,-34.2,-52.8,-18.8,-55.9C-3.4,-59,11.2,-58.6,26.1,-55.2" />
-            </svg>
         </div>
     </section>
 
 
-    <!-- SECCIÓN DEDICADA: RIFA PRO-FONDOS -->
-    <section id="rifa" class="py-16 bg-white border-b border-crema-200">
+    <!-- SECCIÓN INTERACTIVA: RIFA INSTITUCIONAL Y CALCULADORA DE BOLETOS -->
+    <section id="rifa" class="py-20 bg-white border-b border-crema-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-crema-100 via-white to-naranja-light/30 border-2 border-naranja/30 rounded-2xl p-8 sm:p-12 shadow-md relative overflow-hidden">
-                <div class="md:flex items-center justify-between gap-8 relative z-10">
-                    <div class="max-w-2xl mb-8 md:mb-0">
-                        <div class="inline-block px-3 py-1 rounded bg-naranja text-white font-montserrat text-xs font-bold uppercase tracking-wider mb-3">
-                            Iniciativa Pro-Fondos LVT
+            <div class="bg-gradient-to-br from-crema-100 via-white to-naranja-light/40 border-2 border-naranja/30 rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden reveal">
+                <div class="grid lg:grid-cols-12 gap-10 items-center relative z-10">
+                    
+                    <!-- Información de la Rifa -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-naranja text-white font-montserrat text-xs font-bold uppercase tracking-wider">
+                            <span>Iniciativa Pro-Fondos LVT</span>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl font-montserrat font-bold text-carbon mb-4">
+                        <h2 class="text-3xl sm:text-4xl font-montserrat font-bold text-carbon leading-tight">
                             Rifa Institucional de Recaudación Cultural
                         </h2>
-                        <p class="text-grafito font-inter text-base mb-4 leading-relaxed">
-                            Para sostener de manera autónoma las publicaciones grupales, la logística de las asambleas generales y los materiales de formación literaria gratuita en Tabasco, la asociación pone a disposición la venta de <strong class="text-carbon">cien boletos dobles</strong>.
+                        <p class="text-grafito font-inter text-base leading-relaxed">
+                            Para financiar la impresión de antologías literarias, la logística de las asambleas de asociados y los talleres gratuitos en Tabasco, ponemos a disposición la emisión de <strong class="text-carbon">100 boletos dobles</strong>.
                         </p>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 my-6 font-montserrat text-sm">
-                            <div class="bg-white p-3 rounded-lg border border-crema-200 shadow-sm">
-                                <span class="block text-xs text-grafito">Emisión Total</span>
-                                <span class="font-bold text-carbon text-lg">100 Boletos</span>
+
+                        <!-- Indicadores de Avance Real -->
+                        <div class="space-y-2 max-w-md pt-2">
+                            <div class="flex justify-between text-xs font-montserrat font-bold text-carbon">
+                                <span>Emisión Limitada: 100 Boletos</span>
+                                <span class="text-naranja" id="available-counter">84 Disponibles</span>
                             </div>
-                            <div class="bg-white p-3 rounded-lg border border-crema-200 shadow-sm">
-                                <span class="block text-xs text-grafito">Aportación</span>
-                                <span class="font-bold text-naranja text-lg">$100 MXN</span>
+                            <div class="w-full h-3 bg-crema-300 rounded-full overflow-hidden p-0.5">
+                                <div class="bg-naranja h-full rounded-full transition-all duration-1000 ease-out shadow-sm" style="width: 16%;"></div>
                             </div>
-                            <div class="bg-white p-3 rounded-lg border border-crema-200 shadow-sm col-span-2 sm:col-span-1">
-                                <span class="block text-xs text-grafito">Modalidad</span>
-                                <span class="font-bold text-carbon text-lg">Boleto Doble</span>
-                            </div>
+                            <p class="text-[11px] text-grafito font-inter">Cada aportación incluye boleto doble para el sorteo especial.</p>
                         </div>
                     </div>
 
-                    <!-- CTA Adquisición de Boletos -->
-                    <div class="bg-white p-6 rounded-xl border border-crema-200 shadow-lg text-center min-w-[280px]">
-                        <span class="block font-garamond italic text-grafito text-sm mb-1">¡Sé parte del mecenazgo literario!</span>
-                        <span class="block font-montserrat font-extrabold text-3xl text-carbon mb-4">$100 <span class="text-xs font-normal text-grafito">MXN c/u</span></span>
-                        <a href="#contacto" class="block w-full py-3 px-6 rounded-md bg-naranja text-white font-montserrat text-sm font-bold uppercase tracking-wider hover:bg-naranja-hover transition-colors shadow mb-3">
-                            Adquirir Boletos
-                        </a>
-                        <p class="text-xs text-grafito font-inter">Recibirás tu número asignado e información de depósito bancario HSBC.</p>
+                    <!-- Calculadora Interactiva de Boletos (Microinteracción Dinámica) -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-card p-8 rounded-2xl border border-crema-300 shadow-xl text-center space-y-6">
+                            <h3 class="font-montserrat font-bold text-lg text-carbon">Calculadora de Boletos</h3>
+                            
+                            <!-- Controles de Incremento / Decremento -->
+                            <div class="flex items-center justify-center space-x-6">
+                                <button type="button" onclick="adjustTickets(-1)" class="w-12 h-12 rounded-xl bg-crema-200 hover:bg-naranja hover:text-white text-carbon font-montserrat font-bold text-xl transition-all duration-200 active:scale-95 shadow-sm flex items-center justify-center">
+                                    -
+                                </button>
+                                <div class="text-center">
+                                    <span id="ticket-count" class="block font-montserrat font-extrabold text-4xl text-carbon">1</span>
+                                    <span class="text-xs text-grafito uppercase tracking-wider font-semibold">Boleto Doble</span>
+                                </div>
+                                <button type="button" onclick="adjustTickets(1)" class="w-12 h-12 rounded-xl bg-crema-200 hover:bg-naranja hover:text-white text-carbon font-montserrat font-bold text-xl transition-all duration-200 active:scale-95 shadow-sm flex items-center justify-center">
+                                    +
+                                </button>
+                            </div>
+
+                            <!-- Total Calculado -->
+                            <div class="py-4 bg-crema-100 rounded-xl border border-crema-200">
+                                <span class="block text-xs text-grafito uppercase font-montserrat font-semibold mb-1">Monto de Aportación</span>
+                                <span id="ticket-total" class="font-montserrat font-extrabold text-3xl text-naranja">$100 <span class="text-sm font-normal text-carbon">MXN</span></span>
+                            </div>
+
+                            <a href="#contacto" onclick="selectRaffleOption()" class="block w-full py-4 px-6 rounded-xl bg-naranja text-white font-montserrat text-sm font-bold uppercase tracking-wider hover:bg-naranja-hover shadow-md hover:shadow-naranja-glow hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+                                Reservar Boletos Ahora
+                            </a>
+                            <p class="text-[11px] text-grafito font-inter">Recibirás confirmación directa con los datos bancarios HSBC.</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- SECCIÓN 2: QUIÉNES SOMOS -->
-    <section id="quienes-somos" class="py-20 bg-crema-100 border-b border-crema-200">
+    <!-- SECCIÓN 2: QUIÉNES SOMOS Y VALORES -->
+    <section id="quienes-somos" class="py-24 bg-crema-100 border-b border-crema-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-xs font-montserrat font-bold text-naranja uppercase tracking-widest mb-3">Nuestra Identidad</h2>
                 <p class="text-3xl sm:text-4xl font-montserrat font-bold text-carbon">Quiénes Somos y Qué Nos Mueve</p>
                 <div class="w-16 h-1 bg-naranja mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-grafito font-inter leading-relaxed text-base">
-                    <p class="text-lg font-garamond italic text-carbon border-l-4 border-naranja pl-4 py-1">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-6 text-grafito font-inter leading-relaxed text-base reveal">
+                    <p class="text-xl font-garamond italic text-carbon border-l-4 border-naranja pl-6 py-2 bg-white/60 rounded-r-xl">
                         «La literatura no es solo el reflejo de una época, sino la voz colectiva que preserva la dignidad y la belleza de nuestro pueblo.»
                     </p>
                     <p>
-                        La <strong class="text-carbon font-medium">Sociedad de Escritores Letras y Voces de Tabasco, A.C.</strong> es una organización civil sin fines de lucro, legalmente constituida para fomentar la lectura, la creación literaria y la investigación histórico-cultural en el estado de Tabasco.
+                        La <strong class="text-carbon font-semibold">Sociedad de Escritores Letras y Voces de Tabasco, A.C.</strong> es una organización civil sin fines de lucro, legalmente constituida para promover la lectura, la creación literaria y la investigación histórico-cultural en Tabasco.
                     </p>
                     <p>
                         Agrupamos a escritoras, escritores, ensayistas, promotores culturales y docentes comprometidos con el rigor intelectual, el pensamiento crítico y la calidez artística tropical.
                     </p>
                 </div>
 
-                <!-- Tarjetas de Misión y Visión -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded-xl border border-crema-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-lg bg-naranja-light text-naranja flex items-center justify-center mb-4">
+                <!-- Tarjetas de Misión y Visión con Hover Lift -->
+                <div class="grid sm:grid-cols-2 gap-6 reveal">
+                    <div class="glass-card p-8 rounded-2xl border border-crema-300 shadow-sm hover-lift">
+                        <div class="w-12 h-12 rounded-xl bg-naranja-light text-naranja flex items-center justify-center mb-5">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
-                        <h3 class="font-montserrat font-bold text-lg text-carbon mb-2">Misión</h3>
+                        <h3 class="font-montserrat font-bold text-xl text-carbon mb-3">Misión</h3>
                         <p class="text-sm text-grafito leading-relaxed">
-                            Promover el desarrollo de talleres literarios, certámenes y ediciones independientes que democraticen el acceso a la palabra escrita en todo Tabasco.
+                            Fomentar talleres literarios, certámenes y ediciones independientes que democraticen el acceso a la lectura y escritura en todo Tabasco.
                         </p>
                     </div>
 
-                    <div class="bg-white p-6 rounded-xl border border-crema-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-lg bg-naranja-light text-naranja flex items-center justify-center mb-4">
+                    <div class="glass-card p-8 rounded-2xl border border-crema-300 shadow-sm hover-lift">
+                        <div class="w-12 h-12 rounded-xl bg-naranja-light text-naranja flex items-center justify-center mb-5">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                         </div>
-                        <h3 class="font-montserrat font-bold text-lg text-carbon mb-2">Visión</h3>
+                        <h3 class="font-montserrat font-bold text-xl text-carbon mb-3">Visión</h3>
                         <p class="text-sm text-grafito leading-relaxed">
-                            Ser la institución de referencia en el Sureste mexicano para la salvaguarda de la memoria lírica y la formación de nuevas generaciones de creadores.
+                            Ser la institución de referencia en el Sureste mexicano para la salvaguarda de la memoria lírica y la formación de creadores.
                         </p>
                     </div>
                 </div>
@@ -256,236 +372,303 @@
     </section>
 
 
-    <!-- SECCIÓN 3: PROYECTOS Y ACTIVIDADES -->
-    <section id="proyectos" class="py-20 bg-white border-b border-crema-200">
+    <!-- SECCIÓN 3: PROYECTOS Y ACTIVIDADES (CON PESTAÑAS Y TARJETAS INTERACTIVAS) -->
+    <section id="proyectos" class="py-24 bg-white border-b border-crema-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-xs font-montserrat font-bold text-naranja uppercase tracking-widest mb-3">Ejes de Acción</h2>
                 <p class="text-3xl sm:text-4xl font-montserrat font-bold text-carbon">Proyectos y Actividades Destacadas</p>
                 <p class="text-grafito font-inter text-base mt-3">Iniciativas permanentes diseñadas para nutrir el ecosistema literario regional.</p>
                 <div class="w-16 h-1 bg-naranja mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Tarjetas de Proyectos (Cards) -->
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Tarjeta 1: Formación y Talleres -->
-                <div class="bg-crema-100 rounded-xl border border-crema-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
-                    <div class="p-6 flex-1">
-                        <div class="text-xs font-montserrat font-semibold text-naranja uppercase tracking-wider mb-2">Pilar 1 · Formación</div>
+            <!-- Selector de Pestañas Interactivas (Tabs) -->
+            <div class="flex justify-center mb-12 reveal">
+                <div class="inline-flex p-1.5 bg-crema-200 rounded-xl border border-crema-300">
+                    <button type="button" onclick="switchTab('todos')" id="tab-todos" class="tab-btn px-5 py-2.5 rounded-lg font-montserrat text-xs font-bold uppercase transition-all duration-300 bg-naranja text-white shadow">
+                        Todos los Pilares
+                    </button>
+                    <button type="button" onclick="switchTab('formacion')" id="tab-formacion" class="tab-btn px-5 py-2.5 rounded-lg font-montserrat text-xs font-bold uppercase transition-all duration-300 text-carbon hover:text-naranja">
+                        Talleres Literarios
+                    </button>
+                    <button type="button" onclick="switchTab('antologias')" id="tab-antologias" class="tab-btn px-5 py-2.5 rounded-lg font-montserrat text-xs font-bold uppercase transition-all duration-300 text-carbon hover:text-naranja">
+                        Antologías
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grilla de Tarjetas de Proyectos -->
+            <div class="grid md:grid-cols-3 gap-8 reveal" id="projects-grid">
+                
+                <!-- Tarjeta 1: Talleres Literarios -->
+                <div class="project-card formacion bg-crema-100 rounded-2xl border border-crema-300 p-8 shadow-sm hover-lift flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-montserrat font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-naranja-light text-naranja">Pilar 1 · Formación</span>
+                            <span class="text-xs text-grafito font-inter">Semanal</span>
+                        </div>
                         <h3 class="text-xl font-montserrat font-bold text-carbon mb-3">Talleres Literarios Permanentes</h3>
-                        <p class="text-sm text-grafito leading-relaxed mb-4">
-                            Espacios semanales de crítica, análisis de textos y técnicas de narrativa y poesía, guiados por escritores con trayectoria en Tabasco.
+                        <p class="text-sm text-grafito leading-relaxed mb-6">
+                            Espacios de crítica, análisis de textos y técnicas de narrativa y poesía guiados por escritores con trayectoria en Tabasco.
                         </p>
-                        <ul class="text-xs text-carbon space-y-2 font-inter border-t border-crema-200 pt-4">
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-naranja rounded-full"></span>Taller de Narrativa Breve</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-naranja rounded-full"></span>Laboratorio de Poesía Tropical</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-naranja rounded-full"></span>Conferencias Magistrales Gratuitas</li>
-                        </ul>
                     </div>
+                    <ul class="text-xs text-carbon space-y-2.5 font-inter border-t border-crema-200 pt-4">
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-naranja rounded-full"></span>Taller de Narrativa Breve</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-naranja rounded-full"></span>Laboratorio de Poesía Tropical</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-naranja rounded-full"></span>Conferencias Magistrales Gratuitas</li>
+                    </ul>
                 </div>
 
-                <!-- Tarjeta 2: Publicación de Antologías -->
-                <div class="bg-crema-100 rounded-xl border border-crema-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
-                    <div class="p-6 flex-1">
-                        <div class="text-xs font-montserrat font-semibold text-naranja uppercase tracking-wider mb-2">Pilar 2 · Publicaciones</div>
+                <!-- Tarjeta 2: Antologías -->
+                <div class="project-card antologias bg-crema-100 rounded-2xl border border-crema-300 p-8 shadow-sm hover-lift flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-montserrat font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-naranja-light text-naranja">Pilar 2 · Publicaciones</span>
+                            <span class="text-xs text-grafito font-inter">Anual</span>
+                        </div>
                         <h3 class="text-xl font-montserrat font-bold text-carbon mb-3">Edición de Antologías Literarias</h3>
-                        <p class="text-sm text-grafito leading-relaxed mb-4">
+                        <p class="text-sm text-grafito leading-relaxed mb-6">
                             Coordinación, dictamen y edición de compilaciones colectivas que rescatan y difunden las obras de nuestros asociados.
                         </p>
-                        <div class="bg-white p-3 rounded border border-crema-200 mb-2">
+                    </div>
+                    <div class="space-y-3 border-t border-crema-200 pt-4">
+                        <div class="bg-white p-3 rounded-lg border border-crema-200">
                             <span class="block font-montserrat font-bold text-xs text-carbon">Antología «Animalia Literaria»</span>
-                            <span class="text-xs text-grafito">Convocatoria y coordinación activa.</span>
+                            <span class="text-[11px] text-grafito">Convocatoria y coordinación activa.</span>
                         </div>
-                        <div class="bg-white p-3 rounded border border-crema-200">
+                        <div class="bg-white p-3 rounded-lg border border-crema-200">
                             <span class="block font-montserrat font-bold text-xs text-carbon">«Tardes Tabasqueñas de Ópalos y Topacios»</span>
-                            <span class="text-xs text-grafito">Memoria colectiva y financiamiento grupal.</span>
+                            <span class="text-[11px] text-grafito">Memoria colectiva y financiamiento grupal.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta 3: Mesas de Lectura y Divulgación -->
-                <div class="bg-crema-100 rounded-xl border border-crema-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
-                    <div class="p-6 flex-1">
-                        <div class="text-xs font-montserrat font-semibold text-naranja uppercase tracking-wider mb-2">Pilar 3 · Difusión</div>
+                <!-- Tarjeta 3: Mesas de Lectura -->
+                <div class="project-card formacion bg-crema-100 rounded-2xl border border-crema-300 p-8 shadow-sm hover-lift flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-montserrat font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-naranja-light text-naranja">Pilar 3 · Difusión</span>
+                            <span class="text-xs text-grafito font-inter">Mensual</span>
+                        </div>
                         <h3 class="text-xl font-montserrat font-bold text-carbon mb-3">Mesas de Lectura y Muro Digital</h3>
-                        <p class="text-sm text-grafito leading-relaxed mb-4">
-                            Encuentros presenciales en recintos culturales de Villahermosa y divulgación continua mediante nuestro muro digital institucional.
+                        <p class="text-sm text-grafito leading-relaxed mb-6">
+                            Encuentros presenciales en recintos culturales de Villahermosa y divulgación continua en nuestro muro digital.
                         </p>
-                        <ul class="text-xs text-carbon space-y-2 font-inter border-t border-crema-200 pt-4">
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-naranja rounded-full"></span>Recitativos en Espacios Públicos</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-naranja rounded-full"></span>Presentaciones de Libros de Autores Locales</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-naranja rounded-full"></span>Vinculación Institucional con Escuelas</li>
-                        </ul>
                     </div>
+                    <ul class="text-xs text-carbon space-y-2.5 font-inter border-t border-crema-200 pt-4">
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-naranja rounded-full"></span>Recitativos en Espacios Públicos</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-naranja rounded-full"></span>Presentaciones de Libros Locales</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-naranja rounded-full"></span>Vinculación Escolar e Institucional</li>
+                    </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
 
-    <!-- SECCIÓN 4: TRANSPARENCIA Y ASAMBLEAS -->
-    <section id="transparencia" class="py-20 bg-crema-100 border-b border-crema-200">
+    <!-- SECCIÓN 4: TRANSPARENCIA Y ASAMBLEAS (ACORDEÓN INTERACTIVO SUAVE) -->
+    <section id="transparencia" class="py-24 bg-crema-100 border-b border-crema-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-xs font-montserrat font-bold text-naranja uppercase tracking-widest mb-3">Gobierno y Rendición de Cuentas</h2>
                 <p class="text-3xl sm:text-4xl font-montserrat font-bold text-carbon">Transparencia y Asambleas</p>
                 <p class="text-grafito font-inter text-base mt-3">Documentos rectores, convocatorias y acuerdos de la Mesa Directiva.</p>
                 <div class="w-16 h-1 bg-naranja mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Listado Formal de Convocatorias y Acuerdos -->
-            <div class="max-w-4xl mx-auto space-y-6">
-                <!-- Documento 1 -->
-                <div class="bg-white p-6 rounded-xl border border-crema-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 hover:border-naranja/40 transition-colors">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-crema-200 text-carbon flex-shrink-0 flex items-center justify-center font-montserrat font-bold text-xs">
-                            PDF
+            <!-- Acordeones Interactivos con Transición CSS -->
+            <div class="max-w-4xl mx-auto space-y-4 reveal">
+                
+                <!-- Acordeón 1 -->
+                <div class="glass-card rounded-2xl border border-crema-300 overflow-hidden shadow-sm transition-all duration-300">
+                    <button type="button" onclick="toggleAccordion('acc-1')" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none hover:bg-crema-200/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-naranja-light text-naranja flex items-center justify-center font-montserrat font-bold text-xs flex-shrink-0">
+                                PDF
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-montserrat font-bold uppercase tracking-wider text-grafito block">Gestión 2026</span>
+                                <h3 class="font-montserrat font-bold text-base text-carbon">Acta de Inicio de Gestión y Plan de Trabajo Directivo</h3>
+                            </div>
                         </div>
-                        <div>
-                            <span class="inline-block px-2 py-0.5 rounded bg-crema-200 text-carbon text-xs font-montserrat font-semibold mb-1">Administración 2026</span>
-                            <h3 class="font-montserrat font-bold text-base text-carbon">Acta de Inicio de Gestión y Plan de Trabajo Directivo</h3>
-                            <p class="text-xs text-grafito mt-1">Periodo iniciado en Marzo de 2026. Firma legal de Presidencia y Secretaría General.</p>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-montserrat font-bold bg-green-100 text-green-800 uppercase">
+                                [APROBADO]
+                            </span>
+                            <svg id="icon-acc-1" class="w-5 h-5 text-grafito transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </div>
+                    </button>
+                    <div id="acc-1" class="accordion-content px-6 pb-6">
+                        <p class="text-xs text-grafito font-inter leading-relaxed pt-2 border-t border-crema-200">
+                            Documento oficial correspondiente al inicio del periodo directivo en Marzo de 2026. Contiene los compromisos de transparencia, calendario de asambleas ordinarias y la firma legal de la Presidencia e integrante de la Mesa Directiva.
+                        </p>
                     </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-montserrat font-semibold bg-green-100 text-green-800">
-                        [APROBADO]
-                    </span>
                 </div>
 
-                <!-- Documento 2 -->
-                <div class="bg-white p-6 rounded-xl border border-crema-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 hover:border-naranja/40 transition-colors">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-crema-200 text-carbon flex-shrink-0 flex items-center justify-center font-montserrat font-bold text-xs">
-                            DOC
+                <!-- Acordeón 2 -->
+                <div class="glass-card rounded-2xl border border-crema-300 overflow-hidden shadow-sm transition-all duration-300">
+                    <button type="button" onclick="toggleAccordion('acc-2')" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none hover:bg-crema-200/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-naranja-light text-naranja flex items-center justify-center font-montserrat font-bold text-xs flex-shrink-0">
+                                DOC
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-montserrat font-bold uppercase tracking-wider text-grafito block">Asamblea General</span>
+                                <h3 class="font-montserrat font-bold text-base text-carbon">Convocatoria a Asamblea Ordinaria de Asociados</h3>
+                            </div>
                         </div>
-                        <div>
-                            <span class="inline-block px-2 py-0.5 rounded bg-naranja-light text-naranja text-xs font-montserrat font-semibold mb-1">Asamblea General</span>
-                            <h3 class="font-montserrat font-bold text-base text-carbon">Convocatoria a Asamblea Ordinaria de Asociados</h3>
-                            <p class="text-xs text-grafito mt-1">Revisión del informe financiero pro-fondos y calendarización de antologías.</p>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-montserrat font-bold bg-naranja-light text-naranja uppercase">
+                                Vigente
+                            </span>
+                            <svg id="icon-acc-2" class="w-5 h-5 text-grafito transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </div>
+                    </button>
+                    <div id="acc-2" class="accordion-content px-6 pb-6">
+                        <p class="text-xs text-grafito font-inter leading-relaxed pt-2 border-t border-crema-200">
+                            Convocatoria formal dirigida a todos los miembros y escritoras asociadas para la revisión del informe financiero pro-fondos de la Rifa Institucional y la aprobación de nuevos dictámenes de antologías.
+                        </p>
                     </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-montserrat font-semibold bg-naranja-light text-naranja">
-                        Vigente
-                    </span>
                 </div>
 
-                <!-- Documento 3 -->
-                <div class="bg-white p-6 rounded-xl border border-crema-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 hover:border-naranja/40 transition-colors">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-crema-200 text-carbon flex-shrink-0 flex items-center justify-center font-montserrat font-bold text-xs">
-                            ACT
+                <!-- Acordeón 3 -->
+                <div class="glass-card rounded-2xl border border-crema-300 overflow-hidden shadow-sm transition-all duration-300">
+                    <button type="button" onclick="toggleAccordion('acc-3')" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none hover:bg-crema-200/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-naranja-light text-naranja flex items-center justify-center font-montserrat font-bold text-xs flex-shrink-0">
+                                ACT
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-montserrat font-bold uppercase tracking-wider text-grafito block">Estatutos</span>
+                                <h3 class="font-montserrat font-bold text-base text-carbon">Estatutos Sociales y Código de Ética Editorial LVT</h3>
+                            </div>
                         </div>
-                        <div>
-                            <span class="inline-block px-2 py-0.5 rounded bg-crema-200 text-carbon text-xs font-montserrat font-semibold mb-1">Estatutos</span>
-                            <h3 class="font-montserrat font-bold text-base text-carbon">Estatutos Sociales y Código de Ética Editorial LVT</h3>
-                            <p class="text-xs text-grafito mt-1">Normativa interna reguladora para dictámenes y admisión de nuevos miembros.</p>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-montserrat font-bold bg-green-100 text-green-800 uppercase">
+                                [APROBADO]
+                            </span>
+                            <svg id="icon-acc-3" class="w-5 h-5 text-grafito transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </div>
+                    </button>
+                    <div id="acc-3" class="accordion-content px-6 pb-6">
+                        <p class="text-xs text-grafito font-inter leading-relaxed pt-2 border-t border-crema-200">
+                            Reglamento interno que norma los procedimientos de votación, la admisión de nuevos integrantes y los estándares ortotipográficos y de calidad estética obligatorios para las publicaciones bajo el sello LVT.
+                        </p>
                     </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-montserrat font-semibold bg-green-100 text-green-800">
-                        [APROBADO]
-                    </span>
                 </div>
+
             </div>
         </div>
     </section>
 
 
     <!-- SECCIÓN 5: CONTACTO E INFORMACIÓN LEGAL -->
-    <section id="contacto" class="py-20 bg-white">
+    <section id="contacto" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-xs font-montserrat font-bold text-naranja uppercase tracking-widest mb-3">Atención Directa</h2>
                 <p class="text-3xl sm:text-4xl font-montserrat font-bold text-carbon">Contacto e Información Legal</p>
                 <p class="text-grafito font-inter text-base mt-3">Escríbenos o conéctate con la Mesa Directiva para dudas, talleres o aportaciones.</p>
                 <div class="w-16 h-1 bg-naranja mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                
                 <!-- Formulario de Contacto (Izquierda) -->
-                <div class="bg-crema-100 p-8 rounded-2xl border border-crema-200 shadow-sm">
-                    <h3 class="font-montserrat font-bold text-xl text-carbon mb-6">Enviar un Mensaje Directo</h3>
+                <div class="glass-card p-8 sm:p-10 rounded-3xl border border-crema-300 shadow-lg reveal">
+                    <h3 class="font-montserrat font-bold text-2xl text-carbon mb-6">Enviar Mensaje Directo</h3>
                     
-                    <form id="contact-form" onsubmit="event.preventDefault(); showFormSuccess();" class="space-y-5">
+                    <form id="contact-form" onsubmit="event.preventDefault(); handleFormSubmit();" class="space-y-5">
                         <div>
-                            <label for="nombre" class="block text-xs font-montserrat font-semibold text-carbon uppercase mb-2">Nombre Completo *</label>
-                            <input type="text" id="nombre" required placeholder="Ej. Dra. Carmen Morales" class="w-full px-4 py-3 rounded-lg border border-crema-200 focus:outline-none focus:border-naranja focus:ring-1 focus:ring-naranja bg-white text-sm font-inter">
+                            <label for="nombre" class="block text-xs font-montserrat font-bold text-carbon uppercase tracking-wider mb-2">Nombre Completo *</label>
+                            <input type="text" id="nombre" required placeholder="Ej. Dra. Carmen Morales" class="w-full px-4 py-3.5 rounded-xl border border-crema-300 focus:outline-none focus:border-naranja focus:ring-2 focus:ring-naranja/20 bg-white text-sm font-inter transition-all">
                         </div>
 
                         <div>
-                            <label for="correo" class="block text-xs font-montserrat font-semibold text-carbon uppercase mb-2">Correo Electrónico *</label>
-                            <input type="email" id="correo" required placeholder="correo@ejemplo.com" class="w-full px-4 py-3 rounded-lg border border-crema-200 focus:outline-none focus:border-naranja focus:ring-1 focus:ring-naranja bg-white text-sm font-inter">
+                            <label for="correo" class="block text-xs font-montserrat font-bold text-carbon uppercase tracking-wider mb-2">Correo Electrónico *</label>
+                            <input type="email" id="correo" required placeholder="correo@ejemplo.com" class="w-full px-4 py-3.5 rounded-xl border border-crema-300 focus:outline-none focus:border-naranja focus:ring-2 focus:ring-naranja/20 bg-white text-sm font-inter transition-all">
                         </div>
 
                         <div>
-                            <label for="asunto" class="block text-xs font-montserrat font-semibold text-carbon uppercase mb-2">Asunto de Interés *</label>
-                            <select id="asunto" class="w-full px-4 py-3 rounded-lg border border-crema-200 focus:outline-none focus:border-naranja focus:ring-1 focus:ring-naranja bg-white text-sm font-inter">
-                                <option>Inscripción a Talleres Literarios</option>
-                                <option>Adquisición de Boletos para la Rifa Pro-Fondos</option>
-                                <option>Propuesta para Publicación / Antologías</option>
-                                <option>Afiliación o Consulta Institucional</option>
+                            <label for="asunto" class="block text-xs font-montserrat font-bold text-carbon uppercase tracking-wider mb-2">Asunto de Interés *</label>
+                            <select id="asunto" class="w-full px-4 py-3.5 rounded-xl border border-crema-300 focus:outline-none focus:border-naranja focus:ring-2 focus:ring-naranja/20 bg-white text-sm font-inter transition-all">
+                                <option value="rifa">Adquisición de Boletos - Rifa Pro-Fondos ($100 MXN)</option>
+                                <option value="talleres">Inscripción a Talleres Literarios</option>
+                                <option value="antologias">Propuesta de Publicación / Antologías</option>
+                                <option value="afiliacion">Afiliación o Consulta Institucional</option>
                             </select>
                         </div>
 
                         <div>
-                            <label for="mensaje" class="block text-xs font-montserrat font-semibold text-carbon uppercase mb-2">Mensaje *</label>
-                            <textarea id="mensaje" rows="4" required placeholder="Escriba aquí sus comentarios u observaciones..." class="w-full px-4 py-3 rounded-lg border border-crema-200 focus:outline-none focus:border-naranja focus:ring-1 focus:ring-naranja bg-white text-sm font-inter"></textarea>
+                            <label for="mensaje" class="block text-xs font-montserrat font-bold text-carbon uppercase tracking-wider mb-2">Mensaje *</label>
+                            <textarea id="mensaje" rows="4" required placeholder="Escriba aquí sus comentarios u observaciones..." class="w-full px-4 py-3.5 rounded-xl border border-crema-300 focus:outline-none focus:border-naranja focus:ring-2 focus:ring-naranja/20 bg-white text-sm font-inter transition-all"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-3.5 px-6 rounded-lg bg-naranja text-white font-montserrat text-sm font-bold uppercase tracking-wider hover:bg-naranja-hover shadow transition-all">
-                            Enviar Mensaje Institucional
+                        <button type="submit" id="submit-btn" class="w-full py-4 px-6 rounded-xl bg-naranja text-white font-montserrat text-sm font-bold uppercase tracking-wider hover:bg-naranja-hover shadow-md hover:shadow-naranja-glow hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Enviar Mensaje Institucional</span>
                         </button>
                     </form>
 
-                    <div id="form-success" class="hidden mt-4 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800 text-sm font-inter text-center">
-                        ¡Gracias por comunicarse! Su mensaje ha sido recibido por la Secretaría General. Le responderemos a la brevedad.
+                    <!-- Feedback Visual del Formulario -->
+                    <div id="form-success" class="hidden mt-6 p-5 rounded-xl bg-green-50 border border-green-200 text-green-900 text-sm font-inter text-center shadow-sm">
+                        <strong class="block font-montserrat font-bold text-base mb-1">¡Mensaje Enviado con Éxito!</strong>
+                        <span>Su solicitud ha sido canalizada a la Secretaría General. Nos pondremos en contacto a la brevedad.</span>
                     </div>
                 </div>
 
-                <!-- Información Legal y Bancaria (Derecha) -->
-                <div class="space-y-8 flex flex-col justify-between">
-                    <div class="bg-crema-100 p-8 rounded-2xl border border-crema-200 shadow-sm">
-                        <h3 class="font-montserrat font-bold text-xl text-carbon mb-4">Datos Institucionales de LVT</h3>
+                <!-- Datos Legales, Ubicación y Banco (Derecha) -->
+                <div class="space-y-8 reveal">
+                    <div class="glass-card p-8 rounded-3xl border border-crema-300 shadow-sm space-y-6">
+                        <h3 class="font-montserrat font-bold text-xl text-carbon mb-2">Datos Institucionales LVT</h3>
                         
-                        <div class="space-y-4 text-sm font-inter text-grafito">
-                            <div class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-naranja flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-7h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        <div class="space-y-5 text-sm font-inter text-grafito">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-naranja-light text-naranja flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-7h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                </div>
                                 <div>
                                     <strong class="block text-carbon font-semibold">Razón Social:</strong>
                                     Sociedad de Escritores Letras y Voces de Tabasco, A.C.
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-naranja flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-naranja-light text-naranja flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </div>
                                 <div>
                                     <strong class="block text-carbon font-semibold">Sede Principal:</strong>
                                     Villahermosa, Tabasco, México.
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-naranja flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-naranja-light text-naranja flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                </div>
                                 <div>
-                                    <strong class="block text-carbon font-semibold">Servicios Bancarios para Donativos y Rifa:</strong>
-                                    HSBC México (Transferencia electrónica y depósitos de la asociación).
+                                    <strong class="block text-carbon font-semibold">Servicios Bancarios Institucionales:</strong>
+                                    HSBC México (Aportaciones y depósitos de la Rifa Pro-Fondos).
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Redes Sociales y Comunidad -->
-                    <div class="bg-crema-100 p-8 rounded-2xl border border-crema-200 shadow-sm">
-                        <h3 class="font-montserrat font-bold text-lg text-carbon mb-3">Redes Sociales y Presencia Digital</h3>
-                        <p class="text-xs text-grafito mb-4 leading-relaxed">
-                            Sigue las publicaciones, convocatorias y transmisiones de la asociación en nuestro canal oficial:
+                    <!-- Enlace a Redes Sociales Oficiales -->
+                    <div class="glass-card p-8 rounded-3xl border border-crema-300 shadow-sm">
+                        <h3 class="font-montserrat font-bold text-lg text-carbon mb-2">Comunidad y Redes Sociales</h3>
+                        <p class="text-xs text-grafito mb-5 leading-relaxed">
+                            Acompáñanos en nuestro canal oficial para seguir publicaciones y anuncios:
                         </p>
                         
-                        <a href="https://www.facebook.com/profile.php?id=100083236744883" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-white border border-crema-200 text-carbon hover:text-naranja hover:border-naranja shadow-sm transition-all text-sm font-montserrat font-semibold">
+                        <a href="https://www.facebook.com/profile.php?id=100083236744883" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white border border-crema-300 text-carbon hover:text-naranja hover:border-naranja shadow-sm hover:shadow transition-all duration-300 text-xs font-montserrat font-bold">
                             <svg class="w-5 h-5 fill-current text-blue-600" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                             <span>Página Oficial de Facebook (Sociedad Escritores Lvt)</span>
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -495,8 +678,8 @@
     <footer class="bg-carbon text-white py-12 border-t border-carbon-light mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center border-b border-carbon-light/50 pb-8 mb-8 gap-6">
-                <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 rounded bg-naranja flex items-center justify-center text-white font-montserrat font-bold text-lg">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-naranja flex items-center justify-center text-white font-montserrat font-extrabold text-lg">
                         LVT
                     </div>
                     <div>
@@ -516,7 +699,7 @@
 
             <div class="text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-inter gap-4">
                 <p>&copy; 2026 Sociedad de Escritores Letras y Voces de Tabasco, A.C. Todos los derechos reservados.</p>
-                <p class="font-garamond italic text-sm text-gray-300">
+                <p class="font-garamond italic text-base text-gray-200">
                     Cordialmente, Sociedad de Escritores Letras y Voces de Tabasco, A.C.
                 </p>
             </div>
@@ -524,20 +707,114 @@
     </footer>
 
 
-    <!-- JavaScript Ligero para Interacción -->
+    <!-- JAVASCRIPT VANILLA DE ALTO RENDIMIENTO (MICROINTERACCIONES Y ANIMACIONES) -->
     <script>
-        // Menú Móvil
+        // 1. Menú Móvil
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
         if (menuBtn && mobileMenu) {
             menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
         }
 
-        // Simulación Formulario
-        function showFormSuccess() {
+        // 2. IntersectionObserver para Revelado Suave al Desplazar (Scroll Reveal)
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            reveals.forEach(reveal => observer.observe(reveal));
+        });
+
+        // 3. Calculadora Interactiva de Boletos para la Rifa
+        let currentTicketCount = 1;
+        const ticketPrice = 100;
+
+        function adjustTickets(amount) {
+            currentTicketCount += amount;
+            if (currentTicketCount < 1) currentTicketCount = 1;
+            if (currentTicketCount > 20) currentTicketCount = 20; // Límite por reserva
+
+            const countEl = document.getElementById('ticket-count');
+            const totalEl = document.getElementById('ticket-total');
+
+            if (countEl && totalEl) {
+                countEl.textContent = currentTicketCount;
+                totalEl.innerHTML = `$${currentTicketCount * ticketPrice} <span class="text-sm font-normal text-carbon">MXN</span>`;
+            }
+        }
+
+        function selectRaffleOption() {
+            const asuntoSelect = document.getElementById('asunto');
+            const mensajeTextarea = document.getElementById('mensaje');
+            if (asuntoSelect) asuntoSelect.value = 'rifa';
+            if (mensajeTextarea) {
+                mensajeTextarea.value = `Deseo reservar ${currentTicketCount} boleto(s) doble(s) para la Rifa Pro-Fondos ($${currentTicketCount * ticketPrice} MXN). Favor de enviarme las instrucciones de depósito bancario HSBC.`;
+            }
+        }
+
+        // 4. Selector de Pestañas (Tabs) de Proyectos
+        function switchTab(category) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            const cards = document.querySelectorAll('.project-card');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-naranja', 'text-white', 'shadow');
+                btn.classList.add('text-carbon');
+            });
+
+            const activeBtn = document.getElementById(`tab-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-naranja', 'text-white', 'shadow');
+                activeBtn.classList.remove('text-carbon');
+            }
+
+            cards.forEach(card => {
+                if (category === 'todos' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 5. Acordeones Suaves de Transparencia
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(`icon-${id}`);
+
+            if (content) {
+                if (content.classList.contains('open')) {
+                    content.style.maxHeight = '0px';
+                    content.classList.remove('open');
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                } else {
+                    // Cerrar otros
+                    document.querySelectorAll('.accordion-content').forEach(acc => {
+                        acc.style.maxHeight = '0px';
+                        acc.classList.remove('open');
+                    });
+                    document.querySelectorAll('[id^="icon-acc-"]').forEach(ic => {
+                        ic.style.transform = 'rotate(0deg)';
+                    });
+
+                    content.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        }
+
+        // 6. Envío del Formulario
+        function handleFormSubmit() {
             const successMsg = document.getElementById('form-success');
             const form = document.getElementById('contact-form');
             if (successMsg && form) {
