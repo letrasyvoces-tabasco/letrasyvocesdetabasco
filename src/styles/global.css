@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --color-editorial: #FAF7F2;
-    --color-editorial-warm: #F3ECE0;
-    --color-editorial-border: #E8DFD1;
-    --color-carbon: #161413;
-    --color-terracota: #D96B27;
+    --color-editorial: #FDFBF7;
+    --color-editorial-warm: #F5EFE6;
+    --color-editorial-border: #E6DCCE;
+    --color-carbon: #222222;
+    --color-terracota: #EF7B38;
     --color-dorado: #C59B27;
   }
 
@@ -22,8 +22,8 @@
     color: var(--color-carbon);
     font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    background-image: radial-gradient(rgba(217, 107, 39, 0.02) 1px, transparent 0);
-    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(239, 123, 56, 0.025) 1px, transparent 0);
+    background-size: 28px 28px;
     background-position: -19px -19px;
   }
 }
@@ -31,14 +31,14 @@
 /* Fondo con efecto de degradado atmosférico en el Hero */
 .hero-bg {
   background: 
-    radial-gradient(circle at 85% 15%, rgba(217, 107, 39, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, rgba(239, 123, 56, 0.18) 0%, transparent 50%),
     radial-gradient(circle at 15% 85%, rgba(197, 155, 39, 0.12) 0%, transparent 50%),
-    linear-gradient(180deg, #161413 0%, #1A1715 60%, #1F1B18 100%);
+    linear-gradient(180deg, #1A1817 0%, #222222 60%, #282422 100%);
 }
 
 /* Cabecera translúcida con desenfoque óptico */
 .glass-header {
-  background: rgba(250, 247, 242, 0.92);
+  background: rgba(253, 251, 247, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -73,11 +73,11 @@
 }
 
 .num-btn.selected {
-  background-color: #D96B27 !important;
+  background-color: #EF7B38 !important;
   color: #FFFFFF !important;
-  border-color: #C05718 !important;
+  border-color: #D96620 !important;
   transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(217, 107, 39, 0.38);
+  box-shadow: 0 4px 14px rgba(239, 123, 56, 0.38);
 }
 
 /* Transiciones de citas y textos */
@@ -92,13 +92,13 @@
 }
 
 .reader-marfil {
-  background-color: #FAF7F2;
-  color: #1A1715;
+  background-color: #FDFBF7;
+  color: #222222;
 }
 
 .reader-noche {
-  background-color: #161413;
-  color: #E8DFD1;
+  background-color: #1A1817;
+  color: #E6DCCE;
 }
 
 /* Animaciones suaves para modales */

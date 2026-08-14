@@ -1,59 +1,118 @@
 ---
-// MesaDirectiva.astro - Gobernanza y Representación Legal Institucional
+// MesaDirectiva.astro - Gobernanza y Representación Legal Institucional con Retratos Editoriales
+const basePath = "/letrasyvocesdetabasco";
 ---
 
 <section id="directiva" class="py-24 bg-editorial border-b border-editorial-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-[11px] font-title font-bold text-terracota uppercase tracking-widest block mb-2">Estructura y Representación Legal</span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-editorial-warm border border-editorial-border text-terracota font-title text-[10px] font-bold uppercase tracking-widest mb-3">
+        <span>Gobernanza Institucional</span>
+      </div>
       <h2 class="font-serif text-4xl sm:text-5xl font-bold text-carbon">Mesa Directiva Institucional</h2>
-      <p class="text-sm text-gray-600 mt-2 font-light">Gobernanza y representación de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.</p>
+      <p class="text-sm text-gray-600 mt-2 font-light">
+        Representación jurídica y directiva de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
+      </p>
       <div class="w-16 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
       
       <!-- Presidente -->
-      <div class="bg-white p-8 sm:p-10 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 text-center group">
-        <div class="w-16 h-16 bg-carbon text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-terracota transition shadow-subtle">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-          </svg>
+      <div class="bg-white rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1.5 transition duration-300 overflow-hidden flex flex-col group">
+        <!-- Retrato Editorial Blanco y Negro -->
+        <div class="relative overflow-hidden aspect-[4/5] bg-editorial-warm">
+          <img 
+            src={`${basePath}/assets/directiva/juan_david_perez_cabrera.jpg`} 
+            alt="Lic. Juan David Pérez Cabrera - Presidente de Letras y Voces de Tabasco, A.C." 
+            class="w-full h-full object-cover object-center grayscale contrast-115 group-hover:scale-103 transition duration-500"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon/75 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-5 right-5 text-white">
+            <span class="text-[10px] font-title font-bold uppercase tracking-widest text-dorado-light block mb-0.5">
+              Presidencia & Representación Legal
+            </span>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
+              Lic. Juan David Pérez Cabrera
+            </h3>
+          </div>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Lic. Juan David Pérez Cabrera</h3>
-        <p class="text-terracota font-title text-xs font-bold uppercase tracking-wider mb-4">Presidencia y Representación Legal</p>
-        <p class="text-xs text-gray-600 font-light leading-relaxed">
-          Dirección general, representación legal y vinculación estratégica de la asociación con instituciones culturales nacionales e internacionales.
-        </p>
+
+        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-xs text-gray-600 font-light leading-relaxed">
+            Dirección general, representación legal, gestión de alianzas interinstitucionales con entidades de gobierno y vinculación estratégica del gremio literario.
+          </p>
+          <div class="pt-3 border-t border-editorial-border flex items-center justify-between text-[11px] font-title font-bold uppercase tracking-wider text-gray-500">
+            <span>Periodo Directivo</span>
+            <span class="text-terracota">2024 – 2027</span>
+          </div>
+        </div>
       </div>
 
       <!-- Secretaria -->
-      <div class="bg-white p-8 sm:p-10 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 text-center group">
-        <div class="w-16 h-16 bg-carbon text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-terracota transition shadow-subtle">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
+      <div class="bg-white rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1.5 transition duration-300 overflow-hidden flex flex-col group">
+        <!-- Retrato Editorial Blanco y Negro -->
+        <div class="relative overflow-hidden aspect-[4/5] bg-editorial-warm">
+          <img 
+            src={`${basePath}/assets/directiva/eva_guadalupe_pineda_cruz.jpg`} 
+            alt="Mtra. Eva Guadalupe Pineda Cruz - Secretaria General de Letras y Voces de Tabasco, A.C." 
+            class="w-full h-full object-cover object-center grayscale contrast-115 group-hover:scale-103 transition duration-500"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon/75 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-5 right-5 text-white">
+            <span class="text-[10px] font-title font-bold uppercase tracking-widest text-dorado-light block mb-0.5">
+              Secretaría General
+            </span>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
+              Mtra. Eva Guadalupe Pineda Cruz
+            </h3>
+          </div>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Mtra. Eva Guadalupe Pineda Cruz</h3>
-        <p class="text-terracota font-title text-xs font-bold uppercase tracking-wider mb-4">Secretaría General</p>
-        <p class="text-xs text-gray-600 font-light leading-relaxed">
-          Atención institucional, actas de asambleas, acuerdos directivos y gestión de correspondencia oficial con los miembros.
-        </p>
+
+        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-xs text-gray-600 font-light leading-relaxed">
+            Atención institucional, actas de asambleas generales, formalización de acuerdos colegiados y coordinación de correspondencia oficial con los socios.
+          </p>
+          <div class="pt-3 border-t border-editorial-border flex items-center justify-between text-[11px] font-title font-bold uppercase tracking-wider text-gray-500">
+            <span>Periodo Directivo</span>
+            <span class="text-terracota">2024 – 2027</span>
+          </div>
+        </div>
       </div>
 
       <!-- Tesorera -->
-      <div class="bg-white p-8 sm:p-10 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 text-center group">
-        <div class="w-16 h-16 bg-carbon text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-terracota transition shadow-subtle">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
+      <div class="bg-white rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1.5 transition duration-300 overflow-hidden flex flex-col group">
+        <!-- Retrato Editorial Blanco y Negro -->
+        <div class="relative overflow-hidden aspect-[4/5] bg-editorial-warm">
+          <img 
+            src={`${basePath}/assets/directiva/ana_laura_hernandez_jimenez.jpg`} 
+            alt="Ana Laura Hernández Jiménez - Tesorera Institucional de Letras y Voces de Tabasco, A.C." 
+            class="w-full h-full object-cover object-center grayscale contrast-115 group-hover:scale-103 transition duration-500"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon/75 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-5 right-5 text-white">
+            <span class="text-[10px] font-title font-bold uppercase tracking-widest text-dorado-light block mb-0.5">
+              Tesorería Institucional
+            </span>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
+              Ana Laura Hernández Jiménez
+            </h3>
+          </div>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Ana Laura Hernández Jiménez</h3>
-        <p class="text-terracota font-title text-xs font-bold uppercase tracking-wider mb-4">Tesorería Institucional</p>
-        <p class="text-xs text-gray-600 font-light leading-relaxed">
-          Administración financiera, control y transparencia de fondos editoriales y regularización de aportaciones pro-fondos.
-        </p>
+
+        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-xs text-gray-600 font-light leading-relaxed">
+            Administración financiera, control y transparencia de fondos editoriales, expedición de recibos y regularización de aportaciones voluntarias.
+          </p>
+          <div class="pt-3 border-t border-editorial-border flex items-center justify-between text-[11px] font-title font-bold uppercase tracking-wider text-gray-500">
+            <span>Periodo Directivo</span>
+            <span class="text-terracota">2024 – 2027</span>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -1,22 +1,22 @@
 ---
-// Footer.astro - Pie de Página Oficial LVT
+// Footer.astro - Pie de Página Oficial LVT con Logotipo Vectorial Blanco
 const basePath = "/letrasyvocesdetabasco";
 ---
 
-<footer class="bg-carbon text-gray-400 py-14 border-t border-carbon-border">
+<footer class="bg-carbon text-gray-400 py-16 border-t border-carbon-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-center border-b border-carbon-border pb-10 mb-8 gap-8">
+    <div class="flex flex-col md:flex-row justify-between items-center border-b border-carbon-border pb-12 mb-8 gap-8">
       
       <div class="flex items-center space-x-4">
         <img 
-          src={`${basePath}/assets/LVT Logo Iso 1 Original.png`} 
-          alt="Isotipo LVT" 
-          class="h-12 w-auto object-contain filter invert brightness-200" 
+          src={`${basePath}/assets/logos/LVT Logo Iso 6 Blanco Relleno.svg`} 
+          alt="Isotipo Oficial LVT" 
+          class="h-12 w-auto object-contain" 
           onerror="this.src='/letrasyvocesdetabasco/assets/logo.svg'" 
         />
         <div class="text-left">
-          <span class="font-serif text-xl font-bold text-white block">Letras y Voces de Tabasco, A.C.</span>
-          <span class="text-xs text-gray-400">Villahermosa, Tabasco, México</span>
+          <span class="font-serif text-xl font-bold text-white block">Sociedad de Escritores Letras y Voces de Tabasco, A.C.</span>
+          <span class="text-xs text-gray-400 font-light">Institución Cultural Autónoma • Villahermosa, Tabasco, México</span>
         </div>
       </div>
 
