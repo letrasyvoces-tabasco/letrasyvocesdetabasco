@@ -1,4 +1,4 @@
-name: Despliegue Automatizado a GitHub Pages
+name: Despliegue Automatizado LVT
 
 on:
   push:
@@ -6,47 +6,32 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
-    name: Compilar Sitio Estático (Astro)
+  build-and-deploy:
+    name: Compilar y Publicar Sitio Oficial LVT
     runs-on: ubuntu-latest
     steps:
       - name: Descargar Repositorio
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: Configurar Entorno Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Instalar Dependencias
-        run: npm ci || npm install
+        run: npm install
 
       - name: Compilar Proyecto Astro
         run: npm run build
 
-      - name: Subir Artefacto para GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+      - name: Publicar en Rama gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
         with:
-          path: ./dist
-
-  deploy:
-    name: Publicar en GitHub Pages
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Desplegar a GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

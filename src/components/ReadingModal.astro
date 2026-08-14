@@ -1,10 +1,10 @@
 ---
-// ReadingModal.astro - Visor Inmersivo de Muestras Literarias
+// ReadingModal.astro - Visor Inmersivo de Muestras Literarias con Lógica de Color Rigurosa
 ---
 
 <div 
   id="reading-modal" 
-  class="fixed inset-0 z-50 hidden bg-carbon/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+  class="fixed inset-0 z-50 hidden bg-carbon/85 backdrop-blur-lg flex items-center justify-center p-4 sm:p-6"
   role="dialog"
   aria-modal="true"
   aria-labelledby="modal-book-title"
@@ -14,25 +14,26 @@
     <!-- Barra Superior de Control del Lector -->
     <div class="flex items-center justify-between px-6 py-4 border-b border-editorial-border bg-editorial-warm">
       <div class="flex items-center gap-3">
-        <span class="w-2.5 h-2.5 rounded-full bg-terracota"></span>
-        <span id="modal-badge" class="font-title text-[10px] font-bold uppercase tracking-widest text-carbon">
+        <span class="w-2.5 h-2.5 rounded-full bg-terracota animate-pulse"></span>
+        <span id="modal-badge" class="font-title text-[11px] font-bold uppercase tracking-widest text-carbon">
           Muestra de Lectura Oficial
         </span>
       </div>
 
       <!-- Controles de Accesibilidad de Lectura -->
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2.5">
         <!-- Control de Tamaño de Letra -->
-        <div class="flex items-center bg-white border border-editorial-border rounded-xl px-2 py-1 gap-1 text-xs">
-          <button id="font-decrease" type="button" class="px-2 py-0.5 hover:bg-editorial-warm rounded font-bold text-gray-700" title="Disminuir texto">A-</button>
-          <button id="font-increase" type="button" class="px-2 py-0.5 hover:bg-editorial-warm rounded font-bold text-gray-700" title="Aumentar texto">A+</button>
+        <div class="flex items-center bg-white border border-editorial-border rounded-xl px-2.5 py-1 gap-1.5 text-xs shadow-subtle">
+          <button id="font-decrease" type="button" class="px-2 py-0.5 hover:bg-editorial-warm rounded-lg font-bold text-carbon transition" title="Disminuir tamaño de fuente">A-</button>
+          <span class="text-gray-300">|</span>
+          <button id="font-increase" type="button" class="px-2 py-0.5 hover:bg-editorial-warm rounded-lg font-bold text-carbon transition" title="Aumentar tamaño de fuente">A+</button>
         </div>
 
         <!-- Selector de Modo de Fondo -->
-        <div class="flex items-center bg-white border border-editorial-border rounded-xl p-1 gap-1">
-          <button id="theme-pergamino" type="button" class="w-5 h-5 rounded-full bg-[#F8F4EC] border border-editorial-border" title="Modo Pergamino"></button>
-          <button id="theme-marfil" type="button" class="w-5 h-5 rounded-full bg-[#FFFFFF] border border-editorial-border" title="Modo Marfil"></button>
-          <button id="theme-noche" type="button" class="w-5 h-5 rounded-full bg-[#161413] border border-gray-700" title="Modo Nocturno"></button>
+        <div class="flex items-center bg-white border border-editorial-border rounded-xl p-1 gap-1.5 shadow-subtle">
+          <button id="theme-pergamino" type="button" class="w-6 h-6 rounded-full bg-[#F8F4EC] border-2 border-editorial-border hover:scale-105 transition" title="Modo Pergamino Editorial"></button>
+          <button id="theme-marfil" type="button" class="w-6 h-6 rounded-full bg-[#FFFFFF] border-2 border-editorial-border hover:scale-105 transition" title="Modo Marfil Puro"></button>
+          <button id="theme-noche" type="button" class="w-6 h-6 rounded-full bg-[#181615] border-2 border-gray-600 hover:scale-105 transition" title="Modo Nocturno"></button>
         </div>
 
         <!-- Botón Cerrar -->
@@ -54,15 +55,15 @@
       <div class="max-w-2xl mx-auto space-y-6">
         
         <div class="text-center pb-6 border-b border-editorial-border/60">
-          <h3 id="modal-book-title" class="font-serif text-3xl sm:text-4xl font-bold text-carbon">
+          <h3 id="modal-book-title" class="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
             Animalia Literaria
           </h3>
-          <p id="modal-book-author" class="text-xs font-title uppercase tracking-widest text-terracota font-bold mt-2">
+          <p id="modal-book-author" class="text-xs font-title uppercase tracking-widest reader-badge font-bold mt-2">
             Antología Colectiva de la Sociedad de Escritores
           </p>
         </div>
 
-        <div id="modal-book-text" class="font-serif text-base sm:text-lg leading-relaxed text-gray-800 space-y-4">
+        <div id="modal-book-text" class="font-serif text-base sm:text-lg leading-relaxed space-y-4">
           <!-- Inyectado dinámicamente -->
         </div>
 
@@ -80,7 +81,7 @@
           href="https://wa.me/522205889391" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="px-5 py-2.5 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover transition shadow-subtle inline-flex items-center gap-2"
+          class="px-6 py-2.5 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover transition shadow-subtle inline-flex items-center gap-2"
         >
           <span>Solicitar Ejemplar</span>
         </a>
@@ -106,7 +107,7 @@
       author: 'Antología Colectiva · 16 Escritores · 131 Páginas',
       waText: 'Hola Mesa Directiva de LVT, leí la muestra de Animalia Literaria y deseo información sobre su adquisición y preventa.',
       contentHtml: `
-        <p class="italic text-center text-gray-600 mb-6 font-serif">
+        <p class="italic text-center mb-6 font-serif">
           «En el trópico húmedo la palabra no se escribe: brota como mangle y canta como agua viva.»
         </p>
         <p class="font-serif text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-terracota">
@@ -115,7 +116,7 @@
         <p class="font-serif leading-relaxed">
           Cada página es un testimonio de la biodiversidad que palpita en el Sureste de México, uniendo el rigor formal de la métrica con la libertad del cuento moderno. Una edición cuidadosamente diagramada en 131 páginas que constituye ya una pieza clave en el acervo bibliográfico de nuestra entidad.
         </p>
-        <div class="my-6 p-4 rounded-xl bg-editorial border-l-4 border-dorado italic text-sm text-gray-700">
+        <div class="my-6 p-4 rounded-xl reader-quote-box border-l-4 italic text-sm">
           «Bajo la sombra del guayacán florecido,<br>
           el ojo del reptil vigila el río:<br>
           no hay tiempo en el pantano, solo canto.»
@@ -127,7 +128,7 @@
       author: 'María de los Ángeles Cervantes Rosas',
       waText: 'Hola Mesa Directiva de LVT, leí la muestra de A corazón abierto de María Cervantes y deseo adquirir un ejemplar.',
       contentHtml: `
-        <p class="italic text-center text-gray-600 mb-6 font-serif">
+        <p class="italic text-center mb-6 font-serif">
           «Abrir el pecho a la memoria es dejar que el río lave las heridas de la tarde.»
         </p>
         <p class="font-serif text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-terracota">
@@ -136,7 +137,7 @@
         <p class="font-serif leading-relaxed">
           Presentada el 30 de mayo de 2026 en el emblemático recinto de la Casa Universitaria Cacao y Chocolate de Villahermosa, esta obra se consolida como una de las voces más honestas y emotivas de la literatura contemporánea en Tabasco.
         </p>
-        <div class="my-6 p-4 rounded-xl bg-editorial border-l-4 border-terracota italic text-sm text-gray-700">
+        <div class="my-6 p-4 rounded-xl reader-quote-box border-l-4 italic text-sm">
           «No guardo rencor al viento que deshojó mi jardín;<br>
           en cada pétalo caído aprendí el nombre del agua<br>
           y en cada silencio hallé mi propia voz.»
@@ -148,7 +149,7 @@
       author: 'Antología Conmemorativa Histórica LVT',
       waText: 'Hola Mesa Directiva de LVT, deseo adquirir un ejemplar de la antología conmemorativa Tardes Tabasqueñas de Ópalos y Topacios.',
       contentHtml: `
-        <p class="italic text-center text-gray-600 mb-6 font-serif">
+        <p class="italic text-center mb-6 font-serif">
           «El atardecer en Villahermosa tiñe el río de ópalo y funde el cielo en topacio.»
         </p>
         <p class="font-serif text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-terracota">
@@ -158,7 +159,6 @@
     }
   };
 
-  // Función global para abrir el modal desde cualquier componente
   (window as any).openReadingSample = function(bookKey: string) {
     const data = bookData[bookKey];
     if (!data || !modal || !modalTitle || !modalAuthor || !modalText || !modalWaBtn) return;

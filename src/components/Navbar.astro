@@ -4,20 +4,20 @@ const basePath = "/letrasyvocesdetabasco";
 
 <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-editorial-border transition-all duration-300 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
+    <div class="flex justify-between items-center h-24 sm:h-26">
       
-      <!-- Logotipo Oficial Vectorial SVG -->
-      <a href="#inicio" class="flex items-center space-x-3 group" aria-label="Ir al inicio de Letras y Voces de Tabasco">
+      <!-- Logotipo Oficial Vectorial SVG Grande y de Alta Presencia -->
+      <a href="#inicio" class="flex items-center space-x-3 group py-2" aria-label="Ir al inicio de Letras y Voces de Tabasco">
         <img 
           src={`${basePath}/assets/logos/LVT Logo Hor 1 Original.svg`} 
           alt="Sociedad de Escritores Letras y Voces de Tabasco, A.C." 
-          class="h-10 sm:h-11 w-auto object-contain logo-blend group-hover:opacity-90 transition"
+          class="h-14 sm:h-16 w-auto object-contain logo-blend group-hover:scale-102 transition duration-300"
           onerror="this.src='/letrasyvocesdetabasco/assets/logos/LVT Logo Hor 1 Original.png'" 
         />
       </a>
 
-      <!-- Navegación de Escritorio -->
-      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 font-title text-[11px] font-bold tracking-widest uppercase text-carbon">
+      <!-- Navegación de Escritorio con Tipografía de Prestigio -->
+      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 font-title text-xs font-bold tracking-widest uppercase text-carbon">
         <a href="#inicio" class="hover:text-terracota transition-colors py-2">Inicio</a>
         <a href="#quienes-somos" class="hover:text-terracota transition-colors py-2">Semblanza</a>
         <a href="#antologias" class="hover:text-terracota transition-colors py-2">Publicaciones</a>
@@ -30,13 +30,13 @@ const basePath = "/letrasyvocesdetabasco";
         <a href="#directiva" class="hover:text-terracota transition-colors py-2">Directiva</a>
       </nav>
 
-      <!-- Acciones Rápidas de Comunicación Oficial -->
+      <!-- Acciones Rápidas -->
       <div class="hidden sm:flex items-center space-x-3">
         <a 
           href="https://wa.me/522205889391" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="p-2.5 rounded-full bg-editorial-warm border border-editorial-border text-green-700 hover:bg-green-50 hover:border-green-300 transition shadow-subtle" 
+          class="p-3 rounded-full bg-editorial-warm border border-editorial-border text-green-700 hover:bg-green-50 hover:border-green-300 transition shadow-subtle hover:scale-105" 
           title="Atención Directa por WhatsApp Oficial"
           aria-label="Atención Directa por WhatsApp Oficial"
         >
@@ -44,7 +44,7 @@ const basePath = "/letrasyvocesdetabasco";
         </a>
         <a 
           href="#contacto" 
-          class="px-6 py-2.5 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:shadow-elevated transition"
+          class="px-7 py-3 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:shadow-elevated hover:scale-103 transition"
         >
           Contacto
         </a>
@@ -55,10 +55,10 @@ const basePath = "/letrasyvocesdetabasco";
         <button 
           id="mobile-toggle" 
           type="button" 
-          class="text-carbon hover:text-terracota focus:outline-none p-2.5 rounded-2xl bg-editorial-warm border border-editorial-border" 
+          class="text-carbon hover:text-terracota focus:outline-none p-3 rounded-2xl bg-editorial-warm border border-editorial-border" 
           aria-label="Abrir menú de navegación"
         >
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -74,7 +74,7 @@ const basePath = "/letrasyvocesdetabasco";
     <a href="#convocatorias" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition text-terracota">Convocatorias Abiertas 2026</a>
     <a href="#galeria" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Eventos y Archivo Histórico</a>
     <a href="#rifa" class="block px-4 py-3 rounded-2xl bg-terracota text-white text-center shadow-md">Iniciativa Pro-Fondos (Rifa 2026)</a>
-    <a href="#directiva" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Mesa Directiva</a>
-    <a href="#contacto" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition text-center border border-editorial-border">Contacto y Correspondencia</a>
+    <a href="#directiva" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Mesa Directiva (2026 – 2029)</a>
+    <a href="#contacto" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition text-center border border-editorial-border">Contacto Oficial</a>
   </div>
 </header>
