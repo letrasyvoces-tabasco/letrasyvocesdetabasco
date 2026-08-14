@@ -1,0 +1,95 @@
+---
+// Hero.astro - Pórtico Editorial y Rotador Dinámico de Citas
+---
+
+<section id="inicio" class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 hero-bg text-white overflow-hidden">
+  <!-- Sutil elemento decorativo de fondo -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#C59B27_1px,transparent_1px)] [background-size:32px_32px]"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
+    
+    <!-- Distintivo Superior -->
+    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-dorado/30 bg-dorado/10 text-dorado-light text-[11px] font-title font-bold tracking-widest uppercase mb-6 shadow-subtle">
+      <span class="w-2 h-2 rounded-full bg-terracota animate-pulse"></span>
+      <span>Sociedad de Escritores • Villahermosa, Tabasco</span>
+    </div>
+
+    <!-- Título Principal con Rotador Dinámico -->
+    <div class="min-h-[140px] sm:min-h-[180px] md:min-h-[220px] flex items-center justify-center">
+      <h1 id="hero-phrase" class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white max-w-5xl leading-[1.08] tracking-tight phrase-fade">
+        Preservamos la palabra,<br />
+        <span class="italic font-light text-gray-200">impulsamos la lírica del Sureste.</span>
+      </h1>
+    </div>
+
+    <!-- Subtítulo -->
+    <p class="text-base sm:text-lg md:text-xl font-light text-gray-300 max-w-3xl leading-relaxed mt-6 mb-10">
+      Institución legalmente constituida para cultivar la creación literaria, coordinar ediciones colectivas rigurosas y difundir la cultura en Tabasco a lo largo de su historia.
+    </p>
+
+    <!-- Botones de Acción Principal -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md sm:max-w-none">
+      <a 
+        href="#antologias" 
+        class="inline-flex justify-center items-center px-8 py-4 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-elevated hover:shadow-terracota-glow hover:-translate-y-0.5 transition-all"
+      >
+        Ver «Animalia Literaria» (En Imprenta)
+        <svg class="ml-2.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+      <a 
+        href="#rifa" 
+        class="inline-flex justify-center items-center px-8 py-4 rounded-full border border-gray-500/80 text-gray-200 font-title text-xs font-bold uppercase tracking-wider hover:border-white hover:bg-white/10 hover:-translate-y-0.5 transition-all"
+      >
+        Iniciativa Pro-Fondos ($100 MXN)
+      </a>
+    </div>
+
+    <!-- Franja de Hitos Institucionales Históricos -->
+    <div class="mt-16 pt-10 border-t border-gray-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 w-full max-w-4xl text-center">
+      <div class="bg-carbon-card/40 p-4 rounded-2xl border border-gray-800/60 backdrop-blur-sm">
+        <span class="block font-serif text-3xl sm:text-4xl font-bold text-terracota">+38</span>
+        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-400 uppercase">Años de Historia</span>
+      </div>
+      <div class="bg-carbon-card/40 p-4 rounded-2xl border border-gray-800/60 backdrop-blur-sm">
+        <span class="block font-serif text-3xl sm:text-4xl font-bold text-white">+100</span>
+        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-400 uppercase">Escritores en su Historia</span>
+      </div>
+      <div class="bg-carbon-card/40 p-4 rounded-2xl border border-gray-800/60 backdrop-blur-sm">
+        <span class="block font-serif text-3xl sm:text-4xl font-bold text-dorado">+25</span>
+        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-400 uppercase">Ediciones Impresas</span>
+      </div>
+      <div class="bg-carbon-card/40 p-4 rounded-2xl border border-gray-800/60 backdrop-blur-sm">
+        <span class="block font-serif text-3xl sm:text-4xl font-bold text-white">100%</span>
+        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-400 uppercase">Autonomía Cultural</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Rotador Dinámico de Citas en el Hero
+  const phrases = [
+    'Preservamos la palabra,<br><span class="italic font-light text-gray-200">impulsamos la lírica del Sureste.</span>',
+    'Más de 38 años de memoria literaria<br><span class="italic font-light text-gray-200">e historia colectiva en Tabasco.</span>',
+    'Voces que trascienden el trópico:<br><span class="italic font-light text-gray-200">poesía, narrativa y rigor editorial.</span>',
+    'Un espacio independiente de encuentro,<br><span class="italic font-light text-gray-200">diálogo y divulgación cultural.</span>'
+  ];
+  let currentPhraseIdx = 0;
+  const phraseEl = document.getElementById('hero-phrase');
+
+  if (phraseEl) {
+    setInterval(() => {
+      phraseEl.style.opacity = '0';
+      phraseEl.style.transform = 'translateY(8px)';
+      setTimeout(() => {
+        currentPhraseIdx = (currentPhraseIdx + 1) % phrases.length;
+        phraseEl.innerHTML = phrases[currentPhraseIdx];
+        phraseEl.style.opacity = '1';
+        phraseEl.style.transform = 'translateY(0)';
+      }, 600);
+    }, 4800);
+  }
+</script>

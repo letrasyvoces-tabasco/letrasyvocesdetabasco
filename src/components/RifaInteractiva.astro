@@ -1,0 +1,189 @@
+---
+// RifaInteractiva.astro - Iniciativa Pro-Fondos A.C. con Cuadrícula 00-99 y WhatsApp Checkout
+---
+
+<section id="rifa" class="py-24 bg-white border-b border-editorial-border">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-editorial p-8 sm:p-12 rounded-3xl border border-editorial-border shadow-elevated">
+      
+      <div class="text-center mb-10">
+        <span class="bg-dorado/15 text-dorado px-4 py-1.5 rounded-full text-xs font-title font-bold tracking-widest uppercase mb-3 inline-block">
+          Recaudación Cultural Oficial
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-carbon mb-3">Iniciativa Pro-Fondos A.C.</h2>
+        <p class="text-base text-gray-700 max-w-2xl mx-auto font-light leading-relaxed">
+          Selecciona tus números en la cuadrícula (del 00 al 99).<br />
+          <strong class="text-terracota font-bold">Cada 2 números = 1 Boleto Doble por $100 MXN.</strong>
+        </p>
+
+        <!-- Filtros Rápidos -->
+        <div class="flex flex-wrap justify-center gap-3 mt-6">
+          <button 
+            id="btn-azar" 
+            type="button" 
+            class="px-4 py-2 rounded-full bg-editorial-warm border border-editorial-border text-carbon hover:border-terracota hover:text-terracota font-title text-[11px] font-bold uppercase tracking-wider transition shadow-subtle flex items-center gap-1.5"
+          >
+            <span>🎲 Elegir Pareja al Azar</span>
+          </button>
+          <button 
+            id="btn-limpiar" 
+            type="button" 
+            class="px-4 py-2 rounded-full bg-editorial-warm border border-editorial-border text-gray-600 hover:text-red-600 font-title text-[11px] font-bold uppercase tracking-wider transition shadow-subtle"
+          >
+            Limpiar Selección
+          </button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula 00-99 Interactiva -->
+      <div id="grid-numeros" class="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-8 max-h-96 overflow-y-auto p-3 bg-white rounded-2xl border border-editorial-border shadow-inner">
+        <!-- Inyectado dinámicamente por JavaScript -->
+      </div>
+
+      <!-- Resumen de Compra -->
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-editorial-border text-center shadow-inner space-y-5">
+        <div>
+          <p class="text-gray-500 font-title font-bold uppercase tracking-wider text-xs mb-1">Tus números seleccionados</p>
+          <p id="numeros-lista" class="font-serif text-2xl font-bold text-terracota min-h-[2rem]">Ninguno</p>
+        </div>
+
+        <div class="py-2">
+          <p class="text-gray-500 font-title font-bold uppercase tracking-wider text-xs mb-1">Aportación Total a Realizar</p>
+          <p id="total-pago" class="font-serif text-4xl font-bold text-carbon">$0 MXN</p>
+        </div>
+
+        <p id="alerta-impar" class="text-amber-900 text-xs font-medium hidden bg-amber-50 py-3 px-4 rounded-xl border border-amber-200">
+          ⚠️ Has elegido una cantidad impar de números. Selecciona 1 número adicional para completar tu boleto doble ($100 MXN por cada 2 números).
+        </p>
+
+        <button 
+          id="btn-apartar" 
+          type="button"
+          class="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-full font-title text-sm font-bold uppercase tracking-wider w-full sm:w-auto shadow-elevated transition duration-300 opacity-50 cursor-not-allowed inline-flex items-center justify-center gap-2.5 mx-auto" 
+          disabled
+        >
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span>Apartar Boletos con la Mesa Directiva</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Motor Interactivo de la Rifa Pro-Fondos
+  const grid = document.getElementById('grid-numeros');
+  const listaSpan = document.getElementById('numeros-lista');
+  const totalSpan = document.getElementById('total-pago');
+  const alertaImpar = document.getElementById('alerta-impar');
+  const btnApartar = document.getElementById('btn-apartar');
+  const btnAzar = document.getElementById('btn-azar');
+  const btnLimpiar = document.getElementById('btn-limpiar');
+
+  let seleccionados: string[] = [];
+  const btnElements: Record<string, HTMLButtonElement> = {};
+
+  if (grid) {
+    for (let i = 0; i < 100; i++) {
+      const numStr = i < 10 ? '0' + i : i.toString();
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.innerText = numStr;
+      btn.className = "num-btn py-3 px-1 text-sm sm:text-base font-title font-bold bg-editorial-warm border border-editorial-border text-carbon rounded-xl hover:border-terracota shadow-sm";
+      
+      btn.onclick = () => toggleNumero(numStr);
+      btnElements[numStr] = btn;
+      grid.appendChild(btn);
+    }
+  }
+
+  function toggleNumero(numStr: string) {
+    if (seleccionados.includes(numStr)) {
+      seleccionados = seleccionados.filter(n => n !== numStr);
+      btnElements[numStr]?.classList.remove('selected');
+    } else {
+      if (seleccionados.length >= 20) {
+        alert('Puedes seleccionar un máximo de 20 números por apartado.');
+        return;
+      }
+      seleccionados.push(numStr);
+      btnElements[numStr]?.classList.add('selected');
+    }
+    actualizarResumen();
+  }
+
+  function actualizarResumen() {
+    seleccionados.sort((a, b) => parseInt(a) - parseInt(b));
+    if (listaSpan) {
+      listaSpan.innerText = seleccionados.length > 0 ? seleccionados.map(n => '#' + n).join(', ') : 'Ninguno';
+    }
+    
+    // Cada 2 números equivale a $100 MXN
+    const pares = Math.floor(seleccionados.length / 2);
+    const total = pares * 100;
+    if (totalSpan) {
+      totalSpan.innerText = `$${total} MXN`;
+    }
+
+    const esImpar = seleccionados.length % 2 !== 0;
+    
+    if (esImpar) {
+      alertaImpar?.classList.remove('hidden');
+      if (btnApartar) {
+        (btnApartar as HTMLButtonElement).disabled = true;
+        btnApartar.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    } else {
+      alertaImpar?.classList.add('hidden');
+      if (btnApartar) {
+        if (seleccionados.length > 0) {
+          (btnApartar as HTMLButtonElement).disabled = false;
+          btnApartar.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+          (btnApartar as HTMLButtonElement).disabled = true;
+          btnApartar.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+      }
+    }
+  }
+
+  if (btnAzar) {
+    btnAzar.addEventListener('click', () => {
+      // Encontrar dos números libres no seleccionados
+      const disponibles = [];
+      for (let i = 0; i < 100; i++) {
+        const numStr = i < 10 ? '0' + i : i.toString();
+        if (!seleccionados.includes(numStr)) disponibles.push(numStr);
+      }
+      if (disponibles.length >= 2) {
+        const idx1 = Math.floor(Math.random() * disponibles.length);
+        const num1 = disponibles.splice(idx1, 1)[0];
+        const idx2 = Math.floor(Math.random() * disponibles.length);
+        const num2 = disponibles.splice(idx2, 1)[0];
+        toggleNumero(num1);
+        toggleNumero(num2);
+      }
+    });
+  }
+
+  if (btnLimpiar) {
+    btnLimpiar.addEventListener('click', () => {
+      seleccionados.forEach(num => {
+        btnElements[num]?.classList.remove('selected');
+      });
+      seleccionados = [];
+      actualizarResumen();
+    });
+  }
+
+  if (btnApartar) {
+    btnApartar.addEventListener('click', () => {
+      const pares = Math.floor(seleccionados.length / 2);
+      const totalPago = pares * 100;
+      const mjs = `Hola Mesa Directiva de Letras y Voces de Tabasco A.C.\n\nDeseo apartar los siguientes números para la Rifa Pro-Fondos: *${seleccionados.map(n => '#' + n).join(', ')}* (${pares} boleto(s) doble(s)).\n\nMonto total de aportación: *$${totalPago} MXN*.\n\n¿Me proporcionan las instrucciones para realizar el depósito bancario?`;
+      const url = `https://wa.me/522205889391?text=${encodeURIComponent(mjs)}`;
+      window.open(url, '_blank');
+    });
+  }
+</script>

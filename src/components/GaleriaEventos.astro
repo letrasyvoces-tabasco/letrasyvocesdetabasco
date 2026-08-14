@@ -1,0 +1,118 @@
+---
+// GaleriaEventos.astro - Memoria Gráfica y Archivo Histórico de Eventos
+const basePath = "/letrasyvocesdetabasco";
+---
+
+<section id="galeria" class="py-24 bg-carbon text-editorial border-b border-carbon-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-[11px] font-title font-bold text-dorado-light uppercase tracking-widest block mb-2">Memoria Gráfica</span>
+      <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">Archivo Histórico y Eventos</h2>
+      <p class="text-sm text-gray-400 mt-2 font-light">
+        Registro fotográfico de la presentación editorial del libro «A corazón abierto» de María Cervantes (30 de Mayo de 2026, Casa Universitaria Cacao y Chocolate).
+      </p>
+      <div class="w-16 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- Cuadrícula Fotográfica -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Foto 1 -->
+      <div class="overflow-hidden rounded-3xl border border-carbon-border bg-carbon-card group relative shadow-subtle cursor-pointer photo-item" data-full={`${basePath}/assets/20260530_130817.jpg`} data-caption="Presidium y Apertura Institucional · Casa Universitaria Cacao y Chocolate">
+        <img 
+          src={`${basePath}/assets/20260530_130817.jpg`} 
+          alt="Presidium y Mesa de Honor" 
+          class="w-full h-80 object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" 
+          onerror="this.src='/letrasyvocesdetabasco/assets/logo.svg'" 
+        />
+        <div class="absolute bottom-0 w-full p-6 bg-gradient-to-t from-carbon via-carbon/85 to-transparent">
+          <span class="text-[10px] font-title font-bold uppercase tracking-wider text-dorado-light block">Acto Protocolario</span>
+          <h4 class="font-serif text-xl font-bold text-white">Presidium y Apertura Institucional</h4>
+          <p class="text-xs text-gray-300 font-light">Casa Universitaria Cacao y Chocolate • Villahermosa, Tabasco</p>
+        </div>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="overflow-hidden rounded-3xl border border-carbon-border bg-carbon-card group relative shadow-subtle cursor-pointer photo-item" data-full={`${basePath}/assets/20260530_130823.jpg`} data-caption="Lectura Magistral · María de los Ángeles Cervantes Rosas">
+        <img 
+          src={`${basePath}/assets/20260530_130823.jpg`} 
+          alt="Lectura Magistral" 
+          class="w-full h-80 object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" 
+          onerror="this.src='/letrasyvocesdetabasco/assets/logo.svg'" 
+        />
+        <div class="absolute bottom-0 w-full p-6 bg-gradient-to-t from-carbon via-carbon/85 to-transparent">
+          <span class="text-[10px] font-title font-bold uppercase tracking-wider text-dorado-light block">Voz de Autora</span>
+          <h4 class="font-serif text-xl font-bold text-white">Lectura de Obra Lírica</h4>
+          <p class="text-xs text-gray-300 font-light">María de los Ángeles Cervantes Rosas</p>
+        </div>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="overflow-hidden rounded-3xl border border-carbon-border bg-carbon-card group relative shadow-subtle cursor-pointer photo-item md:col-span-2 lg:col-span-1" data-full={`${basePath}/assets/IMG-20260530-WA0061.jpg`} data-caption="Convivencia Literaria y Firma de Ejemplares">
+        <img 
+          src={`${basePath}/assets/IMG-20260530-WA0061.jpg`} 
+          alt="Convivencia Literaria" 
+          class="w-full h-80 object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" 
+          onerror="this.src='/letrasyvocesdetabasco/assets/logo.svg'" 
+        />
+        <div class="absolute bottom-0 w-full p-6 bg-gradient-to-t from-carbon via-carbon/85 to-transparent">
+          <span class="text-[10px] font-title font-bold uppercase tracking-wider text-dorado-light block">Encuentro Cultural</span>
+          <h4 class="font-serif text-xl font-bold text-white">Comunidad de Escritores</h4>
+          <p class="text-xs text-gray-300 font-light">Diálogo entre miembros y asistentes</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox de Galería Fotográfica -->
+<div id="gallery-lightbox" class="fixed inset-0 z-50 hidden bg-carbon/95 backdrop-blur-md flex items-center justify-center p-4" role="dialog" aria-modal="true">
+  <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center">
+    <button id="close-gallery-lightbox" type="button" class="absolute -top-12 right-0 text-white hover:text-terracota p-2 text-sm font-title font-bold uppercase flex items-center gap-1">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      Cerrar
+    </button>
+    <img id="lightbox-img" src="" alt="Fotografía ampliada" class="max-h-[75vh] w-auto rounded-2xl shadow-2xl object-contain" />
+    <p id="lightbox-caption" class="text-xs sm:text-sm text-gray-300 font-serif italic mt-4 text-center"></p>
+  </div>
+</div>
+
+<script>
+  // Control de Lightbox de Galería
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxCap = document.getElementById('lightbox-caption');
+  const closeGalleryBtn = document.getElementById('close-gallery-lightbox');
+
+  document.querySelectorAll('.photo-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const full = item.getAttribute('data-full');
+      const caption = item.getAttribute('data-caption');
+      if (full && lightbox && lightboxImg && lightboxCap) {
+        lightboxImg.src = full;
+        lightboxCap.innerText = caption || '';
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (closeGalleryBtn) closeGalleryBtn.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+</script>

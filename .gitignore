@@ -1,0 +1,19 @@
+# Build and Dependency Directories
+node_modules/
+.astro/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and Local Settings
+.env
+.env.production
+.env.local
+
+# OS Generated Files
+.DS_Store
+Thumbs.db

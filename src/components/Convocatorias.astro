@@ -1,0 +1,199 @@
+---
+// Convocatorias.astro - Módulo Oficial de Convocatorias con Cuenta Regresiva Dinámica
+const basePath = "/letrasyvocesdetabasco";
+---
+
+<section id="convocatorias" class="py-24 bg-editorial border-b border-editorial-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-[11px] font-title font-bold text-terracota uppercase tracking-widest block mb-2">Convocatorias Oficiales LVT</span>
+      <h2 class="font-serif text-4xl sm:text-5xl font-bold text-carbon">Convocatorias Abiertas 2026</h2>
+      <p class="text-sm text-gray-600 mt-2 font-light">¡Haz escuchar tu voz! Únete a la comunidad literaria representativa de Tabasco.</p>
+      <div class="w-16 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Cartel Oficial de la Convocatoria con Modal Lightbox -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="bg-white p-3 rounded-3xl border border-editorial-border shadow-elevated group relative cursor-pointer overflow-hidden max-w-md" id="open-poster-modal">
+          <img 
+            src={`${basePath}/assets/CONVOCATORIA_NUEVOS_MIEMBROS_page-0001.jpg`} 
+            alt="Cartel Oficial de Convocatoria para Nuevos Socios 2026" 
+            class="w-full h-auto rounded-2xl object-cover shadow-inner group-hover:scale-102 transition duration-500" 
+            onerror="this.src='/letrasyvocesdetabasco/assets/logo.svg'" 
+          />
+          <div class="absolute inset-0 bg-carbon/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl flex items-center justify-center">
+            <span class="bg-white text-carbon px-4 py-2 rounded-full font-title text-xs font-bold uppercase tracking-wider shadow-lg flex items-center gap-2">
+              <svg class="w-4 h-4 text-terracota" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
+              Ver Cartel Ampliado
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bases, Requisitos y Cuenta Regresiva -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-100 border border-green-300 text-green-900 text-xs font-title font-bold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-green-600 animate-pulse"></span>
+          <span>CONVOCATORIA ABIERTA • CIERRE: 1 DE OCTUBRE DE 2026</span>
+        </div>
+
+        <h3 class="font-serif text-3xl sm:text-4xl font-bold text-carbon">
+          Convocatoria Abierta para Nuevos Socios 2026
+        </h3>
+
+        <p class="text-gray-700 font-light text-base leading-relaxed">
+          La Mesa Directiva convoca a escritoras, escritores, poetas, narradores, ensayistas, investigadores y promotores culturales del estado a integrarse como miembros activos bajo el lema institucional: <strong class="text-carbon font-semibold">«Nada con la fuerza: todo con el derecho y la razón»</strong>.
+        </p>
+
+        <!-- Contador Regresivo Dinámico -->
+        <div class="bg-carbon text-white p-5 rounded-2xl border border-carbon-border shadow-subtle">
+          <span class="text-[10px] font-title font-bold uppercase tracking-widest text-dorado-light block mb-3 text-center sm:text-left">
+            Tiempo Restante para Envío de Documentación
+          </span>
+          <div class="grid grid-cols-4 gap-3 text-center">
+            <div class="bg-carbon-light/80 p-2.5 rounded-xl border border-gray-800">
+              <span id="cd-days" class="block font-serif text-2xl sm:text-3xl font-bold text-terracota">--</span>
+              <span class="text-[9px] font-title font-semibold uppercase text-gray-400">Días</span>
+            </div>
+            <div class="bg-carbon-light/80 p-2.5 rounded-xl border border-gray-800">
+              <span id="cd-hours" class="block font-serif text-2xl sm:text-3xl font-bold text-white">--</span>
+              <span class="text-[9px] font-title font-semibold uppercase text-gray-400">Horas</span>
+            </div>
+            <div class="bg-carbon-light/80 p-2.5 rounded-xl border border-gray-800">
+              <span id="cd-mins" class="block font-serif text-2xl sm:text-3xl font-bold text-white">--</span>
+              <span class="text-[9px] font-title font-semibold uppercase text-gray-400">Minutos</span>
+            </div>
+            <div class="bg-carbon-light/80 p-2.5 rounded-xl border border-gray-800">
+              <span id="cd-secs" class="block font-serif text-2xl sm:text-3xl font-bold text-dorado">--</span>
+              <span class="text-[9px] font-title font-semibold uppercase text-gray-400">Segundos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumen de Requisitos -->
+        <div class="bg-white p-6 rounded-2xl border border-editorial-border shadow-subtle space-y-3 text-xs">
+          <span class="block font-title font-bold uppercase tracking-wider text-carbon text-sm">Documentación para Formalizar Postulación:</span>
+          <ul class="space-y-2.5 text-gray-700">
+            <li class="flex items-start gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-terracota mt-1.5 flex-shrink-0"></span>
+              <span><strong>1. Carta de Motivos:</strong> Escrito formal breve explicando el interés y compromiso de pertenecer a la Sociedad.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-terracota mt-1.5 flex-shrink-0"></span>
+              <span><strong>2. Semblanza / CV:</strong> Resumen de trayectoria creativa, publicaciones previas o actividad académica.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-terracota mt-1.5 flex-shrink-0"></span>
+              <span><strong>3. Muestra de Obra:</strong> Breve selección representativa de textos (poesía, cuento, ensayo o fragmento de novela).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Canales de Recepción -->
+        <div class="pt-2 flex flex-wrap gap-4">
+          <a 
+            href="mailto:lvt.correo@gmail.com?subject=Postulacion%20para%20Nuevo%20Socio%20LVT%202026" 
+            class="px-8 py-4 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:shadow-elevated transition"
+          >
+            Enviar Postulación por Correo
+          </a>
+          <a 
+            href="https://wa.me/522205889391?text=Hola%20Mesa%20Directiva%20de%20LVT%2C%20deseo%20informes%20sobre%20la%20Convocatoria%20para%20Nuevos%20Socios%202026." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="px-8 py-4 rounded-full bg-white border border-editorial-border text-carbon font-title text-xs font-bold uppercase hover:border-terracota hover:text-terracota shadow-subtle transition"
+          >
+            Informes por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox Modal para el Cartel de la Convocatoria -->
+<div id="poster-modal" class="fixed inset-0 z-50 hidden bg-carbon/90 backdrop-blur-md flex items-center justify-center p-4" role="dialog" aria-modal="true">
+  <div class="relative max-w-3xl max-h-[90vh] bg-transparent flex flex-col items-center">
+    <button id="close-poster-modal" type="button" class="absolute -top-12 right-0 text-white hover:text-terracota p-2 text-sm font-title font-bold uppercase flex items-center gap-1">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      Cerrar
+    </button>
+    <img 
+      src={`${basePath}/assets/CONVOCATORIA_NUEVOS_MIEMBROS_page-0001.jpg`} 
+      alt="Cartel Oficial en Alta Resolución" 
+      class="max-h-[82vh] w-auto rounded-2xl shadow-2xl object-contain" 
+    />
+  </div>
+</div>
+
+<script>
+  // Cuenta Regresiva hacia el 1 de Octubre de 2026
+  const targetDate = new Date('October 1, 2026 23:59:59').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      const daysEl = document.getElementById('cd-days');
+      if (daysEl) daysEl.innerText = '0';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const dEl = document.getElementById('cd-days');
+    const hEl = document.getElementById('cd-hours');
+    const mEl = document.getElementById('cd-mins');
+    const sEl = document.getElementById('cd-secs');
+
+    if (dEl) dEl.innerText = days.toString();
+    if (hEl) hEl.innerText = hours.toString().padStart(2, '0');
+    if (mEl) mEl.innerText = minutes.toString().padStart(2, '0');
+    if (sEl) sEl.innerText = seconds.toString().padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Control del Lightbox del Cartel
+  const posterModal = document.getElementById('poster-modal');
+  const openPosterBtn = document.getElementById('open-poster-modal');
+  const closePosterBtn = document.getElementById('close-poster-modal');
+
+  if (openPosterBtn && posterModal) {
+    openPosterBtn.addEventListener('click', () => {
+      posterModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (closePosterBtn && posterModal) {
+    closePosterBtn.addEventListener('click', () => {
+      posterModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (posterModal) {
+    posterModal.addEventListener('click', (e) => {
+      if (e.target === posterModal) {
+        posterModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+</script>
