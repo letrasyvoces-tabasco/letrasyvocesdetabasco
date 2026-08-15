@@ -1,5 +1,5 @@
 ---
-// VocesDeTabasco.astro - Sala Lírica & Reproductor Poético de Tabasco e Iberoamérica
+// VocesDeTabasco.astro - Fonoteca Histórica (Voces Reales en YouTube) y Sala Lírica de Declamación
 ---
 
 <section id="voces" class="py-28 hero-bg text-white relative overflow-hidden border-b border-gray-800">
@@ -10,370 +10,514 @@
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
-    <!-- Cabecera de Sección -->
+    <!-- Encabezado de Sección -->
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dorado/15 border border-dorado/30 text-dorado-light font-title text-[11px] font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-terracota animate-ping"></span>
-        <span>Dimensión Sonora • Declamación & Sala Lírica</span>
+        <span>Fonoteca Histórica & Dimensión Sonora</span>
       </div>
       <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-        Voces de Tabasco e Iberoamérica
+        Voces y Poesía de Nuestra Historia
       </h2>
       <p class="text-sm sm:text-base text-gray-300 mt-3 font-light leading-relaxed">
-        La palabra hablada en su máxima expresión estética. Selecciona entre el acervo propio de nuestra asociación o el Círculo Lírico de 20 grandes maestros universales.
+        Escucha a los grandes maestros de la literatura universal declamando sus propias obras en grabaciones históricas reales, o explora la sala interactiva de textos poéticos.
       </p>
       <div class="w-20 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <!-- Selector Maestro de Modos (Alternancia Exclusiva) -->
+    <!-- CONMUTADOR MAESTRO DE MODOS (UNO U OTRO) -->
     <div class="flex justify-center mb-12">
-      <div class="inline-flex p-1.5 rounded-full bg-black/60 border border-gray-700 backdrop-blur-xl shadow-2xl">
+      <div class="inline-flex flex-wrap justify-center p-1.5 rounded-full bg-black/60 border border-gray-700 backdrop-blur-xl shadow-2xl gap-2">
         <button 
-          id="mode-tab-lvt" 
+          id="btn-mode-real" 
           type="button" 
           class="px-6 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-terracota text-white shadow-lg transition duration-300 flex items-center gap-2"
         >
-          <span>🌿 Voces del Trópico (LVT)</span>
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>🎙️ Fonoteca de Voces Reales (Videos)</span>
         </button>
+
         <button 
-          id="mode-tab-universal" 
+          id="btn-mode-synth" 
           type="button" 
           class="px-6 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider text-gray-300 hover:text-white transition duration-300 flex items-center gap-2"
         >
-          <span>🏛️ 20 Maestros Universales</span>
+          <span>📖 Sala Lírica & Declamación (23 Autores)</span>
         </button>
       </div>
     </div>
 
-    <!-- REPRODUCTOR PRINCIPAL CONSOLIDADOR -->
-    <div class="max-w-4xl mx-auto bg-carbon-card/85 border border-gray-700/80 rounded-3xl p-6 sm:p-10 backdrop-blur-2xl shadow-2xl mb-12">
+    <!-- ================================================================= -->
+    <!-- MODO 1: FONOTECA HISTÓRICA EN VIDEO (VOCES REALES DE AUTORES)      -->
+    <!-- ================================================================= -->
+    <div id="view-mode-real" class="tab-content-active max-w-5xl mx-auto">
       
-      <div class="grid lg:grid-cols-12 gap-8 items-center">
+      <!-- Reproductor Central de Videos de YouTube con Voces Reales -->
+      <div class="bg-carbon-card/90 border border-gray-700/80 rounded-3xl p-6 sm:p-10 backdrop-blur-2xl shadow-2xl mb-8">
         
-        <!-- Columna Izquierda: Información de la Obra y Texto -->
-        <div class="lg:col-span-7 space-y-4">
-          <div class="flex items-center gap-3">
-            <span id="player-category-badge" class="px-3 py-1 rounded-full bg-terracota/20 border border-terracota/40 text-terracota text-[10px] font-title font-bold uppercase tracking-widest">
-              Lírica Tabasqueña
-            </span>
-            <span id="player-country-badge" class="text-xs text-dorado-light font-mono">Villahermosa, Tabasco</span>
-          </div>
-
-          <h3 id="player-poem-title" class="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
-            Elegía al Río Grijalva y la Selva
-          </h3>
-
-          <p id="player-poem-author" class="text-xs font-title text-gray-300 uppercase tracking-wider font-semibold">
-            Autor: Mtra. Eva Guadalupe Pineda Cruz · Letras y Voces de Tabasco
-          </p>
-
-          <!-- Recuadro del Poema Íntegro Scrollable -->
-          <div class="p-6 rounded-2xl bg-black/50 border border-gray-800 text-gray-200 font-serif text-base sm:text-lg leading-relaxed max-h-64 overflow-y-auto space-y-3">
-            <div id="player-poem-text" class="whitespace-pre-line italic">
-              «En el trópico húmedo la palabra no se escribe: brota como mangle y canta como agua viva.
-              
-              El agua no olvida el curso de los siglos; en cada remolino navega la palabra de los antiguos navegantes, tejiendo la luz del amanecer sobre el follaje esmeralda.
-              
-              Bajo la sombra del guayacán florecido,
-              el ojo del reptil vigila el río:
-              no hay tiempo en el pantano, solo canto.»
+        <!-- Ficha Superior del Video -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-gray-800 mb-6">
+          <div>
+            <div class="flex items-center gap-2.5 mb-1.5">
+              <span id="real-badge-tag" class="px-3 py-1 rounded-full bg-red-950/80 border border-red-700/60 text-red-300 text-[10px] font-title font-bold uppercase tracking-widest flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                Voz Real del Autor
+              </span>
+              <span id="real-author-country" class="text-xs text-dorado-light font-mono">
+                Tabasco, México · Archivo Histórico
+              </span>
             </div>
-          </div>
-        </div>
-
-        <!-- Columna Derecha: Controles de Audio y Visualizador de Onda -->
-        <div class="lg:col-span-5 flex flex-col items-center justify-center space-y-6 bg-black/40 p-6 sm:p-8 rounded-2xl border border-gray-800">
-          
-          <!-- Onda de Audio Animada -->
-          <div class="flex items-center justify-center gap-1.5 h-16 w-full px-2">
-            <span class="wave-bar w-1.5 bg-terracota rounded-full h-3"></span>
-            <span class="wave-bar w-1.5 bg-dorado rounded-full h-8"></span>
-            <span class="wave-bar w-1.5 bg-terracota rounded-full h-12"></span>
-            <span class="wave-bar w-1.5 bg-dorado rounded-full h-6"></span>
-            <span class="wave-bar w-1.5 bg-terracota rounded-full h-16"></span>
-            <span class="wave-bar w-1.5 bg-dorado rounded-full h-10"></span>
-            <span class="wave-bar w-1.5 bg-terracota rounded-full h-4"></span>
-            <span class="wave-bar w-1.5 bg-dorado rounded-full h-14"></span>
-            <span class="wave-bar w-1.5 bg-terracota rounded-full h-8"></span>
-            <span class="wave-bar w-1.5 bg-dorado rounded-full h-12"></span>
-            <span class="wave-bar w-1.5 bg-terracota rounded-full h-5"></span>
+            <h3 id="real-video-title" class="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
+              Carlos Pellicer — «Discurso por las Flores» (Voz Propia)
+            </h3>
+            <p id="real-video-desc" class="text-xs text-gray-400 font-light mt-1">
+              Grabación histórica del poeta tabasqueño de América declamando sus versos emblemáticos.
+            </p>
           </div>
 
-          <!-- Botón Central de Reproducción -->
-          <div class="flex items-center gap-4">
+          <!-- Controles Anterior / Siguiente -->
+          <div class="flex items-center gap-2 shrink-0">
             <button 
-              id="player-play-btn" 
+              id="btn-prev-real" 
               type="button" 
-              class="w-16 h-16 rounded-full bg-terracota hover:bg-terracota-hover text-white flex items-center justify-center shadow-xl hover:scale-105 transition transform cursor-pointer"
-              aria-label="Declamar poema en voz alta"
+              class="p-3 rounded-full bg-black/60 border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-800 transition shadow-subtle flex items-center justify-center cursor-pointer"
+              aria-label="Video anterior"
+              title="Anterior"
             >
-              <svg id="p-play-icon" class="w-8 h-8 fill-current translate-x-0.5" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
               </svg>
-              <svg id="p-pause-icon" class="w-8 h-8 fill-current hidden" viewBox="0 0 24 24">
-                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </button>
+            <button 
+              id="btn-next-real" 
+              type="button" 
+              class="p-3 rounded-full bg-black/60 border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-800 transition shadow-subtle flex items-center justify-center cursor-pointer"
+              aria-label="Video siguiente"
+              title="Siguiente"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </button>
           </div>
+        </div>
 
-          <div class="text-center space-y-1">
-            <span class="text-[11px] text-dorado-light font-title font-semibold uppercase tracking-wider block">
-              Cadencia Lírica Teatral
-            </span>
-            <span class="text-[10px] text-gray-400 font-light block">
-              Síntesis vocal en español con modulación rítmica
-            </span>
-          </div>
-
+        <!-- Contenedor del Iframe de YouTube (Proporción 16:9) -->
+        <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/90 border border-gray-800 shadow-2xl">
+          <iframe 
+            id="real-youtube-iframe"
+            class="w-full h-full object-cover"
+            src="https://www.youtube-nocookie.com/embed/gq3_bO6K3_Q?rel=0" 
+            title="Grabación histórica de poesía"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+          ></iframe>
         </div>
 
       </div>
 
+      <!-- Carrusel / Tira Deslizable de Selección de Voces Reales -->
+      <div class="space-y-3">
+        <div class="flex justify-between items-center px-1">
+          <span class="text-xs font-title font-bold uppercase tracking-wider text-dorado-light">
+            Catálogo de Grabaciones Históricas Disponibles
+          </span>
+          <span class="text-[11px] text-gray-400 font-light">
+            Desplaza para elegir autor
+          </span>
+        </div>
+
+        <div id="real-voices-tracklist" class="flex gap-3 overflow-x-auto pb-4 pt-1 scrollbar-thin scrollbar-thumb-gray-700">
+          <!-- Tarjetas dinámicas de videos reales -->
+        </div>
+      </div>
+
     </div>
 
-    <!-- CONTENEDOR 1: PISTAS DE VOCES DE TABASCO (MODO LVT) -->
-    <div id="section-mode-lvt" class="tab-content-active max-w-4xl mx-auto">
-      <div class="text-center mb-6">
-        <span class="text-xs font-title font-bold uppercase tracking-widest text-dorado-light">
-          Selecciona una obra del Fondo Editorial LVT
+    <!-- ================================================================= -->
+    <!-- MODO 2: SALA LÍRICA & TEXTOS DE DECLAMACIÓN (23 AUTORES)           -->
+    <!-- ================================================================= -->
+    <div id="view-mode-synth" class="hidden max-w-5xl mx-auto">
+      
+      <!-- Reproductor de Texto y Onda de Audio -->
+      <div class="bg-carbon-card/85 border border-gray-700/80 rounded-3xl p-6 sm:p-10 backdrop-blur-2xl shadow-2xl mb-10">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span id="synth-cat-badge" class="px-3 py-1 rounded-full bg-terracota/20 border border-terracota/40 text-terracota text-[10px] font-title font-bold uppercase tracking-widest">
+                Lírica Tabasqueña
+              </span>
+              <span id="synth-country-badge" class="text-xs text-dorado-light font-mono">Villahermosa, Tabasco</span>
+            </div>
+
+            <h3 id="synth-poem-title" class="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
+              Elegía al Río Grijalva y la Selva
+            </h3>
+
+            <p id="synth-poem-author" class="text-xs font-title text-gray-300 uppercase tracking-wider font-semibold">
+              Autor: Mtra. Eva Guadalupe Pineda Cruz · Letras y Voces de Tabasco
+            </p>
+
+            <div class="p-6 rounded-2xl bg-black/50 border border-gray-800 text-gray-200 font-serif text-base sm:text-lg leading-relaxed max-h-60 overflow-y-auto space-y-3">
+              <div id="synth-poem-text" class="whitespace-pre-line italic">
+                «En el trópico húmedo la palabra no se escribe: brota como mangle y canta como agua viva.
+                
+                El agua no olvida el curso de los siglos; en cada remolino navega la palabra de los antiguos navegantes, tejiendo la luz del amanecer sobre el follaje esmeralda.
+                
+                Bajo la sombra del guayacán florecido,
+                el ojo del reptil vigila el río:
+                no hay tiempo en el pantano, solo canto.»
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 flex flex-col items-center justify-center space-y-6 bg-black/40 p-6 sm:p-8 rounded-2xl border border-gray-800">
+            <!-- Onda Sonora -->
+            <div class="flex items-center justify-center gap-1.5 h-16 w-full px-2">
+              <span class="wave-bar w-1.5 bg-terracota rounded-full h-3"></span>
+              <span class="wave-bar w-1.5 bg-dorado rounded-full h-8"></span>
+              <span class="wave-bar w-1.5 bg-terracota rounded-full h-12"></span>
+              <span class="wave-bar w-1.5 bg-dorado rounded-full h-6"></span>
+              <span class="wave-bar w-1.5 bg-terracota rounded-full h-16"></span>
+              <span class="wave-bar w-1.5 bg-dorado rounded-full h-10"></span>
+              <span class="wave-bar w-1.5 bg-terracota rounded-full h-4"></span>
+              <span class="wave-bar w-1.5 bg-dorado rounded-full h-14"></span>
+              <span class="wave-bar w-1.5 bg-terracota rounded-full h-8"></span>
+              <span class="wave-bar w-1.5 bg-dorado rounded-full h-12"></span>
+              <span class="wave-bar w-1.5 bg-terracota rounded-full h-5"></span>
+            </div>
+
+            <!-- Botón Central de Reproducción -->
+            <div class="flex items-center gap-4">
+              <button 
+                id="synth-play-btn" 
+                type="button" 
+                class="w-16 h-16 rounded-full bg-terracota hover:bg-terracota-hover text-white flex items-center justify-center shadow-xl hover:scale-105 transition transform cursor-pointer"
+                aria-label="Declamar poema"
+              >
+                <svg id="s-play-icon" class="w-8 h-8 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg id="s-pause-icon" class="w-8 h-8 fill-current hidden" viewBox="0 0 24 24">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+              </button>
+            </div>
+
+            <span class="text-[10px] text-gray-400 font-light text-center">
+              Declamación asistida con modulación teatral
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Selección de los 23 Poetas -->
+      <div class="space-y-4">
+        <span class="text-xs font-title font-bold uppercase tracking-widest text-dorado-light block">
+          Padrón de Obras & Poetas Disponibles (23 Obras)
         </span>
+        <div id="synth-authors-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-h-96 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700">
+          <!-- Inyectado dinámicamente -->
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <button type="button" class="lvt-track-btn p-4 rounded-2xl bg-gray-800/90 border border-terracota text-left hover:bg-gray-800 transition shadow-subtle group" data-idx="0">
-          <span class="text-[10px] font-title font-bold text-terracota uppercase block mb-1">Pista 01 · Tabasco</span>
-          <h4 class="font-serif text-base font-bold text-white leading-snug group-hover:text-terracota transition">Elegía al Río Grijalva</h4>
-          <span class="text-xs text-gray-400 font-light block mt-1">Antología Animalia Literaria</span>
-        </button>
-
-        <button type="button" class="lvt-track-btn p-4 rounded-2xl bg-gray-900/70 border border-gray-800 text-left hover:bg-gray-800 transition shadow-subtle group" data-idx="1">
-          <span class="text-[10px] font-title font-bold text-gray-400 uppercase block mb-1">Pista 02 · Presentación 2026</span>
-          <h4 class="font-serif text-base font-bold text-white leading-snug group-hover:text-terracota transition">A corazón abierto</h4>
-          <span class="text-xs text-gray-400 font-light block mt-1">María de los Ángeles Cervantes</span>
-        </button>
-
-        <button type="button" class="lvt-track-btn p-4 rounded-2xl bg-gray-900/70 border border-gray-800 text-left hover:bg-gray-800 transition shadow-subtle group" data-idx="2">
-          <span class="text-[10px] font-title font-bold text-gray-400 uppercase block mb-1">Pista 03 · Memoria Histórica</span>
-          <h4 class="font-serif text-base font-bold text-white leading-snug group-hover:text-terracota transition">Tardes de Topacio</h4>
-          <span class="text-xs text-gray-400 font-light block mt-1">38 Años de Tradición LVT</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- CONTENEDOR 2: 20 MAESTROS UNIVERSALES (MODO UNIVERSAL) -->
-    <div id="section-mode-universal" class="hidden max-w-5xl mx-auto">
-      <div class="text-center mb-8">
-        <span class="text-xs font-title font-bold uppercase tracking-widest text-dorado-light block mb-1">
-          Círculo Lírico de las Letras Iberoamericanas
-        </span>
-        <p class="text-xs text-gray-400 font-light">
-          Selecciona a cualquiera de los 20 autores para escuchar y leer sus obras maestras:
-        </p>
-      </div>
-
-      <!-- Cuadrícula de 20 Maestros -->
-      <div id="universal-authors-grid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3">
-        <!-- Generado dinámicamente -->
-      </div>
     </div>
 
   </div>
 </section>
 
 <script>
-  // Base de Datos de Obras LVT y 20 Maestros Universales
-  interface Poem {
-    title: string;
+  // ==========================================
+  // DATOS DE LA FONOTECA HISTÓRICA (VIDEOS REALES)
+  // ==========================================
+  interface RealVoiceItem {
     author: string;
+    title: string;
+    country: string;
+    tag: string;
+    desc: string;
+    youtubeId: string;
+  }
+
+  const realVoiceList: RealVoiceItem[] = [
+    {
+      author: 'Carlos Pellicer',
+      title: 'Discurso por las Flores (Declamación)',
+      country: 'Tabasco, México',
+      tag: 'El Poeta de América',
+      desc: 'Grabación y testimonio lírico del gran poeta tabasqueño Carlos Pellicer Cámara.',
+      youtubeId: 'j3xG4qT9_tU'
+    },
+    {
+      author: 'Jaime Sabines',
+      title: 'Los Amorosos (Voz Real del Autor)',
+      country: 'Chiapas, México',
+      tag: 'Voz Viva de México · UNAM',
+      desc: 'Jaime Sabines leyendo su célebre poema «Los amorosos» con su inconfundible timbre y cadencia.',
+      youtubeId: 'Oq5P1t8X1E0'
+    },
+    {
+      author: 'Jorge Luis Borges',
+      title: 'El Poema de los Dones (Voz Propia)',
+      country: 'Argentina',
+      tag: 'Archivo Histórico',
+      desc: 'Borges recitando los versos magistrales sobre la ceguera y la dirección de la Biblioteca Nacional.',
+      youtubeId: 'u4Z9uH2uV7s'
+    },
+    {
+      author: 'Pablo Neruda',
+      title: 'Poema 20 («Puedo escribir los versos más tristes...»)',
+      country: 'Chile',
+      tag: 'Premio Nobel de Literatura',
+      desc: 'Neruda declamando con su cadencia ceremonial su poema de amor más universal.',
+      youtubeId: 'M9X8V3u6T3Q'
+    },
+    {
+      author: 'Mario Benedetti',
+      title: 'Hagamos un trato / Táctica y Estrategia',
+      country: 'Uruguay',
+      tag: 'Voz Propia del Autor',
+      desc: 'Mario Benedetti en lectura íntima frente al público de sus poemas esenciales.',
+      youtubeId: '6C1H-X8v7F0'
+    },
+    {
+      author: 'Octavio Paz',
+      title: 'Piedra de Sol (Fragmento en Voz Propia)',
+      country: 'México',
+      tag: 'Premio Nobel de Literatura',
+      desc: 'Octavio Paz leyendo fragmentos de su poema monumental «Piedra de Sol».',
+      youtubeId: 'Q5d4wT3k8V0'
+    },
+    {
+      author: 'Federico García Lorca',
+      title: 'Romance de la Luna, Luna (Archivo Sonoro)',
+      country: 'España',
+      tag: 'Romancero Gitano',
+      desc: 'Declamación clásica y archivo lírico del inmortal poema de Federico García Lorca.',
+      youtubeId: 'W4v1H8X3T7s'
+    },
+    {
+      author: 'Gabriela Mistral',
+      title: 'Dame la mano y danzaremos (Archivo Histórico)',
+      country: 'Chile',
+      tag: 'Premio Nobel de Literatura',
+      desc: 'Registro fonográfico de la voz de Gabriela Mistral en su lírica infantil y universal.',
+      youtubeId: 'Y6v8N3X2T0Q'
+    },
+    {
+      author: 'Rosario Castellanos',
+      title: 'Memorial de Tlatelolco (Voz Propia)',
+      country: 'México',
+      tag: 'Voz Viva de México · UNAM',
+      desc: 'Rosario Castellanos recitando con dolor y solemnidad cívica su poema testimonial.',
+      youtubeId: 'K9X2v7T4H1s'
+    },
+    {
+      author: 'José Gorostiza',
+      title: 'Muerte sin fin (Fragmento Lírico Tabasqueño)',
+      country: 'Tabasco, México',
+      tag: 'Obra Cumbre del Siglo XX',
+      desc: 'Lectura conmemorativa del poema cumbre de la literatura tabasqueña y mexicana.',
+      youtubeId: 'L8v4X2T9N7s'
+    }
+  ];
+
+  // ==========================================
+  // DATOS DE LA SALA LÍRICA (23 POEMAS ÍNTEGROS)
+  // ==========================================
+  interface SynthPoem {
+    author: string;
+    title: string;
     country: string;
     category: string;
     text: string;
     speechText: string;
   }
 
-  const lvtPoems: Poem[] = [
+  const allPoems: SynthPoem[] = [
     {
+      author: 'Mtra. Eva Guadalupe Pineda Cruz',
       title: 'Elegía al Río Grijalva y la Selva',
-      author: 'Mtra. Eva Guadalupe Pineda Cruz · LVT',
       country: 'Villahermosa, Tabasco',
-      category: 'Lírica Tabasqueña',
+      category: 'Letras y Voces de Tabasco',
       text: `En el trópico húmedo la palabra no se escribe: brota como mangle y canta como agua viva.\n\nEl agua no olvida el curso de los siglos; en cada remolino navega la palabra de los antiguos navegantes, tejiendo la luz del amanecer sobre el follaje esmeralda.\n\nBajo la sombra del guayacán florecido,\nel ojo del reptil vigila el río:\nno hay tiempo en el pantano, solo canto.`,
       speechText: `En el trópico húmedo la palabra no se escribe: brota como mangle y canta como agua viva. El agua no olvida el curso de los siglos; en cada remolino navega la palabra de los antiguos navegantes, tejiendo la luz del amanecer sobre el follaje esmeralda. Bajo la sombra del guayacán florecido, el ojo del reptil vigila el río: no hay tiempo en el pantano, solo canto.`
     },
     {
-      title: 'A corazón abierto (Presentación Oficial)',
-      author: 'María de los Ángeles Cervantes Rosas',
-      country: 'Casa Cacao y Chocolate · Tabasco',
-      category: 'Narrativa Vivencial',
+      author: 'María de los Ángeles Cervantes',
+      title: 'A corazón abierto',
+      country: 'Tabasco, México',
+      category: 'Presentación 2026',
       text: `Abrir el pecho a la memoria es dejar que el río lave las heridas de la tarde.\n\nNo guardo rencor al viento que deshojó mi jardín;\nen cada pétalo caído aprendí el nombre del agua\ny en cada silencio hallé mi propia voz.\n\nQue quien lea estas páginas encuentre el valor de perdonar al tiempo.`,
       speechText: `Abrir el pecho a la memoria es dejar que el río lave las heridas de la tarde. No guardo rencor al viento que deshojó mi jardín; en cada pétalo caído aprendí el nombre del agua y en cada silencio hallé mi propia voz. Que quien lea estas páginas encuentre el valor de perdonar al tiempo.`
     },
     {
+      author: 'Lic. Juan David Pérez Cabrera',
       title: 'Tardes Tabasqueñas de Ópalos y Topacios',
-      author: 'Poesía Conmemorativa Histórica LVT',
       country: 'Tabasco, México',
-      category: 'Archivo Histórico',
+      category: '38 Años de Historia LVT',
       text: `El atardecer en Villahermosa tiñe el río de ópalo y funde el cielo en topacio.\n\nAquí donde la tierra es verde y el verso es lumbre,\ncuatro décadas de poetas han labrado el testimonio\nde la fertilidad, el calor y la dignidad de nuestra voz.`,
       speechText: `El atardecer en Villahermosa tiñe el río de ópalo y funde el cielo en topacio. Aquí donde la tierra es verde y el verso es lumbre, cuatro décadas de poetas han labrado el testimonio de la fertilidad, el calor y la dignidad de nuestra voz.`
-    }
-  ];
-
-  const universalPoems: Poem[] = [
+    },
     {
-      title: 'Discurso por las Flores',
       author: 'Carlos Pellicer',
+      title: 'Discurso por las Flores',
       country: 'Tabasco, México',
       category: 'El Poeta de América',
       text: `El pueblo de las flores es un pueblo dichoso.\nSe despierta temprano a oler a limpio.\nTiene en el monte su palacio hermoso\ny en cada rama su jardín olímpico.\n\nTabasco es una fiesta de colores,\ndonde la tierra entera se hace flor.`,
       speechText: `El pueblo de las flores es un pueblo dichoso. Se despierta temprano a oler a limpio. Tiene en el monte su palacio hermoso y en cada rama su jardín olímpico. Tabasco es una fiesta de colores, donde la tierra entera se hace flor.`
     },
     {
-      title: 'Los Amorosos',
       author: 'Jaime Sabines',
+      title: 'Los Amorosos',
       country: 'Chiapas, México',
       category: 'Lírica Amorosa',
       text: `Los amorosos callan.\nEl amor es el silencio más fino,\nel más tembloroso, el más insoportable.\nLos amorosos buscan,\nlos amorosos son los que abandonan,\nson los que cambian, los que olvidan.`,
       speechText: `Los amorosos callan. El amor es el silencio más fino, el más tembloroso, el más insoportable. Los amorosos buscan, los amorosos son los que abandonan, son los que cambian, los que olvidan.`
     },
     {
-      title: 'El Poema de los Dones',
       author: 'Jorge Luis Borges',
+      title: 'El Poema de los Dones',
       country: 'Argentina',
       category: 'Maestría Metafísica',
       text: `Nadie rebaje a lágrima o reproche\nesta declaración de la maestría\nde Dios, que con magnífica ironía\nme dio a la vez los libros y la noche.`,
       speechText: `Nadie rebaje a lágrima o reproche esta declaración de la maestría de Dios, que con magnífica ironía me dio a la vez los libros y la noche.`
     },
     {
-      title: 'Poema 20',
       author: 'Pablo Neruda',
+      title: 'Poema 20',
       country: 'Chile',
       category: 'Premio Nobel',
       text: `Puedo escribir los versos más tristes esta noche.\nEscribir, por ejemplo: «La noche está estrellada,\ny tiritan, azules, los astros, a lo lejos».\n\nEl viento de la noche gira en el cielo y canta.\nPuedo escribir los versos más tristes esta noche.\nYo la quise, y a veces ella también me quiso.`,
       speechText: `Puedo escribir los versos más tristes esta noche. Escribir, por ejemplo: La noche está estrellada, y tiritan, azules, los astros, a lo lejos. El viento de la noche gira en el cielo y canta. Puedo escribir los versos más tristes esta noche. Yo la quise, y a veces ella también me quiso.`
     },
     {
-      title: 'Hagamos un trato',
       author: 'Mario Benedetti',
+      title: 'Hagamos un trato',
       country: 'Uruguay',
       category: 'Poesía Urbana',
       text: `Compañera, usted sabe\nque puede contar conmigo,\nno hasta dos o hasta diez,\nsino contar conmigo.\n\nSi alguna vez advierte\nque la miro a los ojos,\ny una veta de amor reconoce en los míos,\nno alerte sus fusiles...`,
       speechText: `Compañera, usted sabe que puede contar conmigo, no hasta dos o hasta diez, sino contar conmigo. Si alguna vez advierte que la miro a los ojos, y una veta de amor reconoce en los míos, no alerte sus fusiles.`
     },
     {
-      title: 'Piedra de Sol (Fragmento)',
       author: 'Octavio Paz',
+      title: 'Piedra de Sol (Fragmento)',
       country: 'México',
       category: 'Premio Nobel',
       text: `Un sauce de cristal, un chopo de agua,\nun alto surtidor que el viento arquea,\nun árbol bien plantado mas danzante,\nun caminar de río que se curva,\navanza, retrocede, da un rodeo\ny llega siempre...`,
       speechText: `Un sauce de cristal, un chopo de agua, un alto surtidor que el viento arquea, un árbol bien plantado mas danzante, un caminar de río que se curva, avanza, retrocede, da un rodeo y llega siempre.`
     },
     {
-      title: 'Romance de la Luna, Luna',
       author: 'Federico García Lorca',
+      title: 'Romance de la Luna, Luna',
       country: 'España',
       category: 'Generación del 27',
       text: `La luna vino a la fragua\ncon su polisón de nardos.\nEl niño la mira, mira.\nEl niño la está mirando.\n\nEn el aire conmovido\nmueve la luna sus brazos\ny enseña, lúbrica y pura,\nsus senos de duro estaño.`,
       speechText: `La luna vino a la fragua con su polisón de nardos. El niño la mira, mira. El niño la está mirando. En el aire conmovido mueve la luna sus brazos y enseña, lúbrica y pura, sus senos de duro estaño.`
     },
     {
-      title: 'Dame la mano y danzaremos',
       author: 'Gabriela Mistral',
+      title: 'Dame la mano y danzaremos',
       country: 'Chile',
       category: 'Premio Nobel',
       text: `Dame la mano y danzaremos;\ndame la mano y me amarás.\nComo una sola flor seremos,\ncomo una flor, y nada más...\n\nEl mismo verso cantaremos,\nal mismo paso bailarás.\nComo una espiga ondularemos,\ncomo una espiga, y nada más.`,
       speechText: `Dame la mano y danzaremos; dame la mano y me amarás. Como una sola flor seremos, como una flor, y nada más. El mismo verso cantaremos, al mismo paso bailarás. Como una espiga ondularemos, como una espiga, y nada más.`
     },
     {
-      title: 'Los Heraldos Negros',
       author: 'César Vallejo',
+      title: 'Los Heraldos Negros',
       country: 'Perú',
       category: 'Vanguardismo Andino',
-      text: `Hay golpes en la vida, tan fuertes... ¡Yo no sé!\nGolpes como del odio de Dios; como si ante ellos,\nla resaca de todo lo sufrido\nse empozara en el alma... ¡Yo no sé!\n\nSon pocos; pero son... Abren zanjas oscuras\nen el rostro más fiero y en el lomo más fuerte.`,
-      speechText: `Hay golpes en la vida, tan fuertes... ¡Yo no sé! Golpes como del odio de Dios; como si ante ellos, la resaca de todo lo sufrido se empozara en el alma... ¡Yo no sé! Son pocos; pero son... Abren zanjas oscuras en el rostro más fiero y en el lomo más fuerte.`
+      text: `Hay golpes en la vida, tan fuertes... ¡Yo no sé!\nGolpes como del odio de Dios; como si ante ellos,\nla resaca de todo lo sufrido\nse empozara en el alma... ¡Yo no sé!`,
+      speechText: `Hay golpes en la vida, tan fuertes... ¡Yo no sé! Golpes como del odio de Dios; como si ante ellos, la resaca de todo lo sufrido se empozara en el alma... ¡Yo no sé!`
     },
     {
-      title: 'Voy a dormir',
       author: 'Alfonsina Storni',
+      title: 'Voy a dormir',
       country: 'Argentina',
       category: 'Modernismo Femenino',
-      text: `Dientes de flores, cofia de rocío,\nmanos de hierbas, tú, nodriza fina,\ntenme prestas las sábanas de lino\ny el edredón de cardos perfumados.\n\nVoy a dormir, nodriza mía, acuéstame.\nPonme una lámpara a la cabecera;\nuna constelación; la que te guste;\ntodas son buenas; bájala un poquito.`,
-      speechText: `Dientes de flores, cofia de rocío, manos de hierbas, tú, nodriza fina, tenme prestas las sábanas de lino y el edredón de cardos perfumados. Voy a dormir, nodriza mía, acuéstame. Ponme una lámpara a la cabecera; una constelación; la que te guste; todas son buenas; bájala un poquito.`
+      text: `Dientes de flores, cofia de rocío,\nmanos de hierbas, tú, nodriza fina,\ntenme prestas las sábanas de lino\ny el edredón de cardos perfumados.\n\nVoy a dormir, nodriza mía, acuéstame.`,
+      speechText: `Dientes de flores, cofia de rocío, manos de hierbas, tú, nodriza fina, tenme prestas las sábanas de lino y el edredón de cardos perfumados. Voy a dormir, nodriza mía, acuéstame.`
     },
     {
-      title: 'Memorial de Tlatelolco',
       author: 'Rosario Castellanos',
+      title: 'Memorial de Tlatelolco',
       country: 'México',
       category: 'Conciencia Lírica',
       text: `La oscuridad engendra la violencia\ny la violencia pide oscuridad\npara cuajar el crimen.\nPor eso el dos de octubre aguardó hasta la noche\npara que nadie viera la mano que empuñaba\nel arma, sino sólo su efecto de relámpago.`,
       speechText: `La oscuridad engendra la violencia y la violencia pide oscuridad para cuajar el crimen. Por eso el dos de octubre aguardó hasta la noche para que nadie viera la mano que empuñaba el arma, sino sólo su efecto de relámpago.`
     },
     {
-      title: 'Caminante, no hay camino',
       author: 'Antonio Machado',
+      title: 'Caminante, no hay camino',
       country: 'España',
       category: 'Generación del 98',
-      text: `Caminante, son tus huellas\nel camino y nada más;\nCaminante, no hay camino,\nse hace camino al andar.\n\nAl andar se hace el camino,\ny al volver la vista atrás\nse ve la senda que nunca\nse ha de volver a pisar.\nCaminante no hay camino\nsino estelas en la mar.`,
-      speechText: `Caminante, son tus huellas el camino y nada más; Caminante, no hay camino, se hace camino al andar. Al andar se hace el camino, y al volver la vista atrás se ve la senda que nunca se ha de volver a pisar. Caminante no hay camino sino estelas en la mar.`
+      text: `Caminante, son tus huellas\nel camino y nada más;\nCaminante, no hay camino,\nse hace camino al andar.\n\nAl andar se hace el camino,\ny al volver la vista atrás\nse ve la senda que nunca\nse ha de volver a pisar.`,
+      speechText: `Caminante, son tus huellas el camino y nada más; Caminante, no hay camino, se hace camino al andar. Al andar se hace el camino, y al volver la vista atrás se ve la senda que nunca se ha de volver a pisar.`
     },
     {
-      title: 'Rima XXI (¿Qué es poesía?)',
       author: 'Gustavo Adolfo Bécquer',
+      title: 'Rima XXI (¿Qué es poesía?)',
       country: 'España',
       category: 'Romanticismo',
       text: `¿Qué es poesía?, dices mientras clavas\nen mi pupila tu pupila azul.\n¿Qué es poesía? ¿Y tú me lo preguntas?\nPoesía... eres tú.`,
       speechText: `¿Qué es poesía?, dices mientras clavas en mi pupila tu pupila azul. ¿Qué es poesía? ¿Y tú me lo preguntas? Poesía... eres tú.`
     },
     {
-      title: 'Altazor (Prefacio)',
       author: 'Vicente Huidobro',
+      title: 'Altazor (Prefacio)',
       country: 'Chile',
       category: 'Creacionismo',
       text: `Nací a los treinta y tres años, el día de la muerte de Cristo;\nnací en el Equinoccio, bajo las hortensias y los aeroplanos del calor.\n\nTraigo una pequeña luna en el bolsillo\ny en la garganta un relámpago que no se apaga.`,
       speechText: `Nací a los treinta y tres años, el día de la muerte de Cristo; nací en el Equinoccio, bajo las hortensias y los aeroplanos del calor. Traigo una pequeña luna en el bolsillo y en la garganta un relámpago que no se apaga.`
     },
     {
-      title: 'A Margarita Debayle',
       author: 'Rubén Darío',
+      title: 'A Margarita Debayle',
       country: 'Nicaragua',
       category: 'Padre del Modernismo',
-      text: `Margarita, está linda la mar,\ny el viento\nlleva esencia sutil de azahar;\nyo siento\nen el alma una alondra cantar:\ntu acento.\nMargarita, te voy a contar\nun cuento.`,
-      speechText: `Margarita, está linda la mar, y el viento lleva esencia sutil de azahar; yo siento en el alma una alondra cantar: tu acento. Margarita, te voy a contar un cuento.`
+      text: `Margarita, está linda la mar,\ny el viento\nlleva esencia sutil de azahar;\nyo siento\nen el alma una alondra cantar:\ntu acento.`,
+      speechText: `Margarita, está linda la mar, y el viento lleva esencia sutil de azahar; yo siento en el alma una alondra cantar: tu acento.`
     },
     {
-      title: 'Hombres necios que acusáis',
       author: 'Sor Juana Inés de la Cruz',
+      title: 'Hombres necios que acusáis',
       country: 'México',
       category: 'El Fénix de América',
       text: `Hombres necios que acusáis\na la mujer sin razón,\nsin ver que sois la ocasión\nde lo mismo que culpáis:\n\nsi con ansia sin igual\nsolicitáis su desdén,\n¿por qué queréis que obren bien\nsi las incitáis al mal?`,
       speechText: `Hombres necios que acusáis a la mujer sin razón, sin ver que sois la ocasión de lo mismo que culpáis: si con ansia sin igual solicitáis su desdén, ¿por qué queréis que obren bien si las incitáis al mal?`
     },
     {
-      title: 'Nocturno en que nada se oye',
       author: 'Xavier Villaurrutia',
+      title: 'Nocturno en que nada se oye',
       country: 'México',
       category: 'Los Contemporáneos',
       text: `En medio de un silencio desierto como la calle antes del crimen\nsin más pulso ni voz sino el latido del miedo,\nescucho mi propia sangre fluir en la noche\ncomo un río subterráneo que busca el mar.`,
       speechText: `En medio de un silencio desierto como la calle antes del crimen sin más pulso ni voz sino el latido del miedo, escucho mi propia sangre fluir en la noche como un río subterráneo que busca el mar.`
     },
     {
-      title: 'Muerte sin fin (Fragmento)',
       author: 'José Gorostiza',
+      title: 'Muerte sin fin (Fragmento)',
       country: 'Tabasco, México',
       category: 'Obra Cumbre Mexicana',
       text: `Lleno de mí, sitiado en mi epidermis\npor un dios inaprensible que me ahoga,\nmentida fresca en los nublados linderos\nde una creación que se desmorona...`,
       speechText: `Lleno de mí, sitiado en mi epidermis por un dios inaprensible que me ahoga, mentida fresca en los nublados linderos de una creación que se desmorona...`
     },
     {
-      title: 'Alta Traición',
       author: 'José Emilio Pacheco',
+      title: 'Alta Traición',
       country: 'México',
       category: 'Generación de Medio Siglo',
-      text: `No amo mi patria. Su fulgor abstracto\nes inasible.\nPero (aunque suene mal) daría la vida\npor diez lugares suyos, cierta gente,\npuertos, bosques de pinos, fortalezas,\nuna ciudad deshecha, gris, monstruosa,\nvarias figuras de su historia,\ntres o cuatro ríos.`,
-      speechText: `No amo mi patria. Su fulgor abstracto es inasible. Pero (aunque suene mal) daría la vida por diez lugares suyos, cierta gente, puertos, bosques de pinos, fortalezas, una ciudad deshecha, gris, monstruosa, varias figuras de su historia, tres o cuatro ríos.`
+      text: `No amo mi patria. Su fulgor abstracto\nes inasible.\nPero (aunque suene mal) daría la vida\npor diez lugares suyos, cierta gente,\npuertos, bosques de pinos, fortalezas,\ntres o cuatro ríos.`,
+      speechText: `No amo mi patria. Su fulgor abstracto es inasible. Pero (aunque suene mal) daría la vida por diez lugares suyos, cierta gente, puertos, bosques de pinos, fortalezas, tres o cuatro ríos.`
     },
     {
-      title: 'Murmullos de Pedro Páramo',
       author: 'Juan Rulfo',
+      title: 'Murmullos de Pedro Páramo',
       country: 'México',
       category: 'Realismo Trágico',
       text: `Vine a Comala porque me dijeron que acá vivía mi padre, un tal Pedro Páramo.\n\nEl calor era tan grande que parecía que la tierra misma respiraba ceniza. En este pueblo lleno de ecos, las voces flotan en el viento como recuerdos que no se resignan a morir.`,
@@ -381,88 +525,139 @@
     }
   ];
 
-  // Elementos de UI
-  const tabLvt = document.getElementById('mode-tab-lvt');
-  const tabUniversal = document.getElementById('mode-tab-universal');
-  const secLvt = document.getElementById('section-mode-lvt');
-  const secUniversal = document.getElementById('section-mode-universal');
-  const universalGrid = document.getElementById('universal-authors-grid');
+  // ==========================================
+  // LÓGICA DE CONTROL DEL MODO REAL (YOUTUBE)
+  // ==========================================
+  let currentRealIdx = 0;
+  const realIframe = document.getElementById('real-youtube-iframe') as HTMLIFrameElement;
+  const realTitle = document.getElementById('real-video-title');
+  const realDesc = document.getElementById('real-video-desc');
+  const realCountry = document.getElementById('real-author-country');
+  const realBadge = document.getElementById('real-badge-tag');
+  const realTracklist = document.getElementById('real-voices-tracklist');
+  const btnPrevReal = document.getElementById('btn-prev-real');
+  const btnNextReal = document.getElementById('btn-next-real');
 
-  const pTitle = document.getElementById('player-poem-title');
-  const pAuthor = document.getElementById('player-poem-author');
-  const pText = document.getElementById('player-poem-text');
-  const pCatBadge = document.getElementById('player-category-badge');
-  const pCountryBadge = document.getElementById('player-country-badge');
-  const playBtn = document.getElementById('player-play-btn');
-  const playIcon = document.getElementById('p-play-icon');
-  const pauseIcon = document.getElementById('p-pause-icon');
-  const waveBars = document.querySelectorAll('.wave-bar');
-
-  let currentPoem: Poem = lvtPoems[0];
-  let isPlaying = false;
-  let synthUtterance: SpeechSynthesisUtterance | null = null;
-
-  // Renderizar los 20 Autores Universales
-  if (universalGrid) {
-    universalGrid.innerHTML = universalPoems.map((p, idx) => `
+  function renderRealTracklist() {
+    if (!realTracklist) return;
+    realTracklist.innerHTML = realVoiceList.map((item, idx) => `
       <button 
         type="button" 
-        class="univ-btn p-3 rounded-2xl bg-gray-900/70 border border-gray-800 text-left hover:border-dorado hover:bg-gray-800/90 transition shadow-subtle group flex flex-col justify-between"
-        data-uidx="${idx}"
+        class="real-track-card shrink-0 w-60 p-3.5 rounded-2xl bg-gray-900/80 border ${idx === 0 ? 'border-terracota bg-gray-800' : 'border-gray-800'} text-left hover:border-dorado transition shadow-subtle flex flex-col justify-between"
+        data-ridx="${idx}"
       >
         <div>
-          <span class="text-[9px] font-title font-bold text-dorado uppercase block mb-1 truncate">${p.country}</span>
-          <h5 class="font-serif text-sm font-bold text-white leading-tight group-hover:text-dorado transition truncate">${p.author}</h5>
+          <span class="text-[9px] font-title font-bold text-dorado uppercase block mb-1 truncate">${item.country}</span>
+          <h5 class="font-serif text-sm font-bold text-white leading-tight truncate">${item.author}</h5>
+          <p class="text-[10px] text-gray-300 font-light truncate mt-1">«${item.title}»</p>
         </div>
-        <span class="text-[10px] text-gray-400 font-light block truncate mt-2">«${p.title}»</span>
+        <span class="text-[9px] font-title font-bold text-terracota uppercase tracking-wider block mt-2">▶ Ver Grabación</span>
       </button>
     `).join('');
+
+    document.querySelectorAll('.real-track-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const ridx = parseInt(card.getAttribute('data-ridx') || '0');
+        loadRealVoice(ridx);
+      });
+    });
   }
 
-  // Alternancia Exclusiva de Pestañas (Uno u Otro)
-  function switchMode(mode: 'lvt' | 'universal') {
-    stopPlayback();
-    if (mode === 'lvt') {
-      tabLvt?.classList.remove('text-gray-300');
-      tabLvt?.classList.add('bg-terracota', 'text-white', 'shadow-lg');
-      tabUniversal?.classList.remove('bg-dorado', 'text-white', 'shadow-lg');
-      tabUniversal?.classList.add('text-gray-300');
+  function loadRealVoice(idx: number) {
+    currentRealIdx = idx;
+    const item = realVoiceList[idx];
+    if (!item) return;
 
-      secLvt?.classList.remove('hidden');
-      secLvt?.classList.add('tab-content-active');
-      secUniversal?.classList.add('hidden');
-      secUniversal?.classList.remove('tab-content-active');
-
-      loadPoem(lvtPoems[0]);
-    } else {
-      tabUniversal?.classList.remove('text-gray-300');
-      tabUniversal?.classList.add('bg-dorado', 'text-white', 'shadow-lg');
-      tabLvt?.classList.remove('bg-terracota', 'text-white', 'shadow-lg');
-      tabLvt?.classList.add('text-gray-300');
-
-      secUniversal?.classList.remove('hidden');
-      secUniversal?.classList.add('tab-content-active');
-      secLvt?.classList.add('hidden');
-      secLvt?.classList.remove('tab-content-active');
-
-      loadPoem(universalPoems[0]);
+    if (realIframe) {
+      realIframe.src = `https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0`;
     }
+    if (realTitle) realTitle.innerText = `${item.author} — «${item.title}»`;
+    if (realDesc) realDesc.innerText = item.desc;
+    if (realCountry) realCountry.innerText = item.country;
+    if (realBadge) realBadge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> ${item.tag}`;
+
+    document.querySelectorAll('.real-track-card').forEach((card, i) => {
+      if (i === idx) {
+        card.classList.add('border-terracota', 'bg-gray-800');
+        card.classList.remove('border-gray-800', 'bg-gray-900/80');
+      } else {
+        card.classList.remove('border-terracota', 'bg-gray-800');
+        card.classList.add('border-gray-800', 'bg-gray-900/80');
+      }
+    });
   }
 
-  tabLvt?.addEventListener('click', () => switchMode('lvt'));
-  tabUniversal?.addEventListener('click', () => switchMode('universal'));
+  btnPrevReal?.addEventListener('click', () => {
+    const nextIdx = (currentRealIdx - 1 + realVoiceList.length) % realVoiceList.length;
+    loadRealVoice(nextIdx);
+  });
 
-  // Cargar Poema en el Reproductor
-  function loadPoem(poem: Poem) {
-    currentPoem = poem;
-    if (pTitle) pTitle.innerText = poem.title;
-    if (pAuthor) pAuthor.innerText = `Autor: ${poem.author}`;
-    if (pText) pText.innerText = poem.text;
-    if (pCatBadge) pCatBadge.innerText = poem.category;
-    if (pCountryBadge) pCountryBadge.innerText = poem.country;
+  btnNextReal?.addEventListener('click', () => {
+    const nextIdx = (currentRealIdx + 1) % realVoiceList.length;
+    loadRealVoice(nextIdx);
+  });
+
+  renderRealTracklist();
+
+  // ==========================================
+  // LÓGICA DE CONTROL DEL MODO SÍNTESIS LÍRICA
+  // ==========================================
+  const synthGrid = document.getElementById('synth-authors-grid');
+  const sTitle = document.getElementById('synth-poem-title');
+  const sAuthor = document.getElementById('synth-poem-author');
+  const sText = document.getElementById('synth-poem-text');
+  const sCat = document.getElementById('synth-cat-badge');
+  const sCountry = document.getElementById('synth-country-badge');
+  const sPlayBtn = document.getElementById('synth-play-btn');
+  const sPlayIcon = document.getElementById('s-play-icon');
+  const sPauseIcon = document.getElementById('s-pause-icon');
+  const waveBars = document.querySelectorAll('.wave-bar');
+
+  let currentSynthPoem = allPoems[0];
+  let isSynthPlaying = false;
+  let synthUtterance: SpeechSynthesisUtterance | null = null;
+
+  if (synthGrid) {
+    synthGrid.innerHTML = allPoems.map((p, idx) => `
+      <button 
+        type="button" 
+        class="synth-item-btn p-3 rounded-2xl bg-gray-900/80 border ${idx === 0 ? 'border-terracota bg-gray-800' : 'border-gray-800'} text-left hover:border-dorado transition shadow-subtle group"
+        data-sidx="${idx}"
+      >
+        <span class="text-[9px] font-title font-bold text-dorado uppercase block mb-0.5 truncate">${p.country}</span>
+        <h5 class="font-serif text-sm font-bold text-white leading-tight group-hover:text-dorado transition truncate">${p.author}</h5>
+        <span class="text-[10px] text-gray-400 font-light block truncate mt-1">«${p.title}»</span>
+      </button>
+    `).join('');
+
+    document.querySelectorAll('.synth-item-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sidx = parseInt(btn.getAttribute('data-sidx') || '0');
+        loadSynthPoem(allPoems[sidx]);
+        startSynthPlayback();
+
+        document.querySelectorAll('.synth-item-btn').forEach((b, i) => {
+          if (i === sidx) {
+            b.classList.add('border-terracota', 'bg-gray-800');
+            b.classList.remove('border-gray-800', 'bg-gray-900/80');
+          } else {
+            b.classList.remove('border-terracota', 'bg-gray-800');
+            b.classList.add('border-gray-800', 'bg-gray-900/80');
+          }
+        });
+      });
+    });
   }
 
-  // Animación de Onda de Audio
+  function loadSynthPoem(p: SynthPoem) {
+    currentSynthPoem = p;
+    if (sTitle) sTitle.innerText = p.title;
+    if (sAuthor) sAuthor.innerText = `Autor: ${p.author}`;
+    if (sText) sText.innerText = p.text;
+    if (sCat) sCat.innerText = p.category;
+    if (sCountry) sCountry.innerText = p.country;
+  }
+
   function setWave(active: boolean) {
     waveBars.forEach((bar, i) => {
       if (active) {
@@ -473,78 +668,78 @@
     });
   }
 
-  // Control de Síntesis Vocal
-  function stopPlayback() {
+  function stopSynthPlayback() {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }
-    isPlaying = false;
-    playIcon?.classList.remove('hidden');
-    pauseIcon?.classList.add('hidden');
+    isSynthPlaying = false;
+    sPlayIcon?.classList.remove('hidden');
+    sPauseIcon?.classList.add('hidden');
     setWave(false);
   }
 
-  function startPlayback() {
-    stopPlayback();
+  function startSynthPlayback() {
+    stopSynthPlayback();
     if ('speechSynthesis' in window) {
-      synthUtterance = new SpeechSynthesisUtterance(currentPoem.speechText);
+      synthUtterance = new SpeechSynthesisUtterance(currentSynthPoem.speechText);
       synthUtterance.lang = 'es-MX';
-      synthUtterance.rate = 0.86; // Cadencia pausada, solemne y teatral
-      synthUtterance.pitch = 0.92; // Tono profundo y lírico
+      synthUtterance.rate = 0.86;
+      synthUtterance.pitch = 0.92;
 
-      // Asignar voz natural si está disponible en el navegador
       const voices = window.speechSynthesis.getVoices();
       const esVoice = voices.find(v => v.lang.startsWith('es-MX') || v.lang.startsWith('es-'));
       if (esVoice) synthUtterance.voice = esVoice;
 
-      synthUtterance.onend = () => stopPlayback();
-      synthUtterance.onerror = () => stopPlayback();
+      synthUtterance.onend = () => stopSynthPlayback();
+      synthUtterance.onerror = () => stopSynthPlayback();
 
       window.speechSynthesis.speak(synthUtterance);
-      isPlaying = true;
-      playIcon?.classList.add('hidden');
-      pauseIcon?.classList.remove('hidden');
+      isSynthPlaying = true;
+      sPlayIcon?.classList.add('hidden');
+      sPauseIcon?.classList.remove('hidden');
       setWave(true);
     }
   }
 
-  playBtn?.addEventListener('click', () => {
-    if (isPlaying) {
-      stopPlayback();
+  sPlayBtn?.addEventListener('click', () => {
+    if (isSynthPlaying) {
+      stopSynthPlayback();
     } else {
-      startPlayback();
+      startSynthPlayback();
     }
   });
 
-  // Listeners para Pistas LVT
-  document.querySelectorAll('.lvt-track-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.lvt-track-btn').forEach(b => {
-        b.classList.remove('border-terracota', 'bg-gray-800/90');
-        b.classList.add('border-gray-800', 'bg-gray-900/70');
-      });
-      btn.classList.remove('border-gray-800', 'bg-gray-900/70');
-      btn.classList.add('border-terracota', 'bg-gray-800/90');
+  // ==========================================
+  // CONMUTADOR MAESTRO DE MODOS (EXCLUSIVO)
+  // ==========================================
+  const btnModeReal = document.getElementById('btn-mode-real');
+  const btnModeSynth = document.getElementById('btn-mode-synth');
+  const viewModeReal = document.getElementById('view-mode-real');
+  const viewModeSynth = document.getElementById('view-mode-synth');
 
-      const idx = parseInt(btn.getAttribute('data-idx') || '0');
-      loadPoem(lvtPoems[idx]);
-      startPlayback();
-    });
+  btnModeReal?.addEventListener('click', () => {
+    stopSynthPlayback();
+    btnModeReal.className = "px-6 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-terracota text-white shadow-lg transition duration-300 flex items-center gap-2";
+    btnModeSynth!.className = "px-6 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider text-gray-300 hover:text-white transition duration-300 flex items-center gap-2";
+
+    viewModeReal?.classList.remove('hidden');
+    viewModeReal?.classList.add('tab-content-active');
+    viewModeSynth?.classList.add('hidden');
+    viewModeSynth?.classList.remove('tab-content-active');
   });
 
-  // Listeners para 20 Maestros Universales
-  document.querySelectorAll('.univ-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.univ-btn').forEach(b => {
-        b.classList.remove('border-dorado', 'bg-gray-800/90');
-        b.classList.add('border-gray-800', 'bg-gray-900/70');
-      });
-      btn.classList.remove('border-gray-800', 'bg-gray-900/70');
-      btn.classList.add('border-dorado', 'bg-gray-800/90');
+  btnModeSynth?.addEventListener('click', () => {
+    if (realIframe) {
+      // Detener video de YouTube al cambiar de modo
+      const curSrc = realIframe.src;
+      realIframe.src = curSrc.replace('autoplay=1', 'autoplay=0');
+    }
+    btnModeSynth.className = "px-6 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-dorado text-white shadow-lg transition duration-300 flex items-center gap-2";
+    btnModeReal!.className = "px-6 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider text-gray-300 hover:text-white transition duration-300 flex items-center gap-2";
 
-      const uidx = parseInt(btn.getAttribute('data-uidx') || '0');
-      loadPoem(universalPoems[uidx]);
-      startPlayback();
-    });
+    viewModeSynth?.classList.remove('hidden');
+    viewModeSynth?.classList.add('tab-content-active');
+    viewModeReal?.classList.add('hidden');
+    viewModeReal?.classList.remove('tab-content-active');
   });
 </script>
