@@ -1,0 +1,256 @@
+---
+// VocesDeTabasco.astro - Dimensión Sonora y Reproductor Poético de Tabasco
+---
+
+<section id="voces" class="py-24 hero-bg text-white relative overflow-hidden border-b border-gray-800">
+  
+  <!-- Resplandor sutil de fondo -->
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-terracota/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-dorado/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Cabecera -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dorado/15 border border-dorado/30 text-dorado-light font-title text-[11px] font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-terracota animate-ping"></span>
+        <span>Dimensión Sonora • Acervo Poético Declamado</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+        Voces de Tabasco
+      </h2>
+      <p class="text-sm sm:text-base text-gray-300 mt-3 font-light leading-relaxed">
+        La lírica del trópico cobra vida. Escucha los versos y narraciones que resuenan en la memoria colectiva de nuestra tierra.
+      </p>
+      <div class="w-20 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- Reproductor Central de Alta Gama -->
+    <div class="max-w-4xl mx-auto bg-carbon-card/80 border border-gray-700/80 rounded-3xl p-8 sm:p-10 backdrop-blur-xl shadow-2xl">
+      
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Columna Izquierda: Información de la Obra en Reproducción -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full bg-terracota/20 border border-terracota/40 text-terracota text-[10px] font-title font-bold uppercase tracking-widest">
+              Audio Declamación
+            </span>
+            <span id="audio-duration" class="text-xs text-gray-400 font-mono">01:45</span>
+          </div>
+
+          <h3 id="current-poem-title" class="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
+            Elegía al Río Grijalva y la Selva
+          </h3>
+
+          <p id="current-poem-author" class="text-xs font-title text-dorado-light uppercase tracking-wider font-semibold">
+            Voz: Acervo Lírico LVT · Letras y Voces de Tabasco
+          </p>
+
+          <!-- Fragmento Poético Activo con Tipografía Garamond -->
+          <div class="p-5 rounded-2xl bg-black/40 border border-gray-800 text-gray-300 font-serif italic text-base sm:text-lg leading-relaxed">
+            <p id="current-poem-excerpt">
+              «El agua no olvida el curso de los siglos; en cada remolino navega la palabra de los antiguos navegantes, tejiendo la luz del amanecer sobre el follaje esmeralda.»
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Controles y Onda Sonora -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center space-y-6 bg-black/30 p-6 rounded-2xl border border-gray-800">
+          
+          <!-- Onda de Audio Animada -->
+          <div class="flex items-center justify-center gap-1.5 h-16 w-full px-4">
+            <span class="wave-bar w-1.5 bg-terracota rounded-full h-3"></span>
+            <span class="wave-bar w-1.5 bg-dorado rounded-full h-8"></span>
+            <span class="wave-bar w-1.5 bg-terracota rounded-full h-12"></span>
+            <span class="wave-bar w-1.5 bg-dorado rounded-full h-6"></span>
+            <span class="wave-bar w-1.5 bg-terracota rounded-full h-14"></span>
+            <span class="wave-bar w-1.5 bg-dorado rounded-full h-10"></span>
+            <span class="wave-bar w-1.5 bg-terracota rounded-full h-4"></span>
+            <span class="wave-bar w-1.5 bg-dorado rounded-full h-11"></span>
+            <span class="wave-bar w-1.5 bg-terracota rounded-full h-16"></span>
+            <span class="wave-bar w-1.5 bg-dorado rounded-full h-7"></span>
+            <span class="wave-bar w-1.5 bg-terracota rounded-full h-13"></span>
+            <span class="wave-bar w-1.5 bg-dorado rounded-full h-5"></span>
+          </div>
+
+          <!-- Botón de Reproducción Principal -->
+          <div class="flex items-center gap-4">
+            <button 
+              id="play-pause-btn" 
+              type="button" 
+              class="w-16 h-16 rounded-full bg-terracota hover:bg-terracota-hover text-white flex items-center justify-center shadow-lg hover:scale-105 transition transform cursor-pointer"
+              aria-label="Reproducir poema"
+            >
+              <svg id="play-icon" class="w-8 h-8 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <svg id="pause-icon" class="w-8 h-8 fill-current hidden" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            </button>
+          </div>
+
+          <span class="text-[11px] text-gray-400 font-light text-center">
+            Pulsa para activar la declamación poética asistida
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- Lista de Pistas Poéticas Seleccionables -->
+      <div class="mt-8 pt-6 border-t border-gray-800 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <button type="button" class="track-btn active p-3 rounded-xl bg-gray-800/80 border border-terracota text-left hover:bg-gray-800 transition" data-index="0">
+          <span class="text-[10px] font-title font-bold text-terracota uppercase block">Pista 01</span>
+          <span class="text-xs font-serif font-bold text-white block truncate">Elegía al Grijalva</span>
+          <span class="text-[10px] text-gray-400">Animalia Literaria</span>
+        </button>
+        <button type="button" class="track-btn p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-left hover:bg-gray-800 transition" data-index="1">
+          <span class="text-[10px] font-title font-bold text-gray-400 uppercase block">Pista 02</span>
+          <span class="text-xs font-serif font-bold text-white block truncate">A corazón abierto</span>
+          <span class="text-[10px] text-gray-400">María de los Ángeles</span>
+        </button>
+        <button type="button" class="track-btn p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-left hover:bg-gray-800 transition" data-index="2">
+          <span class="text-[10px] font-title font-bold text-gray-400 uppercase block">Pista 03</span>
+          <span class="text-xs font-serif font-bold text-white block truncate">Tardes de Topacio</span>
+          <span class="text-[10px] text-gray-400">Memoria Lírica LVT</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Reproductor Poético de Voces de Tabasco
+  const tracks = [
+    {
+      title: 'Elegía al Río Grijalva y la Selva',
+      author: 'Antología Animalia Literaria · Letras y Voces de Tabasco, A.C.',
+      excerpt: '«El agua no olvida el curso de los siglos; en cada remolino navega la palabra de los antiguos navegantes, tejiendo la luz del amanecer sobre el follaje esmeralda.»',
+      speech: 'El agua no olvida el curso de los siglos. En cada remolino navega la palabra de los antiguos navegantes, tejiendo la luz del amanecer sobre el follaje esmeralda de Tabasco. En el trópico húmedo la palabra no se escribe: brota como mangle y canta como agua viva.',
+      duration: '01:45'
+    },
+    {
+      title: 'A corazón abierto (Presentación Oficial)',
+      author: 'María de los Ángeles Cervantes Rosas · Casa Cacao y Chocolate',
+      excerpt: '«No guardo rencor al viento que deshojó mi jardín; en cada pétalo caído aprendí el nombre del agua y en cada silencio hallé mi propia voz.»',
+      speech: 'No guardo rencor al viento que deshojó mi jardín. En cada pétalo caído aprendí el nombre del agua, y en cada silencio hallé mi propia voz. Abrir el pecho a la memoria es dejar que el río lave las heridas de la tarde.',
+      duration: '02:10'
+    },
+    {
+      title: 'Tardes Tabasqueñas de Ópalos y Topacios',
+      author: 'Poesía Conmemorativa Histórica · 38 Años de Tradición',
+      excerpt: '«El atardecer en Villahermosa tiñe el río de ópalo y funde el cielo en topacio. Aquí donde la tierra es verde y el verso es fuego.»',
+      speech: 'El atardecer en Villahermosa tiñe el río de ópalo y funde el cielo en topacio. Aquí donde la tierra es verde y el verso es fuego, preservamos la palabra y honramos la memoria de nuestro pueblo.',
+      duration: '01:55'
+    }
+  ];
+
+  let currentTrackIdx = 0;
+  let isPlaying = false;
+  let synthUtterance: SpeechSynthesisUtterance | null = null;
+
+  const playBtn = document.getElementById('play-pause-btn');
+  const playIcon = document.getElementById('play-icon');
+  const pauseIcon = document.getElementById('pause-icon');
+  const titleEl = document.getElementById('current-poem-title');
+  const authorEl = document.getElementById('current-poem-author');
+  const excerptEl = document.getElementById('current-poem-excerpt');
+  const durationEl = document.getElementById('audio-duration');
+  const trackBtns = document.querySelectorAll('.track-btn');
+  const waveBars = document.querySelectorAll('.wave-bar');
+
+  function setWaveAnimation(active: boolean) {
+    waveBars.forEach((bar, i) => {
+      if (active) {
+        (bar as HTMLElement).style.animation = `pulse 0.8s infinite alternate ${(i * 0.1).toFixed(1)}s`;
+      } else {
+        (bar as HTMLElement).style.animation = 'none';
+      }
+    });
+  }
+
+  function stopAudio() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    isPlaying = false;
+    if (playIcon && pauseIcon) {
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+    }
+    setWaveAnimation(false);
+  }
+
+  function playCurrentTrack() {
+    stopAudio();
+    const track = tracks[currentTrackIdx];
+    if ('speechSynthesis' in window) {
+      synthUtterance = new SpeechSynthesisUtterance(track.speech);
+      synthUtterance.lang = 'es-MX';
+      synthUtterance.rate = 0.92;
+      synthUtterance.pitch = 0.95;
+
+      synthUtterance.onend = () => {
+        stopAudio();
+      };
+      synthUtterance.onerror = () => {
+        stopAudio();
+      };
+
+      window.speechSynthesis.speak(synthUtterance);
+      isPlaying = true;
+      if (playIcon && pauseIcon) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+      }
+      setWaveAnimation(true);
+    }
+  }
+
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        stopAudio();
+      } else {
+        playCurrentTrack();
+      }
+    });
+  }
+
+  trackBtns.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      trackBtns.forEach(b => {
+        b.classList.remove('bg-gray-800/80', 'border-terracota');
+        b.classList.add('bg-gray-900/60', 'border-gray-800');
+        const span = b.querySelector('span');
+        if (span) {
+          span.classList.remove('text-terracota');
+          span.classList.add('text-gray-400');
+        }
+      });
+
+      btn.classList.remove('bg-gray-900/60', 'border-gray-800');
+      btn.classList.add('bg-gray-800/80', 'border-terracota');
+      const activeSpan = btn.querySelector('span');
+      if (activeSpan) {
+        activeSpan.classList.remove('text-gray-400');
+        activeSpan.classList.add('text-terracota');
+      }
+
+      currentTrackIdx = idx;
+      const track = tracks[idx];
+      if (titleEl) titleEl.innerText = track.title;
+      if (authorEl) authorEl.innerText = `Voz: ${track.author}`;
+      if (excerptEl) excerptEl.innerText = track.excerpt;
+      if (durationEl) durationEl.innerText = track.duration;
+
+      if (isPlaying) {
+        playCurrentTrack();
+      }
+    });
+  });
+</script>

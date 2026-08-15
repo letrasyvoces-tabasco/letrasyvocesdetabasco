@@ -17,14 +17,20 @@ const basePath = "/letrasyvocesdetabasco";
       </a>
 
       <!-- Navegación de Escritorio con Tipografía de Prestigio -->
-      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 font-title text-xs font-bold tracking-widest uppercase text-carbon">
+      <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7 font-title text-[11px] font-bold tracking-wider uppercase text-carbon">
         <a href="#inicio" class="hover:text-terracota transition-colors py-2">Inicio</a>
         <a href="#quienes-somos" class="hover:text-terracota transition-colors py-2">Semblanza</a>
+        <a href="#solvencia" class="hover:text-terracota transition-colors py-2">Solvencia</a>
         <a href="#antologias" class="hover:text-terracota transition-colors py-2">Publicaciones</a>
-        <a href="#convocatorias" class="hover:text-terracota transition-colors py-2">Convocatorias</a>
-        <a href="#galeria" class="hover:text-terracota transition-colors py-2">Eventos</a>
-        <a href="#rifa" class="hover:text-terracota transition-colors py-2 flex items-center gap-1.5 text-terracota">
-          <span class="w-2 h-2 rounded-full bg-terracota animate-ping"></span>
+        <a href="#voces" class="hover:text-terracota transition-colors py-2 flex items-center gap-1 text-dorado font-bold">
+          <span class="w-1.5 h-1.5 rounded-full bg-dorado animate-ping"></span>
+          Voces
+        </a>
+        <a href="#autores" class="hover:text-terracota transition-colors py-2">Autores</a>
+        <a href="#descargas" class="hover:text-terracota transition-colors py-2">Descargas</a>
+        <a href="#membresia" class="hover:text-terracota transition-colors py-2">Membresía</a>
+        <a href="#rifa" class="hover:text-terracota transition-colors py-2 flex items-center gap-1 text-terracota font-bold">
+          <span class="w-1.5 h-1.5 rounded-full bg-terracota animate-pulse"></span>
           Rifa 2026
         </a>
         <a href="#directiva" class="hover:text-terracota transition-colors py-2">Directiva</a>
@@ -44,14 +50,14 @@ const basePath = "/letrasyvocesdetabasco";
         </a>
         <a 
           href="#contacto" 
-          class="px-7 py-3 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:shadow-elevated hover:scale-103 transition"
+          class="px-6 py-2.5 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:shadow-elevated hover:scale-103 transition"
         >
           Contacto
         </a>
       </div>
 
       <!-- Botón Menú Móvil -->
-      <div class="lg:hidden flex items-center">
+      <div class="xl:hidden flex items-center">
         <button 
           id="mobile-toggle" 
           type="button" 
@@ -67,14 +73,19 @@ const basePath = "/letrasyvocesdetabasco";
   </div>
 
   <!-- Menú Móvil Desplegable -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-editorial-warm border-b border-editorial-border px-6 pt-4 pb-6 space-y-2.5 font-title text-xs font-bold uppercase tracking-wider shadow-elevated">
-    <a href="#inicio" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Inicio</a>
-    <a href="#quienes-somos" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Semblanza e Historia</a>
-    <a href="#antologias" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Publicaciones y Antologías</a>
-    <a href="#convocatorias" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition text-terracota">Convocatorias Abiertas 2026</a>
-    <a href="#galeria" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Eventos y Archivo Histórico</a>
-    <a href="#rifa" class="block px-4 py-3 rounded-2xl bg-terracota text-white text-center shadow-md">Iniciativa Pro-Fondos (Rifa 2026)</a>
-    <a href="#directiva" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Mesa Directiva (2026 – 2029)</a>
-    <a href="#contacto" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition text-center border border-editorial-border">Contacto Oficial</a>
+  <div id="mobile-menu" class="hidden xl:hidden bg-editorial-warm border-b border-editorial-border px-6 pt-4 pb-6 space-y-2.5 font-title text-xs font-bold uppercase tracking-wider shadow-elevated max-h-[80vh] overflow-y-auto">
+    <a href="#inicio" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Inicio</a>
+    <a href="#quienes-somos" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Semblanza e Historia</a>
+    <a href="#solvencia" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Solvencia & Legalidad</a>
+    <a href="#antologias" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Publicaciones</a>
+    <a href="#voces" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-dorado transition text-dorado">Voces de Tabasco (Audio)</a>
+    <a href="#autores" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Padrón de Autores</a>
+    <a href="#descargas" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Centro de Descargas PDF</a>
+    <a href="#membresia" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Membresía & Afiliación</a>
+    <a href="#convocatorias" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition text-terracota">Convocatorias Abiertas 2026</a>
+    <a href="#galeria" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Eventos y Archivo</a>
+    <a href="#rifa" class="block px-4 py-3 rounded-2xl bg-terracota text-white text-center shadow-md">Iniciativa Pro-Fondos ($100 MXN)</a>
+    <a href="#directiva" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Mesa Directiva (2026 – 2029)</a>
+    <a href="#contacto" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition text-center border border-editorial-border">Contacto Oficial</a>
   </div>
 </header>

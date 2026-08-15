@@ -1,17 +1,22 @@
 ---
-// index.astro - Página Principal Oficial de Letras y Voces de Tabasco, A.C.
+// index.astro - Portal Institucional Maestro de Letras y Voces de Tabasco, A.C.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Semblanza from '../components/Semblanza.astro';
+import SolvenciaInstitucional from '../components/SolvenciaInstitucional.astro';
 import Publicaciones from '../components/Publicaciones.astro';
-import ReadingModal from '../components/ReadingModal.astro';
+import VocesDeTabasco from '../components/VocesDeTabasco.astro';
+import DirectorioAutores from '../components/DirectorioAutores.astro';
+import CentroDescargas from '../components/CentroDescargas.astro';
+import ProcesoMembresia from '../components/ProcesoMembresia.astro';
 import Convocatorias from '../components/Convocatorias.astro';
 import GaleriaEventos from '../components/GaleriaEventos.astro';
 import RifaInteractiva from '../components/RifaInteractiva.astro';
 import MesaDirectiva from '../components/MesaDirectiva.astro';
 import Contacto from '../components/Contacto.astro';
 import Footer from '../components/Footer.astro';
+import ReadingModal from '../components/ReadingModal.astro';
 import '../styles/global.css';
 ---
 
@@ -19,28 +24,43 @@ import '../styles/global.css';
   <!-- Barra de Navegación Flotante Translúcida -->
   <Navbar />
 
-  <!-- Sección 1: Pórtico Editorial con Rotador de Frases e Hitos Históricos -->
+  <!-- 1. Pórtico Editorial con Rotador de Frases e Hitos Históricos -->
   <Hero />
 
-  <!-- Sección 2: Semblanza Institucional, Misión y Visión -->
+  <!-- 2. Semblanza Institucional, Misión y Memoria Histórica -->
   <Semblanza />
 
-  <!-- Sección 3: Fondo Editorial LVT (Portadas 3D de Libros) -->
+  <!-- 3. Solvencia Jurídica, Transparencia y Convenios Institucionales -->
+  <SolvenciaInstitucional />
+
+  <!-- 4. Fondo Editorial LVT (Portadas 3D Interactivas) -->
   <Publicaciones />
 
-  <!-- Sección 4: Convocatorias Oficiales 2026 y Cuenta Regresiva -->
+  <!-- 5. Dimensión Sonora: Voces de Tabasco (Reproductor Poético) -->
+  <VocesDeTabasco />
+
+  <!-- 6. Directorio y Padrón de Autores con Filtro por Género -->
+  <DirectorioAutores />
+
+  <!-- 7. Centro de Documentación y Descargas Oficiales (Estatutos PDF) -->
+  <CentroDescargas />
+
+  <!-- 8. Protocolo de Admisión: Cómo Integrarse a la Sociedad de Escritores -->
+  <ProcesoMembresia />
+
+  <!-- 9. Convocatorias Oficiales 2026 y Cuenta Regresiva -->
   <Convocatorias />
 
-  <!-- Sección 5: Archivo Histórico y Memoria Gráfica de Eventos -->
+  <!-- 10. Archivo Histórico y Memoria Gráfica de Eventos -->
   <GaleriaEventos />
 
-  <!-- Sección 6: Iniciativa Pro-Fondos A.C. (Rifa 2026 con Cuadrícula 00-99) -->
+  <!-- 11. Iniciativa Pro-Fondos A.C. (Rifa 2026 con Cuadrícula 00-99) -->
   <RifaInteractiva />
 
-  <!-- Sección 7: Mesa Directiva y Gobernanza Institucional -->
+  <!-- 12. Mesa Directiva y Gobernanza Institucional (Gestión 2026 – 2029) -->
   <MesaDirectiva />
 
-  <!-- Sección 8: Secretaría General, Correspondencia y Vinculación -->
+  <!-- 13. Secretaría General, Correspondencia y Vinculación -->
   <Contacto />
 
   <!-- Pie de Página Institucional -->
