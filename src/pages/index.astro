@@ -1,16 +1,19 @@
 ---
-// index.astro - Portal Institucional Maestro de Letras y Voces de Tabasco, A.C.
+// index.astro - Portal Institucional Maestro de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Semblanza from '../components/Semblanza.astro';
+import SolvenciaInstitucional from '../components/SolvenciaInstitucional.astro';
 import Publicaciones from '../components/Publicaciones.astro';
 import VocesDeTabasco from '../components/VocesDeTabasco.astro';
 import DirectorioAutores from '../components/DirectorioAutores.astro';
-import GobernanzaHub from '../components/GobernanzaHub.astro';
+import CentroDescargas from '../components/CentroDescargas.astro';
+import ProcesoMembresia from '../components/ProcesoMembresia.astro';
 import Convocatorias from '../components/Convocatorias.astro';
 import GaleriaEventos from '../components/GaleriaEventos.astro';
 import RifaInteractiva from '../components/RifaInteractiva.astro';
+import MesaDirectiva from '../components/MesaDirectiva.astro';
 import Contacto from '../components/Contacto.astro';
 import Footer from '../components/Footer.astro';
 import ReadingModal from '../components/ReadingModal.astro';
@@ -18,42 +21,51 @@ import '../styles/global.css';
 ---
 
 <BaseLayout>
-  <!-- Barra de Navegación Flotante Translúcida y Despejada -->
+  <!-- Barra de Navegación Flotante Translúcida -->
   <Navbar />
 
-  <!-- 1. Pórtico Editorial con Rotador de Citas e Hitos Históricos -->
+  <!-- 1. Pórtico Editorial con Rotador de Frases e Hitos Históricos -->
   <Hero />
 
-  <!-- 2. Semblanza Institucional, Misión y Memoria de 38 Años -->
+  <!-- 2. Semblanza Institucional, Misión y Memoria Histórica -->
   <Semblanza />
 
-  <!-- 3. Fondo Editorial LVT (Portadas 3D Interactivas y Lector) -->
+  <!-- 3. Solvencia Jurídica, Transparencia Notarial y Convenios -->
+  <SolvenciaInstitucional />
+
+  <!-- 4. Fondo Editorial LVT (Vitrina con Portadas 3D Interactivas) -->
   <Publicaciones />
 
-  <!-- 4. Dimensión Sonora: Voces de Tabasco & 20 Maestros Universales -->
+  <!-- 5. Dimensión Sonora: Voces de Tabasco (Fonoteca y Sala Lírica) -->
   <VocesDeTabasco />
 
-  <!-- 5. Directorio y Padrón de Escritores con Filtro por Género -->
+  <!-- 6. Directorio y Padrón de Escritores con Filtros por Género -->
   <DirectorioAutores />
 
-  <!-- 6. Pabellón Maestro de Gobernanza, Solvencia, Membresía y Descargas PDF -->
-  <GobernanzaHub />
+  <!-- 7. Centro de Documentación y Descargas Oficiales en PDF -->
+  <CentroDescargas />
 
-  <!-- 7. Convocatorias Oficiales 2026 y Cuenta Regresiva al 1 de Octubre -->
+  <!-- 8. Protocolo de Admisión: Proceso de Incorporación de Nuevos Socios -->
+  <ProcesoMembresia />
+
+  <!-- 9. Convocatorias Oficiales 2026 y Certámenes Abiertos -->
   <Convocatorias />
 
-  <!-- 8. Archivo Histórico y Memoria Gráfica (Fotos Reales de Eventos) -->
+  <!-- 10. Archivo Gráfico y Memoria de Encuentros Culturales -->
   <GaleriaEventos />
 
-  <!-- 9. Iniciativa Pro-Fondos A.C. (Rifa 2026 con Cuadrícula 00-99) -->
+  <!-- 11. Iniciativa Pro-Fondos A.C. (Rifa Interactiva 2026 con Cuadrícula 00-99) -->
   <RifaInteractiva />
 
-  <!-- 10. Secretaría General, Correspondencia y Vinculación -->
+  <!-- 12. Mesa Directiva y Gobernanza Institucional (Gestión 2026 – 2029) -->
+  <MesaDirectiva />
+
+  <!-- 13. Secretaría General, Correspondencia y Vinculación -->
   <Contacto />
 
-  <!-- Pie de Página Institucional con Firma Legal -->
+  <!-- Pie de Página Institucional -->
   <Footer />
 
-  <!-- Visor Inmersivo Modal de Muestras de Lectura (Pergamino, Marfil, Noche) -->
+  <!-- Visor de Lectura Inmersiva Modal (Marfil, Pergamino, Noche) -->
   <ReadingModal />
 </BaseLayout>
