@@ -6,86 +6,71 @@ interface Props {
 }
 
 const {
-  title = "Sociedad de Escritores Letras y Voces de Tabasco, A.C. | Sitio Oficial",
-  description = "Institución cultural con más de 38 años de trayectoria ininterrumpida dedicada al rigor literario, ediciones colectivas, poesía y memoria lírica en el Sureste de México.",
-  image = "/letrasyvocesdetabasco/assets/logos/LVT Logo Hor 1 Original.png"
+  title = "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
+  description = "Portal oficial de la Sociedad de Escritores Letras y Voces de Tabasco, A.C. Difusión literaria, fondo editorial, fonoteca de poesía, convocatorias y gobernanza cultural en el sureste mexicano.",
+  image = "/assets/branding/lvt_og_banner.jpg",
 } = Astro.props;
 
-const siteUrl = "https://letrasyvocesdetabasco.github.io/letrasyvocesdetabasco";
-const fullImageUrl = `https://letrasyvocesdetabasco.github.io${image}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyvocesdetabasco.github.io");
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  
-  <!-- Primarios SEO -->
-  <title>{title}</title>
-  <meta name="title" content={title} />
-  <meta name="description" content={description} />
-  <meta name="keywords" content="Sociedad de Escritores Letras y Voces de Tabasco, Letras y Voces de Tabasco A.C., Literatura de Tabasco, Escritores de Villahermosa, Poetas de Tabasco, Animalia Literaria, A corazón abierto María Cervantes, Convocatorias Literarias Tabasco 2026" />
-  <meta name="author" content="Sociedad de Escritores Letras y Voces de Tabasco, A.C." />
-  <meta name="theme-color" content="#FDFBF7" />
-  <link rel="canonical" href={siteUrl} />
-  
-  <!-- Favicon e Iconografía Vectorial Oficial -->
-  <link rel="icon" type="image/svg+xml" href="/letrasyvocesdetabasco/assets/logos/LVT Logo Iso 1 Original.svg" />
-  <link rel="apple-touch-icon" href="/letrasyvocesdetabasco/assets/logos/LVT Logo Iso 1 Original.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/assets/branding/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-  <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={siteUrl} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={fullImageUrl} />
-  <meta property="og:locale" content="es_MX" />
-  <meta property="og:site_name" content="Sociedad de Escritores Letras y Voces de Tabasco, A.C." />
+    <!-- Primarios SEO -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Sociedad de Escritores Letras y Voces de Tabasco, A.C." />
+    <link rel="canonical" href={canonicalURL} />
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content={siteUrl} />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={fullImageUrl} />
+    <!-- Tarjetas Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Letras y Voces de Tabasco, A.C." />
 
-  <!-- Tipografías Editoriales de Prestigio (Google Fonts) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <!-- Tarjetas Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
 
-  <!-- Schema.org Datos Estructurados JSON-LD -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "NGO",
-    "name": "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
-    "alternateName": "Letras y Voces de Tabasco",
-    "url": "https://letrasyvocesdetabasco.github.io/letrasyvocesdetabasco",
-    "logo": "https://letrasyvocesdetabasco.github.io/letrasyvocesdetabasco/assets/logos/LVT Logo Hor 1 Original.png",
-    "description": "Sociedad de escritores legalmente constituida dedicada al fomento de la creación literaria, certámenes, talleres y salvaguarda de la memoria lírica en Tabasco.",
-    "foundingDate": "1988",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Villahermosa",
-      "addressRegion": "Tabasco",
-      "addressCountry": "MX"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "lvt.correo@gmail.com",
-      "telephone": "+52-220-588-9391",
-      "contactType": "Secretaría General"
-    },
-    "sameAs": [
-      "https://www.facebook.com/letrayvoces.tabasco/",
-      "https://www.instagram.com/letrasyvoces.tabasco/"
-    ]
-  })} />
-</head>
+    <!-- Tipografías Oficiales del Manual de Marca LVT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-<body class="bg-editorial text-carbon antialiased selection:bg-terracota selection:text-white flex flex-col min-h-screen">
-  <slot />
-</body>
+    <!-- Datos Estructurados Schema.org (Asociación Cultural) -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
+        "alternateName": "Letras y Voces de Tabasco",
+        "url": "https://letrasyvocesdetabasco.github.io",
+        "logo": "https://letrasyvocesdetabasco.github.io/assets/branding/logo_lvt.svg",
+        "email": "lvt.correo@gmail.com",
+        "sameAs": [
+          "https://web.facebook.com/profile.php?id=100063472631282"
+        ],
+        "description": "Asociación civil dedicada a la promoción literaria, edición de antologías y preservación cultural en el estado de Tabasco, México."
+      }
+    </script>
+  </head>
+  <body class="bg-editorial text-carbon font-sans antialiased selection:bg-terracota selection:text-white min-h-screen flex flex-col">
+    <slot />
+  </body>
 </html>
