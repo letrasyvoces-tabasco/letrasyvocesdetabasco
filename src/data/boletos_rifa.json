@@ -1,0 +1,43 @@
+{
+  "precio_boleto": 100,
+  "meta_boletos": 100,
+  "premio_principal": "Colección Completa del Fondo Editorial LVT (Obras Impresas y Antologías) + Reconocimiento de Mecenas Cultural",
+  "fecha_sorteo": "Enlace directo con el Sorteo Mayor de la Lotería Nacional (Diciembre 2026)",
+  "boletos_ocupados": {
+    "00": {
+      "estado": "Pagado",
+      "participante": "Participante Registrado en Notion",
+      "fecha": "2026-08-16"
+    },
+    "01": {
+      "estado": "Pagado",
+      "participante": "Participante Registrado en Notion",
+      "fecha": "2026-08-16"
+    },
+    "05": {
+      "estado": "Apartado",
+      "participante": "Participante Registrado en Notion",
+      "fecha": "2026-08-16"
+    },
+    "07": {
+      "estado": "Pagado",
+      "participante": "Sociedad Civil Pro-Cultura",
+      "fecha": "2026-08-16"
+    },
+    "13": {
+      "estado": "Apartado",
+      "participante": "Miembro Afiliado LVT",
+      "fecha": "2026-08-16"
+    },
+    "24": {
+      "estado": "Pagado",
+      "participante": "Patrocinador Editorial UJAT",
+      "fecha": "2026-08-16"
+    },
+    "77": {
+      "estado": "Apartado",
+      "participante": "Lector Amigo de las Letras",
+      "fecha": "2026-08-16"
+    }
+  }
+}
