@@ -17,11 +17,12 @@ import { CRONOLOGIA_DIRECTIVA, CUADRO_FUNDADORES } from '../data/historia';
       </p>
     </div>
 
+    <!-- Cuadro Fundacional de 1987 -->
     <div class="mb-20">
       <div class="flex items-center justify-between mb-8">
         <div>
           <h3 class="text-2xl font-title font-bold text-[#222222]">Cuadro Fundacional de 1987</h3>
-          <p class="text-xs sm:text-sm font-sans text-[#555555]">Pioneros, intelectuales y cronistas que constituyeron formalmente la asociación civil.</p>
+          <p class="text-xs sm:text-sm font-sans text-[#555555]">Pioneros, intelectuales y cronistas que constituyeron formalmente la asociación civil bajo el liderazgo tutelar del Arq. Mario de Lille Fuentes.</p>
         </div>
         <span class="hidden sm:inline-block text-xs font-title font-bold text-[#EF7B38] uppercase tracking-wider">
           Registro Histórico LVT
@@ -29,16 +30,22 @@ import { CRONOLOGIA_DIRECTIVA, CUADRO_FUNDADORES } from '../data/historia';
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {CUADRO_FUNDADORES.map((fundador) => (
-          <div class="bg-white p-5 rounded-xl border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition-colors">
-            <span class="text-xs font-title font-bold uppercase text-[#EF7B38]">{fundador.rol}</span>
-            <h4 class="text-base font-title font-bold text-[#222222] mt-1">{fundador.nombre}</h4>
-            <p class="text-xs font-serif italic text-[#555555] mt-1">{fundador.detalle}</p>
+        {CUADRO_FUNDADORES.map((fundador, index) => (
+          <div class={`bg-white p-5 rounded-xl border shadow-subtle hover:border-[#EF7B38] transition-colors ${index === 0 ? 'border-[#EF7B38] bg-gradient-to-br from-white to-[#FDFBF7] ring-1 ring-[#EF7B38]/30 sm:col-span-2 lg:col-span-3' : 'border-[#E6DCCE]'}`}>
+            <div class="flex items-center justify-between">
+              <span class={`text-xs font-title font-bold uppercase ${index === 0 ? 'text-white bg-[#EF7B38] px-2.5 py-0.5 rounded-full' : 'text-[#EF7B38]'}`}>
+                {fundador.rol}
+              </span>
+              {index === 0 && <span class="text-xs font-title font-bold text-[#B8860B] uppercase">★ Pilar Histórico</span>}
+            </div>
+            <h4 class={`font-title font-bold text-[#222222] mt-2 ${index === 0 ? 'text-xl text-[#222222]' : 'text-base'}`}>{fundador.nombre}</h4>
+            <p class={`font-serif italic text-[#555555] mt-1 ${index === 0 ? 'text-sm' : 'text-xs'}`}>{fundador.detalle}</p>
           </div>
         ))}
       </div>
     </div>
 
+    <!-- Evolución Cronológica y Liderazgos -->
     <div>
       <div class="mb-8">
         <h3 class="text-2xl font-title font-bold text-[#222222]">Evolución Cronológica y Liderazgos</h3>

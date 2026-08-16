@@ -48,9 +48,29 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
 ];
 
 export const CUERPO_DOCENTE_HISTORICO = [
-  { nombre: 'Mario de Lille Fuentes', cargo: 'Director Fundador (2001)', semblanza: 'Destacado narrador, dramaturgo y poeta radicado en Tabasco, forjador del modelo pedagógico inicial.' },
-  { nombre: 'Fernando Nieto Cadena', cargo: 'Catedrático de Poesía', semblanza: 'Poeta y crítico de renombre nacional, formador de múltiples generaciones líricas.' },
-  { nombre: 'Rodrigo Arteaga Portillo', cargo: 'Instructor de Narrativa', semblanza: 'Especialista en cuento y técnicas narrativas contemporáneas.' },
-  { nombre: 'Ana Livia Salinas', cargo: 'Especialista en Crónica', semblanza: 'Docente e investigadora en géneros periodísticos y memoria urbana.' },
-  { nombre: 'Rebeca Díaz Suárez', cargo: 'Catedrática de Creación Literaria', semblanza: 'Poeta, gestora cultural y expresidenta de la Mesa Directiva LVT.' }
+  { 
+    nombre: 'Arq. Mario de Lille Fuentes', 
+    cargo: 'Director Fundador & Rector Académico (2001)', 
+    semblanza: 'Arquitecto, eminente novelista, dramaturgo y poeta radicado en Tabasco, creador y forjador del modelo pedagógico y curricular de la escuela.' 
+  },
+  { 
+    nombre: 'Fernando Nieto Cadena', 
+    cargo: 'Catedrático de Poesía', 
+    semblanza: 'Poeta y crítico de renombre nacional, formador de múltiples generaciones líricas.' 
+  },
+  { 
+    nombre: 'Rodrigo Arteaga Portillo', 
+    cargo: 'Instructor de Narrativa', 
+    semblanza: 'Especialista en cuento y técnicas narrativas contemporáneas.' 
+  },
+  { 
+    nombre: 'Ana Livia Salinas', 
+    cargo: 'Especialista en Crónica', 
+    semblanza: 'Docente e investigadora en géneros periodísticos y memoria urbana.' 
+  },
+  { 
+    nombre: 'Rebeca Díaz Suárez', 
+    cargo: 'Catedrática de Creación Literaria', 
+    semblanza: 'Poeta, gestora cultural y expresidenta de la Mesa Directiva LVT.' 
+  }
 ];
