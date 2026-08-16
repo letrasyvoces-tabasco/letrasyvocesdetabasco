@@ -1,113 +1,374 @@
 ---
-import { DIPLOMADOS_GOROSTIZA, CUERPO_DOCENTE_HISTORICO } from '../data/escuela';
+// EscuelaGorostiza.astro - Filial Académica Oficial de Letras y Voces de Tabasco, A.C.
+import { 
+  IDENTIDAD_ESCUELA, 
+  DIPLOMADOS_GOROSTIZA, 
+  TALLERES_LIBRES_ESCUELA, 
+  CLAUSTRO_DOCENTE_HISTORICO 
+} from '../data/escuela';
+
+const basePath = "/letrasyvocesdetabasco";
 ---
 
-<section id="escuela-gorostiza" class="py-24 bg-[#FDFBF7] text-[#222222] border-b border-[#E6DCCE]">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8">
+<section id="escuela-gorostiza" class="py-24 sm:py-32 bg-[#FDFBF7] text-[#222222] border-b border-[#E6DCCE] relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 sm:space-y-20">
     
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#EF7B38]/10 text-[#EF7B38] text-xs font-title font-bold tracking-widest uppercase rounded-full mb-4">
-        Filial Académica Oficial · Fundada en Septiembre de 2001
+    <!-- ================================================================= -->
+    <!-- 1. ENCABEZADO INSTITUCIONAL & FILOSOFÍA PEDAGÓGICA                -->
+    <!-- ================================================================= -->
+    <div class="text-center max-w-4xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EF7B38]/15 border border-[#EF7B38]/30 text-[#EF7B38] font-title text-[10px] sm:text-[11px] font-bold uppercase tracking-widest shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-ping"></span>
+        <span>Única Filial Académica Oficial de LVT, A.C. · Fundada en Septiembre de 2001</span>
       </div>
-      <h2 class="text-3xl sm:text-5xl font-title font-black tracking-tight text-[#222222]">
+
+      <h2 class="text-3xl sm:text-5xl lg:text-6xl font-title font-black text-[#222222] tracking-tight">
         Escuela de Escritores <span class="text-[#EF7B38]">«José Gorostiza»</span>
       </h2>
-      <p class="mt-4 text-base sm:text-lg font-serif italic text-[#555555]">
-        Brazo formativo de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., con el aval académico formal de la Universidad Juárez Autónoma de Tabasco (UJAT).
-      </p>
-    </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 bg-white p-8 sm:p-10 rounded-2xl border border-[#E6DCCE] shadow-subtle">
-      <div class="lg:col-span-7 space-y-4">
-        <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-[#F5EFE6] text-[#EF7B38] text-[11px] font-title font-bold uppercase tracking-wider rounded-md">
-          Dirección Fundacional: Arq. Mario de Lille Fuentes
-        </div>
-        <h3 class="text-2xl font-title font-bold text-[#222222]">Modelo Pedagógico y Sede Histórica</h3>
-        <p class="font-sans text-sm sm:text-base text-[#555555] leading-relaxed">
-          Inaugurada en septiembre de 2001, la Escuela de Escritores nació para dotar al estado de Tabasco de un centro de formación técnica, teórica y práctica en el oficio de las letras. Concebida y dirigida por el distinguido <strong class="text-[#222222]">Arquitecto Mario de Lille Fuentes</strong> —novelista, dramaturgo, poeta y pilar fundador de LVT—, la institución cimentó un programa que ha graduado a múltiples generaciones de creadores literarios y periodistas culturales.
-        </p>
-        <p class="font-sans text-sm sm:text-base text-[#555555] leading-relaxed">
-          Su sede opera históricamente en la calle Centenario del Instituto Juárez s/n, Colonia Reforma, al interior de la antigua División Académica de Ciencias Sociales y Humanidades (<strong class="text-[#222222]">DACSyH - UJAT</strong>), detrás del edificio de la Fundación UJAT en Villahermosa.
-        </p>
+      <p class="font-serif italic text-lg sm:text-xl text-[#B8860B] font-semibold">
+        «{IDENTIDAD_ESCUELA.lema}»
+      </p>
+
+      <p class="font-sans text-sm sm:text-base text-[#555555] max-w-3xl mx-auto leading-relaxed">
+        {IDENTIDAD_ESCUELA.mision}
+      </p>
+      
+      <div class="inline-block p-3 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE] text-xs font-serif italic text-[#666666]">
+        🌱 <strong>Filosofía Docente:</strong> {IDENTIDAD_ESCUELA.filosofia}
       </div>
 
-      <div class="lg:col-span-5 bg-[#F5EFE6] p-6 rounded-xl border border-[#E6DCCE] flex flex-col justify-between">
-        <div>
-          <span class="text-xs font-title font-bold uppercase tracking-wider text-[#EF7B38]">Cuerpo Docente Histórico</span>
-          <div class="mt-4 space-y-3">
-            {CUERPO_DOCENTE_HISTORICO.map((docente) => (
-              <div class="border-b border-[#E6DCCE] pb-2 last:border-0">
-                <div class="font-title font-bold text-sm text-[#222222]">{docente.nombre}</div>
-                <div class="text-xs text-[#EF7B38] font-medium">{docente.cargo}</div>
-                <div class="text-xs text-[#555555] font-serif italic mt-0.5">{docente.semblanza}</div>
+      <div class="w-24 h-0.5 bg-[#EF7B38] mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 2. ORIGEN FUNDACIONAL, ARQ. MARIO DE LILLE Y ALIANZA UJAT         -->
+    <!-- ================================================================= -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      
+      <!-- Historia y Dirección del Arq. Mario de Lille -->
+      <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-[#E6DCCE] shadow-subtle flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider">
+              Bienio 2001 – 2003
+            </span>
+            <span class="text-xs text-gray-500 font-mono">
+              Patrocinio Histórico: UJAT & ICT (hoy IEC)
+            </span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-title font-bold text-[#222222]">
+            Cimiento Pedagógico & Dirección Fundacional
+          </h3>
+
+          <p class="font-sans text-sm text-[#555555] leading-relaxed">
+            Inaugurada formalmente en <strong class="text-[#222222]">septiembre de 2001</strong> con la primera generación del Diplomado en Creación Literaria, la institución fue concebida durante la gestión directiva 2001–2003 de la Sociedad de Escritores «Letras y Voces de Tabasco», A.C.
+          </p>
+
+          <p class="font-sans text-sm text-[#555555] leading-relaxed">
+            Su primer director y rector pedagógico fue el insigne <strong class="text-[#222222]">Arquitecto Mario de Lille Fuentes</strong> —novelista, dramaturgo, poeta y pilar fundador de LVT—, quien estructuró los planes de estudio, la metodología de taller colegiado y la visión formativa que ha marcado a más de dos décadas de egresados.
+          </p>
+
+          <div class="pt-3 border-t border-[#E6DCCE] space-y-2">
+            <span class="text-xs font-title font-bold uppercase text-[#EF7B38] tracking-wider block">
+              Direcciones Destacadas en su Historia:
+            </span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-title">
+              <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]">
+                <div class="font-bold text-[#222222]">Arq. Mario de Lille</div>
+                <div class="text-[10px] text-gray-500">Director Fundador (2001)</div>
               </div>
-            ))}
+              <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]">
+                <div class="font-bold text-[#222222]">Mtra. Guadalupe Azuara</div>
+                <div class="text-[10px] text-gray-500">Directora e Investigadora</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]">
+                <div class="font-bold text-[#222222]">Mtra. Liliana Chuzeville</div>
+                <div class="text-[10px] text-gray-500">Directora General Actual</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Alianza Estratégica con la UJAT (+24 Años) -->
+      <div class="lg:col-span-5 bg-gradient-to-br from-[#1C1814] to-[#25201B] p-8 sm:p-10 rounded-3xl border border-[#3A2E26] text-white shadow-elevated flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#EF7B38] animate-pulse"></span>
+            <span class="text-xs font-title font-bold uppercase tracking-widest text-[#F5DEB3]">
+              Convenio Interinstitucional Vigente
+            </span>
+          </div>
+
+          <h3 class="text-2xl font-title font-black text-white">
+            Alianza Estratégica con la UJAT
+          </h3>
+
+          <p class="text-xs font-serif italic text-gray-300 leading-relaxed">
+            Convenio oficial con más de <strong class="text-[#F5DEB3]">24 años de vigencia ininterrumpida</strong>, refrendado públicamente entre el Rector de la UJAT, <strong class="text-white">Lic. Guillermo Narváez Osorio</strong>, y la Directora General de la Escuela, <strong class="text-white">Mtra. Liliana Chuzeville Córdoba</strong>.
+          </p>
+
+          <ul class="space-y-3 text-xs font-sans text-gray-200">
+            {IDENTIDAD_ESCUELA.alianzaUjat.beneficios.map((beneficio) => (
+              <li class="flex items-start gap-2">
+                <span class="text-[#EF7B38] font-bold text-sm">✓</span>
+                <span>{beneficio}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-black/40 border border-[#3A2E26] text-center">
+          <span class="text-[10px] font-title font-bold uppercase tracking-widest text-[#EF7B38] block mb-1">
+            Plataforma de Práctica Profesional
+          </span>
+          <span class="text-xs font-serif italic text-[#F5DEB3]">
+            Programa «Emergiendo desde las Palabras» en TV UJAT
+          </span>
+        </div>
+      </div>
+
     </div>
 
-    <div class="mb-12">
-      <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] mb-6 flex items-center gap-3">
-        <span class="w-2.5 h-6 bg-[#EF7B38] rounded-full inline-block"></span>
-        Oferta Curricular con Validez Institucional
-      </h3>
+    <!-- ================================================================= -->
+    <!-- 3. OFERTA CURRICULAR: 4 DIPLOMADOS & PERIODISMO EN 11 MÓDULOS     -->
+    <!-- ================================================================= -->
+    <div class="space-y-8">
+      
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-3 border-b border-[#E6DCCE]">
+        <div>
+          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Oferta Académica Formal</span>
+          <h3 class="text-2xl sm:text-3xl font-title font-bold text-[#222222] mt-0.5">Diplomados con Validez Curricular</h3>
+        </div>
+        <div class="flex items-center gap-3 text-xs font-title text-[#555555]">
+          <span>📋 Asistencia Mínima: <strong>90%</strong></span>
+          <span>•</span>
+          <span>Promedio Aprobatorio: <strong>8.0</strong></span>
+        </div>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {DIPLOMADOS_GOROSTIZA.map((diplomado) => (
-          <div class="bg-white p-6 sm:p-8 rounded-xl border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-start mb-3">
-                <span class="text-xs font-title font-bold tracking-wider uppercase px-2.5 py-1 bg-[#F5EFE6] text-[#222222] rounded-md">
-                  {diplomado.duracion}
-                </span>
-                <span class="text-xs text-[#EF7B38] font-bold font-title">
-                  {diplomado.modulos} Módulos
-                </span>
-              </div>
-              <h4 class="text-xl font-title font-bold text-[#222222] mb-2">{diplomado.nombre}</h4>
-              <p class="text-xs font-sans text-[#555555] mb-4 leading-relaxed">{diplomado.objetivo}</p>
+        {DIPLOMADOS_GOROSTIZA.map((d) => (
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition-all flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
               
-              <div class="mb-4">
-                <div class="text-xs font-title font-semibold text-[#222222] uppercase tracking-wider mb-2">Materias y Módulos:</div>
-                <ul class="text-xs text-[#555555] space-y-1 list-disc list-inside font-sans">
-                  {diplomado.materiasClave.map((materia) => (
-                    <li>{materia}</li>
-                  ))}
-                </ul>
+              <div class="flex justify-between items-start gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#F5EFE6] text-[#222222] text-[10px] font-title font-bold uppercase tracking-wider">
+                  {d.duracion}
+                </span>
+                <span class="text-xs font-title font-bold text-[#EF7B38]">
+                  {d.modulosCount} Módulos
+                </span>
               </div>
+
+              <div>
+                <h4 class="text-xl font-title font-black text-[#222222] leading-snug">{d.nombre}</h4>
+                <p class="text-xs font-serif italic text-[#B8860B] mt-0.5">{d.perfilEgresado}</p>
+              </div>
+
+              <div class="space-y-1 text-xs text-[#555555]">
+                <strong class="text-[#222222] font-title text-[11px] uppercase tracking-wider block">Dirigido a:</strong>
+                <p class="leading-relaxed">{d.dirigidoA}</p>
+              </div>
+
+              <!-- Materias o Desglose de Módulos -->
+              <div class="pt-3 border-t border-[#E6DCCE] space-y-2">
+                <strong class="text-[#222222] font-title text-[11px] uppercase tracking-wider block">
+                  {d.id === 'periodismo-cultural' ? 'Plan de Estudios (11 Módulos Detallados):' : 'Contenido y Ejes Temáticos:'}
+                </strong>
+                
+                {d.modulosDetallados ? (
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-[#555555]">
+                    {d.modulosDetallados.map((m) => (
+                      <div class="flex items-center gap-1.5 p-1.5 rounded-lg bg-[#FDFBF7] border border-[#E6DCCE]/60">
+                        <span class="w-4 h-4 rounded-full bg-[#EF7B38]/15 text-[#EF7B38] text-[9px] font-bold flex items-center justify-center shrink-0">
+                          {m.numero}
+                        </span>
+                        <span class="truncate">{m.nombre}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-1 text-xs text-[#555555] list-disc list-inside">
+                    {d.materiasClave.map((materia) => (
+                      <li class="truncate">{materia}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
             </div>
 
-            <div class="pt-4 border-t border-[#E6DCCE] flex items-center justify-between">
-              <span class="text-xs text-[#777777] font-serif italic">Aval: UJAT / LVT</span>
+            <div class="pt-4 border-t border-[#E6DCCE] flex justify-between items-center">
+              <span class="text-xs font-serif italic text-gray-500">Aval: UJAT & LVT, A.C.</span>
               <a 
-                href={`https://wa.me/522205889391?text=Deseo%20informes%20e%20inscripción%20para%20el%20${encodeURIComponent(diplomado.nombre)}`}
-                target="_blank"
-                rel="noopener"
-                class="inline-flex items-center text-xs font-title font-bold text-[#EF7B38] hover:text-[#D96620] transition-colors"
+                href={`https://wa.me/522205889391?text=Hola%20Mesa%20Directiva%20LVT,%20deseo%20informes%20e%20inscripción%20para%20el%20${encodeURIComponent(d.nombre)}.`}
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="px-4 py-2 rounded-xl bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-sm"
               >
-                Solicitar Ficha &rarr;
+                Solicitar Inscripción &rarr;
               </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Franja de Talleres Libres Complementarios -->
+      <div class="bg-[#F5EFE6] p-6 sm:p-8 rounded-2xl border border-[#E6DCCE] flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="space-y-1 text-center sm:text-left">
+          <span class="text-xs font-title font-bold uppercase tracking-wider text-[#EF7B38]">Cursos y Talleres Libres</span>
+          <p class="text-xs font-serif italic text-[#555555]">
+            Capacitación continua en: Poesía, Cuento, Redacción y Ortografía Ejecutiva, Oratoria, Corrección de Estilo y Guionismo.
+          </p>
+        </div>
+        <a 
+          href="https://wa.me/522205889391?text=Deseo%20información%20sobre%20los%20talleres%20libres%20de%20la%20Escuela%20de%20Escritores%20Gorostiza."
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-5 py-2.5 rounded-xl bg-white border border-[#E6DCCE] hover:border-[#EF7B38] text-[#222222] font-title text-xs font-bold uppercase tracking-wider transition shadow-sm shrink-0"
+        >
+          Consultar Próximo Taller
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 4. CLAUSTRO DOCENTE Y MAESTROS HISTÓRICOS                         -->
+    <!-- ================================================================= -->
+    <div class="space-y-6">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Excelencia Académica</span>
+        <h3 class="text-2xl sm:text-3xl font-title font-bold text-[#222222]">Claustro Docente y Maestros Históricos</h3>
+        <p class="text-xs font-serif italic text-[#555555]">
+          Escritores, catedráticos e investigadores que han forjado el prestigio de la institución desde 2001:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {CLAUSTRO_DOCENTE_HISTORICO.map((docente) => (
+          <div class="bg-white p-6 rounded-2xl border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[9px] font-title font-bold uppercase tracking-wider inline-block">
+                {docente.cargo}
+              </span>
+              <h4 class="text-base font-title font-bold text-[#222222]">{docente.nombre}</h4>
+              <p class="text-xs font-serif italic text-[#555555] leading-relaxed">{docente.trayectoria}</p>
+            </div>
+            <div class="pt-3 border-t border-[#E6DCCE] text-[11px] text-[#777777] font-sans">
+              <strong class="text-[#222222] font-semibold">Cátedras:</strong> {docente.materias}
             </div>
           </div>
         ))}
       </div>
     </div>
 
-    <div class="bg-[#222222] text-[#FDFBF7] p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="space-y-2">
-        <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Publicación de Egresados 2024</span>
-        <h4 class="text-2xl font-title font-black">"Escuela con sus plumas de ceiba"</h4>
-        <p class="text-sm text-stone-300 font-serif italic max-w-2xl">
-          Generación Guadalupe Azuara. Compendio cuatridimensional con las obras de titulación en Poesía, Cuento, Ensayo e Investigación avalado por la Escuela Gorostiza y UJAT.
+    <!-- ================================================================= -->
+    <!-- 5. PROYECCIÓN ESTUDIANTIL, ANTOLOGÍA 2024 Y CERTÁMENES            -->
+    <!-- ================================================================= -->
+    <div class="bg-[#1C1814] text-white p-8 sm:p-12 rounded-3xl border border-[#3A2E26] shadow-elevated grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <div class="lg:col-span-7 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EF7B38]/20 border border-[#EF7B38]/40 text-[#EF7B38] text-xs font-title font-bold uppercase tracking-widest">
+          Publicación de Titulación Oficial
+        </div>
+
+        <h3 class="text-2xl sm:text-4xl font-title font-black text-white leading-tight">
+          «Escuela con sus plumas de ceiba»
+        </h3>
+
+        <p class="text-xs sm:text-sm font-serif italic text-gray-300 leading-relaxed">
+          Antología anual de graduados (Generación Guadalupe Azuara Forcelledo 2022–2023, publicada en 2024 / <strong class="text-[#F5DEB3]">ISBN 978-607-606-668-3</strong>). Compendio cuatridimensional con obras de titulación en Poesía, Narrativa, Investigación y Ensayo.
+        </p>
+
+        <div class="flex flex-wrap gap-4 text-xs font-title text-gray-300 pt-2">
+          <span>🏛️ Recitales: Galería El Jaguar Despertado</span>
+          <span>•</span>
+          <span>Casa Mora (Casa del Escritor)</span>
+          <span>•</span>
+          <span>Instituto Juárez</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 bg-black/50 p-6 rounded-2xl border border-[#3A2E26] text-center space-y-4">
+        <span class="text-xs font-title font-bold uppercase tracking-widest text-[#C59B27] block">
+          Plataforma de Difusión Gratuita
+        </span>
+        <p class="text-xs text-gray-300 font-serif italic leading-relaxed">
+          Los egresados cuentan con espacios de publicación editorial, emisión televisiva en TV UJAT y participación directa en el Certamen Estatal «Un Soneto por Sor Juana».
+        </p>
+        <a 
+          href="#publicaciones" 
+          class="inline-block px-6 py-3 rounded-xl bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-md"
+        >
+          Ver Antología en Catálogo
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 6. UBICACIÓN, HORARIOS Y ATENCIÓN A ASPIRANTES                    -->
+    <!-- ================================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-3xl border border-[#E6DCCE] shadow-subtle">
+      
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="text-lg">📍</span>
+          <h4 class="font-title font-bold text-base text-[#222222]">Sede y Ubicación Física</h4>
+        </div>
+        <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+          <strong>{IDENTIDAD_ESCUELA.ubicacion.sede}</strong><br/>
+          {IDENTIDAD_ESCUELA.ubicacion.direccion}
         </p>
       </div>
-      <a 
-        href="#publicaciones" 
-        class="whitespace-nowrap px-6 py-3 bg-[#EF7B38] hover:bg-[#D96620] text-white text-xs font-title font-bold tracking-wider uppercase rounded-xl transition-all shadow-md"
-      >
-        Ver en Librería
-      </a>
+
+      <div class="space-y-3 border-t md:border-t-0 md:border-l border-[#E6DCCE] pt-4 md:pt-0 md:pl-6">
+        <div class="flex items-center gap-2">
+          <span class="text-lg">🕒</span>
+          <h4 class="font-title font-bold text-base text-[#222222]">Horarios de Clases y Atención</h4>
+        </div>
+        <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+          {IDENTIDAD_ESCUELA.ubicacion.horarios}
+        </p>
+        <a 
+          href="https://wa.me/522205889391?text=Hola,%20deseo%20agendar%20una%20visita%20o%20solicitar%20informes%20de%20la%20Escuela%20de%20Escritores%20Gorostiza." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs font-title font-bold text-[#EF7B38] hover:text-[#D96620]"
+        >
+          <span>Contactar Coordinación Académica por WhatsApp &rarr;</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 7. NOTA DE DIFERENCIACIÓN TÉCNICA OBLIGATORIA                    -->
+    <!-- ================================================================= -->
+    <div class="bg-amber-50/80 p-6 sm:p-8 rounded-2xl border border-amber-200 text-[#222222] space-y-3">
+      <div class="flex items-center gap-2 text-[#C59B27] font-title font-bold text-xs uppercase tracking-wider">
+        <span>⚠️ Nota de Diferenciación Técnica e Institucional</span>
+      </div>
+
+      <p class="text-xs font-sans text-gray-700 leading-relaxed">
+        Para evitar confusiones frecuentes entre los visitantes y postulantes en Villahermosa, es indispensable distinguir:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-sans pt-1">
+        <div class="p-3.5 rounded-xl bg-white border border-amber-200 shadow-xs">
+          <strong class="text-[#EF7B38] font-title block mb-1">Escuela de Escritores «José Gorostiza»:</strong>
+          {IDENTIDAD_ESCUELA.diferenciacionInstitucional.escuelaGorostiza}
+        </div>
+        <div class="p-3.5 rounded-xl bg-white border border-amber-200 shadow-xs">
+          <strong class="text-gray-700 font-title block mb-1">Casa de Artes «José Gorostiza»:</strong>
+          {IDENTIDAD_ESCUELA.diferenciacionInstitucional.casaArtesGorostiza}
+        </div>
+      </div>
     </div>
 
   </div>
