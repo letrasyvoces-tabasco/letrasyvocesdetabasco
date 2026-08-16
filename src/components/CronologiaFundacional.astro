@@ -1,0 +1,76 @@
+---
+import { CRONOLOGIA_DIRECTIVA, CUADRO_FUNDADORES } from '../data/historia';
+---
+
+<section id="historia-fundacional" class="py-24 bg-[#F5EFE6] text-[#222222] border-b border-[#E6DCCE]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#222222] text-white text-xs font-title font-bold tracking-widest uppercase rounded-full mb-4">
+        Memoria Institucional 1987 – 2026
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-title font-black tracking-tight text-[#222222]">
+        Trayectoria, Cuadro Fundacional y <span class="text-[#EF7B38]">Gobernanza</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg font-serif italic text-[#555555]">
+        Casi cuatro décadas de labor ininterrumpida articulando la representación del gremio de escritores tabasqueños y proyectando su producción hacia el ámbito internacional.
+      </p>
+    </div>
+
+    <div class="mb-20">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h3 class="text-2xl font-title font-bold text-[#222222]">Cuadro Fundacional de 1987</h3>
+          <p class="text-xs sm:text-sm font-sans text-[#555555]">Pioneros, intelectuales y cronistas que constituyeron formalmente la asociación civil.</p>
+        </div>
+        <span class="hidden sm:inline-block text-xs font-title font-bold text-[#EF7B38] uppercase tracking-wider">
+          Registro Histórico LVT
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {CUADRO_FUNDADORES.map((fundador) => (
+          <div class="bg-white p-5 rounded-xl border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition-colors">
+            <span class="text-xs font-title font-bold uppercase text-[#EF7B38]">{fundador.rol}</span>
+            <h4 class="text-base font-title font-bold text-[#222222] mt-1">{fundador.nombre}</h4>
+            <p class="text-xs font-serif italic text-[#555555] mt-1">{fundador.detalle}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-8">
+        <h3 class="text-2xl font-title font-bold text-[#222222]">Evolución Cronológica y Liderazgos</h3>
+        <p class="text-xs sm:text-sm font-sans text-[#555555]">Sucesión institucional y principales hitos editoriales y estatutarios.</p>
+      </div>
+
+      <div class="space-y-6">
+        {CRONOLOGIA_DIRECTIVA.map((gestion) => (
+          <div class="bg-white p-6 sm:p-8 rounded-2xl border border-[#E6DCCE] shadow-subtle grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-[#E6DCCE] pb-4 lg:pb-0 lg:pr-6">
+              <span class="px-3 py-1 bg-[#222222] text-[#FDFBF7] text-xs font-title font-bold rounded-md inline-block mb-3">
+                {gestion.periodo}
+              </span>
+              <h4 class="text-lg font-title font-bold text-[#222222] leading-snug">{gestion.liderazgo}</h4>
+              <p class="text-xs font-sans text-[#555555] mt-2 leading-relaxed">{gestion.descripcion}</p>
+            </div>
+
+            <div class="lg:col-span-8 flex flex-col justify-center">
+              <span class="text-xs font-title font-bold uppercase tracking-wider text-[#EF7B38] mb-2">Hitos y Acontecimientos Clave</span>
+              <ul class="space-y-2">
+                {gestion.hitos.map((hito) => (
+                  <li class="text-xs sm:text-sm font-sans text-[#444444] flex items-start gap-2">
+                    <span class="text-[#EF7B38] font-bold text-base leading-none">▪</span>
+                    <span>{hito}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

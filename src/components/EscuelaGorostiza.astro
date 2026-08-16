@@ -1,227 +1,109 @@
 ---
-// EscuelaGorostiza.astro - Filial Académica de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
-const basePath = "/letrasyvocesdetabasco";
+import { DIPLOMADOS_GOROSTIZA, CUERPO_DOCENTE_HISTORICO } from '../data/escuela';
 ---
 
-<section id="escuela-gorostiza" class="py-24 bg-white border-b border-editorial-border">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="escuela-gorostiza" class="py-24 bg-[#FDFBF7] text-[#222222] border-b border-[#E6DCCE]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
     
-    <!-- Cabecera de Sección -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-editorial-warm border border-editorial-border text-terracota font-title text-[11px] font-bold uppercase tracking-widest mb-3 shadow-subtle">
-        <span class="w-2 h-2 rounded-full bg-dorado animate-pulse"></span>
-        <span>Brazo Académico & Formación Literaria • Fundada en 2001</span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#EF7B38]/10 text-[#EF7B38] text-xs font-title font-bold tracking-widest uppercase rounded-full mb-4">
+        Filial Académica Oficial · Fundada en Septiembre de 2001
       </div>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-carbon">
-        Escuela de Escritores «José Gorostiza»
+      <h2 class="text-3xl sm:text-5xl font-title font-black tracking-tight text-[#222222]">
+        Escuela de Escritores <span class="text-[#EF7B38]">"José Gorostiza"</span>
       </h2>
-      <p class="text-sm sm:text-base text-gray-600 mt-3 font-light leading-relaxed">
-        Centro de especialización técnica, teórica y práctica para narradores, poetas, redactores y periodistas culturales, con el aval académico formal de la Universidad Juárez Autónoma de Tabasco (UJAT).
+      <p class="mt-4 text-base sm:text-lg font-serif italic text-[#555555]">
+        Brazo formativo de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., con el aval académico formal de la Universidad Juárez Autónoma de Tabasco (UJAT).
       </p>
-      <div class="w-20 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <!-- Bloque 1: Reseña Fundacional y Primer Director Mario de Lille Fuentes -->
-    <div class="grid lg:grid-cols-12 gap-10 items-center mb-16">
-      
-      <div class="lg:col-span-7 space-y-6">
-        <div class="space-y-3">
-          <span class="text-xs font-title font-bold text-dorado uppercase tracking-widest block">
-            Origen y Vocación Pedagógica
-          </span>
-          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-carbon leading-snug">
-            Casi un cuarto de siglo forjando la técnica y el rigor de las letras en el Sureste.
-          </h3>
-        </div>
-
-        <p class="text-gray-700 font-light text-sm sm:text-base leading-relaxed">
-          En <strong>septiembre de 2001</strong>, la Sociedad de Escritores "Letras y Voces de Tabasco", A.C. materializó uno de sus mayores anhelos institucionales: la creación de su filial formativa, la <strong>Escuela de Escritores «José Gorostiza»</strong>.
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 bg-white p-8 sm:p-10 rounded-2xl border border-[#E6DCCE] shadow-subtle">
+      <div class="lg:col-span-7 space-y-4">
+        <h3 class="text-2xl font-title font-bold text-[#222222]">Modelo Pedagógico y Sede Histórica</h3>
+        <p class="font-sans text-sm sm:text-base text-[#555555] leading-relaxed">
+          Inaugurada en septiembre de 2001, la Escuela de Escritores nació para dotar al estado de Tabasco de un centro de formación técnica, teórica y práctica en las letras. Bajo el liderazgo de su primer director, el escritor <strong class="text-[#222222]">Mario de Lille Fuentes</strong>, se cimentó un programa que ha graduado a generaciones de poetas, narradores y periodistas culturales.
         </p>
-
-        <p class="text-gray-700 font-light text-sm sm:text-base leading-relaxed">
-          Bajo la dirección fundacional del distinguido escritor <strong>Mario de Lille Fuentes</strong> —novelista, cuentista, poeta y dramaturgo—, la institución estableció un modelo pedagógico de alto rendimiento que dotó a Tabasco de una cantera permanente de creadores con dominio de la preceptiva, la métrica, el análisis crítico y la narrativa contemporánea.
-        </p>
-
-        <div class="p-5 rounded-2xl bg-editorial-warm border border-editorial-border flex items-start gap-4">
-          <div class="w-10 h-10 rounded-xl bg-terracota/10 text-terracota flex items-center justify-center shrink-0 mt-0.5">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-          </div>
-          <div class="text-xs text-gray-700 space-y-1 font-light">
-            <strong class="font-bold text-carbon block font-title uppercase tracking-wider text-[11px]">Sede Física e Histórica:</strong>
-            <span>Calle Centenario del Instituto Juárez s/n, Colonia Reforma, Villahermosa, Tabasco (Antigua División Académica de Ciencias Sociales y Humanidades — DACSyH UJAT, detrás del edificio de la Fundación UJAT).</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cuadro de Honor: Claustro Docente Histórico -->
-      <div class="lg:col-span-5">
-        <div class="p-8 rounded-3xl bg-editorial border border-editorial-border shadow-subtle space-y-6">
-          <div class="border-b border-editorial-border pb-4">
-            <span class="text-[10px] font-title font-bold text-terracota uppercase tracking-widest block mb-1">Cuerpo Académico</span>
-            <h4 class="font-serif text-xl font-bold text-carbon">Claustro Docente Histórico</h4>
-            <p class="text-xs text-gray-500 font-light mt-1">Catedráticos e investigadores que han impartido cátedra en la filial:</p>
-          </div>
-
-          <div class="space-y-3.5">
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white border border-editorial-border">
-              <span class="w-8 h-8 rounded-full bg-dorado/15 text-dorado flex items-center justify-center font-bold text-xs">01</span>
-              <div>
-                <h5 class="font-serif text-sm font-bold text-carbon">Mario de Lille Fuentes</h5>
-                <span class="text-[11px] text-gray-500 font-light">Primer Director · Narrativa, Novela y Dramaturgia</span>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white border border-editorial-border">
-              <span class="w-8 h-8 rounded-full bg-dorado/15 text-dorado flex items-center justify-center font-bold text-xs">02</span>
-              <div>
-                <h5 class="font-serif text-sm font-bold text-carbon">Fernando Nieto Cadena</h5>
-                <span class="text-[11px] text-gray-500 font-light">Poesía Contemporánea y Crítica de Texto</span>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white border border-editorial-border">
-              <span class="w-8 h-8 rounded-full bg-dorado/15 text-dorado flex items-center justify-center font-bold text-xs">03</span>
-              <div>
-                <h5 class="font-serif text-sm font-bold text-carbon">Rodrigo Arteaga Portillo</h5>
-                <span class="text-[11px] text-gray-500 font-light">Técnicas Narrativas y Guionismo</span>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white border border-editorial-border">
-              <span class="w-8 h-8 rounded-full bg-dorado/15 text-dorado flex items-center justify-center font-bold text-xs">04</span>
-              <div>
-                <h5 class="font-serif text-sm font-bold text-carbon">Ana Livia Salinas</h5>
-                <span class="text-[11px] text-gray-500 font-light">Periodismo Cultural y Taller de Crónica</span>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white border border-editorial-border">
-              <span class="w-8 h-8 rounded-full bg-dorado/15 text-dorado flex items-center justify-center font-bold text-xs">05</span>
-              <div>
-                <h5 class="font-serif text-sm font-bold text-carbon">Rebeca Díaz Suárez</h5>
-                <span class="text-[11px] text-gray-500 font-light">Lírica Clásica y Coordinación Docente</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bloque 2: Los 4 Diplomados con Aval UJAT -->
-    <div class="space-y-8">
-      <div class="text-center max-w-2xl mx-auto">
-        <span class="text-[11px] font-title font-bold text-terracota uppercase tracking-widest block mb-1">
-          Oferta Curricular Institucional
-        </span>
-        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-carbon">
-          Diplomados Universitarios Especializados
-        </h3>
-        <p class="text-xs text-gray-500 font-light mt-1">
-          Programas modulares diseñados para profesionalizar el oficio de las letras y la comunicación cultural:
+        <p class="font-sans text-sm sm:text-base text-[#555555] leading-relaxed">
+          Su sede opera históricamente en la calle Centenario del Instituto Juárez s/n, Colonia Reforma, al interior de la antigua División Académica de Ciencias Sociales y Humanidades (<strong class="text-[#222222]">DACSyH - UJAT</strong>), detrás del edificio de la Fundación UJAT en Villahermosa.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Diplomado 1: Creación Literaria -->
-        <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated hover:-translate-y-1 transition duration-300">
-          <div>
-            <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center mb-4 font-serif text-xl font-bold">
-              01
-            </div>
-            <span class="text-[10px] font-title font-bold text-terracota uppercase tracking-wider block mb-1">Programa Central</span>
-            <h4 class="font-serif text-xl font-bold text-carbon mb-2">Creación Literaria</h4>
-            <p class="text-xs text-gray-600 font-light leading-relaxed">
-              Desarrollo integral de competencias y técnicas en los seis géneros fundamentales: <strong>cuento, novela, poesía, teatro, guionismo y ensayo</strong>.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-editorial-border text-[11px] font-mono text-gray-500">
-            Aval: UJAT & SET LVT
+      <div class="lg:col-span-5 bg-[#F5EFE6] p-6 rounded-xl border border-[#E6DCCE] flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-title font-bold uppercase tracking-wider text-[#EF7B38]">Cuerpo Docente Histórico</span>
+          <div class="mt-4 space-y-3">
+            {CUERPO_DOCENTE_HISTORICO.map((docente) => (
+              <div class="border-b border-[#E6DCCE] pb-2 last:border-0">
+                <div class="font-title font-bold text-sm text-[#222222]">{docente.nombre}</div>
+                <div class="text-xs text-[#EF7B38] font-medium">{docente.cargo}</div>
+                <div class="text-xs text-[#555555] font-serif italic mt-0.5">{docente.semblanza}</div>
+              </div>
+            ))}
           </div>
         </div>
-
-        <!-- Diplomado 2: Formación Literaria -->
-        <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated hover:-translate-y-1 transition duration-300">
-          <div>
-            <div class="w-12 h-12 rounded-2xl bg-dorado/15 text-dorado flex items-center justify-center mb-4 font-serif text-xl font-bold">
-              02
-            </div>
-            <span class="text-[10px] font-title font-bold text-dorado uppercase tracking-wider block mb-1">Capacitación Docente</span>
-            <h4 class="font-serif text-xl font-bold text-carbon mb-2">Formación Literaria</h4>
-            <p class="text-xs text-gray-600 font-light leading-relaxed">
-              Formación pedagógica y metodológica diseñada para profesores de <strong>español, literatura, humanidades y mediadores de lectura</strong>.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-editorial-border text-[11px] font-mono text-gray-500">
-            Aval: UJAT & SET LVT
-          </div>
-        </div>
-
-        <!-- Diplomado 3: Periodismo Cultural -->
-        <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated hover:-translate-y-1 transition duration-300">
-          <div>
-            <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center mb-4 font-serif text-xl font-bold">
-              03
-            </div>
-            <span class="text-[10px] font-title font-bold text-terracota uppercase tracking-wider block mb-1">325 Horas · 11 Módulos</span>
-            <h4 class="font-serif text-xl font-bold text-carbon mb-2">Periodismo Cultural</h4>
-            <p class="text-xs text-gray-600 font-light leading-relaxed">
-              Especialización rigurosa en <strong>crónica, reseña crítica, entrevista a profundidad, reportaje de fondo, ética y periodismo digital</strong>.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-editorial-border text-[11px] font-mono text-gray-500">
-            Aval: UJAT & SET LVT
-          </div>
-        </div>
-
-        <!-- Diplomado 4: Redacción Profesional -->
-        <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated hover:-translate-y-1 transition duration-300">
-          <div>
-            <div class="w-12 h-12 rounded-2xl bg-dorado/15 text-dorado flex items-center justify-center mb-4 font-serif text-xl font-bold">
-              04
-            </div>
-            <span class="text-[10px] font-title font-bold text-dorado uppercase tracking-wider block mb-1">Técnica Superior</span>
-            <h4 class="font-serif text-xl font-bold text-carbon mb-2">Redacción Profesional</h4>
-            <p class="text-xs text-gray-600 font-light leading-relaxed">
-              Dominio de la <strong>ortografía avanzada, sintaxis, gramática estructural y corrección de estilo</strong> para entornos editoriales e institucionales.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-editorial-border text-[11px] font-mono text-gray-500">
-            Aval: UJAT & SET LVT
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <!-- Bloque 3: Antología de Egresados y Llamado a la Acción -->
-    <div class="mt-16 p-8 sm:p-10 rounded-3xl bg-editorial-warm border border-editorial-border flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+    <div class="mb-12">
+      <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] mb-6 flex items-center gap-3">
+        <span class="w-2.5 h-6 bg-[#EF7B38] rounded-full inline-block"></span>
+        Oferta Curricular con Validez Institucional
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {DIPLOMADOS_GOROSTIZA.map((diplomado) => (
+          <div class="bg-white p-6 sm:p-8 rounded-xl border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-3">
+                <span class="text-xs font-title font-bold tracking-wider uppercase px-2.5 py-1 bg-[#F5EFE6] text-[#222222] rounded-md">
+                  {diplomado.duracion}
+                </span>
+                <span class="text-xs text-[#EF7B38] font-bold font-title">
+                  {diplomado.modulos} Módulos
+                </span>
+              </div>
+              <h4 class="text-xl font-title font-bold text-[#222222] mb-2">{diplomado.nombre}</h4>
+              <p class="text-xs font-sans text-[#555555] mb-4 leading-relaxed">{diplomado.objetivo}</p>
+              
+              <div class="mb-4">
+                <div class="text-xs font-title font-semibold text-[#222222] uppercase tracking-wider mb-2">Materias y Módulos:</div>
+                <ul class="text-xs text-[#555555] space-y-1 list-disc list-inside font-sans">
+                  {diplomado.materiasClave.map((materia) => (
+                    <li>{materia}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+              <span class="text-xs text-[#777777] font-serif italic">Aval: UJAT / LVT</span>
+              <a 
+                href={`https://wa.me/522205889391?text=Deseo%20informes%20e%20inscripción%20para%20el%20${encodeURIComponent(diplomado.nombre)}`}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center text-xs font-title font-bold text-[#EF7B38] hover:text-[#D96620] transition-colors"
+              >
+                Solicitar Ficha &rarr;
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="bg-[#222222] text-[#FDFBF7] p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="space-y-2">
-        <span class="text-[10px] font-title font-bold uppercase tracking-widest text-terracota block">
-          Publicación Académica Anual
-        </span>
-        <h4 class="font-serif text-xl sm:text-2xl font-bold text-carbon">
-          Antología: «Escuela con sus plumas de ceiba» (2024)
-        </h4>
-        <p class="text-xs sm:text-sm text-gray-600 font-light max-w-2xl">
-          Compendio cuatripartito que reúne los trabajos de graduación en poesía, cuento, ensayo e investigación literaria de los egresados de la Generación Guadalupe Azuara Forcelledo.
+        <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Publicación de Egresados 2024</span>
+        <h4 class="text-2xl font-title font-black">"Escuela con sus plumas de ceiba"</h4>
+        <p class="text-sm text-stone-300 font-serif italic max-w-2xl">
+          Generación Guadalupe Azuara. Compendio cuatridimensional con las obras de titulación en Poesía, Cuento, Ensayo e Investigación avalado por la Escuela Gorostiza y UJAT.
         </p>
       </div>
-
       <a 
-        href="https://wa.me/522205889391?text=Hola%20Mesa%20Directiva,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20los%20Diplomados%20y%20Talleres%20de%20la%20Escuela%20de%20Escritores%20Jos%C3%A9%20Gorostiza." 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-carbon text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota shadow-elevated transition shrink-0"
+        href="#antologias" 
+        class="whitespace-nowrap px-6 py-3 bg-[#EF7B38] hover:bg-[#D96620] text-white text-xs font-title font-bold tracking-wider uppercase rounded-xl transition-all shadow-md"
       >
-        <span>Solicitar Informes de Diplomados</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-        </svg>
+        Ver en Librería
       </a>
     </div>
 

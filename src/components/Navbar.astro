@@ -2,34 +2,34 @@
 const basePath = "/letrasyvocesdetabasco";
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-editorial-border transition-all duration-300 shadow-sm">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#E6DCCE] transition-all duration-300 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-22 sm:h-24">
+    <div class="flex justify-between items-center h-20 sm:h-22">
       
-      <!-- Logotipo Oficial Vectorial SVG Grande -->
-      <a href="#inicio" class="flex items-center space-x-3 group py-2" aria-label="Ir al inicio de Letras y Voces de Tabasco">
+      <!-- Logotipo Oficial Vectorial SVG -->
+      <a href="#inicio" class="flex items-center space-x-3 group py-1" aria-label="Ir al inicio de Letras y Voces de Tabasco">
         <img 
           src={`${basePath}/assets/logos/LVT Logo Hor 1 Original.svg`} 
           alt="Sociedad de Escritores Letras y Voces de Tabasco, A.C." 
-          class="h-12 sm:h-14 lg:h-16 w-auto object-contain logo-blend group-hover:scale-102 transition duration-300"
+          class="h-10 sm:h-12 lg:h-14 w-auto object-contain group-hover:scale-102 transition duration-300"
           onerror="this.src='/letrasyvocesdetabasco/assets/logos/LVT Logo Hor 1 Original.png'" 
         />
       </a>
 
-      <!-- Navegación de Escritorio Espaciosa y Completa -->
-      <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 font-title text-[10px] xl:text-[11px] font-bold tracking-wider uppercase text-carbon">
-        <a href="#inicio" class="hover:text-terracota transition-colors py-2">Inicio</a>
-        <a href="#quienes-somos" class="hover:text-terracota transition-colors py-2">Historia 1987</a>
-        <a href="#escuela-gorostiza" class="hover:text-dorado transition-colors py-2 text-carbon">Escuela Gorostiza</a>
-        <a href="#antologias" class="hover:text-terracota transition-colors py-2">Fondo Editorial</a>
-        <a href="#voces" class="hover:text-dorado transition-colors py-2 flex items-center gap-1.5 text-dorado font-bold">
-          <span class="w-2 h-2 rounded-full bg-dorado animate-ping"></span>
+      <!-- Navegación de Escritorio -->
+      <nav class="hidden xl:flex items-center space-x-5 font-title text-[11px] font-bold tracking-wider uppercase text-[#222222]">
+        <a href="#inicio" class="hover:text-[#EF7B38] transition-colors py-2">Inicio</a>
+        <a href="#quienes-somos" class="hover:text-[#EF7B38] transition-colors py-2">Historia 1987</a>
+        <a href="#escuela-gorostiza" class="hover:text-[#B8860B] transition-colors py-2 text-[#222222]">Escuela Gorostiza</a>
+        <a href="#publicaciones" class="hover:text-[#EF7B38] transition-colors py-2">Fondo Editorial</a>
+        <a href="#voces" class="hover:text-[#B8860B] transition-colors py-2 flex items-center gap-1.5 text-[#B8860B] font-bold">
+          <span class="w-2 h-2 rounded-full bg-[#B8860B] animate-ping"></span>
           Voces & Fonoteca
         </a>
-        <a href="#gobernanza" class="hover:text-terracota transition-colors py-2">Gobernanza</a>
-        <a href="#convocatorias" class="hover:text-terracota transition-colors py-2">Certámenes</a>
-        <a href="#rifa" class="hover:text-terracota transition-colors py-2 flex items-center gap-1 text-terracota font-bold">
-          <span class="w-1.5 h-1.5 rounded-full bg-terracota animate-pulse"></span>
+        <a href="#solvencia" class="hover:text-[#EF7B38] transition-colors py-2">Solvencia</a>
+        <a href="#convocatorias" class="hover:text-[#EF7B38] transition-colors py-2">Certámenes</a>
+        <a href="#rifa" class="hover:text-[#EF7B38] transition-colors py-2 flex items-center gap-1 text-[#EF7B38] font-bold">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#EF7B38] animate-pulse"></span>
           Rifa 2026
         </a>
       </nav>
@@ -40,7 +40,7 @@ const basePath = "/letrasyvocesdetabasco";
           href="https://wa.me/522205889391" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="p-2.5 rounded-full bg-editorial-warm border border-editorial-border text-green-700 hover:bg-green-50 hover:border-green-300 transition shadow-subtle hover:scale-105" 
+          class="p-2.5 rounded-full bg-[#F5EFE6] border border-[#E6DCCE] text-green-700 hover:bg-green-50 hover:border-green-300 transition shadow-sm hover:scale-105" 
           title="Atención Directa por WhatsApp Oficial"
           aria-label="Atención Directa por WhatsApp Oficial"
         >
@@ -48,18 +48,18 @@ const basePath = "/letrasyvocesdetabasco";
         </a>
         <a 
           href="#contacto" 
-          class="px-5 py-2.5 rounded-full bg-terracota text-white font-title text-[11px] font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:scale-103 transition"
+          class="px-5 py-2.5 rounded-xl bg-[#EF7B38] text-white font-title text-[11px] font-bold uppercase tracking-wider hover:bg-[#D96620] shadow-sm hover:scale-103 transition"
         >
           Contacto
         </a>
       </div>
 
       <!-- Botón Menú Móvil -->
-      <div class="lg:hidden flex items-center">
+      <div class="xl:hidden flex items-center">
         <button 
           id="mobile-toggle" 
           type="button" 
-          class="text-carbon hover:text-terracota focus:outline-none p-2.5 rounded-2xl bg-editorial-warm border border-editorial-border" 
+          class="text-[#222222] hover:text-[#EF7B38] focus:outline-none p-2 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]" 
           aria-label="Abrir menú de navegación"
         >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,17 +71,18 @@ const basePath = "/letrasyvocesdetabasco";
   </div>
 
   <!-- Menú Móvil Desplegable -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-editorial-warm border-b border-editorial-border px-6 pt-4 pb-6 space-y-2.5 font-title text-xs font-bold uppercase tracking-wider shadow-elevated max-h-[80vh] overflow-y-auto">
-    <a href="#inicio" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Inicio</a>
-    <a href="#quienes-somos" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Historia & Fundadores (1987)</a>
-    <a href="#escuela-gorostiza" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-dorado transition text-dorado font-bold">Escuela de Escritores «José Gorostiza»</a>
-    <a href="#antologias" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Fondo Editorial (12 Obras)</a>
-    <a href="#voces" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-dorado transition">Voces & Fonoteca Audiovisual</a>
-    <a href="#autores" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Padrón de Escritores</a>
-    <a href="#gobernanza" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Gobernanza & Descargas PDF</a>
-    <a href="#convocatorias" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition text-terracota">Certámenes & Convocatorias</a>
-    <a href="#galeria" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Eventos y Archivo Histórico</a>
-    <a href="#rifa" class="block px-4 py-2.5 rounded-2xl bg-terracota text-white text-center shadow-md">Iniciativa Pro-Fondos ($100 MXN)</a>
-    <a href="#contacto" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition text-center border border-editorial-border">Contacto Oficial</a>
+  <div id="mobile-menu" class="hidden xl:hidden bg-[#FDFBF7] border-b border-[#E6DCCE] px-6 pt-4 pb-6 space-y-2 font-title text-xs font-bold uppercase tracking-wider shadow-lg max-h-[80vh] overflow-y-auto">
+    <a href="#inicio" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition">Inicio</a>
+    <a href="#quienes-somos" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition">Historia & Fundadores (1987)</a>
+    <a href="#escuela-gorostiza" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#B8860B] transition text-[#B8860B] font-bold">Escuela de Escritores «José Gorostiza»</a>
+    <a href="#publicaciones" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition">Fondo Editorial (11 Libros)</a>
+    <a href="#voces" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#B8860B] transition">Voces & Fonoteca Audiovisual</a>
+    <a href="#autores" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition">Padrón de Escritores</a>
+    <a href="#solvencia" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition">Solvencia & Gobernanza</a>
+    <a href="#descargas" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition">Centro de Descargas PDF</a>
+    <a href="#convocatorias" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition text-[#EF7B38]">Certámenes & Convocatorias</a>
+    <a href="#galeria" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition">Eventos y Archivo Gráfico</a>
+    <a href="#rifa" class="block px-4 py-2.5 rounded-xl bg-[#EF7B38] text-white text-center shadow-sm">Iniciativa Pro-Fondos ($100 MXN)</a>
+    <a href="#contacto" class="block px-4 py-2.5 rounded-xl hover:bg-[#F5EFE6] hover:text-[#EF7B38] transition text-center border border-[#E6DCCE]">Contacto Oficial</a>
   </div>
 </header>

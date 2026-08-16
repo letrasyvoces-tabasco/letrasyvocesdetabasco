@@ -1,352 +1,170 @@
 ---
 // Publicaciones.astro - Catálogo Editorial Exhaustivo & Fondo Bibliográfico Histórico de LVT
+import { CATALOGO_EDITORIAL } from '../data/libros';
 const basePath = "/letrasyvocesdetabasco";
 ---
 
-<section id="antologias" class="py-24 bg-white border-b border-editorial-border">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="publicaciones" class="py-24 bg-white border-b border-[#E6DCCE]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
     
     <!-- Cabecera de Sección -->
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="text-[11px] font-title font-bold text-terracota uppercase tracking-widest block mb-2">
-        Fondo Editorial & Acervo Bibliográfico
-      </span>
-      <h2 class="font-serif text-4xl sm:text-5xl font-bold text-carbon">
-        Publicaciones, Antologías y Coediciones
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#EF7B38]/10 text-[#EF7B38] text-xs font-title font-bold tracking-widest uppercase rounded-full mb-4">
+        Fondo Editorial & Acervo Bibliográfico 1987 – 2026
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-title font-black tracking-tight text-[#222222]">
+        Publicaciones, Antologías y <span class="text-[#EF7B38]">Coediciones</span>
       </h2>
-      <p class="text-sm text-gray-600 mt-2 font-light">
-        Catálogo bibliográfico producido y auspiciado por la Sociedad de Escritores Letras y Voces de Tabasco, A.C., en coedición con la UJAT, el IEC, el ICT y el FECA desde 1987.
+      <p class="mt-4 text-base sm:text-lg font-serif italic text-[#555555]">
+        Catálogo bibliográfico producido y auspiciado por la Sociedad de Escritores Letras y Voces de Tabasco, A.C., en coedición con la UJAT, el IEC, el ICT y el FECA.
       </p>
-      <div class="w-16 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <!-- Obras Insignia 2026: Animalia Literaria y A corazón abierto -->
-    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+    <!-- Obras Insignia 2026 (Portadas Originales en Alta Resolución) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
       
       <!-- Ficha 1: Animalia Literaria -->
-      <div class="bg-editorial rounded-3xl p-6 sm:p-8 border border-editorial-border shadow-subtle hover:shadow-elevated transition duration-300 flex flex-col justify-between">
-        <div class="flex flex-col sm:flex-row items-center gap-6">
-          <div class="w-44 sm:w-52 book-stage shrink-0">
-            <img 
-              src={`${basePath}/assets/portada_animalialieteraria.png`} 
-              alt="Portada del libro Animalia Literaria" 
-              class="w-full book-3d object-cover cursor-pointer rounded-r-lg shadow-md"
-              onclick="openReadingSample('animalia')"
-              loading="lazy"
-            />
-          </div>
-          <div class="space-y-3 text-center sm:text-left">
-            <span class="px-3 py-1 rounded-full bg-terracota text-white text-[10px] font-title font-bold uppercase tracking-widest inline-block shadow-sm">
-              [EN IMPRENTA 2026]
-            </span>
-            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-carbon leading-tight">Animalia Literaria</h3>
-            <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-              Mosaico vivo donde 16 escritoras y escritores entablan un diálogo directo con la fauna nativa de Tabasco a través de versos íntimos y relatos en claroscuro.
-            </p>
-            <div class="text-[11px] font-mono text-gray-500 pt-1">
-              16 Autores · 131 Páginas · Poesía & Cuento
-            </div>
-          </div>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center">
-          <span class="text-xs font-title font-bold uppercase tracking-wider text-terracota">Fondo LVT 2026</span>
-          <button 
-            type="button" 
+      <div class="bg-[#FDFBF7] rounded-2xl p-6 sm:p-8 border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition-all flex flex-col sm:flex-row items-center gap-6">
+        <div class="w-44 sm:w-48 shrink-0 flex justify-center">
+          <img 
+            src={`${basePath}/assets/portada_animalialieteraria.png`} 
+            alt="Portada oficial del libro Animalia Literaria" 
+            class="w-full max-h-64 object-contain rounded-lg shadow-md cursor-pointer hover:scale-103 transition-transform"
             onclick="openReadingSample('animalia')"
-            class="px-5 py-2.5 rounded-full bg-editorial-warm border border-editorial-border text-carbon hover:bg-terracota hover:text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-subtle cursor-pointer"
-          >
-            Leer Muestra
-          </button>
+          />
+        </div>
+        <div class="space-y-3 text-center sm:text-left flex-1">
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-[#EF7B38] text-white text-[10px] font-title font-bold uppercase tracking-wider">
+              En Imprenta 2026
+            </span>
+            <span class="text-xs font-mono text-[#777777]">131 Páginas</span>
+          </div>
+          <h3 class="text-2xl font-title font-black text-[#222222]">Animalia Literaria</h3>
+          <p class="text-xs text-[#EF7B38] font-title font-bold">16 Autores Tabasqueños · Poesía & Cuento</p>
+          <p class="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
+            Mosaico vivo donde dieciséis escritoras y escritores entablan un diálogo directo con la fauna nativa del trópico a través de versos íntimos y relatos en claroscuro.
+          </p>
+          <div class="pt-2">
+            <button 
+              type="button" 
+              onclick="openReadingSample('animalia')"
+              class="px-5 py-2 rounded-lg bg-[#222222] hover:bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-sm"
+            >
+              Leer Muestra
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Ficha 2: A corazón abierto -->
-      <div class="bg-editorial rounded-3xl p-6 sm:p-8 border border-editorial-border shadow-subtle hover:shadow-elevated transition duration-300 flex flex-col justify-between">
-        <div class="flex flex-col sm:flex-row items-center gap-6">
-          <div class="w-44 sm:w-52 book-stage shrink-0">
-            <img 
-              src={`${basePath}/assets/portada_acorazonabierto.png`} 
-              alt="Portada del libro A corazón abierto - María de los Ángeles Cervantes" 
-              class="w-full book-3d object-cover cursor-pointer rounded-r-lg shadow-md"
-              onclick="openReadingSample('corazon')"
-              loading="lazy"
-            />
-          </div>
-          <div class="space-y-3 text-center sm:text-left">
-            <span class="px-3 py-1 rounded-full bg-dorado text-white text-[10px] font-title font-bold uppercase tracking-widest inline-block shadow-sm">
-              [PRESENTACIÓN 2026]
-            </span>
-            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-carbon leading-tight">A corazón abierto</h3>
-            <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-              Obra de María de los Ángeles Cervantes Rosas presentada formalmente en la Casa Universitaria Cacao y Chocolate en mayo de 2026.
-            </p>
-            <div class="text-[11px] font-mono text-gray-500 pt-1">
-              María Cervantes · Narrativa Vivencial
-            </div>
-          </div>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center">
-          <span class="text-xs font-title font-bold uppercase tracking-wider text-dorado">Fondo LVT 2026</span>
-          <button 
-            type="button" 
+      <div class="bg-[#FDFBF7] rounded-2xl p-6 sm:p-8 border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition-all flex flex-col sm:flex-row items-center gap-6">
+        <div class="w-44 sm:w-48 shrink-0 flex justify-center">
+          <img 
+            src={`${basePath}/assets/a_corazon_abierto.png`} 
+            alt="Portada oficial del libro A corazón abierto" 
+            class="w-full max-h-64 object-contain rounded-lg shadow-md cursor-pointer hover:scale-103 transition-transform"
             onclick="openReadingSample('corazon')"
-            class="px-5 py-2.5 rounded-full bg-editorial-warm border border-editorial-border text-carbon hover:bg-terracota hover:text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-subtle cursor-pointer"
-          >
-            Leer Muestra
-          </button>
+          />
+        </div>
+        <div class="space-y-3 text-center sm:text-left flex-1">
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-[#B8860B] text-white text-[10px] font-title font-bold uppercase tracking-wider">
+              Presentación 2026
+            </span>
+            <span class="text-xs font-mono text-[#777777]">Casa Cacao y Chocolate</span>
+          </div>
+          <h3 class="text-2xl font-title font-black text-[#222222]">A corazón abierto</h3>
+          <p class="text-xs text-[#B8860B] font-title font-bold">María de los Ángeles Cervantes Rosas</p>
+          <p class="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
+            Obra testimonial y vivencial presentada formalmente en la Casa Universitaria Cacao y Chocolate en mayo de 2026, con prólogo e integración gremial de LVT.
+          </p>
+          <div class="pt-2">
+            <button 
+              type="button" 
+              onclick="openReadingSample('corazon')"
+              class="px-5 py-2 rounded-lg bg-[#222222] hover:bg-[#B8860B] text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-sm"
+            >
+              Leer Muestra
+            </button>
+          </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Filtros por Género del Acervo Histórico Completo -->
+    <!-- Filtros por Género del Acervo Editorial -->
     <div class="flex justify-center mb-10">
-      <div class="inline-flex flex-wrap justify-center p-1.5 rounded-3xl bg-editorial-warm border border-editorial-border shadow-subtle gap-1.5 max-w-full">
-        <button type="button" class="pub-filter active px-4 py-2 rounded-2xl text-xs font-title font-bold uppercase tracking-wider bg-terracota text-white shadow-md transition cursor-pointer" data-filter="all">Todos los Títulos</button>
-        <button type="button" class="pub-filter px-4 py-2 rounded-2xl text-xs font-title font-bold uppercase tracking-wider text-carbon hover:text-terracota transition cursor-pointer" data-filter="antologia">Antologías Colectivas</button>
-        <button type="button" class="pub-filter px-4 py-2 rounded-2xl text-xs font-title font-bold uppercase tracking-wider text-carbon hover:text-terracota transition cursor-pointer" data-filter="narrativa">Narrativa & Cuento</button>
-        <button type="button" class="pub-filter px-4 py-2 rounded-2xl text-xs font-title font-bold uppercase tracking-wider text-carbon hover:text-terracota transition cursor-pointer" data-filter="poesia">Poesía</button>
-        <button type="button" class="pub-filter px-4 py-2 rounded-2xl text-xs font-title font-bold uppercase tracking-wider text-carbon hover:text-terracota transition cursor-pointer" data-filter="ensayo">Ensayo & Crítica</button>
-        <button type="button" class="pub-filter px-4 py-2 rounded-2xl text-xs font-title font-bold uppercase tracking-wider text-carbon hover:text-terracota transition cursor-pointer" data-filter="infantil">Infantil & Drama</button>
+      <div class="inline-flex flex-wrap justify-center p-1.5 rounded-2xl bg-[#F5EFE6] border border-[#E6DCCE] shadow-subtle gap-1.5 max-w-full">
+        <button type="button" class="pub-filter active px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider bg-[#EF7B38] text-white shadow-sm transition" data-filter="all">Todos los Títulos ({CATALOGO_EDITORIAL.length})</button>
+        <button type="button" class="pub-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider text-[#222222] hover:text-[#EF7B38] transition" data-filter="Narrativa">Narrativa</button>
+        <button type="button" class="pub-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider text-[#222222] hover:text-[#EF7B38] transition" data-filter="Poesía">Poesía</button>
+        <button type="button" class="pub-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider text-[#222222] hover:text-[#EF7B38] transition" data-filter="Ensayo">Ensayo</button>
+        <button type="button" class="pub-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider text-[#222222] hover:text-[#EF7B38] transition" data-filter="Multigénero">Antologías</button>
+        <button type="button" class="pub-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider text-[#222222] hover:text-[#EF7B38] transition" data-filter="Revista">Revista Letra Voz</button>
       </div>
     </div>
 
-    <!-- Catálogo de 12 Libros Históricos y Contemporáneos -->
+    <!-- Rejilla de Libros Históricos -->
     <div id="books-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- 01: Primero la voz -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="antologia narrativa">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">1994 / 1995 · Narrativa</span>
-            <span class="text-[10px] font-mono text-terracota font-bold">UJAT / SET</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Primero la voz: antología de narrativa contemporánea</h4>
-          <p class="text-xs text-gray-500 font-medium">Compilador: Ciprián Cabrera Jasso / Varios Autores</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Compilación histórica fundacional de la narrativa tabasqueña del siglo XX coeditada entre la UJAT y la Sociedad de Escritores Tabasqueños.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">Fondo Histórico</span>
-          <span class="text-terracota font-title font-bold uppercase tracking-wider">Disponible en Archivo</span>
-        </div>
-      </div>
+      {CATALOGO_EDITORIAL.map((libro) => (
+        <div class="book-card bg-[#FDFBF7] p-6 rounded-2xl border border-[#E6DCCE] shadow-subtle flex flex-col justify-between hover:border-[#EF7B38] hover:shadow-elevated transition-all" data-genero={libro.genero}>
+          <div class="space-y-3">
+            <div class="flex justify-between items-start">
+              <span class="px-2.5 py-1 rounded-md bg-[#F5EFE6] text-[#222222] text-[10px] font-title font-bold uppercase tracking-wider">
+                {libro.anio} · {libro.genero}
+              </span>
+              <span class="text-[10px] font-mono text-[#EF7B38] font-bold">
+                {libro.fondo}
+              </span>
+            </div>
 
-      <!-- 02: Antología de poesía contemporánea -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="antologia poesia">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">1995 · Poesía</span>
-            <span class="text-[10px] font-mono text-terracota font-bold">UJAT / SET</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Antología de poesía contemporánea de Tabasco</h4>
-          <p class="text-xs text-gray-500 font-medium">Compilación Gremial LVT / Varios Autores</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Monumental compendio lírico de <strong>487 páginas</strong> que abarca a la generación poética activa a finales de siglo en Tabasco.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">487 Páginas</span>
-          <span class="text-dorado font-title font-bold uppercase tracking-wider">Edición Coleccionista</span>
-        </div>
-      </div>
+            <div>
+              <h4 class="text-lg font-title font-bold text-[#222222] leading-snug">{libro.titulo}</h4>
+              {libro.subtitulo && <div class="text-xs font-serif italic text-[#777777] mt-0.5">{libro.subtitulo}</div>}
+            </div>
 
-      <!-- 03: La pluma en el blanco -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="ensayo">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">1996 · Ensayo Crítico</span>
-            <span class="text-[10px] font-mono text-gray-500">ICT / FECA / UJAT</span>
+            <p class="text-xs font-medium text-[#EF7B38]">{libro.autores}</p>
+            <p class="text-xs font-sans text-[#555555] leading-relaxed line-clamp-3">{libro.sinopsis}</p>
           </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">La pluma en el blanco</h4>
-          <p class="text-xs text-gray-500 font-medium">Autor: Gonzalo J. González Calzada</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Ensayo literario y crítico publicado dentro de la prestigiosa serie <em>Opera Prima</em> (104 págs., ISBN 968-889-272-6).
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">ISBN 968-889-272-6</span>
-          <span class="text-gray-600 font-title font-bold uppercase tracking-wider">Fondo Catalogado</span>
-        </div>
-      </div>
 
-      <!-- 04: Las puertas del infierno -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="narrativa">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">1996 · Relatos</span>
-            <span class="text-[10px] font-mono text-gray-500">Gobierno del Estado / SET</span>
+          <div class="mt-6 pt-4 border-t border-[#E6DCCE] flex justify-between items-center text-xs">
+            <span class="text-[#777777] font-mono text-[11px]">{libro.coeditores.split('/')[0]}</span>
+            <a 
+              href={`https://wa.me/522205889391?text=Hola%20Mesa%20Directiva,%20deseo%20consultar%20la%20disponibilidad%20del%20libro:%20${encodeURIComponent(libro.titulo)}`}
+              target="_blank"
+              rel="noopener"
+              class="text-xs font-title font-bold uppercase text-[#EF7B38] hover:text-[#D96620] transition-colors"
+            >
+              Consultar →
+            </a>
           </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Las puertas del infierno</h4>
-          <p class="text-xs text-gray-500 font-medium">Autor: Vicente Gómez Montero</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Antología individual de cuentos y relatos breves del narrador, dramaturgo y miembro fundador tabasqueño.
-          </p>
         </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">Fondo Fundacional</span>
-          <span class="text-gray-600 font-title font-bold uppercase tracking-wider">Archivo Impreso</span>
-        </div>
-      </div>
-
-      <!-- 05: Puras mentiras y algo más -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="antologia narrativa">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">1999 · Cuento</span>
-            <span class="text-[10px] font-mono text-terracota font-bold">SET LVT</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Puras mentiras y algo más</h4>
-          <p class="text-xs text-gray-500 font-medium">Colectivo de Escritores Tabasqueños</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Colección de cuentos de 129 páginas producida y editada por la sociedad (Clasificación Bibliográfica PQ7298.17).
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">PQ7298.17</span>
-          <span class="text-gray-600 font-title font-bold uppercase tracking-wider">Disponible en Sala</span>
-        </div>
-      </div>
-
-      <!-- 06: Consumatum est -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="infantil">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">1999 · Dramaturgia</span>
-            <span class="text-[10px] font-mono text-gray-500">FECA / UJAT / ICT</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Consumatum est</h4>
-          <p class="text-xs text-gray-500 font-medium">Autora: María Eugenia Torres Arias («Maru Lozano»)</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Monólogo dramático producido en colaboración con la red de talleres literarios de la UJAT y la Sociedad de Escritores.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">Teatro / Monólogo</span>
-          <span class="text-gray-600 font-title font-bold uppercase tracking-wider">Acervo Dramático</span>
-        </div>
-      </div>
-
-      <!-- 07: Nuestro mundo con Clau-dia -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="infantil">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">2005 · Literatura Infantil</span>
-            <span class="text-[10px] font-mono text-dorado font-bold">Gobierno / UJAT</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Nuestro mundo con Clau-dia</h4>
-          <p class="text-xs text-gray-500 font-medium">Mario de Lille Fuentes (Texto) / Claudia García Silva (Ilust.)</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Cuentos infantiles ilustrados de 77 páginas escritos por el fundador de la Escuela Gorostiza para el fomento lector temprano.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">77 Páginas Ilustradas</span>
-          <span class="text-terracota font-title font-bold uppercase tracking-wider">Sección Infantil</span>
-        </div>
-      </div>
-
-      <!-- 08: Proyecto Babel -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="antologia narrativa">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">2014 · Cuento</span>
-            <span class="text-[10px] font-mono text-gray-500">IEC Tabasco / SET</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Proyecto Babel: antología de cuentos</h4>
-          <p class="text-xs text-gray-500 font-medium">Varios Autores (Francisco Payró, Laura Ocaña, et al.)</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Antología de cuentos contemporáneos de 172 páginas editada conjuntamente por el Instituto Estatal de Cultura y la sociedad.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">172 Páginas</span>
-          <span class="text-gray-600 font-title font-bold uppercase tracking-wider">Fondo Contemporáneo</span>
-        </div>
-      </div>
-
-      <!-- 09: La Mujer del Siglo XXI -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="antologia poesia narrativa">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">2023 · Poesía & Narrativa</span>
-            <span class="text-[10px] font-mono text-terracota font-bold">SET LVT</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">La Mujer del Siglo XXI</h4>
-          <p class="text-xs text-gray-500 font-medium">Coordinadora: Anaís Arias Pérez / Colectivo LVT</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Antología temática presentada en el 36º Aniversario (Galería El Jaguar Despertado) sobre los retos y la visión de la mujer contemporánea.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">36º Aniversario</span>
-          <span class="text-terracota font-title font-bold uppercase tracking-wider">Alta Demanda</span>
-        </div>
-      </div>
-
-      <!-- 10: Escuela con sus plumas de ceiba -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="antologia poesia ensayo narrativa">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">2024 · Multigénero</span>
-            <span class="text-[10px] font-mono text-dorado font-bold">UJAT / Escuela Gorostiza</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Escuela con sus plumas de ceiba</h4>
-          <p class="text-xs text-gray-500 font-medium">Gen. Guadalupe Azuara / Egresados Escuela Gorostiza</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Antología institucional dividida en cuatro secciones que recopila los trabajos de graduación de los diplomados universitarios.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">Edición Académica</span>
-          <span class="text-dorado font-title font-bold uppercase tracking-wider">Activo en Catálogo</span>
-        </div>
-      </div>
-
-      <!-- 11: Revista Letra Voz -->
-      <div class="book-card bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition" data-cat="antologia ensayo">
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-gray-700 text-[10px] font-title font-bold uppercase tracking-wider">Publicación Periódica</span>
-            <span class="text-[10px] font-mono text-carbon font-bold">Órgano de Difusión LVT</span>
-          </div>
-          <h4 class="font-serif text-xl font-bold text-carbon leading-snug">Revista Cultural «Letra Voz»</h4>
-          <p class="text-xs text-gray-500 font-medium">Consejo Editorial de la Sociedad de Escritores</p>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Plataforma periodística y literaria fundada en 2001 para la difusión de textos inéditos, ensayos críticos, crónicas y entrevistas del gremio.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center text-xs">
-          <span class="text-gray-400 font-mono">Órgano Impreso</span>
-          <span class="text-carbon font-title font-bold uppercase tracking-wider">Ediciones Periódicas</span>
-        </div>
-      </div>
-
+      ))}
     </div>
 
   </div>
 </section>
 
 <script>
-  // Filtros Dinámicos del Catálogo de Publicaciones
-  const pubFilters = document.querySelectorAll('.pub-filter');
-  const bookCards = document.querySelectorAll('.book-card');
+  // Filtros de Publicaciones
+  const filters = document.querySelectorAll('.pub-filter');
+  const cards = document.querySelectorAll('.book-card');
 
-  pubFilters.forEach(filterBtn => {
-    filterBtn.addEventListener('click', () => {
-      pubFilters.forEach(b => {
-        b.classList.remove('bg-terracota', 'text-white', 'shadow-md');
-        b.classList.add('text-carbon');
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => {
+        b.classList.remove('bg-[#EF7B38]', 'text-white', 'shadow-sm');
+        b.classList.add('text-[#222222]');
       });
-      filterBtn.classList.remove('text-carbon');
-      filterBtn.classList.add('bg-terracota', 'text-white', 'shadow-md');
+      btn.classList.remove('text-[#222222]');
+      btn.classList.add('bg-[#EF7B38]', 'text-white', 'shadow-sm');
 
-      const cat = filterBtn.getAttribute('data-filter');
+      const filterVal = btn.getAttribute('data-filter');
 
-      bookCards.forEach(card => {
-        const itemCats = card.getAttribute('data-cat') || '';
-        if (cat === 'all' || itemCats.includes(cat!)) {
+      cards.forEach(card => {
+        const genero = card.getAttribute('data-genero');
+        if (filterVal === 'all' || genero === filterVal) {
           (card as HTMLElement).style.display = 'flex';
         } else {
           (card as HTMLElement).style.display = 'none';
