@@ -1,19 +1,17 @@
 ---
-// index.astro - Portal Institucional Maestro de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
+// index.astro - Portal Institucional Maestro de Letras y Voces de Tabasco, A.C.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Semblanza from '../components/Semblanza.astro';
-import SolvenciaInstitucional from '../components/SolvenciaInstitucional.astro';
+import EscuelaGorostiza from '../components/EscuelaGorostiza.astro';
 import Publicaciones from '../components/Publicaciones.astro';
 import VocesDeTabasco from '../components/VocesDeTabasco.astro';
 import DirectorioAutores from '../components/DirectorioAutores.astro';
-import CentroDescargas from '../components/CentroDescargas.astro';
-import ProcesoMembresia from '../components/ProcesoMembresia.astro';
+import GobernanzaHub from '../components/GobernanzaHub.astro';
 import Convocatorias from '../components/Convocatorias.astro';
 import GaleriaEventos from '../components/GaleriaEventos.astro';
 import RifaInteractiva from '../components/RifaInteractiva.astro';
-import MesaDirectiva from '../components/MesaDirectiva.astro';
 import Contacto from '../components/Contacto.astro';
 import Footer from '../components/Footer.astro';
 import ReadingModal from '../components/ReadingModal.astro';
@@ -21,51 +19,45 @@ import '../styles/global.css';
 ---
 
 <BaseLayout>
-  <!-- Barra de Navegación Flotante Translúcida -->
+  <!-- Barra de Navegación Flotante Translúcida y Despejada -->
   <Navbar />
 
-  <!-- 1. Pórtico Editorial con Rotador de Frases e Hitos Históricos -->
+  <!-- 1. Pórtico Editorial con Rotador de Citas e Hitos Históricos -->
   <Hero />
 
-  <!-- 2. Semblanza Institucional, Misión y Memoria Histórica -->
+  <!-- 2. Historia Fundacional 1987, Cuadro de Pioneros y Cronología de Mesas Directivas -->
   <Semblanza />
 
-  <!-- 3. Solvencia Jurídica, Transparencia Notarial y Convenios -->
-  <SolvenciaInstitucional />
+  <!-- 3. Filial Académica: Escuela de Escritores «José Gorostiza» (Diplomados UJAT) -->
+  <EscuelaGorostiza />
 
-  <!-- 4. Fondo Editorial LVT (Vitrina con Portadas 3D Interactivas) -->
+  <!-- 4. Fondo Editorial LVT (Catálogo de 12 Obras Históricas y Coediciones) -->
   <Publicaciones />
 
-  <!-- 5. Dimensión Sonora: Voces de Tabasco (Fonoteca y Sala Lírica) -->
+  <!-- 5. Fonoteca Audiovisual (Videos Reales) & Sala Lírica de 23 Poetas Íntegros -->
   <VocesDeTabasco />
 
-  <!-- 6. Directorio y Padrón de Escritores con Filtros por Género -->
+  <!-- 6. Directorio y Padrón de Escritores con Filtro por Género -->
   <DirectorioAutores />
 
-  <!-- 7. Centro de Documentación y Descargas Oficiales en PDF -->
-  <CentroDescargas />
+  <!-- 7. Pabellón Maestro de Gobernanza, Solvencia, Membresía y Descargas PDF -->
+  <GobernanzaHub />
 
-  <!-- 8. Protocolo de Admisión: Proceso de Incorporación de Nuevos Socios -->
-  <ProcesoMembresia />
-
-  <!-- 9. Convocatorias Oficiales 2026 y Certámenes Abiertos -->
+  <!-- 8. Convocatorias Oficiales, Certamen «Un Soneto por Sor Juana» y Encuentros Estatales -->
   <Convocatorias />
 
-  <!-- 10. Archivo Gráfico y Memoria de Encuentros Culturales -->
+  <!-- 9. Archivo Histórico y Memoria Gráfica (Fotos Reales de Eventos) -->
   <GaleriaEventos />
 
-  <!-- 11. Iniciativa Pro-Fondos A.C. (Rifa Interactiva 2026 con Cuadrícula 00-99) -->
+  <!-- 10. Iniciativa Pro-Fondos A.C. (Rifa 2026 con Cuadrícula 00-99) -->
   <RifaInteractiva />
 
-  <!-- 12. Mesa Directiva y Gobernanza Institucional (Gestión 2026 – 2029) -->
-  <MesaDirectiva />
-
-  <!-- 13. Secretaría General, Correspondencia y Vinculación -->
+  <!-- 11. Secretaría General, Correspondencia y Vinculación -->
   <Contacto />
 
-  <!-- Pie de Página Institucional -->
+  <!-- Pie de Página Institucional con Firma Legal -->
   <Footer />
 
-  <!-- Visor de Lectura Inmersiva Modal (Marfil, Pergamino, Noche) -->
+  <!-- Visor Inmersivo Modal de Muestras de Lectura (Pergamino, Marfil, Noche) -->
   <ReadingModal />
 </BaseLayout>

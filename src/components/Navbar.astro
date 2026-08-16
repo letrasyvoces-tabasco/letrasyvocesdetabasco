@@ -4,29 +4,30 @@ const basePath = "/letrasyvocesdetabasco";
 
 <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-editorial-border transition-all duration-300 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-24 sm:h-26">
+    <div class="flex justify-between items-center h-22 sm:h-24">
       
-      <!-- Logotipo Oficial Vectorial SVG Grande y de Alta Presencia -->
+      <!-- Logotipo Oficial Vectorial SVG Grande -->
       <a href="#inicio" class="flex items-center space-x-3 group py-2" aria-label="Ir al inicio de Letras y Voces de Tabasco">
         <img 
           src={`${basePath}/assets/logos/LVT Logo Hor 1 Original.svg`} 
           alt="Sociedad de Escritores Letras y Voces de Tabasco, A.C." 
-          class="h-14 sm:h-16 lg:h-18 w-auto object-contain logo-blend group-hover:scale-102 transition duration-300"
+          class="h-12 sm:h-14 lg:h-16 w-auto object-contain logo-blend group-hover:scale-102 transition duration-300"
           onerror="this.src='/letrasyvocesdetabasco/assets/logos/LVT Logo Hor 1 Original.png'" 
         />
       </a>
 
-      <!-- Navegación de Escritorio Espaciosa y Despejada (8 Ítems Clave) -->
-      <nav class="hidden lg:flex items-center space-x-5 xl:space-x-7 font-title text-[11px] xl:text-xs font-bold tracking-wider uppercase text-carbon">
+      <!-- Navegación de Escritorio Espaciosa y Completa -->
+      <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 font-title text-[10px] xl:text-[11px] font-bold tracking-wider uppercase text-carbon">
         <a href="#inicio" class="hover:text-terracota transition-colors py-2">Inicio</a>
-        <a href="#quienes-somos" class="hover:text-terracota transition-colors py-2">Semblanza</a>
-        <a href="#antologias" class="hover:text-terracota transition-colors py-2">Publicaciones</a>
+        <a href="#quienes-somos" class="hover:text-terracota transition-colors py-2">Historia 1987</a>
+        <a href="#escuela-gorostiza" class="hover:text-dorado transition-colors py-2 text-carbon">Escuela Gorostiza</a>
+        <a href="#antologias" class="hover:text-terracota transition-colors py-2">Fondo Editorial</a>
         <a href="#voces" class="hover:text-dorado transition-colors py-2 flex items-center gap-1.5 text-dorado font-bold">
           <span class="w-2 h-2 rounded-full bg-dorado animate-ping"></span>
-          Voces & Poesía
+          Voces & Fonoteca
         </a>
-        <a href="#autores" class="hover:text-terracota transition-colors py-2">Autores</a>
         <a href="#gobernanza" class="hover:text-terracota transition-colors py-2">Gobernanza</a>
+        <a href="#convocatorias" class="hover:text-terracota transition-colors py-2">Certámenes</a>
         <a href="#rifa" class="hover:text-terracota transition-colors py-2 flex items-center gap-1 text-terracota font-bold">
           <span class="w-1.5 h-1.5 rounded-full bg-terracota animate-pulse"></span>
           Rifa 2026
@@ -39,15 +40,15 @@ const basePath = "/letrasyvocesdetabasco";
           href="https://wa.me/522205889391" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="p-3 rounded-full bg-editorial-warm border border-editorial-border text-green-700 hover:bg-green-50 hover:border-green-300 transition shadow-subtle hover:scale-105" 
+          class="p-2.5 rounded-full bg-editorial-warm border border-editorial-border text-green-700 hover:bg-green-50 hover:border-green-300 transition shadow-subtle hover:scale-105" 
           title="Atención Directa por WhatsApp Oficial"
           aria-label="Atención Directa por WhatsApp Oficial"
         >
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         </a>
         <a 
           href="#contacto" 
-          class="px-6 py-2.5 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:shadow-elevated hover:scale-103 transition"
+          class="px-5 py-2.5 rounded-full bg-terracota text-white font-title text-[11px] font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:scale-103 transition"
         >
           Contacto
         </a>
@@ -58,10 +59,10 @@ const basePath = "/letrasyvocesdetabasco";
         <button 
           id="mobile-toggle" 
           type="button" 
-          class="text-carbon hover:text-terracota focus:outline-none p-3 rounded-2xl bg-editorial-warm border border-editorial-border" 
+          class="text-carbon hover:text-terracota focus:outline-none p-2.5 rounded-2xl bg-editorial-warm border border-editorial-border" 
           aria-label="Abrir menú de navegación"
         >
-          <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -71,15 +72,16 @@ const basePath = "/letrasyvocesdetabasco";
 
   <!-- Menú Móvil Desplegable -->
   <div id="mobile-menu" class="hidden lg:hidden bg-editorial-warm border-b border-editorial-border px-6 pt-4 pb-6 space-y-2.5 font-title text-xs font-bold uppercase tracking-wider shadow-elevated max-h-[80vh] overflow-y-auto">
-    <a href="#inicio" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Inicio</a>
-    <a href="#quienes-somos" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Semblanza e Historia</a>
-    <a href="#antologias" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Publicaciones y Antologías</a>
-    <a href="#voces" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-dorado transition text-dorado font-bold">Voces de Tabasco & 20 Maestros</a>
-    <a href="#autores" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Padrón de Escritores</a>
-    <a href="#gobernanza" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Gobernanza, Solvencia & Descargas</a>
-    <a href="#convocatorias" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition text-terracota">Convocatorias Abiertas 2026</a>
-    <a href="#galeria" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition">Eventos y Archivo Histórico</a>
-    <a href="#rifa" class="block px-4 py-3 rounded-2xl bg-terracota text-white text-center shadow-md">Iniciativa Pro-Fondos ($100 MXN)</a>
-    <a href="#contacto" class="block px-4 py-3 rounded-2xl hover:bg-white hover:text-terracota transition text-center border border-editorial-border">Contacto Oficial</a>
+    <a href="#inicio" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Inicio</a>
+    <a href="#quienes-somos" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Historia & Fundadores (1987)</a>
+    <a href="#escuela-gorostiza" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-dorado transition text-dorado font-bold">Escuela de Escritores «José Gorostiza»</a>
+    <a href="#antologias" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Fondo Editorial (12 Obras)</a>
+    <a href="#voces" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-dorado transition">Voces & Fonoteca Audiovisual</a>
+    <a href="#autores" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Padrón de Escritores</a>
+    <a href="#gobernanza" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Gobernanza & Descargas PDF</a>
+    <a href="#convocatorias" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition text-terracota">Certámenes & Convocatorias</a>
+    <a href="#galeria" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition">Eventos y Archivo Histórico</a>
+    <a href="#rifa" class="block px-4 py-2.5 rounded-2xl bg-terracota text-white text-center shadow-md">Iniciativa Pro-Fondos ($100 MXN)</a>
+    <a href="#contacto" class="block px-4 py-2.5 rounded-2xl hover:bg-white hover:text-terracota transition text-center border border-editorial-border">Contacto Oficial</a>
   </div>
 </header>
