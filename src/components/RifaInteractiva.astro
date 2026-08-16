@@ -1,55 +1,72 @@
 ---
-// RifaInteractiva.astro - Iniciativa Pro-Fondos A.C. con Cuadrícula 00-99 y WhatsApp Checkout
+// RifaInteractiva.astro - Iniciativa Pro-Fondos A.C. con Selección Inteligente al Azar y Sincronización Notion
+import { BOLETOS_BLOQUEADOS } from '../data/rifaConfig';
 ---
 
-<section id="rifa" class="py-24 bg-white border-b border-editorial-border">
+<section id="rifa" class="py-24 bg-white border-b border-[#E6DCCE]">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-editorial p-8 sm:p-12 rounded-3xl border border-editorial-border shadow-elevated">
+    <div class="bg-[#FDFBF7] p-8 sm:p-12 rounded-3xl border border-[#E6DCCE] shadow-elevated">
       
       <div class="text-center mb-10">
-        <span class="bg-dorado/15 text-dorado px-4 py-1.5 rounded-full text-xs font-title font-bold tracking-widest uppercase mb-3 inline-block">
-          Recaudación Cultural Oficial
-        </span>
-        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-carbon mb-3">Iniciativa Pro-Fondos A.C.</h2>
-        <p class="text-base text-gray-700 max-w-2xl mx-auto font-light leading-relaxed">
-          Selecciona tus números en la cuadrícula (del 00 al 99).<br />
-          <strong class="text-terracota font-bold">Cada 2 números = 1 Boleto Doble por $100 MXN.</strong>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-[#EF7B38]/10 text-[#EF7B38] text-xs font-title font-bold tracking-widest uppercase rounded-full mb-3">
+          Recaudación Institucional Oficial · 100 Números (00 al 99)
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-title font-black text-[#222222] mb-3">
+          Iniciativa Pro-Fondos <span class="text-[#EF7B38]">LVT 2026</span>
+        </h2>
+        <p class="text-sm sm:text-base text-[#555555] max-w-2xl mx-auto font-sans leading-relaxed">
+          Selecciona tus números en la cuadrícula oficial. <br />
+          <strong class="text-[#EF7B38] font-bold">Cada 2 números = 1 Boleto Doble por $100 MXN.</strong>
         </p>
 
-        <!-- Filtros Rápidos -->
-        <div class="flex flex-wrap justify-center gap-3 mt-6">
+        <!-- Filtros y Controles Rápidos -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-6">
           <button 
             id="btn-azar" 
             type="button" 
-            class="px-4 py-2 rounded-full bg-editorial-warm border border-editorial-border text-carbon hover:border-terracota hover:text-terracota font-title text-[11px] font-bold uppercase tracking-wider transition shadow-subtle flex items-center gap-1.5"
+            class="px-5 py-2.5 rounded-xl bg-[#222222] text-white hover:bg-[#EF7B38] font-title text-xs font-bold uppercase tracking-wider transition shadow-sm flex items-center gap-2 cursor-pointer"
           >
-            <span>🎲 Elegir Pareja al Azar</span>
+            <span>🎲 Elegir 2 Boletos al Azar</span>
           </button>
+          
           <button 
             id="btn-limpiar" 
             type="button" 
-            class="px-4 py-2 rounded-full bg-editorial-warm border border-editorial-border text-gray-600 hover:text-red-600 font-title text-[11px] font-bold uppercase tracking-wider transition shadow-subtle"
+            class="px-4 py-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE] text-[#555555] hover:text-red-600 hover:border-red-300 font-title text-xs font-bold uppercase tracking-wider transition shadow-sm"
           >
             Limpiar Selección
           </button>
         </div>
+
+        <!-- Banner de Notificación de Selección al Azar -->
+        <div id="banner-azar-status" class="hidden mt-4 p-3 bg-[#EF7B38]/10 border border-[#EF7B38]/30 rounded-xl text-xs text-[#222222] font-title font-semibold max-w-md mx-auto animate-pulse">
+        </div>
       </div>
 
       <!-- Cuadrícula 00-99 Interactiva -->
-      <div id="grid-numeros" class="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-8 max-h-96 overflow-y-auto p-3 bg-white rounded-2xl border border-editorial-border shadow-inner">
+      <div class="mb-4 flex justify-between items-center text-xs text-[#777777] font-sans px-1">
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-md bg-[#F5EFE6] border border-[#E6DCCE] inline-block"></span> Disponible</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-md bg-[#EF7B38] inline-block"></span> Seleccionado</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-md bg-stone-300 inline-block"></span> Reservado</span>
+        </div>
+        <span class="font-mono text-[11px]">Total: 100 Números</span>
+      </div>
+
+      <div id="grid-numeros" class="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-8 max-h-96 overflow-y-auto p-3 bg-white rounded-2xl border border-[#E6DCCE] shadow-inner">
         <!-- Inyectado dinámicamente por JavaScript -->
       </div>
 
-      <!-- Resumen de Compra -->
-      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-editorial-border text-center shadow-inner space-y-5">
+      <!-- Resumen de Compra y Apartado -->
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-[#E6DCCE] text-center shadow-inner space-y-5">
         <div>
-          <p class="text-gray-500 font-title font-bold uppercase tracking-wider text-xs mb-1">Tus números seleccionados</p>
-          <p id="numeros-lista" class="font-serif text-2xl font-bold text-terracota min-h-[2rem]">Ninguno</p>
+          <p class="text-[#777777] font-title font-bold uppercase tracking-wider text-xs mb-1">Tus números seleccionados</p>
+          <p id="numeros-lista" class="font-title font-black text-2xl sm:text-3xl text-[#EF7B38] min-h-[2rem]">Ninguno</p>
         </div>
 
-        <div class="py-2">
-          <p class="text-gray-500 font-title font-bold uppercase tracking-wider text-xs mb-1">Aportación Total a Realizar</p>
-          <p id="total-pago" class="font-serif text-4xl font-bold text-carbon">$0 MXN</p>
+        <div class="py-1">
+          <p class="text-[#777777] font-title font-bold uppercase tracking-wider text-xs mb-1">Aportación Total a Realizar</p>
+          <p id="total-pago" class="font-title font-black text-3xl sm:text-4xl text-[#222222]">$0 MXN</p>
         </div>
 
         <p id="alerta-impar" class="text-amber-900 text-xs font-medium hidden bg-amber-50 py-3 px-4 rounded-xl border border-amber-200">
@@ -59,7 +76,7 @@
         <button 
           id="btn-apartar" 
           type="button"
-          class="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-full font-title text-sm font-bold uppercase tracking-wider w-full sm:w-auto shadow-elevated transition duration-300 opacity-50 cursor-not-allowed inline-flex items-center justify-center gap-2.5 mx-auto" 
+          class="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-2xl font-title text-sm font-bold uppercase tracking-wider w-full sm:w-auto shadow-elevated transition duration-300 opacity-50 cursor-not-allowed inline-flex items-center justify-center gap-2.5 mx-auto" 
           disabled
         >
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -71,8 +88,8 @@
   </div>
 </section>
 
-<script>
-  // Motor Interactivo de la Rifa Pro-Fondos
+<script define:vars={{ boletosBloqueados: BOLETOS_BLOQUEADOS }}>
+  // Motor Interactivo de la Rifa Pro-Fondos con Memoria de Azar y Bloqueo
   const grid = document.getElementById('grid-numeros');
   const listaSpan = document.getElementById('numeros-lista');
   const totalSpan = document.getElementById('total-pago');
@@ -80,9 +97,12 @@
   const btnApartar = document.getElementById('btn-apartar');
   const btnAzar = document.getElementById('btn-azar');
   const btnLimpiar = document.getElementById('btn-limpiar');
+  const bannerAzar = document.getElementById('banner-azar-status');
 
-  let seleccionados: string[] = [];
-  const btnElements: Record<string, HTMLButtonElement> = {};
+  let seleccionados = [];
+  let azarTiradasCount = 0;
+  const btnElements = {};
+  const reservados = Array.isArray(boletosBloqueados) ? boletosBloqueados : [];
 
   if (grid) {
     for (let i = 0; i < 100; i++) {
@@ -90,27 +110,50 @@
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.innerText = numStr;
-      btn.className = "num-btn py-3 px-1 text-sm sm:text-base font-title font-bold bg-editorial-warm border border-editorial-border text-carbon rounded-xl hover:border-terracota shadow-sm";
       
-      btn.onclick = () => toggleNumero(numStr);
+      const estaReservado = reservados.includes(numStr);
+
+      if (estaReservado) {
+        btn.className = "py-3 px-1 text-sm sm:text-base font-title font-bold bg-stone-200 border border-stone-300 text-stone-400 rounded-xl cursor-not-allowed line-through opacity-60";
+        btn.disabled = true;
+        btn.title = `Número #${numStr} ya reservado`;
+      } else {
+        btn.className = "num-btn py-3 px-1 text-sm sm:text-base font-title font-bold bg-[#F5EFE6] border border-[#E6DCCE] text-[#222222] rounded-xl hover:border-[#EF7B38] hover:text-[#EF7B38] shadow-sm transition-all";
+        btn.onclick = () => toggleNumero(numStr);
+      }
+      
       btnElements[numStr] = btn;
       grid.appendChild(btn);
     }
   }
 
-  function toggleNumero(numStr: string) {
+  function toggleNumero(numStr) {
+    if (reservados.includes(numStr)) return;
+
     if (seleccionados.includes(numStr)) {
       seleccionados = seleccionados.filter(n => n !== numStr);
-      btnElements[numStr]?.classList.remove('selected');
+      actualizarEstiloBoton(numStr, false);
     } else {
       if (seleccionados.length >= 20) {
-        alert('Puedes seleccionar un máximo de 20 números por apartado.');
+        alert('Puedes seleccionar un máximo de 20 números por aportación.');
         return;
       }
       seleccionados.push(numStr);
-      btnElements[numStr]?.classList.add('selected');
+      actualizarEstiloBoton(numStr, true);
     }
     actualizarResumen();
+  }
+
+  function actualizarEstiloBoton(numStr, isSelected) {
+    const btn = btnElements[numStr];
+    if (!btn) return;
+    if (isSelected) {
+      btn.classList.remove('bg-[#F5EFE6]', 'text-[#222222]', 'border-[#E6DCCE]');
+      btn.classList.add('bg-[#EF7B38]', 'text-white', 'border-[#EF7B38]', 'shadow-md');
+    } else {
+      btn.classList.remove('bg-[#EF7B38]', 'text-white', 'border-[#EF7B38]', 'shadow-md');
+      btn.classList.add('bg-[#F5EFE6]', 'text-[#222222]', 'border-[#E6DCCE]');
+    }
   }
 
   function actualizarResumen() {
@@ -131,38 +174,58 @@
     if (esImpar) {
       alertaImpar?.classList.remove('hidden');
       if (btnApartar) {
-        (btnApartar as HTMLButtonElement).disabled = true;
+        btnApartar.disabled = true;
         btnApartar.classList.add('opacity-50', 'cursor-not-allowed');
       }
     } else {
       alertaImpar?.classList.add('hidden');
       if (btnApartar) {
         if (seleccionados.length > 0) {
-          (btnApartar as HTMLButtonElement).disabled = false;
+          btnApartar.disabled = false;
           btnApartar.classList.remove('opacity-50', 'cursor-not-allowed');
         } else {
-          (btnApartar as HTMLButtonElement).disabled = true;
+          btnApartar.disabled = true;
           btnApartar.classList.add('opacity-50', 'cursor-not-allowed');
         }
       }
     }
   }
 
+  // Botón Inteligente de 2 Boletos al Azar con Notificación de Turno
   if (btnAzar) {
     btnAzar.addEventListener('click', () => {
-      // Encontrar dos números libres no seleccionados
+      // Filtrar números libres (no seleccionados y no reservados)
       const disponibles = [];
       for (let i = 0; i < 100; i++) {
         const numStr = i < 10 ? '0' + i : i.toString();
-        if (!seleccionados.includes(numStr)) disponibles.push(numStr);
+        if (!seleccionados.includes(numStr) && !reservados.includes(numStr)) {
+          disponibles.push(numStr);
+        }
       }
-      if (disponibles.length >= 2) {
-        const idx1 = Math.floor(Math.random() * disponibles.length);
-        const num1 = disponibles.splice(idx1, 1)[0];
-        const idx2 = Math.floor(Math.random() * disponibles.length);
-        const num2 = disponibles.splice(idx2, 1)[0];
-        toggleNumero(num1);
-        toggleNumero(num2);
+
+      if (disponibles.length < 2) {
+        alert('No hay suficientes números libres para seleccionar un par al azar.');
+        return;
+      }
+
+      // Tomar 2 números aleatorios distintos
+      const idx1 = Math.floor(Math.random() * disponibles.length);
+      const num1 = disponibles.splice(idx1, 1)[0];
+      const idx2 = Math.floor(Math.random() * disponibles.length);
+      const num2 = disponibles.splice(idx2, 1)[0];
+
+      seleccionados.push(num1);
+      seleccionados.push(num2);
+      actualizarEstiloBoton(num1, true);
+      actualizarEstiloBoton(num2, true);
+
+      azarTiradasCount++;
+      actualizarResumen();
+
+      // Notificación clara del número de tirada al azar
+      if (bannerAzar) {
+        bannerAzar.classList.remove('hidden');
+        bannerAzar.innerHTML = `🎲 <strong>Selección aleatoria #${azarTiradasCount} aplicada:</strong> Se añadieron los boletos <strong>#${num1}</strong> y <strong>#${num2}</strong> (Total acumulado: ${seleccionados.length} números = ${seleccionados.length / 2} boleto(s) doble(s)).`;
       }
     });
   }
@@ -170,9 +233,14 @@
   if (btnLimpiar) {
     btnLimpiar.addEventListener('click', () => {
       seleccionados.forEach(num => {
-        btnElements[num]?.classList.remove('selected');
+        actualizarEstiloBoton(num, false);
       });
       seleccionados = [];
+      azarTiradasCount = 0;
+      if (bannerAzar) {
+        bannerAzar.classList.add('hidden');
+        bannerAzar.innerHTML = '';
+      }
       actualizarResumen();
     });
   }
@@ -181,7 +249,7 @@
     btnApartar.addEventListener('click', () => {
       const pares = Math.floor(seleccionados.length / 2);
       const totalPago = pares * 100;
-      const mjs = `Hola Mesa Directiva de Letras y Voces de Tabasco A.C.\n\nDeseo apartar los siguientes números para la Rifa Pro-Fondos: *${seleccionados.map(n => '#' + n).join(', ')}* (${pares} boleto(s) doble(s)).\n\nMonto total de aportación: *$${totalPago} MXN*.\n\n¿Me proporcionan las instrucciones para realizar el depósito bancario?`;
+      const mjs = `Hola Mesa Directiva de Letras y Voces de Tabasco A.C.\n\nDeseo apartar los siguientes números para la Rifa Pro-Fondos 2026: *${seleccionados.map(n => '#' + n).join(', ')}* (${pares} boleto(s) doble(s)).\n\nMonto total de aportación: *$${totalPago} MXN*.\n\n¿Me proporcionan las instrucciones para realizar el depósito bancario?`;
       const url = `https://wa.me/522205889391?text=${encodeURIComponent(mjs)}`;
       window.open(url, '_blank');
     });
