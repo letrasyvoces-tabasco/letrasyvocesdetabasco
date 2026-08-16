@@ -7,63 +7,59 @@
     --color-editorial: #FDFBF7;
     --color-editorial-warm: #F5EFE6;
     --color-editorial-border: #E6DCCE;
-    --color-carbon: #222222;
+    --color-carbon: #1E1B18;
     --color-terracota: #EF7B38;
     --color-dorado: #C59B27;
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 7.5rem;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  section {
+    scroll-margin-top: 7.5rem;
   }
 
   body {
     background-color: var(--color-editorial);
     color: var(--color-carbon);
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    background-image: radial-gradient(rgba(239, 123, 56, 0.025) 1px, transparent 0);
-    background-size: 28px 28px;
-    background-position: -19px -19px;
   }
 }
 
-/* Efectos de Escenografía Editorial 3D */
+/* Fondo Solemne y Opaco en el Hero */
+.hero-bg {
+  background: linear-gradient(180deg, #141211 0%, #1A1715 50%, #221E1C 100%);
+}
+
+/* Cabecera Sólida, Nítida y sin Transparencias Forzadas */
+.glass-header {
+  background-color: #FDFBF7;
+}
+
+/* Renderizado 3D Sólido de Libros Editoriales */
 .book-stage {
   perspective: 1200px;
 }
 
 .book-3d {
   position: relative;
-  border-left: 7px solid #281B12;
-  border-radius: 3px 12px 12px 3px;
-  box-shadow: 14px 18px 30px rgba(0, 0, 0, 0.22), -3px 0 6px rgba(255, 255, 255, 0.6) inset;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
-  transform: rotateY(-5deg) rotateX(2deg);
+  border-left: 6px solid #281B12;
+  border-radius: 2px 10px 10px 2px;
+  box-shadow: 12px 16px 30px rgba(0,0,0,0.22), -2px 0 4px rgba(255,255,255,0.4) inset;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transform: rotateY(-4deg) rotateX(1deg);
 }
 
 .book-3d:hover {
-  transform: translateY(-8px) rotateY(-1deg) rotateX(0deg) scale(1.02);
-  box-shadow: 20px 26px 40px rgba(0, 0, 0, 0.3), -3px 0 8px rgba(255, 255, 255, 0.75) inset;
+  transform: translateY(-6px) rotateY(-1deg) rotateX(0deg) scale(1.02);
+  box-shadow: 18px 24px 38px rgba(0,0,0,0.30), -2px 0 6px rgba(255,255,255,0.6) inset;
 }
 
-/* Visor Modal: Modos de Lectura Editorial */
-.reader-marfil {
-  background-color: #FFFFFF !important;
-  color: #222222 !important;
-}
-
-.reader-pergamino {
-  background-color: #F8F4EC !important;
-  color: #2A2521 !important;
-}
-
-.reader-noche {
-  background-color: #181615 !important;
-  color: #E6DCCE !important;
-}
-
-/* Botones y controles de la Rifa Interactiva */
+/* Botones interactivos de la cuadrícula de números */
 .num-btn {
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -72,22 +68,113 @@
   background-color: #EF7B38 !important;
   color: #FFFFFF !important;
   border-color: #D96620 !important;
-  transform: scale(1.08);
-  box-shadow: 0 4px 16px rgba(239, 123, 56, 0.45);
+  transform: scale(1.06);
+  box-shadow: 0 4px 14px rgba(239, 123, 56, 0.4);
 }
 
-/* Animaciones y transiciones de lectura */
-@keyframes modalEnter {
-  0% {
+/* Transición fluida de Pestañas y Modos */
+@keyframes tabFadeIn {
+  from {
     opacity: 0;
-    transform: scale(0.96) translateY(12px);
+    transform: translateY(8px);
   }
-  100% {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-content-active {
+  animation: tabFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Transiciones de citas y textos */
+.phrase-fade {
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Temas del Lector Inmersivo con Lógica de Color Rigurosa */
+.reader-pergamino {
+  background-color: #F8F4EC !important;
+  color: #2A2521 !important;
+}
+
+.reader-pergamino * {
+  color: inherit !important;
+}
+
+.reader-pergamino h3 {
+  color: #1A1817 !important;
+}
+
+.reader-pergamino .reader-badge {
+  color: #EF7B38 !important;
+}
+
+.reader-pergamino .reader-quote-box {
+  background-color: #EFE8DA !important;
+  border-color: #C59B27 !important;
+  color: #2A2521 !important;
+}
+
+.reader-marfil {
+  background-color: #FFFFFF !important;
+  color: #222222 !important;
+}
+
+.reader-marfil * {
+  color: inherit !important;
+}
+
+.reader-marfil h3 {
+  color: #161413 !important;
+}
+
+.reader-marfil .reader-badge {
+  color: #EF7B38 !important;
+}
+
+.reader-marfil .reader-quote-box {
+  background-color: #FDFBF7 !important;
+  border-color: #E6DCCE !important;
+  color: #333333 !important;
+}
+
+.reader-noche {
+  background-color: #181615 !important;
+  color: #E6DCCE !important;
+}
+
+.reader-noche * {
+  color: inherit !important;
+}
+
+.reader-noche h3 {
+  color: #FFFFFF !important;
+}
+
+.reader-noche .reader-badge {
+  color: #F5A673 !important;
+}
+
+.reader-noche .reader-quote-box {
+  background-color: #25211F !important;
+  border-color: #EF7B38 !important;
+  color: #EAE3D9 !important;
+}
+
+/* Animaciones suaves para modales */
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
 }
 
 .animate-modal-enter {
-  animation: modalEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
