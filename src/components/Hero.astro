@@ -1,76 +1,239 @@
 ---
-// Hero.astro - Pórtico Editorial y Rotador Dinámico con Sello Institucional de Marca
+// Hero.astro - Pórtico Editorial Dinámico, Transiciones Atmosféricas y Showcase Interactivo de Ejes LVT
 const basePath = "/letrasyvocesdetabasco";
 ---
 
-<section id="inicio" class="relative pt-36 pb-24 lg:pt-48 lg:pb-36 hero-bg text-white overflow-hidden">
+<section id="inicio" class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 bg-[#141210] text-white overflow-hidden border-b border-[#2D241E]">
   
-  <!-- Marca de Agua y Sello Institucional Vectorial de Fondo -->
-  <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none overflow-hidden">
-    <img 
-      src={`${basePath}/assets/logos/LVT Logo Iso 6 Blanco Relleno.svg`} 
-      alt="Sello de Fondo LVT" 
-      class="w-[700px] sm:w-[900px] h-auto object-contain select-none" 
-    />
+  <!-- ================================================================= -->
+  <!-- 1. CAPAS ATMOSFÉRICAS Y CARRUSEL DE FONDOS CON TRANSICIÓN SUAVE    -->
+  <!-- ================================================================= -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    
+    <!-- Escena 1: Encuentros y Eventos Culturales LVT -->
+    <div 
+      id="hero-bg-1" 
+      class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-25 scale-105 transform transition-transform duration-10000"
+      style={`background-image: url('${basePath}/assets/galeria/evento_cacao_01.jpg');`}
+    ></div>
+
+    <!-- Escena 2: Acervo y Colecciones Editoriales -->
+    <div 
+      id="hero-bg-2" 
+      class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105 transform transition-transform duration-10000"
+      style={`background-image: url('${basePath}/assets/galeria/evento_cacao_03.jpg');`}
+    ></div>
+
+    <!-- Escena 3: Escuela de Escritores «José Gorostiza» y Claustro -->
+    <div 
+      id="hero-bg-3" 
+      class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-105 transform transition-transform duration-10000"
+      style={`background-image: url('${basePath}/assets/galeria/evento_cacao_05.jpg');`}
+    ></div>
+
+    <!-- Gradientes de Oscurecimiento y Realce de Contraste -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#141210]/95 via-[#141210]/85 to-[#141210]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#EF7B38]/15 via-transparent to-transparent"></div>
+    
+    <!-- Resplandores Dinámicos que Reaccionan al Mouse -->
+    <div id="hero-mouse-glow" class="absolute w-[500px] h-[500px] bg-[#EF7B38]/10 rounded-full blur-3xl transition-all duration-300 pointer-events-none -top-40 -left-40"></div>
+    <div class="absolute w-96 h-96 bg-[#C59B27]/10 rounded-full blur-3xl bottom-0 right-0 pointer-events-none"></div>
+
+    <!-- Marca de Agua Vectorial Institucional -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+      <img 
+        src={`${basePath}/assets/logos/LVT Logo Iso 6 Blanco Relleno.svg`} 
+        alt="Sello de Fondo LVT" 
+        class="w-[750px] sm:w-[950px] h-auto object-contain select-none" 
+      />
+    </div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
     
-    <!-- Distintivo Superior de Prestigio -->
-    <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-dorado/40 bg-dorado/15 text-dorado-light text-xs font-title font-bold tracking-widest uppercase mb-8 shadow-elevated backdrop-blur-md">
-      <span class="w-2.5 h-2.5 rounded-full bg-terracota animate-pulse"></span>
-      <span>Sociedad de Escritores • Villahermosa, Tabasco, México</span>
+    <!-- ================================================================= -->
+    <!-- 2. CINTILLO DINÁMICO DE NOVEDADES & ANUNCIOS EN TIEMPO REAL        -->
+    <!-- ================================================================= -->
+    <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#C59B27]/50 bg-[#1C1814]/90 text-[#F5DEB3] text-xs font-title font-bold tracking-widest uppercase mb-8 shadow-2xl backdrop-blur-xl">
+      <span class="w-2.5 h-2.5 rounded-full bg-[#EF7B38] animate-pulse"></span>
+      <span id="hero-live-announcement" class="transition-opacity duration-300">
+        XXXIX Aniversario (1987 – 2026) · Sociedad de Escritores LVT
+      </span>
     </div>
 
-    <!-- Título Principal con Rotador Dinámico -->
-    <div class="min-h-[150px] sm:min-h-[190px] md:min-h-[240px] flex items-center justify-center">
-      <h1 id="hero-phrase" class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white max-w-5xl leading-[1.08] tracking-tight phrase-fade drop-shadow-md">
+    <!-- ================================================================= -->
+    <!-- 3. TÍTULO PRINCIPAL CON ROTACIÓN LÍRICA DE ALTO CONTRASTE         -->
+    <!-- ================================================================= -->
+    <div class="min-h-[140px] sm:min-h-[180px] md:min-h-[220px] flex items-center justify-center">
+      <h1 id="hero-phrase" class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white max-w-5xl leading-[1.08] tracking-tight drop-shadow-2xl transition-all duration-500">
         Preservamos la palabra,<br />
-        <span class="italic font-light text-gray-200">impulsamos la lírica del Sureste.</span>
+        <span class="italic font-light text-[#EF7B38]">impulsamos la lírica del Sureste.</span>
       </h1>
     </div>
 
-    <!-- Subtítulo de Rigor Institucional -->
-    <p class="text-base sm:text-lg md:text-xl font-light text-gray-300 max-w-3xl leading-relaxed mt-6 mb-12">
-      Institución civil legalmente constituida para cultivar la creación literaria, coordinar ediciones colectivas rigurosas y difundir el patrimonio cultural de Tabasco.
+    <!-- Subtítulo Institucional de Máxima Legibilidad -->
+    <p class="text-base sm:text-lg md:text-xl font-light text-gray-200 max-w-3xl leading-relaxed mt-4 mb-10 drop-shadow-md">
+      Institución civil fundada en 1987 para cultivar la creación literaria, coordinar ediciones colectivas de excelencia y difundir el patrimonio cultural de Tabasco.
     </p>
 
-    <!-- Botones de Acción de Alta Gama -->
-    <div class="flex flex-col sm:flex-row gap-5 justify-center w-full max-w-md sm:max-w-none">
+    <!-- Botones de Acción Primarios -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md sm:max-w-none mb-14">
       <a 
-        href="#antologias" 
-        class="inline-flex justify-center items-center px-9 py-4 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-elevated hover:shadow-terracota-glow hover:-translate-y-1 transition duration-300"
+        href="#publicaciones" 
+        class="inline-flex justify-center items-center px-8 py-4 rounded-full bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider shadow-2xl hover:scale-103 transition duration-300 gap-2 cursor-pointer"
       >
-        Ver «Animalia Literaria» (En Imprenta)
-        <svg class="ml-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-        </svg>
+        <span>Explorar Catálogo Editorial</span>
+        <svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
+
+      <a 
+        href="#voces" 
+        class="inline-flex justify-center items-center px-8 py-4 rounded-full border border-[#C59B27]/70 bg-black/40 hover:bg-[#C59B27]/20 text-[#F5DEB3] font-title text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-2xl hover:scale-103 transition duration-300 gap-2 cursor-pointer"
+      >
+        <span>🎙️ Audioteca (14 Obras Nativas)</span>
+      </a>
+
       <a 
         href="#rifa" 
-        class="inline-flex justify-center items-center px-9 py-4 rounded-full border border-gray-400/60 text-white font-title text-xs font-bold uppercase tracking-wider hover:border-white hover:bg-white/10 hover:-translate-y-1 transition duration-300 backdrop-blur-sm"
+        class="inline-flex justify-center items-center px-8 py-4 rounded-full border border-gray-700 bg-black/40 hover:border-[#EF7B38] text-gray-300 hover:text-white font-title text-xs font-bold uppercase tracking-wider backdrop-blur-md hover:scale-103 transition duration-300 cursor-pointer"
       >
-        Iniciativa Pro-Fondos ($100 MXN)
+        <span>🎟️ Rifa Pro-Fondos ($100 MXN)</span>
       </a>
     </div>
 
-    <!-- Franja de Hitos Institucionales Históricos -->
-    <div class="mt-20 pt-12 border-t border-gray-800/90 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 w-full max-w-4xl text-center">
-      <div class="bg-carbon-card/60 p-5 rounded-3xl border border-gray-800/80 backdrop-blur-md shadow-subtle hover:border-terracota/50 transition">
-        <span class="block font-serif text-3xl sm:text-4xl font-bold text-terracota">+38</span>
-        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Años de Historia</span>
+    <!-- ================================================================= -->
+    <!-- 4. SHOWCASE INTERACTIVO: NOVEDADES & EJES RELEVANTES LVT (3D)      -->
+    <!-- ================================================================= -->
+    <div class="w-full max-w-6xl mb-14 text-left">
+      
+      <div class="flex justify-between items-center mb-4 px-2">
+        <span class="text-[11px] font-title font-bold uppercase tracking-widest text-[#EF7B38] flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-ping"></span>
+          <span>Novedades y Ejes Fundamentales en Activo</span>
+        </span>
+        <span class="text-xs text-gray-400 font-mono hidden sm:inline-block">Pasa el cursor o selecciona para explorar</span>
       </div>
-      <div class="bg-carbon-card/60 p-5 rounded-3xl border border-gray-800/80 backdrop-blur-md shadow-subtle hover:border-dorado/50 transition">
+
+      <div id="hero-showcase-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Eje 1: Nueva Antología 2026 -->
+        <a 
+          href="#publicaciones" 
+          class="hero-pillar-card p-5 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#EF7B38] transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
+        >
+          <div class="space-y-2">
+            <div class="flex justify-between items-start">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#EF7B38]/20 text-[#EF7B38] text-[10px] font-title font-bold uppercase">
+                En Prensa 2026
+              </span>
+              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+            </div>
+            <h4 class="font-title font-bold text-sm text-white group-hover:text-[#EF7B38] transition">
+              «Animalia Literaria»
+            </h4>
+            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
+              Nueva antología temática coordinada por Juan David Pérez Cabrera con la participación de socios y autores invitados.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-800 text-[10px] font-title font-bold text-[#F5DEB3] uppercase">
+            Ver Ficha Técnica
+          </div>
+        </a>
+
+        <!-- Eje 2: Audioteca Oficial de 14 Obras -->
+        <a 
+          href="#voces" 
+          class="hero-pillar-card p-5 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#C59B27] transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
+        >
+          <div class="space-y-2">
+            <div class="flex justify-between items-start">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[10px] font-title font-bold uppercase">
+                100% Audio Nativo
+              </span>
+              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+            </div>
+            <h4 class="font-title font-bold text-sm text-white group-hover:text-[#C59B27] transition">
+              Audioteca Patrimonial
+            </h4>
+            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
+              14 grabaciones sonoras en alta fidelidad: Oliverio Girondo, Juan Rulfo, García Lorca, Sabines, Neruda y Cortázar.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-800 text-[10px] font-title font-bold text-[#F5DEB3] uppercase">
+            Escuchar Grabaciones
+          </div>
+        </a>
+
+        <!-- Eje 3: Escuela de Escritores «José Gorostiza» -->
+        <a 
+          href="#escuela-gorostiza" 
+          class="hero-pillar-card p-5 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#EF7B38] transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
+        >
+          <div class="space-y-2">
+            <div class="flex justify-between items-start">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#EF7B38]/20 text-[#EF7B38] text-[10px] font-title font-bold uppercase">
+                Validez UJAT
+              </span>
+              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+            </div>
+            <h4 class="font-title font-bold text-sm text-white group-hover:text-[#EF7B38] transition">
+              Escuela «José Gorostiza»
+            </h4>
+            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
+              Brazo formativo fundado en 2001 por el Arq. Mario de Lille Fuentes con 4 diplomados universitarios.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-800 text-[10px] font-title font-bold text-[#F5DEB3] uppercase">
+            Conocer Diplomados
+          </div>
+        </a>
+
+        <!-- Eje 4: Certamen Lírico Sor Juana 2026 -->
+        <a 
+          href="#convocatorias" 
+          class="hero-pillar-card p-5 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#C59B27] transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
+        >
+          <div class="space-y-2">
+            <div class="flex justify-between items-start">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[10px] font-title font-bold uppercase">
+                Convocatoria Abierta
+              </span>
+              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+            </div>
+            <h4 class="font-title font-bold text-sm text-white group-hover:text-[#C59B27] transition">
+              Un Soneto por Sor Juana
+            </h4>
+            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
+              Certamen poético anual con publicación de plica ganadora y diploma de honor de la Mesa Directiva.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-800 text-[10px] font-title font-bold text-[#F5DEB3] uppercase">
+            Consultar Bases
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 5. FRANJA DE HITOS INSTITUCIONALES HISTÓRICOS                     -->
+    <!-- ================================================================= -->
+    <div class="pt-8 border-t border-gray-800/90 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl text-center">
+      <div class="bg-[#1C1814]/80 p-5 rounded-2xl border border-gray-800/90 backdrop-blur-md shadow-subtle hover:border-[#EF7B38]/50 transition">
+        <span class="block font-serif text-3xl sm:text-4xl font-bold text-[#EF7B38]">+38</span>
+        <span class="text-[10px] sm:text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Años de Trayectoria</span>
+      </div>
+      <div class="bg-[#1C1814]/80 p-5 rounded-2xl border border-gray-800/90 backdrop-blur-md shadow-subtle hover:border-[#C59B27]/50 transition">
         <span class="block font-serif text-3xl sm:text-4xl font-bold text-white">+100</span>
-        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Escritores en su Historia</span>
+        <span class="text-[10px] sm:text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Escritores en su Historia</span>
       </div>
-      <div class="bg-carbon-card/60 p-5 rounded-3xl border border-gray-800/80 backdrop-blur-md shadow-subtle hover:border-dorado/50 transition">
-        <span class="block font-serif text-3xl sm:text-4xl font-bold text-dorado">+25</span>
-        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Ediciones Impresas</span>
+      <div class="bg-[#1C1814]/80 p-5 rounded-2xl border border-gray-800/90 backdrop-blur-md shadow-subtle hover:border-[#C59B27]/50 transition">
+        <span class="block font-serif text-3xl sm:text-4xl font-bold text-[#F5DEB3]">+25</span>
+        <span class="text-[10px] sm:text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Obras Publicadas</span>
       </div>
-      <div class="bg-carbon-card/60 p-5 rounded-3xl border border-gray-800/80 backdrop-blur-md shadow-subtle hover:border-terracota/50 transition">
+      <div class="bg-[#1C1814]/80 p-5 rounded-2xl border border-gray-800/90 backdrop-blur-md shadow-subtle hover:border-[#EF7B38]/50 transition">
         <span class="block font-serif text-3xl sm:text-4xl font-bold text-white">100%</span>
-        <span class="text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Autonomía Cultural</span>
+        <span class="text-[10px] sm:text-[11px] font-title font-semibold tracking-wider text-gray-300 uppercase">Autonomía Colegiada</span>
       </div>
     </div>
 
@@ -78,12 +241,32 @@ const basePath = "/letrasyvocesdetabasco";
 </section>
 
 <script>
-  // Rotador Dinámico de Citas en el Hero
+  // 1. Carrusel de Fondos con Transición Suave de Escenas
+  const bgSlides = [
+    document.getElementById('hero-bg-1'),
+    document.getElementById('hero-bg-2'),
+    document.getElementById('hero-bg-3')
+  ];
+  let currentBgIdx = 0;
+
+  if (bgSlides[0] && bgSlides[1] && bgSlides[2]) {
+    setInterval(() => {
+      bgSlides[currentBgIdx]?.classList.remove('opacity-25');
+      bgSlides[currentBgIdx]?.classList.add('opacity-0');
+      
+      currentBgIdx = (currentBgIdx + 1) % bgSlides.length;
+      
+      bgSlides[currentBgIdx]?.classList.remove('opacity-0');
+      bgSlides[currentBgIdx]?.classList.add('opacity-25');
+    }, 6000);
+  }
+
+  // 2. Rotador Dinámico de Citas Líricas en el Hero
   const phrases = [
-    'Preservamos la palabra,<br><span class="italic font-light text-gray-200">impulsamos la lírica del Sureste.</span>',
-    'Más de 38 años de memoria literaria<br><span class="italic font-light text-gray-200">e historia colectiva en Tabasco.</span>',
-    'Voces que trascienden el trópico:<br><span class="italic font-light text-gray-200">poesía, narrativa y rigor editorial.</span>',
-    'Un espacio independiente de encuentro,<br><span class="italic font-light text-gray-200">diálogo y divulgación cultural.</span>'
+    'Preservamos la palabra,<br><span class="italic font-light text-[#EF7B38]">impulsamos la lírica del Sureste.</span>',
+    'Más de 38 años de memoria literaria<br><span class="italic font-light text-[#F5DEB3]">e historia colectiva en Tabasco.</span>',
+    'Voces que trascienden el trópico:<br><span class="italic font-light text-[#EF7B38]">poesía, narrativa y rigor editorial.</span>',
+    'Un espacio independiente de encuentro,<br><span class="italic font-light text-[#F5DEB3]">diálogo y creación cultural.</span>'
   ];
   let currentPhraseIdx = 0;
   const phraseEl = document.getElementById('hero-phrase');
@@ -91,13 +274,48 @@ const basePath = "/letrasyvocesdetabasco";
   if (phraseEl) {
     setInterval(() => {
       phraseEl.style.opacity = '0';
-      phraseEl.style.transform = 'translateY(8px)';
+      phraseEl.style.transform = 'translateY(6px)';
       setTimeout(() => {
         currentPhraseIdx = (currentPhraseIdx + 1) % phrases.length;
         phraseEl.innerHTML = phrases[currentPhraseIdx];
         phraseEl.style.opacity = '1';
         phraseEl.style.transform = 'translateY(0)';
-      }, 600);
-    }, 4800);
+      }, 500);
+    }, 5000);
+  }
+
+  // 3. Rotador de Anuncios y Novedades
+  const announcements = [
+    'XXXIX Aniversario (1987 – 2026) · Sociedad de Escritores LVT',
+    '📚 En Prensa: «Animalia Literaria» — Antología 2026',
+    '🎙️ Audioteca Activa: 14 Obras en Audio Nativo MP3',
+    '✍️ Convocatoria Abierta: Certamen «Un Soneto por Sor Juana»',
+    '🎟️ Iniciativa Pro-Fondos A.C. · Cuadrícula 00 – 99 ($100 MXN)'
+  ];
+  let currentAnnounceIdx = 0;
+  const announceEl = document.getElementById('hero-live-announcement');
+
+  if (announceEl) {
+    setInterval(() => {
+      announceEl.style.opacity = '0';
+      setTimeout(() => {
+        currentAnnounceIdx = (currentAnnounceIdx + 1) % announcements.length;
+        announceEl.innerText = announcements[currentAnnounceIdx];
+        announceEl.style.opacity = '1';
+      }, 400);
+    }, 4500);
+  }
+
+  // 4. Efecto de Resplandor que Reacciona al Movimiento del Mouse
+  const glow = document.getElementById('hero-mouse-glow');
+  const heroSection = document.getElementById('inicio');
+
+  if (glow && heroSection) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      glow.style.transform = `translate(${x - 250}px, ${y - 250}px)`;
+    });
   }
 </script>
