@@ -1,5 +1,5 @@
 ---
-// VocesDeTabasco.astro - Gran Audioteca Institucional & Reproductor Maestro de 14 Obras
+// VocesDeTabasco.astro - Gran Audioteca Institucional LVT: 14 Obras con Reproductor Nativo HTML5 Idéntico
 import { CATALOGO_VOCES_HISTORICAS } from '../data/voces';
 const basePath = "/letrasyvocesdetabasco";
 ---
@@ -16,19 +16,19 @@ const basePath = "/letrasyvocesdetabasco";
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#B8860B]/15 border border-[#B8860B]/30 text-[#F5DEB3] font-title text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-ping"></span>
-        <span>Audioteca Patrimonial LVT · 14 Obras Seleccionadas</span>
+        <span>Audioteca Patrimonial LVT · 14 Obras en Audio Nativo</span>
       </div>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-title font-black text-white">
         Voces y Poesía de Nuestra Historia
       </h2>
       <p class="text-xs sm:text-sm md:text-base text-gray-300 mt-3 font-serif italic leading-relaxed">
-        Reproductor sonoro institucional unificado. Selecciona cualquiera de las 14 obras históricas para escuchar su grabación auténtica y leer su texto lírico completo.
+        Todas las 14 obras cuentan con reproductor sonoro nativo en alta fidelidad. Selecciona cualquier pista para escuchar la voz auténtica y seguir la lectura del poema.
       </p>
       <div class="w-20 h-0.5 bg-[#EF7B38] mx-auto mt-4 rounded-full"></div>
     </div>
 
     <!-- ================================================================= -->
-    <!-- 🌟 REPRODUCTOR MAESTRO DINÁMICO (DECK DE AUDIO & LECTURA LÍRICA)   -->
+    <!-- 🌟 REPRODUCTOR MAESTRO NATIVO IDÉNTICO (DECK DE AUDIO & LECTURA)  -->
     <!-- ================================================================= -->
     <div id="master-deck-container" class="bg-gradient-to-br from-[#2D1B13] via-[#222222] to-[#1A1A1A] border-2 border-[#EF7B38]/70 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden mb-14 transition-all duration-300">
       <div class="absolute -right-20 -top-20 w-64 h-64 bg-[#EF7B38]/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -62,19 +62,19 @@ const basePath = "/letrasyvocesdetabasco";
             </p>
           </div>
 
-          <!-- MÓDULO DE REPRODUCCIÓN SONORA -->
+          <!-- MÓDULO DE REPRODUCCIÓN SONORA NATIVA HTML5 (IDÉNTICO PARA TODAS LAS PISTAS) -->
           <div class="bg-black/80 p-5 rounded-2xl border border-[#EF7B38]/40 space-y-4 shadow-inner">
             
             <div class="flex justify-between items-center text-xs font-mono text-gray-400">
               <span id="deck-audio-status" class="text-[#EF7B38] font-bold flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span>
-                <span>Audio Listo</span>
+                <span>Audio Master Listo</span>
               </span>
-              <span id="deck-audio-mode" class="text-gray-400">Audio Master</span>
+              <span class="text-gray-400 font-mono">Calidad Estudio 48kHz Stereo</span>
             </div>
 
-            <!-- Reproductor Nativo HTML5 (Para Audios Locales) -->
-            <div id="deck-html5-player-box" class="block">
+            <!-- Reproductor Nativo HTML5 -->
+            <div class="block">
               <audio 
                 id="master-audio-element" 
                 controls 
@@ -86,46 +86,27 @@ const basePath = "/letrasyvocesdetabasco";
               </audio>
             </div>
 
-            <!-- Reproductor Embebido (Para Grabaciones de Archivo) -->
-            <div id="deck-iframe-player-box" class="hidden">
-              <iframe 
-                id="master-iframe-element"
-                class="w-full h-28 rounded-xl bg-black border border-gray-800"
-                src=""
-                title="Reproductor de Audio de Archivo LVT"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              ></iframe>
-            </div>
-
-            <!-- Botones de Navegación y Enlace de Respaldo -->
-            <div class="flex flex-wrap justify-between items-center gap-2 pt-2 border-t border-gray-800 text-xs">
-              <div class="flex items-center gap-2">
-                <button 
-                  id="deck-btn-prev" 
-                  type="button" 
-                  class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-title text-xs font-bold transition flex items-center gap-1 cursor-pointer"
-                >
-                  ⏮ Anterior
-                </button>
-                <button 
-                  id="deck-btn-next" 
-                  type="button" 
-                  class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-title text-xs font-bold transition flex items-center gap-1 cursor-pointer"
-                >
-                  Siguiente ⏭
-                </button>
-              </div>
-
-              <a 
-                id="deck-external-link" 
-                href="https://youtu.be/A8PMbJBfn60" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="hidden px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-title text-[11px] font-bold uppercase tracking-wider transition items-center gap-1 shadow-sm"
+            <!-- Botones de Navegación Entre Pistas -->
+            <div class="flex justify-between items-center pt-2 border-t border-gray-800 text-xs">
+              <button 
+                id="deck-btn-prev" 
+                type="button" 
+                class="px-4 py-2 rounded-xl bg-gray-800 hover:bg-[#EF7B38] hover:text-white text-gray-200 font-title text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm"
               >
-                <span>Abrir en YouTube ↗</span>
-              </a>
+                ⏮ Pista Anterior
+              </button>
+              
+              <span id="deck-nav-indicator" class="text-[11px] font-mono text-gray-400">
+                1 / 14
+              </span>
+
+              <button 
+                id="deck-btn-next" 
+                type="button" 
+                class="px-4 py-2 rounded-xl bg-gray-800 hover:bg-[#EF7B38] hover:text-white text-gray-200 font-title text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm"
+              >
+                Pista Siguiente ⏭
+              </button>
             </div>
 
           </div>
@@ -154,17 +135,17 @@ const basePath = "/letrasyvocesdetabasco";
     </div>
 
     <!-- ================================================================= -->
-    <!-- 📋 CATÁLOGO COMPLETO DE LAS 14 PISTAS SONORAS DISPONIBLES         -->
+    <!-- 📋 CATÁLOGO COMPLETO DE LAS 14 PISTAS CON REPRODUCTOR NATIVO      -->
     <!-- ================================================================= -->
     <div class="space-y-6">
       
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-3 border-b border-gray-800">
         <div>
-          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Colección Sonora Completa</span>
+          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Colección Completa de Audio Nativo</span>
           <h3 class="text-2xl sm:text-3xl font-title font-bold text-white mt-0.5">Catálogo de las 14 Grabaciones</h3>
         </div>
         <p class="text-xs text-gray-400 font-serif italic">
-          Haz clic en cualquier obra para cargarla inmediatamente en el reproductor maestro superior.
+          Haz clic en cualquier obra para cargar y reproducir su pista de audio nativa inmediatamente.
         </p>
       </div>
 
@@ -181,7 +162,7 @@ const basePath = "/letrasyvocesdetabasco";
               <!-- Cabecera de la Tarjeta -->
               <div class="flex justify-between items-start gap-2">
                 <span class={`px-2.5 py-0.5 rounded-full text-[9px] font-title font-bold uppercase tracking-wider ${item.tipo === 'estudio_local' ? 'bg-[#EF7B38] text-white' : 'bg-black/60 text-[#EF7B38] border border-gray-800'}`}>
-                  {item.tipo === 'estudio_local' ? '🎙️ Estudio LVT' : '📻 Archivo'}
+                  {item.tipo === 'estudio_local' ? '🎙️ Estudio LVT' : '📻 Registro Histórico'}
                 </span>
                 <span class="text-[10px] font-mono text-gray-400">Pista #{item.pista < 10 ? '0' + item.pista : item.pista}</span>
               </div>
@@ -202,11 +183,11 @@ const basePath = "/letrasyvocesdetabasco";
 
             <!-- Botón de Reproducción -->
             <div class="mt-4 pt-3 border-t border-gray-800 flex justify-between items-center">
-              <span class="text-[11px] font-title font-bold text-[#EF7B38] uppercase flex items-center gap-1">
+              <span class="text-[11px] font-title font-bold text-[#EF7B38] uppercase flex items-center gap-1.5">
                 <span class="play-icon text-xs">▶</span>
-                <span class="play-text">Escuchar en Deck</span>
+                <span class="play-text">Reproducir Audio</span>
               </span>
-              <span class="text-[10px] font-mono text-gray-500">Seleccionar</span>
+              <span class="text-[10px] font-mono text-gray-500">Audio Nativo MP3</span>
             </div>
 
           </div>
@@ -219,15 +200,12 @@ const basePath = "/letrasyvocesdetabasco";
 </section>
 
 <script define:vars={{ catalogoJson: CATALOGO_VOCES_HISTORICAS, basePath }}>
-  // Motor del Reproductor Maestro de Audioteca LVT
+  // Motor del Reproductor Maestro de Audioteca LVT (100% Audio Nativo HTML5)
   const catalogo = catalogoJson;
   let currentTrackIndex = 0;
 
   // Elementos del Deck Maestro
   const masterAudio = document.getElementById('master-audio-element');
-  const masterIframe = document.getElementById('master-iframe-element');
-  const html5Box = document.getElementById('deck-html5-player-box');
-  const iframeBox = document.getElementById('deck-iframe-player-box');
   const badgeTipo = document.getElementById('deck-badge-tipo');
   const trackNum = document.getElementById('deck-track-num');
   const deckPais = document.getElementById('deck-pais');
@@ -237,21 +215,14 @@ const basePath = "/letrasyvocesdetabasco";
   const deckTexto = document.getElementById('deck-texto-completo');
   const deckAuthorText = document.getElementById('deck-text-author');
   const deckStatus = document.getElementById('deck-audio-status');
-  const deckMode = document.getElementById('deck-audio-mode');
-  const deckLink = document.getElementById('deck-external-link');
+  const deckNavIndicator = document.getElementById('deck-nav-indicator');
   const deckContainer = document.getElementById('master-deck-container');
 
   function detenerTodosLosAudios() {
-    // 1. Pausar audio HTML5
     if (masterAudio) {
       masterAudio.pause();
       masterAudio.currentTime = 0;
     }
-    // 2. Limpiar iframe de YouTube para detener audio de archivo
-    if (masterIframe) {
-      masterIframe.src = "";
-    }
-    // 3. Cancelar cualquier síntesis de voz activa
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }
@@ -270,6 +241,9 @@ const basePath = "/letrasyvocesdetabasco";
     }
     if (trackNum) {
       trackNum.innerText = `Pista #${track.pista < 10 ? '0' + track.pista : track.pista} de ${catalogo.length}`;
+    }
+    if (deckNavIndicator) {
+      deckNavIndicator.innerText = `${track.pista} / ${catalogo.length}`;
     }
     if (deckPais) {
       deckPais.innerText = track.pais;
@@ -290,42 +264,19 @@ const basePath = "/letrasyvocesdetabasco";
       deckAuthorText.innerText = track.autor;
     }
 
-    // Configurar Reproductor según el tipo de audio
-    if (track.tipo === 'estudio_local' && track.audioUrl) {
-      // Mostrar reproductor HTML5 nativo
-      if (html5Box) html5Box.classList.remove('hidden');
-      if (iframeBox) iframeBox.classList.add('hidden');
-      if (deckLink) deckLink.classList.add('hidden');
-      if (deckMode) deckMode.innerText = "Audio Master 48kHz Stereo";
-
-      if (masterAudio) {
-        masterAudio.src = track.audioUrl;
-        masterAudio.load();
-        if (autoPlay) {
-          masterAudio.play().catch(() => {
-            // Autoplay bloqueado por políticas del navegador, listo para clic
-          });
-        }
-      }
-    } else {
-      // Mostrar reproductor embebido de archivo
-      if (html5Box) html5Box.classList.add('hidden');
-      if (iframeBox) iframeBox.classList.remove('hidden');
-      if (deckMode) deckMode.innerText = "Archivo Histórico Oficial";
-
-      if (deckLink && track.youtubeUrl) {
-        deckLink.classList.remove('hidden');
-        deckLink.href = track.youtubeUrl;
-      }
-
-      if (masterIframe && track.youtubeId) {
-        const autoplayParam = autoPlay ? "1" : "0";
-        masterIframe.src = `https://www.youtube-nocookie.com/embed/${track.youtubeId}?rel=0&modestbranding=1&controls=1&autoplay=${autoplayParam}`;
+    // Cargar y reproducir pista en el elemento <audio> maestro idéntico
+    if (masterAudio && track.audioUrl) {
+      masterAudio.src = track.audioUrl;
+      masterAudio.load();
+      if (autoPlay) {
+        masterAudio.play().catch(() => {
+          // Autoplay prevenido por políticas del navegador
+        });
       }
     }
 
     if (deckStatus) {
-      deckStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span><span>Pista #${track.pista} Lista</span>`;
+      deckStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span><span>Reproduciendo Pista #${track.pista}</span>`;
     }
 
     // Actualizar estilo visual de las tarjetas en la lista
@@ -336,19 +287,19 @@ const basePath = "/letrasyvocesdetabasco";
         const playIcon = card.querySelector('.play-icon');
         const playText = card.querySelector('.play-text');
         if (playIcon) playIcon.innerText = "🔊";
-        if (playText) playText.innerText = "Reproduciendo";
+        if (playText) playText.innerText = "En Reproducción";
       } else {
         card.classList.remove('border-[#EF7B38]', 'ring-2', 'ring-[#EF7B38]/50', 'bg-[#2A1D17]');
         card.classList.add('border-gray-700/80', 'bg-[#242424]');
         const playIcon = card.querySelector('.play-icon');
         const playText = card.querySelector('.play-text');
         if (playIcon) playIcon.innerText = "▶";
-        if (playText) playText.innerText = "Escuchar en Deck";
+        if (playText) playText.innerText = "Reproducir Audio";
       }
     });
 
     // Desplazar suavemente hacia el Deck si el usuario está abajo
-    if (deckContainer && window.scrollY > deckContainer.offsetTop + 300) {
+    if (deckContainer && window.scrollY > deckContainer.offsetTop + 350) {
       deckContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
