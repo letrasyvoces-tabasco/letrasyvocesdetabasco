@@ -1,5 +1,5 @@
 ---
-// VocesDeTabasco.astro - Gran Audioteca Institucional & Sala Lírica de Declamaciones
+// VocesDeTabasco.astro - Gran Audioteca Institucional & Reproductor Maestro de 14 Obras
 import { CATALOGO_VOCES_HISTORICAS } from '../data/voces';
 const basePath = "/letrasyvocesdetabasco";
 ---
@@ -16,259 +16,201 @@ const basePath = "/letrasyvocesdetabasco";
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#B8860B]/15 border border-[#B8860B]/30 text-[#F5DEB3] font-title text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-ping"></span>
-        <span>Audioteca Patrimonial & Sala Lírica de Declamación</span>
+        <span>Audioteca Patrimonial LVT · 14 Obras Seleccionadas</span>
       </div>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-title font-black text-white">
         Voces y Poesía de Nuestra Historia
       </h2>
       <p class="text-xs sm:text-sm md:text-base text-gray-300 mt-3 font-serif italic leading-relaxed">
-        Grabaciones de estudio oficiales de LVT, registros sonoros históricos de los grandes autores iberoamericanos y sala interactiva con declamación sonora multivoz.
+        Reproductor sonoro institucional unificado. Selecciona cualquiera de las 14 obras históricas para escuchar su grabación auténtica y leer su texto lírico completo.
       </p>
       <div class="w-20 h-0.5 bg-[#EF7B38] mx-auto mt-4 rounded-full"></div>
     </div>
 
     <!-- ================================================================= -->
-    <!-- 1. GRABACIÓN DE ESTUDIO OFICIAL LVT: OLIVERIO GIRONDO             -->
+    <!-- 🌟 REPRODUCTOR MAESTRO DINÁMICO (DECK DE AUDIO & LECTURA LÍRICA)   -->
     <!-- ================================================================= -->
-    <div class="bg-gradient-to-br from-[#2D1B13] via-[#222222] to-[#1A1A1A] border-2 border-[#EF7B38]/60 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden mb-12">
+    <div id="master-deck-container" class="bg-gradient-to-br from-[#2D1B13] via-[#222222] to-[#1A1A1A] border-2 border-[#EF7B38]/70 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden mb-14 transition-all duration-300">
       <div class="absolute -right-20 -top-20 w-64 h-64 bg-[#EF7B38]/20 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <div class="lg:col-span-7 space-y-4">
+        <!-- Panel Izquierdo: Ficha Técnica y Controles de Audio -->
+        <div class="lg:col-span-6 space-y-5">
+          
           <div class="flex flex-wrap items-center gap-2">
-            <span class="px-3 py-1 rounded-full bg-[#EF7B38] text-white text-[10px] font-title font-bold uppercase tracking-widest shadow-sm">
+            <span id="deck-badge-tipo" class="px-3 py-1 rounded-full bg-[#EF7B38] text-white text-[10px] font-title font-bold uppercase tracking-widest shadow-sm">
               🎙️ Grabación Oficial de Estudio LVT
             </span>
-            <span class="text-xs text-[#F5DEB3] font-mono">
-              Voz: Lic. Juan David Pérez Cabrera
+            <span id="deck-track-num" class="px-2.5 py-0.5 rounded-full bg-black/60 border border-gray-700 text-[#F5DEB3] text-[10px] font-mono font-bold">
+              Pista #01 de 14
+            </span>
+            <span id="deck-pais" class="text-xs text-gray-400 font-mono">
+              Buenos Aires, Argentina / Tabasco
             </span>
           </div>
 
-          <h3 class="font-title font-black text-2xl sm:text-4xl text-white leading-tight">
-            «Espantapájaros (1)» — Oliverio Girondo
-          </h3>
-          
-          <p class="text-xs sm:text-sm text-gray-300 font-serif italic leading-relaxed">
-            Grabación oficial en alta fidelidad preservada en el archivo de audio de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
-          </p>
+          <div>
+            <h3 id="deck-titulo" class="font-title font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-tight">
+              Oliverio Girondo — «Espantapájaros (1)»
+            </h3>
+            <p id="deck-declamador" class="text-sm font-title font-bold text-[#EF7B38] mt-1">
+              Declamación: Lic. Juan David Pérez Cabrera (Letras y Voces de Tabasco, A.C.)
+            </p>
+            <p id="deck-desc" class="text-xs sm:text-sm text-gray-300 font-serif italic leading-relaxed mt-2">
+              Grabación oficial en alta fidelidad preservada en el archivo de audio de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
+            </p>
+          </div>
 
-          <!-- Reproductor de Audio HTML5 -->
-          <div class="bg-black/70 p-4 rounded-2xl border border-[#EF7B38]/40 space-y-2">
+          <!-- MÓDULO DE REPRODUCCIÓN SONORA -->
+          <div class="bg-black/80 p-5 rounded-2xl border border-[#EF7B38]/40 space-y-4 shadow-inner">
+            
             <div class="flex justify-between items-center text-xs font-mono text-gray-400">
-              <span class="text-[#EF7B38] font-bold">Audio Master Oficial (03:28)</span>
-              <span>Calidad Estudio 48kHz Stereo</span>
-            </div>
-            <audio controls class="w-full rounded-lg" preload="metadata">
-              <source src={`${basePath}/assets/audios/espantapajaros_oliverio_girondo_david_cabrera.mp3`} type="audio/mpeg" />
-              <source src={`${basePath}/assets/audios/espantapajaros_oliverio_girondo_david_cabrera.m4a`} type="audio/mp4" />
-              Tu navegador no soporta la reproducción de audio HTML5.
-            </audio>
-          </div>
-        </div>
-
-        <!-- Muestra de Texto del Poema Espantapájaros -->
-        <div class="lg:col-span-5 bg-black/50 p-6 rounded-2xl border border-gray-800 max-h-80 overflow-y-auto space-y-2 text-xs font-serif leading-relaxed text-gray-200 scrollbar-thin">
-          <div class="font-title font-bold text-[10px] uppercase text-[#EF7B38] tracking-widest pb-1 border-b border-gray-800">
-            Texto Íntegro · Oliverio Girondo (1932)
-          </div>
-          <p class="italic text-gray-300">
-            No se me importa un pito que las mujeres<br/>
-            tengan los senos como magnolias o como pasas de higo;<br/>
-            un cutis de durazno o de papel de lija.<br/>
-            Le doy una importancia igual a cero,<br/>
-            al hecho de que amanezcan con un aliento afrodisíaco<br/>
-            o con un aliento insecticida.<br/>
-            Soy perfectamente capaz de soportarles<br/>
-            una nariz que sacaría el primer premio<br/>
-            en una exposición de zanahorias;<br/>
-            ¡pero eso sí! -y en esto soy irreductible-<br/>
-            no les perdono, bajo ningún pretexto, que no sepan volar.<br/>
-            Si no saben volar ¡pierden el tiempo las que pretendan seducirme!<br/>
-            Ésta fue -y no otra- la razón de que me enamorase,<br/>
-            tan locamente, de María Luisa.<br/>
-            ¿Qué me importaban sus labios por entregas y sus encelos sulfurosos?<br/>
-            ¿Qué me importaban sus extremidades de palmípedo<br/>
-            y sus miradas de pronóstico reservado?<br/>
-            ¡María Luisa era una verdadera pluma!<br/>
-            Desde el amanecer volaba del dormitorio a la cocina,<br/>
-            volaba del comedor a la despensa.<br/>
-            Volando me preparaba el baño, la camisa.<br/>
-            Volando realizaba sus compras, sus quehaceres...<br/>
-            ¡Con qué impaciencia yo esperaba que volviese, volando,<br/>
-            de algún paseo por los alrededores!<br/>
-            Allí lejos, perdido entre las nubes, un puntito rosado.<br/>
-            "¡María Luisa! ¡María Luisa!"... y a los pocos segundos,<br/>
-            ya me abrazaba con sus piernas de pluma,<br/>
-            para llevarme, volando, a cualquier parte.<br/>
-            Durante kilómetros de silencio planeábamos una caricia<br/>
-            que nos aproximaba al paraíso;<br/>
-            durante horas enteras nos anidábamos en una nube,<br/>
-            como dos ángeles, y de repente,<br/>
-            en tirabuzón, en hoja muerta,<br/>
-            el aterrizaje forzoso de un espasmo.<br/>
-            ¡Qué delicia la de tener una mujer tan ligera...,<br/>
-            aunque nos haga ver, de vez en cuando, las estrellas!<br/>
-            ¡Que voluptuosidad la de pasarse los días entre las nubes...<br/>
-            la de pasarse las noches de un solo vuelo!<br/>
-            Después de conocer una mujer etérea,<br/>
-            ¿puede brindarnos alguna clase de atractivos una mujer terrestre?<br/>
-            ¿Verdad que no hay diferencia sustancial<br/>
-            entre vivir con una vaca o con una mujer<br/>
-            que tenga las nalgas a setenta y ocho centímetros del suelo?<br/>
-            Yo, por lo menos, soy incapaz de comprender<br/>
-            la seducción de una mujer pedestre,<br/>
-            y por más empeño que ponga en concebirlo,<br/>
-            no me es posible ni tan siquiera imaginar<br/>
-            que pueda hacerse el amor más que volando.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ================================================================= -->
-    <!-- 2. AUDIOTECA PATRIMONIAL: 13 REGISTROS SONOROS HISTÓRICOS         -->
-    <!-- ================================================================= -->
-    <div class="mb-14">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 pb-3 border-b border-gray-800">
-        <div>
-          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Registros Sonoros Auténticos</span>
-          <h3 class="text-2xl sm:text-3xl font-title font-bold text-white mt-0.5">Audioteca de Autores y Grandes Voces</h3>
-        </div>
-        <span class="text-xs text-gray-400 font-mono">13 Grabaciones Seleccionadas</span>
-      </div>
-
-      <!-- Reproductor Activo de Audio Histórico -->
-      <div id="active-audio-deck" class="bg-[#242424] p-6 sm:p-8 rounded-3xl border border-gray-700 shadow-2xl mb-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-          
-          <div class="lg:col-span-8 space-y-3">
-            <div class="flex flex-wrap items-center gap-2">
-              <span id="deck-badge" class="px-2.5 py-0.5 rounded-full bg-red-950 text-red-300 border border-red-800 text-[10px] font-title font-bold uppercase tracking-wider">
-                Voz del Autor
+              <span id="deck-audio-status" class="text-[#EF7B38] font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span>
+                <span>Audio Listo</span>
               </span>
-              <span id="deck-pais" class="text-xs text-[#F5DEB3] font-mono">Jalisco, México</span>
+              <span id="deck-audio-mode" class="text-gray-400">Audio Master</span>
             </div>
-            
-            <h4 id="deck-titulo" class="text-2xl sm:text-3xl font-title font-black text-white">
-              Juan Rulfo — «En el hidrante las gotas»
-            </h4>
-            
-            <p id="deck-declamador" class="text-xs font-title font-bold text-[#EF7B38]">
-              Declamación: Juan Rulfo (Voz del Autor)
-            </p>
-            
-            <p id="deck-desc" class="text-xs sm:text-sm text-gray-400 font-serif italic leading-relaxed">
-              Grabación histórica con la voz pausada, misteriosa y profunda del maestro Juan Rulfo.
-            </p>
 
-            <!-- Widget Embebido de Audio / YouTube en formato compacto -->
-            <div class="pt-3">
+            <!-- Reproductor Nativo HTML5 (Para Audios Locales) -->
+            <div id="deck-html5-player-box" class="block">
+              <audio 
+                id="master-audio-element" 
+                controls 
+                class="w-full rounded-xl" 
+                preload="metadata"
+                src={`${basePath}/assets/audios/espantapajaros_oliverio_girondo_david_cabrera.mp3`}
+              >
+                Tu navegador no soporta la reproducción de audio HTML5.
+              </audio>
+            </div>
+
+            <!-- Reproductor Embebido (Para Grabaciones de Archivo) -->
+            <div id="deck-iframe-player-box" class="hidden">
               <iframe 
-                id="audio-deck-iframe"
-                class="w-full h-24 sm:h-28 rounded-2xl bg-black border border-gray-800"
-                src="https://www.youtube-nocookie.com/embed/A8PMbJBfn60?rel=0&modestbranding=1&controls=1" 
-                title="Reproductor de Audio Histórico"
+                id="master-iframe-element"
+                class="w-full h-28 rounded-xl bg-black border border-gray-800"
+                src=""
+                title="Reproductor de Audio de Archivo LVT"
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               ></iframe>
             </div>
-          </div>
 
-          <!-- Acceso Directo y Botón de Respaldo -->
-          <div class="lg:col-span-4 bg-black/40 p-5 rounded-2xl border border-gray-800 flex flex-col justify-between space-y-4">
-            <div class="space-y-1">
-              <span class="text-[10px] font-title font-bold text-gray-400 uppercase tracking-wider block">Fuente Oficial</span>
-              <p class="text-xs text-gray-300 font-serif italic">
-                Grabación preservada en colecciones sonoras de poesía iberoamericana.
-              </p>
+            <!-- Botones de Navegación y Enlace de Respaldo -->
+            <div class="flex flex-wrap justify-between items-center gap-2 pt-2 border-t border-gray-800 text-xs">
+              <div class="flex items-center gap-2">
+                <button 
+                  id="deck-btn-prev" 
+                  type="button" 
+                  class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-title text-xs font-bold transition flex items-center gap-1 cursor-pointer"
+                >
+                  ⏮ Anterior
+                </button>
+                <button 
+                  id="deck-btn-next" 
+                  type="button" 
+                  class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-title text-xs font-bold transition flex items-center gap-1 cursor-pointer"
+                >
+                  Siguiente ⏭
+                </button>
+              </div>
+
+              <a 
+                id="deck-external-link" 
+                href="https://youtu.be/A8PMbJBfn60" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="hidden px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-title text-[11px] font-bold uppercase tracking-wider transition items-center gap-1 shadow-sm"
+              >
+                <span>Abrir en YouTube ↗</span>
+              </a>
             </div>
-            
-            <a 
-              id="deck-direct-link"
-              href="https://youtu.be/A8PMbJBfn60?list=PLkBildazp7OBfnh4eahKj91MQXiaumTer"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-title text-xs font-bold uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm"
-            >
-              <span>Escuchar en YouTube ↗</span>
-            </a>
+
           </div>
 
         </div>
-      </div>
 
-      <!-- Cuadrícula de las 13 Grabaciones Históricas -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {CATALOGO_VOCES_HISTORICAS.slice(1).map((item, index) => (
-          <div 
-            class={`audio-card bg-[#242424] p-5 rounded-2xl border border-gray-700/80 hover:border-[#EF7B38] transition-all cursor-pointer flex flex-col justify-between ${index === 0 ? 'ring-1 ring-[#EF7B38]' : ''}`}
-            data-index={index + 1}
-            data-id={item.youtubeId}
-            data-titulo={`${item.autor} — «${item.titulo}»`}
-            data-declamador={`Declamación: ${item.declamador}`}
-            data-pais={item.pais}
-            data-desc={item.descripcion}
-          >
-            <div class="space-y-2">
-              <div class="flex justify-between items-start">
-                <span class="px-2 py-0.5 rounded-md bg-black/60 text-[#EF7B38] text-[9px] font-title font-bold uppercase tracking-wider">
-                  Audio #{index + 1}
-                </span>
-                <span class="text-[10px] font-mono text-gray-400 truncate max-w-[120px]">{item.pais.split('/')[0]}</span>
-              </div>
-              <h5 class="font-title font-bold text-sm text-white leading-snug">{item.titulo}</h5>
-              <p class="text-xs text-[#F5DEB3] font-serif italic">{item.autor}</p>
-              <p class="text-[11px] text-gray-400 font-sans line-clamp-2">{item.declamador}</p>
-            </div>
-
-            <div class="mt-4 pt-2 border-t border-gray-800 flex justify-between items-center">
-              <span class="text-[10px] font-title font-bold text-[#EF7B38] uppercase">Cargar Audio</span>
-              <span class="text-xs text-gray-400">▶</span>
-            </div>
+        <!-- Panel Derecho: Texto Lírico Completo del Poema Activo -->
+        <div class="lg:col-span-6 space-y-3">
+          <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+            <span class="font-title font-bold text-xs uppercase text-[#EF7B38] tracking-widest">
+              📖 Texto Íntegro de la Obra
+            </span>
+            <span id="deck-text-author" class="text-xs text-[#F5DEB3] font-serif italic">
+              Oliverio Girondo
+            </span>
           </div>
-        ))}
+
+          <div class="bg-black/60 p-6 rounded-2xl border border-gray-800 max-h-[380px] overflow-y-auto space-y-3 text-xs sm:text-sm font-serif leading-relaxed text-gray-200 scrollbar-thin shadow-inner">
+            <p id="deck-texto-completo" class="italic whitespace-pre-line text-gray-300">
+              {CATALOGO_VOCES_HISTORICAS[0].textoPoema}
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <!-- ================================================================= -->
-    <!-- 3. SALA LÍRICA: DECLAMACIÓN ASISTIDA MULTIVOZ & VELOCIDADES        -->
+    <!-- 📋 CATÁLOGO COMPLETO DE LAS 14 PISTAS SONORAS DISPONIBLES         -->
     <!-- ================================================================= -->
-    <div class="bg-[#242424] p-6 sm:p-8 rounded-3xl border border-gray-700/80 shadow-2xl space-y-6">
+    <div class="space-y-6">
       
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-4 border-b border-gray-800">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-3 border-b border-gray-800">
         <div>
-          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#B8860B]">Sala de Lectura Asistida</span>
-          <h3 class="text-xl sm:text-2xl font-title font-bold text-white mt-0.5">Exploración de Textos con Modulación de Voz</h3>
+          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Colección Sonora Completa</span>
+          <h3 class="text-2xl sm:text-3xl font-title font-bold text-white mt-0.5">Catálogo de las 14 Grabaciones</h3>
         </div>
-
-        <!-- Controles de Voz y Velocidad -->
-        <div class="flex flex-wrap items-center gap-3">
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-title font-bold text-gray-400 uppercase">Voz:</span>
-            <select 
-              id="voice-select" 
-              class="px-3 py-1.5 rounded-xl bg-black/60 border border-gray-700 text-xs font-title text-white focus:outline-none focus:border-[#EF7B38]"
-            >
-              <option value="default">Voz Predeterminada (Español)</option>
-            </select>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-title font-bold text-gray-400 uppercase">Velocidad:</span>
-            <div class="inline-flex rounded-xl bg-black/60 border border-gray-700 p-1 gap-1">
-              <button type="button" class="speed-btn active px-2.5 py-0.5 rounded-lg text-xs font-title font-bold bg-[#EF7B38] text-white" data-speed="0.85">0.85x</button>
-              <button type="button" class="speed-btn px-2.5 py-0.5 rounded-lg text-xs font-title font-bold text-gray-300 hover:text-white" data-speed="1.0">1.0x</button>
-              <button type="button" class="speed-btn px-2.5 py-0.5 rounded-lg text-xs font-title font-bold text-gray-300 hover:text-white" data-speed="1.15">1.15x</button>
-            </div>
-          </div>
-        </div>
+        <p class="text-xs text-gray-400 font-serif italic">
+          Haz clic en cualquier obra para cargarla inmediatamente en el reproductor maestro superior.
+        </p>
       </div>
 
-      <!-- Cuadrícula de Poemas de Lectura -->
-      <div id="reading-poemas-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Inyectado dinámicamente -->
+      <!-- Cuadrícula de las 14 Pistas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {CATALOGO_VOCES_HISTORICAS.map((item, index) => (
+          <div 
+            class={`track-card bg-[#242424] p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between hover:border-[#EF7B38] hover:shadow-lg ${index === 0 ? 'border-[#EF7B38] ring-2 ring-[#EF7B38]/50 bg-[#2A1D17]' : 'border-gray-700/80'}`}
+            data-index={index}
+            id={`track-card-${index}`}
+          >
+            <div class="space-y-2">
+              
+              <!-- Cabecera de la Tarjeta -->
+              <div class="flex justify-between items-start gap-2">
+                <span class={`px-2.5 py-0.5 rounded-full text-[9px] font-title font-bold uppercase tracking-wider ${item.tipo === 'estudio_local' ? 'bg-[#EF7B38] text-white' : 'bg-black/60 text-[#EF7B38] border border-gray-800'}`}>
+                  {item.tipo === 'estudio_local' ? '🎙️ Estudio LVT' : '📻 Archivo'}
+                </span>
+                <span class="text-[10px] font-mono text-gray-400">Pista #{item.pista < 10 ? '0' + item.pista : item.pista}</span>
+              </div>
+
+              <!-- Título y Autor -->
+              <div>
+                <h4 class="font-title font-bold text-base text-white leading-snug">{item.titulo}</h4>
+                <p class="text-xs text-[#F5DEB3] font-serif italic">{item.autor}</p>
+              </div>
+
+              <!-- Declamador y País -->
+              <div class="text-[11px] text-gray-300 font-sans space-y-0.5 pt-1">
+                <p class="font-medium text-gray-300 line-clamp-1">🎙️ {item.declamador}</p>
+                <p class="text-gray-400 text-[10px] font-mono">📍 {item.pais}</p>
+              </div>
+
+            </div>
+
+            <!-- Botón de Reproducción -->
+            <div class="mt-4 pt-3 border-t border-gray-800 flex justify-between items-center">
+              <span class="text-[11px] font-title font-bold text-[#EF7B38] uppercase flex items-center gap-1">
+                <span class="play-icon text-xs">▶</span>
+                <span class="play-text">Escuchar en Deck</span>
+              </span>
+              <span class="text-[10px] font-mono text-gray-500">Seleccionar</span>
+            </div>
+
+          </div>
+        ))}
       </div>
 
     </div>
@@ -276,113 +218,157 @@ const basePath = "/letrasyvocesdetabasco";
   </div>
 </section>
 
-<script>
-  // Gestor del Reproductor Activo de Audio Histórico
-  const deckIframe = document.getElementById('audio-deck-iframe') as HTMLIFrameElement;
+<script define:vars={{ catalogoJson: CATALOGO_VOCES_HISTORICAS, basePath }}>
+  // Motor del Reproductor Maestro de Audioteca LVT
+  const catalogo = catalogoJson;
+  let currentTrackIndex = 0;
+
+  // Elementos del Deck Maestro
+  const masterAudio = document.getElementById('master-audio-element');
+  const masterIframe = document.getElementById('master-iframe-element');
+  const html5Box = document.getElementById('deck-html5-player-box');
+  const iframeBox = document.getElementById('deck-iframe-player-box');
+  const badgeTipo = document.getElementById('deck-badge-tipo');
+  const trackNum = document.getElementById('deck-track-num');
+  const deckPais = document.getElementById('deck-pais');
   const deckTitulo = document.getElementById('deck-titulo');
   const deckDeclamador = document.getElementById('deck-declamador');
-  const deckPais = document.getElementById('deck-pais');
   const deckDesc = document.getElementById('deck-desc');
-  const deckLink = document.getElementById('deck-direct-link') as HTMLAnchorElement;
-  const cards = document.querySelectorAll('.audio-card');
+  const deckTexto = document.getElementById('deck-texto-completo');
+  const deckAuthorText = document.getElementById('deck-text-author');
+  const deckStatus = document.getElementById('deck-audio-status');
+  const deckMode = document.getElementById('deck-audio-mode');
+  const deckLink = document.getElementById('deck-external-link');
+  const deckContainer = document.getElementById('master-deck-container');
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => c.classList.remove('ring-1', 'ring-[#EF7B38]'));
-      card.classList.add('ring-1', 'ring-[#EF7B38]');
-
-      const yId = card.getAttribute('data-id');
-      const titulo = card.getAttribute('data-titulo');
-      const declamador = card.getAttribute('data-declamador');
-      const pais = card.getAttribute('data-pais');
-      const desc = card.getAttribute('data-desc');
-
-      if (deckIframe && yId) {
-        deckIframe.src = `https://www.youtube-nocookie.com/embed/${yId}?rel=0&modestbranding=1&controls=1&autoplay=1`;
-      }
-      if (deckTitulo && titulo) deckTitulo.innerText = titulo;
-      if (deckDeclamador && declamador) deckDeclamador.innerText = declamador;
-      if (deckPais && pais) deckPais.innerText = pais;
-      if (deckDesc && desc) deckDesc.innerText = desc;
-      if (deckLink && yId) deckLink.href = `https://www.youtube.com/watch?v=${yId}`;
-    });
-  });
-
-  // Motor de Declamación Asistida con Múltiples Voces
-  let currentSpeed = 0.85;
-  let synthVoices: SpeechSynthesisVoice[] = [];
-  const voiceSelect = document.getElementById('voice-select') as HTMLSelectElement;
-
-  function loadVoices() {
+  function detenerTodosLosAudios() {
+    // 1. Pausar audio HTML5
+    if (masterAudio) {
+      masterAudio.pause();
+      masterAudio.currentTime = 0;
+    }
+    // 2. Limpiar iframe de YouTube para detener audio de archivo
+    if (masterIframe) {
+      masterIframe.src = "";
+    }
+    // 3. Cancelar cualquier síntesis de voz activa
     if ('speechSynthesis' in window) {
-      synthVoices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
-      if (voiceSelect && synthVoices.length > 0) {
-        voiceSelect.innerHTML = synthVoices.map((v, i) => `<option value="${i}">${v.name} (${v.lang})</option>`).join('');
-      }
+      window.speechSynthesis.cancel();
     }
   }
 
-  if ('speechSynthesis' in window) {
-    speechSynthesis.onvoiceschanged = loadVoices;
-    loadVoices();
+  function cargarPista(index, autoPlay = true) {
+    if (index < 0 || index >= catalogo.length) return;
+    
+    detenerTodosLosAudios();
+    currentTrackIndex = index;
+    const track = catalogo[index];
+
+    // Actualizar Textos del Deck
+    if (badgeTipo) {
+      badgeTipo.innerText = track.tipo === 'estudio_local' ? '🎙️ Grabación Oficial de Estudio LVT' : '📻 Registro Histórico de Archivo';
+    }
+    if (trackNum) {
+      trackNum.innerText = `Pista #${track.pista < 10 ? '0' + track.pista : track.pista} de ${catalogo.length}`;
+    }
+    if (deckPais) {
+      deckPais.innerText = track.pais;
+    }
+    if (deckTitulo) {
+      deckTitulo.innerText = `${track.autor} — «${track.titulo}»`;
+    }
+    if (deckDeclamador) {
+      deckDeclamador.innerText = `Declamación: ${track.declamador}`;
+    }
+    if (deckDesc) {
+      deckDesc.innerText = track.descripcion;
+    }
+    if (deckTexto) {
+      deckTexto.innerText = track.textoPoema;
+    }
+    if (deckAuthorText) {
+      deckAuthorText.innerText = track.autor;
+    }
+
+    // Configurar Reproductor según el tipo de audio
+    if (track.tipo === 'estudio_local' && track.audioUrl) {
+      // Mostrar reproductor HTML5 nativo
+      if (html5Box) html5Box.classList.remove('hidden');
+      if (iframeBox) iframeBox.classList.add('hidden');
+      if (deckLink) deckLink.classList.add('hidden');
+      if (deckMode) deckMode.innerText = "Audio Master 48kHz Stereo";
+
+      if (masterAudio) {
+        masterAudio.src = track.audioUrl;
+        masterAudio.load();
+        if (autoPlay) {
+          masterAudio.play().catch(() => {
+            // Autoplay bloqueado por políticas del navegador, listo para clic
+          });
+        }
+      }
+    } else {
+      // Mostrar reproductor embebido de archivo
+      if (html5Box) html5Box.classList.add('hidden');
+      if (iframeBox) iframeBox.classList.remove('hidden');
+      if (deckMode) deckMode.innerText = "Archivo Histórico Oficial";
+
+      if (deckLink && track.youtubeUrl) {
+        deckLink.classList.remove('hidden');
+        deckLink.href = track.youtubeUrl;
+      }
+
+      if (masterIframe && track.youtubeId) {
+        const autoplayParam = autoPlay ? "1" : "0";
+        masterIframe.src = `https://www.youtube-nocookie.com/embed/${track.youtubeId}?rel=0&modestbranding=1&controls=1&autoplay=${autoplayParam}`;
+      }
+    }
+
+    if (deckStatus) {
+      deckStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span><span>Pista #${track.pista} Lista</span>`;
+    }
+
+    // Actualizar estilo visual de las tarjetas en la lista
+    document.querySelectorAll('.track-card').forEach((card, idx) => {
+      if (idx === index) {
+        card.classList.add('border-[#EF7B38]', 'ring-2', 'ring-[#EF7B38]/50', 'bg-[#2A1D17]');
+        card.classList.remove('border-gray-700/80', 'bg-[#242424]');
+        const playIcon = card.querySelector('.play-icon');
+        const playText = card.querySelector('.play-text');
+        if (playIcon) playIcon.innerText = "🔊";
+        if (playText) playText.innerText = "Reproduciendo";
+      } else {
+        card.classList.remove('border-[#EF7B38]', 'ring-2', 'ring-[#EF7B38]/50', 'bg-[#2A1D17]');
+        card.classList.add('border-gray-700/80', 'bg-[#242424]');
+        const playIcon = card.querySelector('.play-icon');
+        const playText = card.querySelector('.play-text');
+        if (playIcon) playIcon.innerText = "▶";
+        if (playText) playText.innerText = "Escuchar en Deck";
+      }
+    });
+
+    // Desplazar suavemente hacia el Deck si el usuario está abajo
+    if (deckContainer && window.scrollY > deckContainer.offsetTop + 300) {
+      deckContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
-  const speedBtns = document.querySelectorAll('.speed-btn');
-  speedBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      speedBtns.forEach(b => {
-        b.classList.remove('bg-[#EF7B38]', 'text-white');
-        b.classList.add('text-gray-300');
-      });
-      btn.classList.remove('text-gray-300');
-      btn.classList.add('bg-[#EF7B38]', 'text-white');
-      currentSpeed = parseFloat(btn.getAttribute('data-speed') || '0.85');
+  // Event Listeners de las 14 Tarjetas de la Lista
+  document.querySelectorAll('.track-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = parseInt(card.getAttribute('data-index') || '0');
+      cargarPista(idx, true);
     });
   });
 
-  // Poemas de la Sala de Lectura
-  const POEMAS_LECTURA = [
-    { autor: "Carlos Pellicer", obra: "Discurso por las flores", texto: "El pueblo de las flores es un pueblo de santos y de poetas. La orquídea es el pensamiento de la selva y el loto es la plegaria del agua. En Tabasco el agua y la lumbre inventaron el color verde." },
-    { autor: "José Gorostiza", obra: "Muerte sin fin (Fragmento)", texto: "Lleno de mí, sitiado en mi epidermis por un dios inaprensible que me ahoga, mentido rumor de nubes en la tarde de agua, agua de cauce y vaso contenida." },
-    { autor: "José Carlos Becerra", obra: "El otoño recorre las islas", texto: "El otoño recorre las islas con pasos de animal taciturno. Sobre el agua del río cae la tarde como una túnica de ceniza tibia. Todo lo que amamos se despide sin hacer ruido." },
-    { autor: "Arq. Mario de Lille Fuentes", obra: "Nuestro mundo con Clau-dia", texto: "Claudia descubrió que las ceibas no son árboles comunes: son escaleras secretas que los pájaros usan para pintar las nubes al amanecer sobre el río de la memoria." },
-    { autor: "Teodosio García Ruiz", obra: "Sin lugar a dudas", texto: "Sin lugar a dudas la lluvia sobre el cinc tiene la consistencia de un tambor antiguo. La noche en la provincia es un lienzo donde la memoria escribe con tinta de jaguar." },
-    { autor: "Octavio Paz", obra: "Hermandad", texto: "Soy hombre: duro poco y es enorme la noche. Pero miro hacia arriba: las estrellas escriben. Sin entender comprendo: también soy escritura y en este mismo instante alguien me deletrea." }
-  ];
+  // Botones Anterior / Siguiente del Deck Maestro
+  document.getElementById('deck-btn-prev')?.addEventListener('click', () => {
+    const prev = currentTrackIndex === 0 ? catalogo.length - 1 : currentTrackIndex - 1;
+    cargarPista(prev, true);
+  });
 
-  const readingGrid = document.getElementById('reading-poemas-grid');
-  if (readingGrid) {
-    POEMAS_LECTURA.forEach(p => {
-      const card = document.createElement('div');
-      card.className = "bg-black/40 p-5 rounded-2xl border border-gray-800 flex flex-col justify-between space-y-3";
-      card.innerHTML = `
-        <div>
-          <h5 class="text-sm font-title font-bold text-white">${p.obra}</h5>
-          <div class="text-xs text-[#EF7B38] font-serif italic">${p.autor}</div>
-          <p class="text-xs text-gray-300 font-serif italic leading-relaxed mt-2 line-clamp-3">«${p.texto}»</p>
-        </div>
-        <div class="pt-2 border-t border-gray-800 flex justify-between items-center">
-          <button type="button" class="read-btn px-3 py-1 rounded-lg bg-[#EF7B38] hover:bg-[#D96620] text-white text-[11px] font-title font-bold uppercase tracking-wider transition cursor-pointer">
-            ▶ Declamar
-          </button>
-          <span class="text-[10px] font-mono text-gray-500">${currentSpeed}x</span>
-        </div>
-      `;
-
-      card.querySelector('.read-btn')?.addEventListener('click', () => {
-        if ('speechSynthesis' in window) {
-          window.speechSynthesis.cancel();
-          const utterance = new SpeechSynthesisUtterance(`${p.obra}, de ${p.autor}. ${p.texto}`);
-          utterance.rate = currentSpeed;
-          const selectedIdx = parseInt(voiceSelect?.value || '0');
-          if (synthVoices[selectedIdx]) {
-            utterance.voice = synthVoices[selectedIdx];
-          }
-          window.speechSynthesis.speak(utterance);
-        }
-      });
-
-      readingGrid.appendChild(card);
-    });
-  }
+  document.getElementById('deck-btn-next')?.addEventListener('click', () => {
+    const next = currentTrackIndex === catalogo.length - 1 ? 0 : currentTrackIndex + 1;
+    cargarPista(next, true);
+  });
 </script>
