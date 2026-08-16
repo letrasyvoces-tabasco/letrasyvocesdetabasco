@@ -1,9 +1,10 @@
 ---
-// VocesDeTabasco.astro - Fonoteca Audiovisual, Audio de Estudio Oficial y Sala Lírica de 24 Poemas
+// VocesDeTabasco.astro - Gran Audioteca Institucional & Sala Lírica de Declamaciones
+import { CATALOGO_VOCES_HISTORICAS } from '../data/voces';
 const basePath = "/letrasyvocesdetabasco";
 ---
 
-<section id="voces" class="py-20 sm:py-28 bg-[#1A1A1A] text-white relative overflow-hidden border-b border-gray-800">
+<section id="voces" class="py-20 sm:py-28 bg-[#181818] text-white relative overflow-hidden border-b border-gray-800">
   
   <!-- Resplandores ambientales de fondo -->
   <div class="absolute -top-40 -left-40 w-72 sm:w-96 h-72 sm:h-96 bg-[#EF7B38]/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -12,289 +13,262 @@ const basePath = "/letrasyvocesdetabasco";
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <!-- Encabezado de Sección -->
-    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+    <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#B8860B]/15 border border-[#B8860B]/30 text-[#F5DEB3] font-title text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-ping"></span>
-        <span>Fonoteca Audiovisual & Sala Lírica de Declamación</span>
+        <span>Audioteca Patrimonial & Sala Lírica de Declamación</span>
       </div>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-title font-black text-white">
         Voces y Poesía de Nuestra Historia
       </h2>
       <p class="text-xs sm:text-sm md:text-base text-gray-300 mt-3 font-serif italic leading-relaxed">
-        Grabaciones de estudio oficiales de LVT, videos históricos de los grandes autores iberoamericanos y sala interactiva con declamación sonora multivoz.
+        Grabaciones de estudio oficiales de LVT, registros sonoros históricos de los grandes autores iberoamericanos y sala interactiva con declamación sonora multivoz.
       </p>
       <div class="w-20 h-0.5 bg-[#EF7B38] mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <!-- CONMUTADOR MAESTRO DE MODOS -->
-    <div class="flex justify-center mb-10 sm:mb-12">
-      <div class="inline-flex flex-wrap justify-center p-1 sm:p-1.5 rounded-3xl sm:rounded-full bg-black/70 border border-gray-700 backdrop-blur-xl shadow-2xl gap-1.5 sm:gap-2 max-w-full">
-        <button 
-          id="tab-btn-videos" 
-          type="button" 
-          class="px-5 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-[#EF7B38] text-white shadow-lg transition duration-300 flex items-center gap-2 cursor-pointer"
-        >
-          <svg class="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 24 24">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-          </svg>
-          <span>🎥 Fonoteca de Videos Reales</span>
-        </button>
-
-        <button 
-          id="tab-btn-textos" 
-          type="button" 
-          class="px-5 sm:px-8 py-3 rounded-full text-xs font-title font-bold uppercase tracking-wider text-gray-300 hover:text-white transition duration-300 flex items-center gap-2 cursor-pointer"
-        >
-          <span>🎙️ Sala Lírica & Audio de Estudio (24 Obras)</span>
-        </button>
-      </div>
-    </div>
-
     <!-- ================================================================= -->
-    <!-- MODO 1: FONOTECA AUDIOVISUAL (VIDEOS REALES)                       -->
+    <!-- 1. GRABACIÓN DE ESTUDIO OFICIAL LVT: OLIVERIO GIRONDO             -->
     <!-- ================================================================= -->
-    <div id="panel-mode-videos" class="tab-content-active max-w-5xl mx-auto space-y-6 sm:space-y-8">
-      
-      <!-- Teatro Audiovisual Principal -->
-      <div class="bg-[#242424] border border-gray-700/80 rounded-3xl p-4 sm:p-8 md:p-10 backdrop-blur-2xl shadow-2xl">
+    <div class="bg-gradient-to-br from-[#2D1B13] via-[#222222] to-[#1A1A1A] border-2 border-[#EF7B38]/60 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden mb-12">
+      <div class="absolute -right-20 -top-20 w-64 h-64 bg-[#EF7B38]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Barra de Estado del Video -->
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 sm:pb-6 border-b border-gray-800 mb-4 sm:mb-6">
-          <div class="space-y-1">
-            <div class="flex flex-wrap items-center gap-2">
-              <span id="video-badge-tag" class="px-3 py-1 rounded-full bg-red-950/80 border border-red-700/60 text-red-300 text-[10px] font-title font-bold uppercase tracking-widest flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-                Grabación Audiovisual Auténtica
-              </span>
-              <span id="video-country-tag" class="text-xs text-[#F5DEB3] font-mono">
-                Chiapas, México · Palacio de Bellas Artes
-              </span>
-            </div>
-            <h3 id="video-display-title" class="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-              Jaime Sabines — «Los Amorosos»
-            </h3>
-            <p id="video-display-desc" class="text-xs text-gray-400 font-light">
-              Histórica lectura del maestro Jaime Sabines en su homenaje en el Palacio de Bellas Artes.
-            </p>
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-[#EF7B38] text-white text-[10px] font-title font-bold uppercase tracking-widest shadow-sm">
+              🎙️ Grabación Oficial de Estudio LVT
+            </span>
+            <span class="text-xs text-[#F5DEB3] font-mono">
+              Voz: Lic. Juan David Pérez Cabrera
+            </span>
           </div>
 
-          <!-- Controles Secuenciales Anterior / Siguiente -->
-          <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
-            <button 
-              id="vid-prev-btn" 
-              type="button" 
-              class="p-3 rounded-full bg-black/60 border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-800 transition shadow-subtle flex items-center justify-center cursor-pointer"
-              title="Video anterior"
-              aria-label="Video anterior"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-              </svg>
-            </button>
-            <button 
-              id="vid-next-btn" 
-              type="button" 
-              class="p-3 rounded-full bg-black/60 border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-800 transition shadow-subtle flex items-center justify-center cursor-pointer"
-              title="Video siguiente"
-              aria-label="Video siguiente"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Marco Responsivo 16:9 del Reproductor de Video -->
-        <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black border border-gray-800 shadow-2xl">
-          <iframe 
-            id="youtube-player-iframe"
-            class="w-full h-full object-cover"
-            src="https://www.youtube-nocookie.com/embed/UgJLcsjNqP-otSFWcb_yTeA3t639To6GEFQGgfBniespyezyf8czWwYfg1bbFeBqbR3ao8ZULEsKttNwn4CTrKHVq25u9A77rpaegHC42R_ZO7DYhAA7_TZsPwxKWCnw?rel=0&modestbranding=1" 
-            title="Reproductor de Videos Reales LVT" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <!-- Botón de Respaldo Directo de YouTube -->
-        <div class="mt-4 flex flex-col sm:flex-row justify-between items-center gap-3 pt-3 border-t border-gray-800 text-xs text-gray-400">
-          <span>💡 Si tu navegador restringe la reproducción en ventana, puedes abrirlo directamente:</span>
-          <a 
-            id="yt-direct-link" 
-            href="https://www.youtube.com/watch?v=UgJLcsjNqP-otSFWcb_yTeA3t639To6GEFQGgfBniespyezyf8czWwYfg1bbFeBqbR3ao8ZULEsKttNwn4CTrKHVq25u9A77rpaegHC42R_ZO7DYhAA7_TZsPwxKWCnw" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-title text-[11px] font-bold uppercase tracking-wider transition shadow-sm shrink-0"
-          >
-            <span>Ver Video en YouTube HD</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Tira Horizontal de Selección de Videos -->
-      <div class="space-y-3">
-        <span class="text-[11px] font-title font-bold uppercase tracking-widest text-gray-400 block px-2">
-          Catálogo de Grabaciones Audiovisuales Disponibles
-        </span>
-        <div id="video-playlist-carousel" class="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x scrollbar-thin">
-          <!-- Inyectado por JS -->
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ================================================================= -->
-    <!-- MODO 2: SALA LÍRICA & AUDIO DE ESTUDIO (24 POEMAS ÍNTEGROS)        -->
-    <!-- ================================================================= -->
-    <div id="panel-mode-textos" class="tab-content-hidden max-w-6xl mx-auto space-y-8">
-      
-      <!-- ============================================================= -->
-      <!-- 🌟 GRABACIÓN DE ESTUDIO DESTACADA LVT: OLIVERIO GIRONDO       -->
-      <!-- ============================================================= -->
-      <div class="bg-gradient-to-br from-[#2D1B13] via-[#242424] to-[#1F1F1F] border-2 border-[#EF7B38]/60 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-        <div class="absolute -right-20 -top-20 w-64 h-64 bg-[#EF7B38]/20 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <h3 class="font-title font-black text-2xl sm:text-4xl text-white leading-tight">
+            «Espantapájaros (1)» — Oliverio Girondo
+          </h3>
           
-          <div class="lg:col-span-7 space-y-4">
+          <p class="text-xs sm:text-sm text-gray-300 font-serif italic leading-relaxed">
+            Grabación oficial en alta fidelidad preservada en el archivo de audio de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
+          </p>
+
+          <!-- Reproductor de Audio HTML5 -->
+          <div class="bg-black/70 p-4 rounded-2xl border border-[#EF7B38]/40 space-y-2">
+            <div class="flex justify-between items-center text-xs font-mono text-gray-400">
+              <span class="text-[#EF7B38] font-bold">Audio Master Oficial (03:28)</span>
+              <span>Calidad Estudio 48kHz Stereo</span>
+            </div>
+            <audio controls class="w-full rounded-lg" preload="metadata">
+              <source src={`${basePath}/assets/audios/espantapajaros_oliverio_girondo_david_cabrera.mp3`} type="audio/mpeg" />
+              <source src={`${basePath}/assets/audios/espantapajaros_oliverio_girondo_david_cabrera.m4a`} type="audio/mp4" />
+              Tu navegador no soporta la reproducción de audio HTML5.
+            </audio>
+          </div>
+        </div>
+
+        <!-- Muestra de Texto del Poema Espantapájaros -->
+        <div class="lg:col-span-5 bg-black/50 p-6 rounded-2xl border border-gray-800 max-h-80 overflow-y-auto space-y-2 text-xs font-serif leading-relaxed text-gray-200 scrollbar-thin">
+          <div class="font-title font-bold text-[10px] uppercase text-[#EF7B38] tracking-widest pb-1 border-b border-gray-800">
+            Texto Íntegro · Oliverio Girondo (1932)
+          </div>
+          <p class="italic text-gray-300">
+            No se me importa un pito que las mujeres<br/>
+            tengan los senos como magnolias o como pasas de higo;<br/>
+            un cutis de durazno o de papel de lija.<br/>
+            Le doy una importancia igual a cero,<br/>
+            al hecho de que amanezcan con un aliento afrodisíaco<br/>
+            o con un aliento insecticida.<br/>
+            Soy perfectamente capaz de soportarles<br/>
+            una nariz que sacaría el primer premio<br/>
+            en una exposición de zanahorias;<br/>
+            ¡pero eso sí! -y en esto soy irreductible-<br/>
+            no les perdono, bajo ningún pretexto, que no sepan volar.<br/>
+            Si no saben volar ¡pierden el tiempo las que pretendan seducirme!<br/>
+            Ésta fue -y no otra- la razón de que me enamorase,<br/>
+            tan locamente, de María Luisa.<br/>
+            ¿Qué me importaban sus labios por entregas y sus encelos sulfurosos?<br/>
+            ¿Qué me importaban sus extremidades de palmípedo<br/>
+            y sus miradas de pronóstico reservado?<br/>
+            ¡María Luisa era una verdadera pluma!<br/>
+            Desde el amanecer volaba del dormitorio a la cocina,<br/>
+            volaba del comedor a la despensa.<br/>
+            Volando me preparaba el baño, la camisa.<br/>
+            Volando realizaba sus compras, sus quehaceres...<br/>
+            ¡Con qué impaciencia yo esperaba que volviese, volando,<br/>
+            de algún paseo por los alrededores!<br/>
+            Allí lejos, perdido entre las nubes, un puntito rosado.<br/>
+            "¡María Luisa! ¡María Luisa!"... y a los pocos segundos,<br/>
+            ya me abrazaba con sus piernas de pluma,<br/>
+            para llevarme, volando, a cualquier parte.<br/>
+            Durante kilómetros de silencio planeábamos una caricia<br/>
+            que nos aproximaba al paraíso;<br/>
+            durante horas enteras nos anidábamos en una nube,<br/>
+            como dos ángeles, y de repente,<br/>
+            en tirabuzón, en hoja muerta,<br/>
+            el aterrizaje forzoso de un espasmo.<br/>
+            ¡Qué delicia la de tener una mujer tan ligera...,<br/>
+            aunque nos haga ver, de vez en cuando, las estrellas!<br/>
+            ¡Que voluptuosidad la de pasarse los días entre las nubes...<br/>
+            la de pasarse las noches de un solo vuelo!<br/>
+            Después de conocer una mujer etérea,<br/>
+            ¿puede brindarnos alguna clase de atractivos una mujer terrestre?<br/>
+            ¿Verdad que no hay diferencia sustancial<br/>
+            entre vivir con una vaca o con una mujer<br/>
+            que tenga las nalgas a setenta y ocho centímetros del suelo?<br/>
+            Yo, por lo menos, soy incapaz de comprender<br/>
+            la seducción de una mujer pedestre,<br/>
+            y por más empeño que ponga en concebirlo,<br/>
+            no me es posible ni tan siquiera imaginar<br/>
+            que pueda hacerse el amor más que volando.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 2. AUDIOTECA PATRIMONIAL: 13 REGISTROS SONOROS HISTÓRICOS         -->
+    <!-- ================================================================= -->
+    <div class="mb-14">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 pb-3 border-b border-gray-800">
+        <div>
+          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Registros Sonoros Auténticos</span>
+          <h3 class="text-2xl sm:text-3xl font-title font-bold text-white mt-0.5">Audioteca de Autores y Grandes Voces</h3>
+        </div>
+        <span class="text-xs text-gray-400 font-mono">13 Grabaciones Seleccionadas</span>
+      </div>
+
+      <!-- Reproductor Activo de Audio Histórico -->
+      <div id="active-audio-deck" class="bg-[#242424] p-6 sm:p-8 rounded-3xl border border-gray-700 shadow-2xl mb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          
+          <div class="lg:col-span-8 space-y-3">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-3 py-1 rounded-full bg-[#EF7B38] text-white text-[10px] font-title font-bold uppercase tracking-widest shadow-sm">
-                🎙️ Grabación de Estudio Oficial LVT
+              <span id="deck-badge" class="px-2.5 py-0.5 rounded-full bg-red-950 text-red-300 border border-red-800 text-[10px] font-title font-bold uppercase tracking-wider">
+                Voz del Autor
               </span>
-              <span class="text-xs text-[#F5DEB3] font-mono">
-                Voz Oficial: Lic. Juan David Pérez Cabrera
-              </span>
+              <span id="deck-pais" class="text-xs text-[#F5DEB3] font-mono">Jalisco, México</span>
             </div>
-
-            <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
-              «Espantapájaros (1)» — Oliverio Girondo
-            </h3>
             
-            <p class="text-xs sm:text-sm text-gray-300 font-serif italic leading-relaxed">
-              Grabación en alta fidelidad preservada en el archivo de audio de la Sociedad de Escritores Letras y Voces de Tabasco, A.C.
+            <h4 id="deck-titulo" class="text-2xl sm:text-3xl font-title font-black text-white">
+              Juan Rulfo — «En el hidrante las gotas»
+            </h4>
+            
+            <p id="deck-declamador" class="text-xs font-title font-bold text-[#EF7B38]">
+              Declamación: Juan Rulfo (Voz del Autor)
+            </p>
+            
+            <p id="deck-desc" class="text-xs sm:text-sm text-gray-400 font-serif italic leading-relaxed">
+              Grabación histórica con la voz pausada, misteriosa y profunda del maestro Juan Rulfo.
             </p>
 
-            <!-- Reproductor de Audio HTML5 Oficial -->
-            <div class="bg-black/60 p-4 rounded-2xl border border-[#EF7B38]/40 space-y-2">
-              <div class="flex justify-between items-center text-xs font-mono text-gray-400">
-                <span class="text-[#EF7B38] font-bold">Audio Master Oficial (03:28)</span>
-                <span>Calidad Estudio 48kHz Stereo</span>
-              </div>
-              <audio controls class="w-full rounded-lg" preload="metadata">
-                <source src={`${basePath}/assets/audios/espantapajaros_oliverio_girondo_david_cabrera.mp3`} type="audio/mpeg" />
-                <source src={`${basePath}/assets/audios/espantapajaros_oliverio_girondo_david_cabrera.m4a`} type="audio/mp4" />
-                Tu navegador no soporta la reproducción de audio HTML5.
-              </audio>
+            <!-- Widget Embebido de Audio / YouTube en formato compacto -->
+            <div class="pt-3">
+              <iframe 
+                id="audio-deck-iframe"
+                class="w-full h-24 sm:h-28 rounded-2xl bg-black border border-gray-800"
+                src="https://www.youtube-nocookie.com/embed/A8PMbJBfn60?rel=0&modestbranding=1&controls=1" 
+                title="Reproductor de Audio Histórico"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
             </div>
           </div>
 
-          <!-- Muestra de Texto del Poema Espantapájaros -->
-          <div class="lg:col-span-5 bg-black/40 p-6 rounded-2xl border border-gray-800 max-h-80 overflow-y-auto space-y-2 text-xs font-serif leading-relaxed text-gray-200 scrollbar-thin">
-            <div class="font-title font-bold text-[10px] uppercase text-[#EF7B38] tracking-widest pb-1 border-b border-gray-800">
-              Texto Íntegro · Oliverio Girondo (1932)
+          <!-- Acceso Directo y Botón de Respaldo -->
+          <div class="lg:col-span-4 bg-black/40 p-5 rounded-2xl border border-gray-800 flex flex-col justify-between space-y-4">
+            <div class="space-y-1">
+              <span class="text-[10px] font-title font-bold text-gray-400 uppercase tracking-wider block">Fuente Oficial</span>
+              <p class="text-xs text-gray-300 font-serif italic">
+                Grabación preservada en colecciones sonoras de poesía iberoamericana.
+              </p>
             </div>
-            <p class="italic text-gray-300">
-              No se me importa un pito que las mujeres<br/>
-              tengan los senos como magnolias o como pasas de higo;<br/>
-              un cutis de durazno o de papel de lija.<br/>
-              Le doy una importancia igual a cero,<br/>
-              al hecho de que amanezcan con un aliento afrodisíaco<br/>
-              o con un aliento insecticida.<br/>
-              Soy perfectamente capaz de soportarles<br/>
-              una nariz que sacaría el primer premio<br/>
-              en una exposición de zanahorias;<br/>
-              ¡pero eso sí! -y en esto soy irreductible-<br/>
-              no les perdono, bajo ningún pretexto, que no sepan volar.<br/>
-              Si no saben volar ¡pierden el tiempo las que pretendan seducirme!<br/>
-              Ésta fue -y no otra- la razón de que me enamorase,<br/>
-              tan locamente, de María Luisa.<br/>
-              ¿Qué me importaban sus labios por entregas y sus encelos sulfurosos?<br/>
-              ¿Qué me importaban sus extremidades de palmípedo<br/>
-              y sus miradas de pronóstico reservado?<br/>
-              ¡María Luisa era una verdadera pluma!<br/>
-              Desde el amanecer volaba del dormitorio a la cocina,<br/>
-              volaba del comedor a la despensa.<br/>
-              Volando me preparaba el baño, la camisa.<br/>
-              Volando realizaba sus compras, sus quehaceres...<br/>
-              ¡Con qué impaciencia yo esperaba que volviese, volando,<br/>
-              de algún paseo por los alrededores!<br/>
-              Allí lejos, perdido entre las nubes, un puntito rosado.<br/>
-              "¡María Luisa! ¡María Luisa!"... y a los pocos segundos,<br/>
-              ya me abrazaba con sus piernas de pluma,<br/>
-              para llevarme, volando, a cualquier parte.<br/>
-              Durante kilómetros de silencio planeábamos una caricia<br/>
-              que nos aproximaba al paraíso;<br/>
-              durante horas enteras nos anidábamos en una nube,<br/>
-              como dos ángeles, y de repente,<br/>
-              en tirabuzón, en hoja muerta,<br/>
-              el aterrizaje forzoso de un espasmo.<br/>
-              ¡Qué delicia la de tener una mujer tan ligera...,<br/>
-              aunque nos haga ver, de vez en cuando, las estrellas!<br/>
-              ¡Que voluptuosidad la de pasarse los días entre las nubes...<br/>
-              la de pasarse las noches de un solo vuelo!<br/>
-              Después de conocer una mujer etérea,<br/>
-              ¿puede brindarnos alguna clase de atractivos una mujer terrestre?<br/>
-              ¿Verdad que no hay diferencia sustancial<br/>
-              entre vivir con una vaca o con una mujer<br/>
-              que tenga las nalgas a setenta y ocho centímetros del suelo?<br/>
-              Yo, por lo menos, soy incapaz de comprender<br/>
-              la seducción de una mujer pedestre,<br/>
-              y por más empeño que ponga en concebirlo,<br/>
-              no me es posible ni tan siquiera imaginar<br/>
-              que pueda hacerse el amor más que volando.
-            </p>
+            
+            <a 
+              id="deck-direct-link"
+              href="https://youtu.be/A8PMbJBfn60?list=PLkBildazp7OBfnh4eahKj91MQXiaumTer"
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-title text-xs font-bold uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm"
+            >
+              <span>Escuchar en YouTube ↗</span>
+            </a>
           </div>
 
         </div>
       </div>
 
-      <!-- Buscador y Controles de la Sala Lírica General -->
-      <div class="bg-[#242424] p-6 rounded-2xl border border-gray-700/80 space-y-4">
-        
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div class="w-full md:w-1/2">
-            <input 
-              id="poet-search-input" 
-              type="text" 
-              placeholder="Buscar por poeta, obra o procedencia (ej. Pellicer, Gorostiza, Sabines)..." 
-              class="w-full px-4 py-3 rounded-xl bg-black/60 border border-gray-700 text-white placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#EF7B38]"
-            />
-          </div>
-
-          <!-- Selector de Voces IA y Cadencia -->
-          <div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-end">
-            
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-title font-bold text-gray-400 uppercase">Voz:</span>
-              <select 
-                id="voice-select" 
-                class="px-3 py-2 rounded-xl bg-black/60 border border-gray-700 text-xs font-title text-white focus:outline-none focus:border-[#EF7B38]"
-              >
-                <option value="default">Voz Predeterminada (Español)</option>
-              </select>
-            </div>
-
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-title font-bold text-gray-400 uppercase">Velocidad:</span>
-              <div class="inline-flex rounded-xl bg-black/60 border border-gray-700 p-1 gap-1">
-                <button type="button" class="speed-btn active px-2.5 py-1 rounded-lg text-xs font-title font-bold bg-[#EF7B38] text-white" data-speed="0.85">0.85x</button>
-                <button type="button" class="speed-btn px-2.5 py-1 rounded-lg text-xs font-title font-bold text-gray-300 hover:text-white" data-speed="1.0">1.0x</button>
-                <button type="button" class="speed-btn px-2.5 py-1 rounded-lg text-xs font-title font-bold text-gray-300 hover:text-white" data-speed="1.15">1.15x</button>
+      <!-- Cuadrícula de las 13 Grabaciones Históricas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {CATALOGO_VOCES_HISTORICAS.slice(1).map((item, index) => (
+          <div 
+            class={`audio-card bg-[#242424] p-5 rounded-2xl border border-gray-700/80 hover:border-[#EF7B38] transition-all cursor-pointer flex flex-col justify-between ${index === 0 ? 'ring-1 ring-[#EF7B38]' : ''}`}
+            data-index={index + 1}
+            data-id={item.youtubeId}
+            data-titulo={`${item.autor} — «${item.titulo}»`}
+            data-declamador={`Declamación: ${item.declamador}`}
+            data-pais={item.pais}
+            data-desc={item.descripcion}
+          >
+            <div class="space-y-2">
+              <div class="flex justify-between items-start">
+                <span class="px-2 py-0.5 rounded-md bg-black/60 text-[#EF7B38] text-[9px] font-title font-bold uppercase tracking-wider">
+                  Audio #{index + 1}
+                </span>
+                <span class="text-[10px] font-mono text-gray-400 truncate max-w-[120px]">{item.pais.split('/')[0]}</span>
               </div>
+              <h5 class="font-title font-bold text-sm text-white leading-snug">{item.titulo}</h5>
+              <p class="text-xs text-[#F5DEB3] font-serif italic">{item.autor}</p>
+              <p class="text-[11px] text-gray-400 font-sans line-clamp-2">{item.declamador}</p>
             </div>
 
+            <div class="mt-4 pt-2 border-t border-gray-800 flex justify-between items-center">
+              <span class="text-[10px] font-title font-bold text-[#EF7B38] uppercase">Cargar Audio</span>
+              <span class="text-xs text-gray-400">▶</span>
+            </div>
           </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 3. SALA LÍRICA: DECLAMACIÓN ASISTIDA MULTIVOZ & VELOCIDADES        -->
+    <!-- ================================================================= -->
+    <div class="bg-[#242424] p-6 sm:p-8 rounded-3xl border border-gray-700/80 shadow-2xl space-y-6">
+      
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-4 border-b border-gray-800">
+        <div>
+          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#B8860B]">Sala de Lectura Asistida</span>
+          <h3 class="text-xl sm:text-2xl font-title font-bold text-white mt-0.5">Exploración de Textos con Modulación de Voz</h3>
         </div>
 
+        <!-- Controles de Voz y Velocidad -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-title font-bold text-gray-400 uppercase">Voz:</span>
+            <select 
+              id="voice-select" 
+              class="px-3 py-1.5 rounded-xl bg-black/60 border border-gray-700 text-xs font-title text-white focus:outline-none focus:border-[#EF7B38]"
+            >
+              <option value="default">Voz Predeterminada (Español)</option>
+            </select>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-title font-bold text-gray-400 uppercase">Velocidad:</span>
+            <div class="inline-flex rounded-xl bg-black/60 border border-gray-700 p-1 gap-1">
+              <button type="button" class="speed-btn active px-2.5 py-0.5 rounded-lg text-xs font-title font-bold bg-[#EF7B38] text-white" data-speed="0.85">0.85x</button>
+              <button type="button" class="speed-btn px-2.5 py-0.5 rounded-lg text-xs font-title font-bold text-gray-300 hover:text-white" data-speed="1.0">1.0x</button>
+              <button type="button" class="speed-btn px-2.5 py-0.5 rounded-lg text-xs font-title font-bold text-gray-300 hover:text-white" data-speed="1.15">1.15x</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Cuadrícula de Poemas de la Sala Lírica -->
-      <div id="poemas-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Inyectado dinámicamente con los 24 autores -->
+      <!-- Cuadrícula de Poemas de Lectura -->
+      <div id="reading-poemas-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Inyectado dinámicamente -->
       </div>
 
     </div>
@@ -302,228 +276,36 @@ const basePath = "/letrasyvocesdetabasco";
   </div>
 </section>
 
-<style>
-  .tab-content-active { display: block; animation: tabFadeIn 0.3s ease forwards; }
-  .tab-content-hidden { display: none; }
-  @keyframes tabFadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
 <script>
-  // 1. Catálogo de Videos Comprobados de YouTube
-  const YOUTUBE_VIDEOS = [
-    {
-      id: "UgJLcsjNqP-otSFWcb_yTeA3t639To6GEFQGgfBniespyezyf8czWwYfg1bbFeBqbR3ao8ZULEsKttNwn4CTrKHVq25u9A77rpaegHC42R_ZO7DYhAA7_TZsPwxKWCnw",
-      youtubeId: "UgJLcsjNqP-otSFWcb_yTeA3t639To6GEFQGgfBniespyezyf8czWwYfg1bbFeBqbR3ao8ZULEsKttNwn4CTrKHVq25u9A77rpaegHC42R_ZO7DYhAA7_TZsPwxKWCnw",
-      titulo: "Jaime Sabines — «Los Amorosos»",
-      autor: "Jaime Sabines",
-      pais: "Chiapas, México",
-      descripcion: "Declamación magistral del maestro Jaime Sabines en el Palacio de Bellas Artes."
-    },
-    {
-      id: "rWl-j8v_K60",
-      youtubeId: "rWl-j8v_K60",
-      titulo: "Mario Benedetti — «Táctica y Estrategia»",
-      autor: "Mario Benedetti",
-      pais: "Uruguay / Iberoamérica",
-      descripcion: "Grabación histórica con la voz propia e íntima de Mario Benedetti."
-    },
-    {
-      id: "k5S-eYpC5vE",
-      youtubeId: "k5S-eYpC5vE",
-      titulo: "Mario Benedetti — «Hagamos un trato»",
-      autor: "Mario Benedetti",
-      pais: "Uruguay / Iberoamérica",
-      descripcion: "Lectura pausada y profunda de uno de sus poemas de amor más entrañables."
-    },
-    {
-      id: "pg1NpMmPv48",
-      youtubeId: "pg1NpMmPv48",
-      titulo: "Jorge Luis Borges — «El Poema de los Dones»",
-      autor: "Jorge Luis Borges",
-      pais: "Buenos Aires, Argentina",
-      descripcion: "Borges declamando con su inconfundible cadencia filosófica y ceremonial."
-    },
-    {
-      id: "xDgSj-hNzFU",
-      youtubeId: "xDgSj-hNzFU",
-      titulo: "Pablo Neruda — «Poema 20»",
-      autor: "Pablo Neruda",
-      pais: "Parral, Chile (Premio Nobel)",
-      descripcion: "Declamación solemne del célebre verso «Puedo escribir los versos más tristes esta noche»."
-    }
-  ];
+  // Gestor del Reproductor Activo de Audio Histórico
+  const deckIframe = document.getElementById('audio-deck-iframe') as HTMLIFrameElement;
+  const deckTitulo = document.getElementById('deck-titulo');
+  const deckDeclamador = document.getElementById('deck-declamador');
+  const deckPais = document.getElementById('deck-pais');
+  const deckDesc = document.getElementById('deck-desc');
+  const deckLink = document.getElementById('deck-direct-link') as HTMLAnchorElement;
+  const cards = document.querySelectorAll('.audio-card');
 
-  // 2. Catálogo de Poemas para la Sala Lírica (24 Autores con Oliverio Girondo en 1er Lugar)
-  const POEMAS_SALA = [
-    {
-      id: "girondo",
-      autor: "Oliverio Girondo",
-      obra: "Espantapájaros (1)",
-      origen: "Buenos Aires, Argentina (Vanguardia)",
-      tipo: "Estudio LVT Oficial",
-      texto: `No se me importa un pito que las mujeres tengan los senos como magnolias o como pasas de higo; un cutis de durazno o de papel de lija. Le doy una importancia igual a cero, al hecho de que amanezcan con un aliento afrodisíaco o con un aliento insecticida. Soy perfectamente capaz de soportarles una nariz que sacaría el primer premio en una exposición de zanahorias; ¡pero eso sí! -y en esto soy irreductible- no les perdono, bajo ningún pretexto, que no sepan volar.`
-    },
-    {
-      id: "pellicer-tropico",
-      autor: "Carlos Pellicer Cámara",
-      obra: "Discurso por las flores",
-      origen: "Tabasco, México",
-      tipo: "Patrimonio Tabasco",
-      texto: `El pueblo de las flores es un pueblo de santos y de poetas. La orquídea es el pensamiento de la selva y el loto es la plegaria del agua. En Tabasco el agua y la lumbre inventaron el color verde.`
-    },
-    {
-      id: "gorostiza-muerte",
-      autor: "José Gorostiza",
-      obra: "Muerte sin fin (Fragmento)",
-      origen: "Tabasco, México",
-      tipo: "Patrimonio Tabasco",
-      texto: `Lleno de mí, sitiado en mi epidermis por un dios inaprensible que me ahoga, mentido rumor de nubes en la tarde de agua, agua de cauce y vaso contenida.`
-    },
-    {
-      id: "becerra-relacion",
-      autor: "José Carlos Becerra",
-      obra: "El otoño recorre las islas",
-      origen: "Tabasco, México",
-      tipo: "Patrimonio Tabasco",
-      texto: `El otoño recorre las islas con pasos de animal taciturno. Sobre el agua del río cae la tarde como una túnica de ceniza tibia. Todo lo que amamos se despide sin hacer ruido.`
-    },
-    {
-      id: "mario-lille",
-      autor: "Arq. Mario de Lille Fuentes",
-      obra: "Nuestro mundo con Clau-dia (Poema en Prosa)",
-      origen: "Tabasco, México",
-      tipo: "Pilar Fundador LVT",
-      texto: `Claudia descubrió que las ceibas no son árboles comunes: son escaleras secretas que los pájaros usan para pintar las nubes al amanecer sobre el río de la memoria.`
-    },
-    {
-      id: "teodosio-garcia",
-      autor: "Teodosio García Ruiz",
-      obra: "Sin lugar a dudas",
-      origen: "Tabasco, México",
-      tipo: "Fundador LVT",
-      texto: `Sin lugar a dudas la lluvia sobre el cinc tiene la consistencia de un tambor antiguo. La noche en la provincia es un lienzo donde la memoria escribe con tinta de jaguar.`
-    },
-    {
-      id: "sabines-amorosos",
-      autor: "Jaime Sabines",
-      obra: "Los Amorosos",
-      origen: "Chiapas, México",
-      tipo: "Iberoamérica",
-      texto: `Los amorosos callan. El amor es el silencio más fino, el más tembloroso, el más insoportable. Los amorosos buscan, los amorosos son los que abandonan, son los que cambian, son los que olvidan.`
-    },
-    {
-      id: "paz-hermandad",
-      autor: "Octavio Paz",
-      obra: "Hermandad (Homenaje a Claudio Ptolomeo)",
-      origen: "Ciudad de México (Premio Nobel)",
-      tipo: "Iberoamérica",
-      texto: `Soy hombre: duro poco y es enorme la noche. Pero miro hacia arriba: las estrellas escriben. Sin entender comprendo: también soy escritura y en este mismo instante alguien me deletrea.`
-    },
-    {
-      id: "mistral-miedo",
-      autor: "Gabriela Mistral",
-      obra: "Miedo",
-      origen: "Vicuña, Chile (Premio Nobel)",
-      tipo: "Iberoamérica",
-      texto: `Yo no quiero que a mi niña golondrina me la vuelvan; se hunde volando en el Cielo y no baja hasta mi estera; en el alero hace nido y mis manos no la peinan. Yo no quiero que a mi niña golondrina me la vuelvan.`
-    },
-    {
-      id: "sor-juana-rosa",
-      autor: "Sor Juana Inés de la Cruz",
-      obra: "A una rosa",
-      origen: "San Jerónimo, México",
-      tipo: "Iberoamérica",
-      texto: `Rosa divina que en gentil cultura eres, con tu fragante sutileza, magisterio purpúreo en la belleza, enseñanza nevada a la hermosura. Amago de la humana arquitectura, ejemplo de la vana gentileza, en cuyo ser unió naturaleza la cuna alegre y triste sepultura.`
-    }
-  ];
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => c.classList.remove('ring-1', 'ring-[#EF7B38]'));
+      card.classList.add('ring-1', 'ring-[#EF7B38]');
 
-  // Alternancia de Pestañas
-  const btnVideos = document.getElementById('tab-btn-videos');
-  const btnTextos = document.getElementById('tab-btn-textos');
-  const panelVideos = document.getElementById('panel-mode-videos');
-  const panelTextos = document.getElementById('panel-mode-textos');
+      const yId = card.getAttribute('data-id');
+      const titulo = card.getAttribute('data-titulo');
+      const declamador = card.getAttribute('data-declamador');
+      const pais = card.getAttribute('data-pais');
+      const desc = card.getAttribute('data-desc');
 
-  btnVideos?.addEventListener('click', () => {
-    btnVideos.classList.remove('text-gray-300');
-    btnVideos.classList.add('bg-[#EF7B38]', 'text-white', 'shadow-lg');
-    btnTextos?.classList.remove('bg-[#EF7B38]', 'text-white', 'shadow-lg');
-    btnTextos?.classList.add('text-gray-300');
-
-    panelVideos?.classList.remove('tab-content-hidden');
-    panelVideos?.classList.add('tab-content-active');
-    panelTextos?.classList.remove('tab-content-active');
-    panelTextos?.classList.add('tab-content-hidden');
-  });
-
-  btnTextos?.addEventListener('click', () => {
-    btnTextos.classList.remove('text-gray-300');
-    btnTextos.classList.add('bg-[#EF7B38]', 'text-white', 'shadow-lg');
-    btnVideos?.classList.remove('bg-[#EF7B38]', 'text-white', 'shadow-lg');
-    btnVideos?.classList.add('text-gray-300');
-
-    panelTextos?.classList.remove('tab-content-hidden');
-    panelTextos?.classList.add('tab-content-active');
-    panelVideos?.classList.remove('tab-content-active');
-    panelVideos?.classList.add('tab-content-hidden');
-  });
-
-  // Gestor del Teatro de Videos
-  let currentVideoIdx = 0;
-  const iframe = document.getElementById('youtube-player-iframe') as HTMLIFrameElement;
-  const vidTitle = document.getElementById('video-display-title');
-  const vidCountry = document.getElementById('video-country-tag');
-  const vidDesc = document.getElementById('video-display-desc');
-  const ytLink = document.getElementById('yt-direct-link') as HTMLAnchorElement;
-  const carousel = document.getElementById('video-playlist-carousel');
-
-  function renderVideo(index: number) {
-    currentVideoIdx = index;
-    const v = YOUTUBE_VIDEOS[index];
-    if (!v) return;
-
-    if (iframe) {
-      iframe.src = `https://www.youtube-nocookie.com/embed/${v.youtubeId}?rel=0&modestbranding=1`;
-    }
-    if (vidTitle) vidTitle.innerText = v.titulo;
-    if (vidCountry) vidCountry.innerText = `${v.pais} · Grabación Auténtica`;
-    if (vidDesc) vidDesc.innerText = v.descripcion;
-    if (ytLink) ytLink.href = `https://www.youtube.com/watch?v=${v.youtubeId}`;
-
-    document.querySelectorAll('.vid-thumb-btn').forEach((btn, idx) => {
-      if (idx === index) {
-        btn.classList.add('ring-2', 'ring-[#EF7B38]', 'bg-gray-800');
-      } else {
-        btn.classList.remove('ring-2', 'ring-[#EF7B38]', 'bg-gray-800');
+      if (deckIframe && yId) {
+        deckIframe.src = `https://www.youtube-nocookie.com/embed/${yId}?rel=0&modestbranding=1&controls=1&autoplay=1`;
       }
+      if (deckTitulo && titulo) deckTitulo.innerText = titulo;
+      if (deckDeclamador && declamador) deckDeclamador.innerText = declamador;
+      if (deckPais && pais) deckPais.innerText = pais;
+      if (deckDesc && desc) deckDesc.innerText = desc;
+      if (deckLink && yId) deckLink.href = `https://www.youtube.com/watch?v=${yId}`;
     });
-  }
-
-  if (carousel) {
-    YOUTUBE_VIDEOS.forEach((v, idx) => {
-      const card = document.createElement('button');
-      card.type = 'button';
-      card.className = `vid-thumb-btn shrink-0 w-64 text-left p-3.5 rounded-2xl bg-black/60 border border-gray-700 hover:border-[#EF7B38] transition cursor-pointer snap-start ${idx === 0 ? 'ring-2 ring-[#EF7B38] bg-gray-800' : ''}`;
-      card.innerHTML = `
-        <div class="text-[10px] font-title font-bold text-[#EF7B38] uppercase">${v.pais}</div>
-        <div class="font-title font-bold text-xs text-white mt-1 truncate">${v.titulo}</div>
-        <div class="text-[11px] text-gray-400 font-serif italic mt-0.5 truncate">${v.autor}</div>
-      `;
-      card.onclick = () => renderVideo(idx);
-      carousel.appendChild(card);
-    });
-  }
-
-  document.getElementById('vid-prev-btn')?.addEventListener('click', () => {
-    const next = currentVideoIdx === 0 ? YOUTUBE_VIDEOS.length - 1 : currentVideoIdx - 1;
-    renderVideo(next);
-  });
-
-  document.getElementById('vid-next-btn')?.addEventListener('click', () => {
-    const next = currentVideoIdx === YOUTUBE_VIDEOS.length - 1 ? 0 : currentVideoIdx + 1;
-    renderVideo(next);
   });
 
   // Motor de Declamación Asistida con Múltiples Voces
@@ -558,73 +340,49 @@ const basePath = "/letrasyvocesdetabasco";
     });
   });
 
-  // Renderizado de Poemas en la Sala Lírica
-  const poemasGrid = document.getElementById('poemas-grid');
-  function renderPoemas(filterText = '') {
-    if (!poemasGrid) return;
-    poemasGrid.innerHTML = '';
+  // Poemas de la Sala de Lectura
+  const POEMAS_LECTURA = [
+    { autor: "Carlos Pellicer", obra: "Discurso por las flores", texto: "El pueblo de las flores es un pueblo de santos y de poetas. La orquídea es el pensamiento de la selva y el loto es la plegaria del agua. En Tabasco el agua y la lumbre inventaron el color verde." },
+    { autor: "José Gorostiza", obra: "Muerte sin fin (Fragmento)", texto: "Lleno de mí, sitiado en mi epidermis por un dios inaprensible que me ahoga, mentido rumor de nubes en la tarde de agua, agua de cauce y vaso contenida." },
+    { autor: "José Carlos Becerra", obra: "El otoño recorre las islas", texto: "El otoño recorre las islas con pasos de animal taciturno. Sobre el agua del río cae la tarde como una túnica de ceniza tibia. Todo lo que amamos se despide sin hacer ruido." },
+    { autor: "Arq. Mario de Lille Fuentes", obra: "Nuestro mundo con Clau-dia", texto: "Claudia descubrió que las ceibas no son árboles comunes: son escaleras secretas que los pájaros usan para pintar las nubes al amanecer sobre el río de la memoria." },
+    { autor: "Teodosio García Ruiz", obra: "Sin lugar a dudas", texto: "Sin lugar a dudas la lluvia sobre el cinc tiene la consistencia de un tambor antiguo. La noche en la provincia es un lienzo donde la memoria escribe con tinta de jaguar." },
+    { autor: "Octavio Paz", obra: "Hermandad", texto: "Soy hombre: duro poco y es enorme la noche. Pero miro hacia arriba: las estrellas escriben. Sin entender comprendo: también soy escritura y en este mismo instante alguien me deletrea." }
+  ];
 
-    const filtered = POEMAS_SALA.filter(p => 
-      p.autor.toLowerCase().includes(filterText.toLowerCase()) ||
-      p.obra.toLowerCase().includes(filterText.toLowerCase()) ||
-      p.origen.toLowerCase().includes(filterText.toLowerCase())
-    );
-
-    filtered.forEach(p => {
+  const readingGrid = document.getElementById('reading-poemas-grid');
+  if (readingGrid) {
+    POEMAS_LECTURA.forEach(p => {
       const card = document.createElement('div');
-      card.className = "bg-[#242424] p-6 rounded-2xl border border-gray-700/80 shadow-subtle flex flex-col justify-between hover:border-[#EF7B38] transition";
+      card.className = "bg-black/40 p-5 rounded-2xl border border-gray-800 flex flex-col justify-between space-y-3";
       card.innerHTML = `
-        <div class="space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="px-2.5 py-0.5 rounded-full bg-black/60 text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider">
-              ${p.tipo}
-            </span>
-            <span class="text-[10px] font-mono text-gray-400">${p.origen.split('(')[0]}</span>
-          </div>
-          <div>
-            <h4 class="text-base font-title font-bold text-white">${p.obra}</h4>
-            <div class="text-xs text-[#F5DEB3] font-serif italic">${p.autor}</div>
-          </div>
-          <p class="text-xs font-serif text-gray-300 leading-relaxed italic line-clamp-4 bg-black/30 p-3 rounded-xl border border-gray-800">
-            «${p.texto}»
-          </p>
+        <div>
+          <h5 class="text-sm font-title font-bold text-white">${p.obra}</h5>
+          <div class="text-xs text-[#EF7B38] font-serif italic">${p.autor}</div>
+          <p class="text-xs text-gray-300 font-serif italic leading-relaxed mt-2 line-clamp-3">«${p.texto}»</p>
         </div>
-        <div class="mt-4 pt-3 border-t border-gray-800 flex justify-between items-center">
-          <button 
-            type="button"
-            class="play-poem-btn px-4 py-1.5 rounded-xl bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5 cursor-pointer shadow-sm"
-          >
-            <span>▶ Declamar</span>
+        <div class="pt-2 border-t border-gray-800 flex justify-between items-center">
+          <button type="button" class="read-btn px-3 py-1 rounded-lg bg-[#EF7B38] hover:bg-[#D96620] text-white text-[11px] font-title font-bold uppercase tracking-wider transition cursor-pointer">
+            ▶ Declamar
           </button>
-          <span class="text-[10px] font-mono text-gray-500">Cadencia: ${currentSpeed}x</span>
+          <span class="text-[10px] font-mono text-gray-500">${currentSpeed}x</span>
         </div>
       `;
 
-      const playBtn = card.querySelector('.play-poem-btn');
-      playBtn?.addEventListener('click', () => {
+      card.querySelector('.read-btn')?.addEventListener('click', () => {
         if ('speechSynthesis' in window) {
           window.speechSynthesis.cancel();
           const utterance = new SpeechSynthesisUtterance(`${p.obra}, de ${p.autor}. ${p.texto}`);
           utterance.rate = currentSpeed;
-          utterance.pitch = 0.95;
           const selectedIdx = parseInt(voiceSelect?.value || '0');
           if (synthVoices[selectedIdx]) {
             utterance.voice = synthVoices[selectedIdx];
           }
           window.speechSynthesis.speak(utterance);
-        } else {
-          alert('Tu navegador no soporta la síntesis de voz.');
         }
       });
 
-      poemasGrid.appendChild(card);
+      readingGrid.appendChild(card);
     });
   }
-
-  renderPoemas();
-
-  document.getElementById('poet-search-input')?.addEventListener('input', (e) => {
-    const target = e.target as HTMLInputElement;
-    renderPoemas(target.value);
-  });
 </script>
