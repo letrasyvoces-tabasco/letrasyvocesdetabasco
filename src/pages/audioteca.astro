@@ -1,0 +1,31 @@
+---
+// src/pages/audioteca.astro - Fonoteca y Archivo Sonoro de 14 Obras Nativas en MP3
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import VocesDeTabasco from '../components/VocesDeTabasco.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const basePath = "/letrasyvocesdetabasco";
+---
+
+<BaseLayout 
+  title="Audioteca Lírica & Archivo Sonoro (14 Obras Nativas) · Sociedad de Escritores LVT"
+  description="Fonoteca literaria de Letras y Voces de Tabasco con 14 reproducciones sonoras de poemas de Oliverio Girondo, Juan Rulfo, García Lorca, Jaime Sabines, Pablo Neruda y Julio Cortázar."
+>
+  <Navbar />
+
+  <main class="pt-16 sm:pt-20">
+    <div class="bg-[#F5EFE6] border-b border-[#E6DCCE] py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-title uppercase tracking-wider text-gray-500">
+        <a href={`${basePath}/`} class="hover:text-[#EF7B38] transition">Inicio</a>
+        <span>/</span>
+        <span class="text-[#EF7B38] font-bold">Audioteca Lírica & Archivo Sonoro</span>
+      </div>
+    </div>
+
+    <VocesDeTabasco />
+  </main>
+
+  <Footer />
+</BaseLayout>

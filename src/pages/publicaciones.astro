@@ -1,0 +1,33 @@
+---
+// src/pages/publicaciones.astro - Catálogo Editorial Completo y Fondo Bibliográfico Histórico de LVT
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Publicaciones from '../components/Publicaciones.astro';
+import ReadingModal from '../components/ReadingModal.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const basePath = "/letrasyvocesdetabasco";
+---
+
+<BaseLayout 
+  title="Catálogo Editorial & Antologías Oficiales · Sociedad de Escritores LVT, A.C."
+  description="Acervo editorial oficial de Letras y Voces de Tabasco: Animalia Literaria, A corazón abierto, Tardes Tabasqueñas de Ópalos y Topacios, La Mujer en el Siglo XXI, Amarellus y publicaciones históricas."
+>
+  <Navbar />
+
+  <main class="pt-16 sm:pt-20">
+    <div class="bg-[#F5EFE6] border-b border-[#E6DCCE] py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-title uppercase tracking-wider text-gray-500">
+        <a href={`${basePath}/`} class="hover:text-[#EF7B38] transition">Inicio</a>
+        <span>/</span>
+        <span class="text-[#EF7B38] font-bold">Catálogo Editorial & Antologías</span>
+      </div>
+    </div>
+
+    <Publicaciones />
+  </main>
+
+  <ReadingModal />
+  <Footer />
+</BaseLayout>
