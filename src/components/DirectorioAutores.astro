@@ -1,182 +1,140 @@
 ---
-// DirectorioAutores.astro - Directorio Dinámico de Plumas y Creadores LVT
+// DirectorioAutores.astro - Directorio Oficial de Autores, Fundadores y Socios de LVT
+import { PADRON_AUTORES } from '../data/autores';
 ---
 
-<section id="autores" class="py-24 bg-editorial border-b border-editorial-border">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="autores" class="py-24 bg-[#FDFBF7] border-b border-[#E6DCCE]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
     
     <!-- Cabecera -->
     <div class="text-center max-w-3xl mx-auto mb-14">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-editorial-warm border border-editorial-border text-terracota font-title text-[11px] font-bold uppercase tracking-widest mb-3 shadow-subtle">
-        <span class="w-2 h-2 rounded-full bg-terracota"></span>
-        <span>Comunidad & Padrón Literario</span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#EF7B38]/10 text-[#EF7B38] text-xs font-title font-bold tracking-widest uppercase rounded-full mb-4">
+        Padrón Autoral & Membresía Histórica
       </div>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-carbon">
-        Plumas y Voces de Nuestra Historia
+      <h2 class="text-3xl sm:text-5xl font-title font-black tracking-tight text-[#222222]">
+        Plumas y Creadores de <span class="text-[#EF7B38]">Tabasco</span>
       </h2>
-      <p class="text-sm sm:text-base text-gray-600 mt-3 font-light leading-relaxed">
-        Escritores, poetas y ensayistas que han forjado y consolidado la memoria literaria de Tabasco a lo largo de casi cuatro décadas.
+      <p class="mt-4 text-base sm:text-lg font-serif italic text-[#555555]">
+        Fundadores, directivos, maestras y autores contemporáneos que han forjado el patrimonio literario de nuestra asociación a lo largo de casi cuatro décadas.
       </p>
-      <div class="w-20 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
+      <div class="w-20 h-0.5 bg-[#EF7B38] mx-auto mt-6 rounded-full"></div>
     </div>
 
-    <!-- Barra de Filtros por Disciplina -->
-    <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-      <button type="button" class="filter-author-btn active px-5 py-2 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-terracota text-white border border-terracota shadow-subtle transition" data-filter="all">
-        Todos los Géneros
-      </button>
-      <button type="button" class="filter-author-btn px-5 py-2 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-white text-carbon hover:text-terracota border border-editorial-border shadow-subtle transition" data-filter="poesia">
-        Poesía
-      </button>
-      <button type="button" class="filter-author-btn px-5 py-2 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-white text-carbon hover:text-terracota border border-editorial-border shadow-subtle transition" data-filter="narrativa">
-        Narrativa & Cuento
-      </button>
-      <button type="button" class="filter-author-btn px-5 py-2 rounded-full text-xs font-title font-bold uppercase tracking-wider bg-white text-carbon hover:text-terracota border border-editorial-border shadow-subtle transition" data-filter="ensayo">
-        Ensayo & Crónica
-      </button>
-    </div>
-
-    <!-- Cuadrícula de Fichas de Autores -->
-    <div id="authors-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    <!-- Buscador y Filtros -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
       
-      <!-- Autor 1 -->
-      <div class="author-card bg-white p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between" data-genre="poesia">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-terracota text-[10px] font-title font-bold uppercase tracking-widest border border-editorial-border">
-              Poesía
-            </span>
-            <span class="text-xs text-gray-400 font-serif italic">Socia Activa</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Mtra. Eva Guadalupe Pineda Cruz</h3>
-          <span class="text-xs text-gray-500 font-light block mb-3">Secretaria General · Poeta y Docente</span>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Pluma de sensibilidad lírica y arraigo tropical. Participante en diversas antologías estatales y coordinadora de memorias literarias.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex items-center justify-between text-[11px] text-gray-500">
-          <span>Obra Representativa</span>
-          <span class="font-serif font-bold text-carbon">«Animalia Literaria»</span>
-        </div>
+      <!-- Filtro por Categoría / Género -->
+      <div class="flex flex-wrap justify-center gap-2">
+        <button type="button" class="author-filter active px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider bg-[#EF7B38] text-white shadow-sm transition" data-filter="all">
+          Todos ({PADRON_AUTORES.length})
+        </button>
+        <button type="button" class="author-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider bg-white text-[#222222] border border-[#E6DCCE] hover:text-[#EF7B38] shadow-subtle transition" data-filter="fundador">
+          Fundadores & Honoríficos
+        </button>
+        <button type="button" class="author-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider bg-white text-[#222222] border border-[#E6DCCE] hover:text-[#EF7B38] shadow-subtle transition" data-filter="directiva">
+          Mesa Directiva & Socios Activos
+        </button>
+        <button type="button" class="author-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider bg-white text-[#222222] border border-[#E6DCCE] hover:text-[#EF7B38] shadow-subtle transition" data-filter="poesia">
+          Poesía
+        </button>
+        <button type="button" class="author-filter px-4 py-2 rounded-xl text-xs font-title font-bold uppercase tracking-wider bg-white text-[#222222] border border-[#E6DCCE] hover:text-[#EF7B38] shadow-subtle transition" data-filter="narrativa">
+          Narrativa
+        </button>
       </div>
 
-      <!-- Autor 2 -->
-      <div class="author-card bg-white p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between" data-genre="ensayo">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-dorado text-[10px] font-title font-bold uppercase tracking-widest border border-editorial-border">
-              Ensayo & Crónica
-            </span>
-            <span class="text-xs text-gray-400 font-serif italic">Presidente</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Lic. Juan David Pérez Cabrera</h3>
-          <span class="text-xs text-gray-500 font-light block mb-3">Presidente LVT · Jurista y Ensayista</span>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Impulsor de la preservación documental, ensayista sobre el desarrollo cultural y representante de la consolidación jurídica del gremio.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex items-center justify-between text-[11px] text-gray-500">
-          <span>Obra Representativa</span>
-          <span class="font-serif font-bold text-carbon">«Memoria Lírica LVT»</span>
-        </div>
-      </div>
-
-      <!-- Autor 3 -->
-      <div class="author-card bg-white p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between" data-genre="narrativa">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-terracota text-[10px] font-title font-bold uppercase tracking-widest border border-editorial-border">
-              Narrativa & Poesía
-            </span>
-            <span class="text-xs text-gray-400 font-serif italic">Escritora</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon mb-1">María de los Ángeles Cervantes</h3>
-          <span class="text-xs text-gray-500 font-light block mb-3">Autora · Narrativa Vivencial</span>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Voz íntima y conmovedora de la literatura contemporánea tabasqueña, exploradora de la memoria, el desapego y la reconciliación existencial.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex items-center justify-between text-[11px] text-gray-500">
-          <span>Obra Representativa</span>
-          <span class="font-serif font-bold text-carbon">«A corazón abierto»</span>
-        </div>
-      </div>
-
-      <!-- Autor 4 -->
-      <div class="author-card bg-white p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between" data-genre="poesia">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-terracota text-[10px] font-title font-bold uppercase tracking-widest border border-editorial-border">
-              Poesía
-            </span>
-            <span class="text-xs text-gray-400 font-serif italic">Socia Fundadora</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Rebeca Delgado</h3>
-          <span class="text-xs text-gray-500 font-light block mb-3">Poeta · Tradición Lírica</span>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Custodia de la cadencia poética tradicional de Tabasco, declamadora y partícipe de encuentros literarios regionales y nacionales.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex items-center justify-between text-[11px] text-gray-500">
-          <span>Obra Representativa</span>
-          <span class="font-serif font-bold text-carbon">«Tardes de Topacio»</span>
-        </div>
-      </div>
-
-      <!-- Autor 5 -->
-      <div class="author-card bg-white p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between" data-genre="narrativa">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-dorado text-[10px] font-title font-bold uppercase tracking-widest border border-editorial-border">
-              Narrativa & Cuento
-            </span>
-            <span class="text-xs text-gray-400 font-serif italic">Colectivo 2026</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Colectivo de 16 Plumas LVT</h3>
-          <span class="text-xs text-gray-500 font-light block mb-3">Antología Colectiva Tabasqueña</span>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Cuerpo colegiado de escritores que unifican su talento en 131 páginas dedicadas al mito, la fauna y el alma selvática del Edén mexicano.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex items-center justify-between text-[11px] text-gray-500">
-          <span>Obra Representativa</span>
-          <span class="font-serif font-bold text-carbon">«Animalia Literaria»</span>
-        </div>
-      </div>
-
-      <!-- Autor 6 -->
-      <div class="author-card bg-white p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between" data-genre="ensayo">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-dorado text-[10px] font-title font-bold uppercase tracking-widest border border-editorial-border">
-              Ensayo & Crónica
-            </span>
-            <span class="text-xs text-gray-400 font-serif italic">Memoria 1988–2026</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Archivo Histórico LVT</h3>
-          <span class="text-xs text-gray-500 font-light block mb-3">Preservación Bibliográfica</span>
-          <p class="text-xs text-gray-600 font-light leading-relaxed">
-            Compendio de actas, discursos de ingreso, prólogos y memorias gráficas recopiladas por cuatro décadas de historia gremial.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex items-center justify-between text-[11px] text-gray-500">
-          <span>Obra Representativa</span>
-          <span class="font-serif font-bold text-carbon">«Memoria 2022–2025»</span>
-        </div>
+      <!-- Buscador en tiempo real -->
+      <div class="relative w-full md:w-72">
+        <input 
+          type="text" 
+          id="author-search-input" 
+          placeholder="Buscar por nombre u obra..." 
+          class="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-white border border-[#E6DCCE] text-[#222222] placeholder-gray-400 focus:outline-none focus:border-[#EF7B38] shadow-subtle"
+        />
+        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
       </div>
 
     </div>
 
-    <!-- Invitación a Postularse -->
-    <div class="mt-16 text-center">
-      <p class="text-xs text-gray-500 font-light mb-4">
-        ¿Eres escritor tabasqueño o radicas en el estado y deseas formar parte de nuestro padrón oficial?
+    <!-- Cuadrícula Dinámica de Fichas de Autores -->
+    <div id="authors-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {PADRON_AUTORES.map((autor) => {
+        let filterCat = "contemporaneo";
+        if (autor.categoria.includes("Fundadores")) filterCat = "fundador";
+        else if (autor.categoria.includes("Mesa Directiva")) filterCat = "directiva";
+
+        const genreLower = autor.generoPrincipal.toLowerCase();
+
+        return (
+          <div 
+            class="author-card bg-white p-6 sm:p-7 rounded-2xl border border-[#E6DCCE] shadow-subtle hover:shadow-elevated hover:border-[#EF7B38] hover:-translate-y-1 transition duration-300 flex flex-col justify-between"
+            data-category={filterCat}
+            data-genre={genreLower}
+            data-name={autor.nombre.toLowerCase()}
+            data-work={autor.obraRepresentativa.toLowerCase()}
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider border border-[#E6DCCE]">
+                  {autor.generoPrincipal}
+                </span>
+                <span class="text-[11px] font-serif italic text-gray-400 text-right truncate">
+                  {autor.categoria.split('&')[0].trim()}
+                </span>
+              </div>
+
+              <h3 class="font-title text-xl font-black text-[#222222] mb-1">
+                {autor.tratamiento && <span class="text-[#EF7B38] font-normal text-base mr-1">{autor.tratamiento}</span>}
+                {autor.nombre}
+              </h3>
+              
+              <span class="text-xs text-[#B8860B] font-title font-semibold block mb-3 leading-snug">
+                {autor.rolGremial}
+              </span>
+
+              <p class="text-xs text-gray-600 font-sans leading-relaxed">
+                {autor.semblanza}
+              </p>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-[#E6DCCE] space-y-2">
+              <div class="flex items-center justify-between text-[11px]">
+                <span class="text-gray-400 uppercase font-title font-bold text-[9px] tracking-wider">Obra Representativa</span>
+                <span class="font-serif font-bold text-[#222222] text-right truncate max-w-[60%]">{autor.obraRepresentativa}</span>
+              </div>
+              
+              {autor.antologiasParticipadas && autor.antologiasParticipadas.length > 0 && (
+                <div class="flex flex-wrap gap-1 pt-1">
+                  {autor.antologiasParticipadas.slice(0, 3).map((ant) => (
+                    <span class="px-2 py-0.5 bg-[#F5EFE6] text-gray-600 text-[9px] rounded-md font-sans">
+                      {ant}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Mensaje si no hay resultados en búsqueda -->
+    <div id="no-authors-msg" class="hidden text-center py-12">
+      <p class="text-gray-500 font-serif italic text-base">No se encontraron autores que coincidan con la búsqueda.</p>
+    </div>
+
+    <!-- Invitación Institucional -->
+    <div class="mt-16 text-center bg-white p-8 rounded-2xl border border-[#E6DCCE] shadow-subtle max-w-2xl mx-auto">
+      <h4 class="font-title text-lg font-black text-[#222222] mb-2">¿Deseas integrarte a nuestro Padrón Oficial?</h4>
+      <p class="text-xs text-gray-500 font-sans mb-6 leading-relaxed">
+        La Sociedad de Escritores Letras y Voces de Tabasco, A.C. abre sus puertas a escritoras, escritores, poetas y ensayistas con obra inédita o publicada en el sureste de México.
       </p>
       <a 
-        href="#membresia" 
-        class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-editorial-warm border border-editorial-border text-carbon font-title text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-terracota hover:border-terracota transition shadow-subtle"
+        href="#contacto" 
+        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#222222] text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-[#EF7B38] transition shadow-sm"
       >
-        <span>Consultar Requisitos de Afiliación</span>
+        <span>Solicitar Información de Afiliación</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
         </svg>
@@ -187,29 +145,67 @@
 </section>
 
 <script>
-  // Filtro Dinámico de Autores
-  const filterBtns = document.querySelectorAll('.filter-author-btn');
+  // Filtros y Búsqueda Dinámica de Autores
+  const filterBtns = document.querySelectorAll('.author-filter');
   const authorCards = document.querySelectorAll('.author-card');
+  const searchInput = document.getElementById('author-search-input') as HTMLInputElement | null;
+  const noMsg = document.getElementById('no-authors-msg');
+
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  function applyFilterAndSearch() {
+    let visibleCount = 0;
+
+    authorCards.forEach(card => {
+      const category = card.getAttribute('data-category') || '';
+      const genre = card.getAttribute('data-genre') || '';
+      const name = card.getAttribute('data-name') || '';
+      const work = card.getAttribute('data-work') || '';
+
+      const matchesFilter = 
+        currentFilter === 'all' || 
+        category === currentFilter || 
+        genre === currentFilter ||
+        (currentFilter === 'poesia' && genre.includes('poesía')) ||
+        (currentFilter === 'narrativa' && genre.includes('narrativa'));
+
+      const matchesSearch = 
+        currentSearch === '' || 
+        name.includes(currentSearch) || 
+        work.includes(currentSearch);
+
+      if (matchesFilter && matchesSearch) {
+        (card as HTMLElement).style.display = 'flex';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (noMsg) {
+      noMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
-        b.classList.remove('bg-terracota', 'text-white', 'border-terracota');
-        b.classList.add('bg-white', 'text-carbon', 'border-editorial-border');
+        b.classList.remove('bg-[#EF7B38]', 'text-white', 'shadow-sm');
+        b.classList.add('bg-white', 'text-[#222222]', 'border', 'border-[#E6DCCE]');
       });
-      btn.classList.remove('bg-white', 'text-carbon', 'border-editorial-border');
-      btn.classList.add('bg-terracota', 'text-white', 'border-terracota');
+      btn.classList.remove('bg-white', 'text-[#222222]', 'border', 'border-[#E6DCCE]');
+      btn.classList.add('bg-[#EF7B38]', 'text-white', 'shadow-sm');
 
-      const filter = btn.getAttribute('data-filter');
-
-      authorCards.forEach(card => {
-        const genre = card.getAttribute('data-genre');
-        if (filter === 'all' || genre === filter) {
-          (card as HTMLElement).style.display = 'flex';
-        } else {
-          (card as HTMLElement).style.display = 'none';
-        }
-      });
+      currentFilter = btn.getAttribute('data-filter') || 'all';
+      applyFilterAndSearch();
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = (e.target as HTMLInputElement).value.trim().toLowerCase();
+      applyFilterAndSearch();
+    });
+  }
 </script>

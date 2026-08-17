@@ -5,18 +5,210 @@ export interface Libro {
   anio: number;
   genero: 'Narrativa' | 'Poesía' | 'Ensayo' | 'Dramaturgia' | 'Literatura Infantil' | 'Multigénero' | 'Revista';
   autores: string;
+  compiladores?: string;
+  prologo?: string;
+  ilustracionPortada?: string;
   coeditores: string;
   paginas: number;
   isbn?: string;
+  indautor?: string;
   clasificacion?: string;
   sinopsis: string;
   fondo: 'Patrimonial Histórico' | 'Contemporáneo' | 'Formativo Gorostiza';
-  disponibilidad: 'Consulta / Archivo' | 'Digitalización PDF' | 'Venta / Distribución';
+  disponibilidad: 'Consulta / Archivo' | 'Digitalización PDF' | 'Venta / Distribución' | 'En Imprenta';
+  portadaImg?: string;
   portadaColor: string;
   fragmentoMuestra: string;
+  autoresDetallados?: string[];
 }
 
 export const CATALOGO_EDITORIAL: Libro[] = [
+  {
+    id: 'animalia-literaria',
+    titulo: 'Animalia Literaria',
+    subtitulo: 'Antología de Narrativa y Lírica',
+    anio: 2026,
+    genero: 'Multigénero',
+    autores: 'Juan David Pérez Cabrera (Compilador) / 16 Autores Tabasqueños',
+    compiladores: 'Juan David Pérez Cabrera',
+    prologo: 'Liliana Chuzeville Córdoba (Delegada Emérita LVT)',
+    ilustracionPortada: 'Diseño editorial y maquetación por Juan David Pérez Cabrera (Tipografía EB Garamond)',
+    coeditores: 'Sociedad de Escritores «Letras y Voces de Tabasco», A.C.',
+    paginas: 131,
+    fondo: 'Contemporáneo',
+    disponibilidad: 'En Imprenta',
+    portadaImg: '/assets/portadas/portada_animalialiteraria.png',
+    portadaColor: 'from-amber-950 to-stone-900',
+    sinopsis: 'Mosaico vivo donde dieciséis escritoras y escritores entablan un diálogo directo con la fauna nativa del trópico a través de versos íntimos y relatos en claroscuro. Reúne a plumas con trayectoria y voces emergentes.',
+    autoresDetallados: [
+      'Juan David Pérez Cabrera',
+      'Víctor Manuel Ameca Mena',
+      'Marlene de la Cruz de la O',
+      'Arlette Alana Pérez Ruiz',
+      'María de los Ángeles Cervantes Rosas',
+      'Francis Vestali Romero Alcántara',
+      'Natalia Morales Sosa',
+      'Pragedis Hernández García',
+      'María de los Ángeles Muñoz Sánchez',
+      'Juan Manuel Canepa Bertolini',
+      'Liliana Chuzeville Córdoba',
+      'Nadya Vanessa Ortiz Moya',
+      'Israel Mendoza Vázquez',
+      'Eva Guadalupe Pineda Cruz',
+      'Flor de Liz Marín Hernández',
+      'Ana Luisa Mosqueda Caraveo'
+    ],
+    fragmentoMuestra: 'Desde antes de que tus ojos rozaran estas páginas, este libro ya te estaba esperando. Hay un pacto secreto e invisible entre quien busca y quien es hallado; una memoria antigua escrita con la luz del agua, el susurro del viento y la pisada silenciosa de las criaturas.'
+  },
+  {
+    id: 'a-corazon-abierto',
+    titulo: 'A corazón abierto',
+    subtitulo: 'Poemario',
+    anio: 2026,
+    genero: 'Poesía',
+    autores: 'María de los Ángeles Cervantes Rosas',
+    ilustracionPortada: 'Óleo sobre tela (60x60 cm) por María de los Ángeles Cervantes Rosas',
+    isbn: '978-607-29-8439-4',
+    indautor: '03-2026-012017574600-14',
+    coeditores: 'Sociedad de Escritores «Letras y Voces de Tabasco», A.C.',
+    paginas: 88,
+    fondo: 'Contemporáneo',
+    disponibilidad: 'Venta / Distribución',
+    portadaImg: '/assets/portadas/portada_acorazonabierto.png',
+    portadaColor: 'from-rose-950 to-neutral-900',
+    sinopsis: 'Obra testimonial y lírica estructurada en seis secciones temáticas: Susurros que gritan, Cicatrices colectivas, Vínculos y puentes, Latidos del corazón, Quimeras del querer y Horizonte de esperanzas. Presentada en la Casa Universitaria Cacao y Chocolate.',
+    fragmentoMuestra: '¿Cuándo se acorta la distancia del amor? En cualquier momento y yendo por la vida con metas y proyectos retadores... María de los Ángeles Cervantes Rosas retrata con precisión esas heridas y esperanzas del corazón.'
+  },
+  {
+    id: 'tardes-tabasquenas',
+    titulo: 'Tardes Tabasqueñas de Ópalos y Topacios',
+    subtitulo: 'Antología de Cuento y Poesía',
+    anio: 2025,
+    genero: 'Multigénero',
+    autores: 'Pragedis Hernández García, Karla Ivonne Alejandro Gómez, Ana Laura Hernández Jiménez (Comp.)',
+    compiladores: 'Pragedis Hernández García, Karla Ivonne Alejandro Gómez, Ana Laura Hernández Jiménez',
+    prologo: 'Dr. Elí Manuel Austria Hernández',
+    ilustracionPortada: 'Joel Tosca',
+    indautor: '03-2025-021011275600-14',
+    coeditores: 'Sociedad de Escritores «Letras y Voces de Tabasco», A.C.',
+    paginas: 148,
+    fondo: 'Contemporáneo',
+    disponibilidad: 'Venta / Distribución',
+    portadaImg: '/assets/portadas/portada_tardes_tabasquenas.jpg',
+    portadaColor: 'from-amber-900 to-amber-950',
+    sinopsis: 'Homenaje literario a la cotidianidad, el color y la sensibilidad de Tabasco. Reúne la producción narrativa y poética de 21 socios y socias en una obra de honda resonancia comunitaria.',
+    autoresDetallados: [
+      'Anais Guadalupe Arias Pérez',
+      'Ana Laura Hernández Jiménez',
+      'Ana Luisa Mosqueda Caraveo',
+      'Cristi Guadalupe Morales Osorio',
+      'Elena Guzmán Ramón',
+      'Eva Guadalupe Pineda Cruz',
+      'Gian Franco López Contreras',
+      'Hugo Hernández Cutiño',
+      'Israel Mendoza Vázquez',
+      'Javier Curiel González',
+      'Jorge Ignacio Islas Miranda',
+      'José Heriberto Castro',
+      'Juan Manuel Canepa Bertolini',
+      'Karla Ivonne Alejandro Gómez',
+      'Liliana Chuzeville Córdoba',
+      'Marisol Lendechy Cerrillo',
+      'Natalia Morales Sosa',
+      'Pragedis Hernández García',
+      'Samuel Morales Morales',
+      'Wilber Jiménez Naranjo',
+      'Yamile Cabrera Salomón'
+    ],
+    fragmentoMuestra: 'Tardes Tabasqueñas de Ópalos y Topacios es un homenaje a lo bello, lo sutil y lo eterno; un tributo a la magia cotidiana que habita en las esquinas de Tabasco. Custodiar su esencia a través de la poesía y la narrativa.'
+  },
+  {
+    id: 'la-mujer-en-el-siglo-xxi',
+    titulo: 'La Mujer en el Siglo XXI',
+    subtitulo: 'Antología de Poesía y Prosa',
+    anio: 2023,
+    genero: 'Multigénero',
+    autores: 'Pragedis Hernández García y Elí Manuel Austria Hernández (Comp.) / 23 Plumas LVT',
+    compiladores: 'Pragedis Hernández García y Elí Manuel Austria Hernández',
+    ilustracionPortada: 'Karla Ivonne Alejandro Gómez',
+    indautor: '03-2023-050808364800-01',
+    coeditores: 'Sociedad de Escritores «Letras y Voces de Tabasco», A.C.',
+    paginas: 116,
+    fondo: 'Contemporáneo',
+    disponibilidad: 'Venta / Distribución',
+    portadaImg: '/assets/portadas/portada_mujer_siglo21.jpg',
+    portadaColor: 'from-stone-900 to-neutral-900',
+    sinopsis: 'Antología fundamental que aborda el papel protagónico, los desafíos y las victorias de la mujer contemporánea desde la óptica plural de 23 creadores tabasqueños.',
+    autoresDetallados: [
+      'Alberto García Mejía',
+      'Ana Laura Hernández Jiménez',
+      'Anaís Guadalupe Arias Pérez',
+      'Cristi Guadalupe Morales Osorio',
+      'Dalia Beatriz Velázquez Cruz',
+      'Elena Guzmán Ramón',
+      'Elí Manuel Austria Hernández',
+      'Esperanza Quijada Mendoza',
+      'Eva Guadalupe Pineda Cruz',
+      'Fabiola Blancas Madrid',
+      'Isabel Pérez Chablé',
+      'Israel Mendoza Vázquez',
+      'Juan Manuel Canepa Bertolini',
+      'Julián Suárez Perera',
+      'Karla Alejandro Gómez',
+      'Liliana Chuzeville Córdoba',
+      'Luis Alberto Gómez Romero',
+      'María de los Ángeles Cervantes Rosas',
+      'Marina Lugo Martínez',
+      'Pragedis Hernández García',
+      'Rebeca Díaz Suárez',
+      'Rocío de la Vega Folgarolas',
+      'Tita Muñoz Sánchez'
+    ],
+    fragmentoMuestra: 'Nuestra voz no es un eco prestado: es la raíz que fractura el pavimento de los silencios impuestos por siglos. En cada página florece el testimonio libre de las letras tabasqueñas.'
+  },
+  {
+    id: 'amarellus',
+    titulo: 'Amarellus',
+    subtitulo: 'Antología Narrativa',
+    anio: 2020,
+    genero: 'Narrativa',
+    autores: 'Edmundo Juárez (Ed.) / Vicente Gómez Montero (Pról.) / Varios Autores',
+    prologo: 'Vicente Gómez Montero',
+    ilustracionPortada: 'María Pinto Madera (Merry Pinto) - Guayacán en flor',
+    isbn: '978-85-65949-29-2',
+    coeditores: 'Inspira Profundo / Sociedad de Escritores Letras y Voces de Tabasco, A.C. / Aval UJAT',
+    paginas: 120,
+    fondo: 'Contemporáneo',
+    disponibilidad: 'Consulta / Archivo',
+    portadaImg: '/assets/portadas/portada_amarellus.jpg',
+    portadaColor: 'from-amber-700 to-yellow-900',
+    sinopsis: 'Volumen narrativo nacido bajo el signo del guayacán amarillo en flor. Reúne cuentos de ciencia ficción, corte intimista y exploración urbana con el aval académico de la UJAT.',
+    autoresDetallados: [
+      'Elí Manuel Austria Hernández',
+      'Emma Cornejo Porras',
+      'Liliana Chuzeville Córdoba',
+      'Alberto García Mejía',
+      'Laura Virginia Ocaña Zurita',
+      'Edison Suárez'
+    ],
+    fragmentoMuestra: 'La ingeniosa delectación de los textos en esta antología nos dice que hay un avance en la narrativa tabasqueña. Por eso, la Sociedad de Escritores Tabasqueños Letras y Voces de Tabasco, A.C., con fe en la calidad de sus socios, ha realizado varias antologías.'
+  },
+  {
+    id: 'escuela-con-sus-plumas-de-ceiba',
+    titulo: 'Escuela con sus plumas de ceiba',
+    subtitulo: 'Generación Guadalupe Azuara',
+    anio: 2024,
+    genero: 'Multigénero',
+    autores: 'Egresados de la Escuela de Escritores "José Gorostiza"',
+    isbn: '978-607-606-668-3',
+    coeditores: 'Universidad Juárez Autónoma de Tabasco (UJAT) / Escuela de Escritores Gorostiza / LVT',
+    paginas: 198,
+    fondo: 'Formativo Gorostiza',
+    disponibilidad: 'Venta / Distribución',
+    portadaColor: 'from-amber-900 to-yellow-950',
+    sinopsis: 'Compilación académica estructurada en cuatro secciones (Poesía, Cuento, Ensayo e Investigación) con las obras de titulación de los diplomados formados bajo el amparo de la ceiba universitaria.',
+    fragmentoMuestra: 'Bajo el follaje de la ceiba universitaria aprendimos que el oficio de escribir no es un pasatiempo, sino una profesión de fe y rigor formal.'
+  },
   {
     id: 'primero-la-voz',
     titulo: 'Primero la voz',
@@ -112,7 +304,7 @@ export const CATALOGO_EDITORIAL: Libro[] = [
     autores: 'Mario de Lille Fuentes (Texto) / Claudia García Silva (Ilustraciones)',
     coeditores: 'Gobierno del Estado de Tabasco / UJAT / SET LVT',
     paginas: 77,
-    sinopsis: 'Cuentos infantiles ilustrados creados por el primer director de la Escuela Gorostiza para estimular el descubrimiento del lenguaje y la imaginación temprana.',
+    sinopsis: 'Cuentos infantiles ilustrados creados por el Arq. Mario de Lille Fuentes, fundador y primer director de la Escuela Gorostiza, para estimular el descubrimiento del lenguaje y la imaginación temprana.',
     fondo: 'Contemporáneo',
     disponibilidad: 'Venta / Distribución',
     portadaColor: 'from-emerald-900 to-teal-950',
@@ -131,35 +323,6 @@ export const CATALOGO_EDITORIAL: Libro[] = [
     disponibilidad: 'Venta / Distribución',
     portadaColor: 'from-blue-950 to-slate-900',
     fragmentoMuestra: 'Construimos torres con vocablos rotos, esperando que alguien allá arriba descifre el dialecto de nuestras soledades compartidas.'
-  },
-  {
-    id: 'la-mujer-del-siglo-xxi',
-    titulo: 'La Mujer del Siglo XXI',
-    anio: 2023,
-    genero: 'Multigénero',
-    autores: 'Anaís Arias Pérez (Coordinadora) / Varias Autoras',
-    coeditores: 'Sociedad de Escritores "Letras y Voces de Tabasco", A.C.',
-    paginas: 160,
-    sinopsis: 'Antología poética y narrativa sobre los retos, ideales, costumbres y reivindicaciones de la mujer contemporánea en el sureste mexicano.',
-    fondo: 'Contemporáneo',
-    disponibilidad: 'Venta / Distribución',
-    portadaColor: 'from-purple-950 to-neutral-900',
-    fragmentoMuestra: 'Nuestra voz no es un eco prestado: es la raíz que fractura el pavimento de los silencios impuestos por siglos.'
-  },
-  {
-    id: 'escuela-con-sus-plumas-de-ceiba',
-    titulo: 'Escuela con sus plumas de ceiba',
-    subtitulo: 'Generación Guadalupe Azuara',
-    anio: 2024,
-    genero: 'Multigénero',
-    autores: 'Egresados de la Escuela de Escritores "José Gorostiza"',
-    coeditores: 'UJAT / Escuela de Escritores Gorostiza / SET LVT',
-    paginas: 198,
-    sinopsis: 'Compilación académica estructurada en cuatro secciones (Poesía, Cuento, Ensayo e Investigación) con las obras de titulación de los diplomados.',
-    fondo: 'Formativo Gorostiza',
-    disponibilidad: 'Venta / Distribución',
-    portadaColor: 'from-amber-900 to-yellow-950',
-    fragmentoMuestra: 'Bajo el follaje de la ceiba universitaria aprendimos que el oficio de escribir no es un pasatiempo, sino una profesión de fe y rigor formal.'
   },
   {
     id: 'revista-letra-voz',
