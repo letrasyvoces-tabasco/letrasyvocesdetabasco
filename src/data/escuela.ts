@@ -349,12 +349,6 @@ export const CLAUSTRO_DOCENTE_HISTORICO: Docente[] = [
     materias: 'Ortografía, Sintaxis, Gramática Superior y Redacción.'
   },
   {
-    nombre: 'Ana Livia Salinas («Ana Salinas»)',
-    cargo: 'Especialista en Crónica y Gestión Administrativa',
-    trayectoria: 'Instructora, editora y especialista en crónica literaria; coordinadora del taller «Género que respira y se mueve».',
-    materias: 'Crónica Literaria, Reseña Periodística y Procesos de Edición.'
-  },
-  {
     nombre: 'Rebeca Díaz Suárez',
     cargo: 'Catedrática y Miembro del Cuerpo Directivo',
     trayectoria: 'Poeta, docente, promotora cultural y miembro del claustro académico colegiado de la institución.',
