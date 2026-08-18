@@ -1,0 +1,326 @@
+---
+// MobileDrawer.astro - Menú Móvil Táctil Completo y Autónomo (Renderizado en el Body para evitar restricciones de Header)
+const basePath = "/letrasyvocesdetabasco";
+---
+
+<!-- Fondo Oscuro de Bloqueo (Backdrop) -->
+<div 
+  id="global-mobile-backdrop" 
+  class="fixed inset-0 bg-black/75 backdrop-blur-xs z-[99998] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+  aria-hidden="true"
+></div>
+
+<!-- Panel Lateral Deslizable Táctil de Pantalla Completa (Drawer) -->
+<aside 
+  id="global-mobile-drawer" 
+  class="fixed top-0 right-0 bottom-0 w-[90vw] max-w-md bg-[#FDFBF7] z-[99999] shadow-2xl border-l border-[#E6DCCE] flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out lg:hidden h-[100dvh] overscroll-contain"
+  role="dialog" 
+  aria-modal="true" 
+  aria-label="Menú de Navegación Móvil"
+>
+  
+  <!-- 1. Encabezado Fijo del Menú -->
+  <div class="p-4 sm:p-5 border-b border-[#E6DCCE] flex items-center justify-between bg-white shrink-0 shadow-xs">
+    <div class="flex items-center gap-2.5">
+      <img 
+        src={`${basePath}/assets/logos/LVT Logo Iso 6 Blanco Relleno.svg`} 
+        alt="LVT" 
+        class="h-8 w-auto object-contain bg-[#1C1814] p-1.5 rounded-xl shadow-xs"
+        onerror="this.src='/letrasyvocesdetabasco/assets/logos/LVT Logo Iso 1 Original.png'"
+      />
+      <div>
+        <span class="font-title font-bold text-xs uppercase tracking-wider text-[#222222] block leading-tight">
+          Letras y Voces
+        </span>
+        <span class="text-[10px] font-serif italic text-[#B8860B] block">
+          Sociedad de Escritores A.C.
+        </span>
+      </div>
+    </div>
+    
+    <!-- Botón de Cierre Destacado -->
+    <button 
+      id="global-mobile-close-btn" 
+      type="button" 
+      class="p-2.5 rounded-2xl bg-[#F5EFE6] border border-[#E6DCCE] text-gray-800 hover:text-red-600 hover:bg-red-50 active:scale-95 transition cursor-pointer shadow-xs"
+      aria-label="Cerrar menú de navegación"
+    >
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- 2. Cuerpo Desplazable con TODAS las Opciones y Sub-Menús -->
+  <div class="p-4 sm:p-5 overflow-y-auto flex-1 space-y-3 font-title text-xs font-bold uppercase tracking-wider">
+    
+    <!-- 🏠 1. INICIO -->
+    <a 
+      href={`${basePath}/`} 
+      class="drawer-nav-item flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-[#E6DCCE] hover:border-[#EF7B38] hover:text-[#EF7B38] text-[#222222] shadow-xs active:scale-98 transition"
+    >
+      <span class="text-xl">🏠</span>
+      <span class="font-black text-sm tracking-wide">Página de Inicio</span>
+    </a>
+
+    <!-- 🎓 2. ESCUELA GOROSTIZA (ACORDEÓN DESPLEGABLE COMPLETO) -->
+    <div class="rounded-2xl bg-white border border-[#E6DCCE] shadow-xs overflow-hidden">
+      <div class="flex items-center justify-between p-3.5 bg-gradient-to-r from-[#EF7B38]/15 to-[#F5EFE6] text-[#EF7B38]">
+        <a href={`${basePath}/escuela`} class="drawer-nav-item flex items-center gap-2.5 flex-1">
+          <span class="text-xl">🎓</span>
+          <div>
+            <span class="font-black text-sm tracking-wide block text-[#EF7B38]">Escuela Gorostiza</span>
+            <span class="text-[9px] text-gray-500 font-serif italic normal-case block">Filial Académica Oficial LVT</span>
+          </div>
+        </a>
+        <button type="button" class="drawer-toggle-sub p-2 rounded-xl bg-white/80 hover:bg-white text-[#EF7B38] transition cursor-pointer" data-target="sub-escuela" aria-label="Desplegar submenú Escuela">
+          <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      
+      <div id="sub-escuela" class="p-3 bg-[#FDFBF7] border-t border-[#E6DCCE] space-y-1.5 text-[11px] normal-case">
+        <a href={`${basePath}/escuela#diplomados`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          📋 <strong>10 Diplomados Actualizados 2026</strong>
+          <span class="block text-[10px] text-gray-500 font-normal">Redacción, Creación, Periodismo, Guion, Oratoria...</span>
+        </a>
+        <a href={`${basePath}/escuela#cursos`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          ✍️ <strong>7 Cursos Continuos & Talleres</strong>
+          <span class="block text-[10px] text-gray-500 font-normal">Cuento, Poesía, Novela, Teatro, Ortografía...</span>
+        </a>
+        <a href={`${basePath}/escuela#claustro`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          🧑‍🏫 <strong>Dirección & Claustro Docente</strong>
+          <span class="block text-[10px] text-gray-500 font-normal">Mtra. Liliana Chuzeville & Mtra. Rebeca Díaz</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 📚 3. CATÁLOGO EDITORIAL & ANTOLOGÍAS -->
+    <div class="rounded-2xl bg-white border border-[#E6DCCE] shadow-xs overflow-hidden">
+      <div class="flex items-center justify-between p-3.5 bg-white text-[#222222]">
+        <a href={`${basePath}/publicaciones`} class="drawer-nav-item flex items-center gap-2.5 flex-1">
+          <span class="text-xl">📚</span>
+          <div>
+            <span class="font-black text-sm tracking-wide block text-[#222222]">Catálogo Editorial</span>
+            <span class="text-[9px] text-[#B8860B] font-serif italic normal-case block">5 Antologías Oficiales</span>
+          </div>
+        </a>
+        <button type="button" class="drawer-toggle-sub p-2 rounded-xl bg-[#F5EFE6] text-gray-700 transition cursor-pointer" data-target="sub-editorial" aria-label="Desplegar submenú Editorial">
+          <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+
+      <div id="sub-editorial" class="p-3 bg-[#FDFBF7] border-t border-[#E6DCCE] space-y-1.5 text-[11px] normal-case">
+        <a href={`${basePath}/publicaciones`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          📖 <strong>Animalia Literaria (2026)</strong> <span class="text-[9px] text-[#EF7B38] font-bold">[En Imprenta]</span>
+        </a>
+        <a href={`${basePath}/publicaciones`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          📖 <strong>A Corazón Abierto (2026)</strong>
+        </a>
+        <a href={`${basePath}/publicaciones`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          📖 <strong>Tardes Tabasqueñas de Ópalos y Topacios (2025)</strong>
+        </a>
+        <a href={`${basePath}/publicaciones`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          📖 <strong>La Mujer en el Siglo XXI & Amarellus</strong>
+        </a>
+      </div>
+    </div>
+
+    <!-- 🎙️ 4. AUDIOTECA LÍRICA & NARRATIVA -->
+    <a 
+      href={`${basePath}/audioteca`} 
+      class="drawer-nav-item flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-[#1C1814] to-[#25201B] text-white shadow-md active:scale-98 transition group"
+    >
+      <div class="flex items-center gap-3">
+        <span class="text-xl">🎙️</span>
+        <div>
+          <span class="font-black text-sm tracking-wide block text-white group-hover:text-[#EF7B38] transition">Audioteca Lírica</span>
+          <span class="text-[9px] text-[#F5DEB3] font-serif italic normal-case block">Miembros LVT & Autores Universales</span>
+        </div>
+      </div>
+      <span class="px-2 py-1 rounded-full bg-[#EF7B38] text-white text-[9px] font-bold">14 Obras MP3</span>
+    </a>
+
+    <!-- ✍️ 5. PADRÓN DE ESCRITORES -->
+    <a 
+      href={`${basePath}/autores`} 
+      class="drawer-nav-item flex items-center justify-between p-3.5 rounded-2xl bg-white border border-[#E6DCCE] hover:border-[#EF7B38] hover:text-[#EF7B38] text-[#222222] shadow-xs active:scale-98 transition"
+    >
+      <div class="flex items-center gap-3">
+        <span class="text-xl">✍️</span>
+        <div>
+          <span class="font-black text-sm tracking-wide block">Padrón de Escritores</span>
+          <span class="text-[9px] text-gray-500 font-serif italic normal-case block">Fundadores y Plumas Contemporáneas</span>
+        </div>
+      </div>
+      <span class="text-[10px] text-gray-500 font-bold">28 Fichas</span>
+    </a>
+
+    <!-- 📜 6. HISTORIA & GOBERNANZA -->
+    <div class="rounded-2xl bg-white border border-[#E6DCCE] shadow-xs overflow-hidden">
+      <div class="flex items-center justify-between p-3.5 bg-white text-[#222222]">
+        <a href={`${basePath}/historia`} class="drawer-nav-item flex items-center gap-2.5 flex-1">
+          <span class="text-xl">📜</span>
+          <div>
+            <span class="font-black text-sm tracking-wide block text-[#222222]">Historia & Gobernanza</span>
+            <span class="text-[9px] text-gray-500 font-serif italic normal-case block">39 Años de Trayectoria (1987–2026)</span>
+          </div>
+        </a>
+        <button type="button" class="drawer-toggle-sub p-2 rounded-xl bg-[#F5EFE6] text-gray-700 transition cursor-pointer" data-target="sub-historia" aria-label="Desplegar submenú Historia">
+          <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+
+      <div id="sub-historia" class="p-3 bg-[#FDFBF7] border-t border-[#E6DCCE] space-y-1.5 text-[11px] normal-case">
+        <a href={`${basePath}/historia`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          🏛️ <strong>Cronología Fundacional 1987-2026</strong>
+        </a>
+        <a href={`${basePath}/historia#directiva`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          👥 <strong>Mesa Directiva (2026–2029)</strong>
+        </a>
+        <a href={`${basePath}/historia#solvencia`} class="drawer-nav-item block p-2.5 rounded-xl bg-white hover:bg-[#F5EFE6] text-[#222222] font-semibold border border-[#E6DCCE] transition">
+          ⚖️ <strong>Solvencia Jurídica & Estatutos</strong>
+        </a>
+      </div>
+    </div>
+
+    <!-- ✍️ 7. CONVOCATORIAS & CONCURSOS -->
+    <a 
+      href={`${basePath}/descargas#convocatorias`} 
+      class="drawer-nav-item flex items-center justify-between p-3.5 rounded-2xl bg-white border border-[#E6DCCE] hover:border-green-500 hover:text-green-700 text-[#222222] shadow-xs active:scale-98 transition"
+    >
+      <div class="flex items-center gap-3">
+        <span class="text-xl">📢</span>
+        <div>
+          <span class="font-black text-sm tracking-wide block">Convocatorias & Concursos</span>
+          <span class="text-[9px] text-gray-500 font-serif italic normal-case block">Nuevos Socios, Plantae Literaria y Certámenes</span>
+        </div>
+      </div>
+      <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-[9px] font-bold">Vigentes</span>
+    </a>
+
+    <!-- 📥 8. CENTRO DE DESCARGAS DOCUMENTALES -->
+    <a 
+      href={`${basePath}/descargas`} 
+      class="drawer-nav-item flex items-center justify-between p-3.5 rounded-2xl bg-white border border-[#E6DCCE] hover:border-[#EF7B38] hover:text-[#EF7B38] text-[#222222] shadow-xs active:scale-98 transition"
+    >
+      <div class="flex items-center gap-3">
+        <span class="text-xl">📥</span>
+        <div>
+          <span class="font-black text-sm tracking-wide block">Centro de Descargas PDF</span>
+          <span class="text-[9px] text-gray-500 font-serif italic normal-case block">Estatutos Públicos, Solicitudes y Formatos</span>
+        </div>
+      </div>
+      <span class="text-[10px] text-gray-500 font-mono">PDF</span>
+    </a>
+
+    <!-- 🎟️ 9. GRAN RIFA PRO-FONDOS -->
+    <a 
+      href={`${basePath}/#contacto`} 
+      class="drawer-nav-item flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-green-50 to-[#F5EFE6] border border-green-300 text-green-900 shadow-xs active:scale-98 transition"
+    >
+      <div class="flex items-center gap-3">
+        <span class="text-xl">🎟️</span>
+        <div>
+          <span class="font-black text-sm tracking-wide block">Gran Rifa Pro-Fondos</span>
+          <span class="text-[9px] text-green-700 font-serif italic normal-case block">Boleto Conmemorativo $100 MXN</span>
+        </div>
+      </div>
+      <span class="px-2 py-0.5 rounded-full bg-green-600 text-white text-[9px] font-bold">$100 MXN</span>
+    </a>
+
+  </div>
+
+  <!-- 3. Pie del Menú con Botones de Contacto Directo -->
+  <div class="p-4 sm:p-5 border-t border-[#E6DCCE] bg-white space-y-2.5 shrink-0 shadow-inner">
+    <a 
+      href="https://wa.me/529932647502?text=Hola%20Sociedad%20de%20Escritores%20LVT,%20deseo%20información%20institucional%20o%20académica." 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-title text-xs font-bold uppercase tracking-wider shadow-md active:scale-98 transition"
+    >
+      <span>📲 WhatsApp Oficial (9932647502)</span>
+    </a>
+    <a 
+      href={`${basePath}/#contacto`} 
+      class="drawer-nav-item flex items-center justify-center w-full py-2.5 rounded-xl bg-[#222222] text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-[#EF7B38] active:scale-98 transition"
+    >
+      Buzón de Correspondencia & Contacto
+    </a>
+  </div>
+
+</aside>
+
+<script is:inline>
+  // Control Maestro Global del Menú Móvil (Fuera del Header)
+  (function setupGlobalMobileDrawer() {
+    function init() {
+      var backdrop = document.getElementById('global-mobile-backdrop');
+      var drawer = document.getElementById('global-mobile-drawer');
+      var closeBtn = document.getElementById('global-mobile-close-btn');
+      var navItems = document.querySelectorAll('.drawer-nav-item');
+      var subToggles = document.querySelectorAll('.drawer-toggle-sub');
+
+      if (!backdrop || !drawer) return;
+
+      window.openGlobalMobileNav = function() {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100', 'pointer-events-auto');
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.closeGlobalMobileNav = function() {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      };
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', window.closeGlobalMobileNav);
+        closeBtn.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+          window.closeGlobalMobileNav();
+        }, { passive: false });
+      }
+
+      backdrop.addEventListener('click', window.closeGlobalMobileNav);
+      backdrop.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        window.closeGlobalMobileNav();
+      }, { passive: false });
+
+      navItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          setTimeout(window.closeGlobalMobileNav, 120);
+        });
+      });
+
+      // Acordeones de Subsecciones
+      subToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var targetId = toggle.getAttribute('data-target');
+          var targetEl = document.getElementById(targetId);
+          var svg = toggle.querySelector('svg');
+          if (targetEl) {
+            var isHidden = targetEl.classList.contains('hidden');
+            if (isHidden) {
+              targetEl.classList.remove('hidden');
+              if (svg) svg.classList.add('rotate-180');
+            } else {
+              targetEl.classList.add('hidden');
+              if (svg) svg.classList.remove('rotate-180');
+            }
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

@@ -1,4 +1,6 @@
 ---
+import MobileDrawer from '../components/MobileDrawer.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -72,5 +74,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyv
   </head>
   <body class="bg-editorial text-carbon font-sans antialiased selection:bg-terracota selection:text-white min-h-screen flex flex-col">
     <slot />
+    
+    <!-- Menú Móvil Táctil Global Independiente del Header -->
+    <MobileDrawer />
   </body>
 </html>
