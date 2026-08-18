@@ -229,6 +229,18 @@ export const PADRON_AUTORES: Autor[] = [
     destacado: false
   },
   {
+    id: 'paulina-pineda',
+    nombre: 'Paulina Pineda',
+    tratamiento: 'Lic.',
+    rolGremial: 'Escritora y Miembro Activo LVT',
+    categoria: 'Plumas Contemporáneas',
+    generoPrincipal: 'Poesía',
+    semblanza: 'Escritora y miembro activo de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., participante en lecturas líricas, talleres y proyectos editoriales colectivos del gremio.',
+    obraRepresentativa: '«Voces del Agua»',
+    antologiasParticipadas: ['Antologías y Muestras LVT'],
+    destacado: false
+  },
+  {
     id: 'marlene-de-la-cruz-de-la-o',
     nombre: 'Marlene de la Cruz de la O',
     tratamiento: 'Lic.',

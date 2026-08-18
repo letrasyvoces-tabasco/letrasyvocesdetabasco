@@ -11,7 +11,7 @@ export const CRONOLOGIA_DIRECTIVA: GestionHistorica[] = [
     liderazgo: 'Mesa Directiva Fundacional (Arq. Mario de Lille Fuentes, Teodosio García Ruiz, Carmen Luna Pérez, Jorge Priego Martínez, Vicente Gómez Montero, Jesús de Dios)',
     descripcion: 'Constitución legal de la asociación civil en Villahermosa, formalizando el espacio autónomo para el gremio, estructurando la red estatal de talleres y consolidando la representatividad de los escritores.',
     hitos: [
-      'Constitución legal de la A.C. en 1987 ante notario público, encabezada por el Arq. Mario de Lille Fuentes y el núcleo de escritores pioneros.',
+      'Constitución legal de la asociación civil en 1987, encabezada por el Arq. Mario de Lille Fuentes y el núcleo de escritores pioneros.',
       'Estructuración de talleres literarios municipales autónomos y espacios de debate estético.',
       'Primeras gestiones de coedición con la Universidad Juárez Autónoma de Tabasco (UJAT) y el ICT.'
     ]
@@ -63,7 +63,7 @@ export const CRONOLOGIA_DIRECTIVA: GestionHistorica[] = [
     hitos: [
       'Celebración del 32º Aniversario (2019) en la Sala Antonio Ocampo (Magno homenaje al Arq. Mario de Lille Fuentes y conferencia magistral de Daniel Baruc Espinal).',
       'Celebración del 36º Aniversario (2023) en Galería Jaguar Despertado con "La Mujer del Siglo XXI" y mesas sobre lenguas maternas.',
-      'Certamen Estatal permanente "Un Soneto por Sor Juana".',
+      'Edición de antologías colectivas «Animalia Literaria» (2026) y convocatorias de creación lírica.',
       'Publicación de la antología de egresados "Escuela con sus plumas de ceiba" (2024).'
     ]
   }

@@ -1,171 +1,336 @@
 ---
-// Convocatorias.astro - Certámenes Oficiales, Convocatorias Literarias y Encuentros Estatales de LVT
+// Convocatorias.astro - Convocatorias Oficiales LVT, Directorio de Concursos Nacionales/Internacionales y Recursos para Escritores
+const basePath = "/letrasyvocesdetabasco";
+
+export const CONCURSOS_EXTERNOS_DESTACADOS = [
+  {
+    titulo: 'Premio Internacional de Poesía «Jaime Sabines»',
+    organizador: 'Consejo Estatal para las Culturas y las Artes / INBAL',
+    genero: 'Poesía Lírica',
+    premio: '$100,000 MXN + Publicación',
+    cierre: 'Convocatoria Anual Regular',
+    enlace: 'https://inba.gob.mx/convocatorias',
+    categoria: 'Nacional / Internacional'
+  },
+  {
+    titulo: 'Premio Bellas Artes de Cuento «Amparo Dávila»',
+    organizador: 'Instituto Nacional de Bellas Artes y Literatura (INBAL)',
+    genero: 'Cuento Fantástico / Breve',
+    premio: '$100,000 MXN + Diploma',
+    cierre: 'Plataforma Digital INBAL',
+    enlace: 'https://inba.gob.mx/convocatorias',
+    categoria: 'Nacional'
+  },
+  {
+    titulo: 'Premio Iberoamericano de Novela «Elena Poniatowska»',
+    organizador: 'Secretaría de Cultura de la CDMX',
+    genero: 'Novela Inédita',
+    premio: '$500,000 MXN',
+    cierre: 'Convocatoria Iberoamericana',
+    enlace: 'https://www.cultura.cdmx.gob.mx/',
+    categoria: 'Internacional'
+  },
+  {
+    titulo: 'Directorio Global de Concursos Literarios (Escritores.org)',
+    organizador: 'Plataforma Internacional Escritores.org',
+    genero: 'Poesía, Novela, Cuento, Ensayo, Teatro',
+    premio: 'Diversas Cuantías & Publicaciones',
+    cierre: 'Actualización Diaria Permanente',
+    enlace: 'https://www.escritores.org/concursos/concursos-1/concursos-literarios',
+    categoria: 'Directorio Global'
+  }
+];
+
+export const RECURSOS_ESCRITORES = [
+  {
+    nombre: 'INDAUTOR (Registro Público de Derechos de Autor)',
+    descripcion: 'Trámite oficial para el registro y protección jurídica de obras literarias y poemarios en México.',
+    url: 'https://www.indautor.gob.mx/',
+    tipo: 'Legal / Derechos'
+  },
+  {
+    nombre: 'Escritores.org (Concursos & Recursos)',
+    descripcion: 'La mayor base de datos hispanohablante de certámenes literarios, becas y asesoría editorial.',
+    url: 'https://www.escritores.org/concursos/concursos-1/concursos-literarios',
+    tipo: 'Concursos & Guías'
+  },
+  {
+    nombre: 'Sistema de Apoyos a la Creación (SACPC / FONCA)',
+    descripcion: 'Becas Jóvenes Creadores, Sistema Nacional de Creadores de Arte y residencias literarias.',
+    url: 'https://fonca.cultura.gob.mx/',
+    tipo: 'Becas & Estímulos'
+  },
+  {
+    nombre: 'Diccionario RAE & Corpus del Español',
+    descripcion: 'Consultas léxicas, Diccionario Panhispánico de Dudas y gramática académica oficial.',
+    url: 'https://dle.rae.es/',
+    tipo: 'Herramientas de Lengua'
+  }
+];
 ---
 
-<section id="convocatorias" class="py-14 sm:py-16 bg-editorial border-b border-editorial-border">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="convocatorias" class="py-14 sm:py-16 bg-[#FDFBF7] text-[#222222] border-b border-[#E6DCCE] relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 sm:space-y-16">
     
     <!-- Cabecera de Sección -->
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-editorial-warm border border-editorial-border text-terracota font-title text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mb-3 shadow-subtle">
-        <span class="w-2 h-2 rounded-full bg-terracota animate-pulse"></span>
-        <span>Certámenes, Encuentros y Convocatorias Oficiales</span>
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EF7B38]/10 border border-[#EF7B38]/20 text-[#EF7B38] font-title text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span>
+        <span>Convocatorias Oficiales LVT & Directorio Literario</span>
       </div>
-      <h2 class="font-title text-2xl sm:text-3xl lg:text-4xl font-black text-carbon">
-        Convocatorias Abiertas y Certámenes
+      <h2 class="font-title text-2xl sm:text-4xl lg:text-5xl font-black text-[#222222] tracking-tight">
+        Convocatorias, Proyectos y <span class="text-[#EF7B38]">Certámenes</span>
       </h2>
-      <p class="text-xs sm:text-sm text-gray-600 mt-2 font-serif italic">
-        Mecanismos transparentes de participación democrática, estímulo a la creación lírica y encuentros descentralizados en los 17 municipios de Tabasco.
+      <p class="text-xs sm:text-sm md:text-base text-[#555555] font-serif italic leading-relaxed">
+        Postulaciones abiertas para nuevos miembros, estatus de nuestras antologías colectivas y directorio de concursos literarios vigentes.
       </p>
-      <div class="w-16 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
+      <div class="w-16 h-0.5 bg-[#EF7B38] mx-auto rounded-full"></div>
     </div>
 
-    <!-- Bloque 1: Convocatoria Vigente 2026 (Cuenta Regresiva al 1 de Octubre) -->
-    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-editorial-border shadow-subtle mb-12">
-      <div class="grid lg:grid-cols-12 gap-8 items-center">
-        
-        <div class="lg:col-span-7 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracota/10 text-terracota text-[10px] font-title font-bold uppercase tracking-widest">
-            <span>[CONVOCATORIA EDITORIAL 2026]</span>
-          </div>
-          <h3 class="font-serif text-3xl sm:text-4xl font-bold text-carbon leading-tight">
-            Antología Estatal LVT 2026
-          </h3>
-          <p class="text-gray-700 font-light text-sm sm:text-base leading-relaxed">
-            Se convoca a escritoras, escritores y poetas con residencia comprobada en el Estado de Tabasco a postular textos inéditos de <strong>poesía, cuento breve o ensayo lírico</strong> para integrar la próxima edición colegiada conmemorativa.
-          </p>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-gray-600 font-light pt-2">
-            <div><strong>Géneros:</strong> Poesía / Narrativa</div>
-            <div><strong>Extensión:</strong> 1 a 5 cuartillas</div>
-            <div><strong>Recepción:</strong> Plica digital</div>
-          </div>
-        </div>
-
-        <!-- Reloj de Cuenta Regresiva al 1 de Octubre de 2026 -->
-        <div class="lg:col-span-5 bg-editorial-warm p-6 sm:p-8 rounded-3xl border border-editorial-border text-center space-y-4">
-          <span class="text-[10px] font-title font-bold uppercase tracking-widest text-gray-500 block">
-            Cierre de Recepción: 01 de Octubre de 2026
-          </span>
-          <div class="grid grid-cols-4 gap-2 text-carbon">
-            <div class="p-3 bg-white rounded-2xl border border-editorial-border shadow-subtle">
-              <span id="timer-days" class="font-serif text-2xl sm:text-3xl font-bold text-terracota block">--</span>
-              <span class="text-[9px] font-title uppercase font-semibold text-gray-400">Días</span>
-            </div>
-            <div class="p-3 bg-white rounded-2xl border border-editorial-border shadow-subtle">
-              <span id="timer-hours" class="font-serif text-2xl sm:text-3xl font-bold text-carbon block">--</span>
-              <span class="text-[9px] font-title uppercase font-semibold text-gray-400">Horas</span>
-            </div>
-            <div class="p-3 bg-white rounded-2xl border border-editorial-border shadow-subtle">
-              <span id="timer-mins" class="font-serif text-2xl sm:text-3xl font-bold text-carbon block">--</span>
-              <span class="text-[9px] font-title uppercase font-semibold text-gray-400">Min</span>
-            </div>
-            <div class="p-3 bg-white rounded-2xl border border-editorial-border shadow-subtle">
-              <span id="timer-secs" class="font-serif text-2xl sm:text-3xl font-bold text-dorado block">--</span>
-              <span class="text-[9px] font-title uppercase font-semibold text-gray-400">Seg</span>
-            </div>
-          </div>
-          <a 
-            href="https://wa.me/522205889391?text=Hola%20Mesa%20Directiva%20de%20LVT,%20deseo%20solicitar%20las%20bases%20completas%20de%20la%20Convocatoria%202026." 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="w-full py-3 rounded-2xl bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover transition shadow-subtle inline-block"
-          >
-            Solicitar Bases en PDF por WhatsApp
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Bloque 2: Certamen Estatal «Un Soneto por Sor Juana» y Encuentros Históricos -->
-    <div class="grid md:grid-cols-2 gap-8">
+    <!-- ================================================================= -->
+    <!-- 1. CONVOCATORIAS OFICIALES DE LETRAS Y VOCES DE TABASCO           -->
+    <!-- ================================================================= -->
+    <div class="space-y-8">
       
-      <!-- Certamen: Un Soneto por Sor Juana -->
-      <div class="bg-white p-8 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition">
-        <div class="space-y-4">
-          <div class="flex justify-between items-center">
-            <span class="px-3 py-1 rounded-full bg-dorado/15 text-dorado text-[10px] font-title font-bold uppercase tracking-widest">Edición Colectiva 2026</span>
-            <span class="text-xs font-mono text-gray-400">Fondo Editorial LVT</span>
+      <div class="flex items-center gap-3 pb-2 border-b border-[#E6DCCE]">
+        <span class="text-xl">🏛️</span>
+        <h3 class="font-title font-bold text-lg sm:text-xl text-[#222222] uppercase tracking-wider">
+          Convocatorias Institucionales LVT
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- A. CONVOCATORIA EN CURSO: NUEVOS SOCIOS LVT -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-green-300 shadow-subtle flex flex-col justify-between space-y-4 hover:shadow-xl hover:border-green-500 transition-all group">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="px-3 py-1 rounded-full bg-green-100 text-green-800 text-[10px] font-title font-bold uppercase tracking-wider animate-pulse">
+                ● En Curso / Vigente
+              </span>
+              <span class="text-[10px] font-mono text-gray-500">Membresía LVT</span>
+            </div>
+
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-editorial-warm border border-[#E6DCCE] relative">
+              <img 
+                src={`${basePath}/assets/convocatorias/nuevos_socios.jpg`} 
+                alt="Convocatoria Nuevos Socios LVT" 
+                class="w-full h-full object-cover object-top group-hover:scale-103 transition duration-500"
+                loading="lazy"
+              />
+            </div>
+
+            <h4 class="font-title font-bold text-lg text-[#222222] leading-snug">
+              Convocatoria de Nuevos Socios y Miembros
+            </h4>
+
+            <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+              Invitación abierta a poetas, narradores, ensayistas, dramaturgos y promotores culturales a integrarse formalmente a la Sociedad de Escritores «Letras y Voces de Tabasco», A.C.
+            </p>
           </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon">Convocatoria para Nuevas Antologías y Concursos</h3>
-          <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-            Recepción abierta de textos inéditos en poesía, cuento y ensayo para integrar los nuevos volúmenes colectivos del Fondo Editorial LVT y participar en los certámenes literarios estatales coordinados por la asociación.
-          </p>
-          <ul class="text-xs text-gray-600 font-light space-y-1.5 pt-2">
-            <li>✦ <strong>Géneros:</strong> Poesía lírica, cuento breve, narrativa y ensayo crítico.</li>
-            <li>✦ <strong>Participantes:</strong> Escritoras, escritores y estudiantes radicados en Tabasco.</li>
-            <li>✦ <strong>Dictamen:</strong> Consejo Editorial y Comité de Selección Colegiado.</li>
-          </ul>
+
+          <div class="pt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+            <span class="text-xs font-serif italic text-gray-500">Recepción permanente</span>
+            <a 
+              href="https://wa.me/529932647502?text=Hola%20Secretar%C3%ADa%20General%20LVT,%20deseo%20postularme%20como%20Nuevo%20Socio%20de%20Letras%20y%20Voces%20de%20Tabasco." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-xs"
+            >
+              Postularme →
+            </a>
+          </div>
         </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center">
-          <span class="text-xs font-title font-bold uppercase text-dorado">Recepción de Obras</span>
-          <a 
-            href="https://wa.me/522205889391?text=Hola%20Mesa%20Directiva%20LVT,%20deseo%20solicitar%20las%20bases%20para%20postular%20obra%20en%20las%20nuevas%20antologías." 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="text-xs font-title font-bold uppercase text-terracota hover:underline"
-          >
-            Consultar Bases →
-          </a>
+
+        <!-- B. ANIMALIA LITERARIA: EN IMPRENTA -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-[#E6DCCE] shadow-subtle flex flex-col justify-between space-y-4 hover:shadow-xl hover:border-[#EF7B38] transition-all group">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="px-3 py-1 rounded-full bg-[#EF7B38]/20 text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider font-mono">
+                🖨️ [EN IMPRENTA / PRENSA 2026]
+              </span>
+              <span class="text-[10px] font-mono text-gray-500">Antología Oficial</span>
+            </div>
+
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-editorial-warm border border-[#E6DCCE] relative">
+              <img 
+                src={`${basePath}/assets/convocatorias/animalia_literaria.jpg`} 
+                alt="Convocatoria Animalia Literaria" 
+                class="w-full h-full object-cover object-top group-hover:scale-103 transition duration-500"
+                loading="lazy"
+              />
+            </div>
+
+            <h4 class="font-title font-bold text-lg text-[#222222] leading-snug">
+              Antología «Animalia Literaria» (2026)
+            </h4>
+
+            <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+              Fase de convocatoria concluida exitosamente. El volumen colectivo reúne a 16 plumas destacadas de Tabasco y actualmente se encuentra en <strong>proceso de prensas e imprenta</strong> para su presentación oficial.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+            <span class="text-xs font-serif italic text-[#B8860B]">Próxima presentación</span>
+            <a 
+              href={`${basePath}/publicaciones`} 
+              class="px-4 py-2 rounded-xl bg-[#222222] hover:bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-xs"
+            >
+              Ver Catálogo →
+            </a>
+          </div>
+        </div>
+
+        <!-- C. PLANTAE LITERARIA: PRÓXIMO LANZAMIENTO -->
+        <div class="bg-gradient-to-br from-[#1C1814] to-[#25201B] rounded-3xl p-6 sm:p-7 border border-[#3A2E26] text-white shadow-elevated flex flex-col justify-between space-y-4 hover:shadow-2xl hover:border-[#C59B27] transition-all group">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="px-3 py-1 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[10px] font-title font-bold uppercase tracking-wider">
+                🌱 [PRÓXIMO LANZAMIENTO]
+              </span>
+              <span class="text-[10px] font-mono text-gray-400">Edición Futura</span>
+            </div>
+
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-[#3A2E26] relative flex flex-col items-center justify-center p-4 text-center">
+              <span class="text-3xl mb-1">🌿📖</span>
+              <span class="font-title font-bold text-sm text-[#F5DEB3] uppercase">Plantae Literaria</span>
+              <span class="text-[10px] text-gray-400 font-serif italic mt-1">Homenaje lírico y narrativo a la flora del Sureste</span>
+            </div>
+
+            <h4 class="font-title font-bold text-lg text-white leading-snug">
+              Antología «Plantae Literaria»
+            </h4>
+
+            <p class="text-xs sm:text-sm text-gray-300 font-sans leading-relaxed">
+              Próxima convocatoria temática en preparación por el Consejo Editorial de LVT. Explorará la memoria botánica, las ceibas, los manglares y la selva tabasqueña en poesía y narrativa.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+            <span class="text-xs font-serif italic text-gray-400">Lanzamiento próximo mes</span>
+            <a 
+              href="https://wa.me/529932647502?text=Deseo%20notificaciones%20cuando%20se%20abra%20la%20convocatoria%20de%20Plantae%20Literaria." 
+              target="_blank"
+              rel="noopener"
+              class="px-4 py-2 rounded-xl bg-[#C59B27] hover:bg-[#B8860B] text-black font-title text-xs font-bold uppercase tracking-wider transition shadow-xs"
+            >
+              Notificarme →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 2. DIRECTORIO DE CONCURSOS LITERARIOS NACIONALES E INTERNACIONALES -->
+    <!-- ================================================================= -->
+    <div class="space-y-6 pt-6 border-t border-[#E6DCCE]">
+      
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xl">🌍</span>
+          <div>
+            <h3 class="font-title font-bold text-lg sm:text-xl text-[#222222] uppercase tracking-wider">
+              Concursos Literarios Nacionales e Internacionales
+            </h3>
+            <p class="text-xs text-gray-500 font-serif italic">
+              Oportunidades y certámenes abiertos para la comunidad de escritoras y escritores
+            </p>
+          </div>
+        </div>
+        <a 
+          href="https://www.escritores.org/concursos/concursos-1/concursos-literarios" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-xs font-title font-bold uppercase text-[#EF7B38] hover:underline flex items-center gap-1"
+        >
+          <span>Ver Directorio en Escritores.org</span>
+          <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {CONCURSOS_EXTERNOS_DESTACADOS.map((c) => (
+          <div class="p-5 rounded-2xl bg-white border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex justify-between items-center text-[10px] font-title font-bold uppercase">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38]">
+                  {c.categoria}
+                </span>
+                <span class="text-gray-500">{c.genero}</span>
+              </div>
+              <h4 class="font-title font-bold text-base text-[#222222]">{c.titulo}</h4>
+              <div class="text-xs text-[#555555] space-y-1">
+                <div><strong>Organiza:</strong> {c.organizador}</div>
+                <div><strong>Premio / Estímulo:</strong> <span class="text-green-800 font-semibold">{c.premio}</span></div>
+                <div><strong>Estatus:</strong> {c.cierre}</div>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-[#E6DCCE] flex justify-end">
+              <a 
+                href={c.enlace} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center gap-1 text-xs font-title font-bold uppercase text-[#EF7B38] hover:text-[#D96620] transition"
+              >
+                <span>Consultar Bases Oficiales</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 3. CAJA DE HERRAMIENTAS & RECURSOS PARA ESCRITORES               -->
+    <!-- ================================================================= -->
+    <div class="space-y-6 pt-6 border-t border-[#E6DCCE]">
+      
+      <div class="flex items-center gap-3">
+        <span class="text-xl">🛠️</span>
+        <div>
+          <h3 class="font-title font-bold text-lg sm:text-xl text-[#222222] uppercase tracking-wider">
+            Recursos y Herramientas para Escritores
+          </h3>
+          <p class="text-xs text-gray-500 font-serif italic">
+            Enlaces útiles para registro de obra, consultas de lengua, becas y profesionalización editorial
+          </p>
         </div>
       </div>
 
-      <!-- Encuentro de Escritores: Así Habla Mi Ciudad y Aniversarios -->
-      <div class="bg-white p-8 rounded-3xl border border-editorial-border shadow-subtle flex flex-col justify-between hover:shadow-elevated transition">
-        <div class="space-y-4">
-          <div class="flex justify-between items-center">
-            <span class="px-3 py-1 rounded-full bg-editorial-warm text-carbon text-[10px] font-title font-bold uppercase tracking-widest">Memoria de Encuentros</span>
-            <span class="text-xs font-mono text-gray-400">Descentralización Municipal</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-carbon">XXVIII Encuentro «Así Habla Mi Ciudad»</h3>
-          <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-            Homenaje póstumo a la escritora <strong>Gabriela Gutiérrez Lomasto</strong> con foros descentralizados en 7 municipios (Centro, Centla, Cárdenas, Tacotalpa, Jalpa de Méndez, Paraíso y Nacajuca), integrando talleres de crónica y creación literaria colegiada.
-          </p>
-          <div class="p-4 rounded-2xl bg-editorial-warm border border-editorial-border text-xs text-gray-700 font-light space-y-1">
-            <strong>Defensa de las Lenguas Maternas (36º Aniversario):</strong>
-            <span>Posicionamiento público en El Jaguar Despertado para proteger el valor intrínseco de las lenguas originarias sin folclorización política.</span>
-          </div>
-        </div>
-        <div class="mt-6 pt-4 border-t border-editorial-border flex justify-between items-center">
-          <span class="text-xs font-title font-bold uppercase text-gray-500">Foro Multisede</span>
-          <span class="text-xs font-mono text-gray-400">Archivo Histórico LVT</span>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {RECURSOS_ESCRITORES.map((r) => (
+          <a 
+            href={r.url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="p-5 rounded-2xl bg-white border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] hover:shadow-elevated transition flex flex-col justify-between space-y-3 group"
+          >
+            <div class="space-y-2">
+              <span class="px-2.5 py-0.5 rounded-md bg-[#F5EFE6] text-[#EF7B38] text-[9px] font-title font-bold uppercase">
+                {r.tipo}
+              </span>
+              <h4 class="font-title font-bold text-sm text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+                {r.nombre}
+              </h4>
+              <p class="text-xs text-gray-600 font-sans leading-relaxed">
+                {r.descripcion}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-[#E6DCCE] text-right text-[11px] font-title font-bold uppercase text-[#EF7B38] flex items-center justify-end gap-1">
+              <span>Abrir Enlace</span>
+              <span>↗</span>
+            </div>
+          </a>
+        ))}
       </div>
 
     </div>
 
   </div>
 </section>
-
-<script>
-  // Cuenta Regresiva Dinámica al 1 de Octubre de 2026
-  function updateCountdown() {
-    const targetDate = new Date('2026-10-01T23:59:59').getTime();
-    const now = new Date().getTime();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-      const el = document.getElementById('timer-days');
-      if (el) el.innerText = '0';
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-    const dEl = document.getElementById('timer-days');
-    const hEl = document.getElementById('timer-hours');
-    const mEl = document.getElementById('timer-mins');
-    const sEl = document.getElementById('timer-secs');
-
-    if (dEl) dEl.innerText = days.toString();
-    if (hEl) hEl.innerText = hours.toString().padStart(2, '0');
-    if (mEl) mEl.innerText = mins.toString().padStart(2, '0');
-    if (sEl) sEl.innerText = secs.toString().padStart(2, '0');
-  }
-
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-</script>

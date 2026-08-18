@@ -42,12 +42,20 @@ const basePath = "/letrasyvocesdetabasco";
           📍 Villahermosa, Tabasco (Presencial y En Línea)
         </span>
         <a 
-          href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[0]}?text=Hola%20Escuela%20de%20Escritores%20Gorostiza,%20deseo%20informes%20de%20los%20diplomados%20y%20cursos.`}
+          href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[0]}?text=Hola%20Escuela%20Gorostiza,%20deseo%20informes%20de%20los%20diplomados%20y%20cursos.`}
           target="_blank"
           rel="noopener"
           class="px-3.5 py-1.5 bg-green-50 text-green-800 rounded-xl border border-green-200 shadow-xs hover:bg-green-100 transition flex items-center gap-1.5 font-bold"
         >
           <span>📲 WhatsApp: {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[0]}</span>
+        </a>
+        <a 
+          href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[1]}?text=Hola%20Escuela%20Gorostiza,%20deseo%20informes%20de%20los%20diplomados%20y%20cursos.`}
+          target="_blank"
+          rel="noopener"
+          class="px-3.5 py-1.5 bg-green-50 text-green-800 rounded-xl border border-green-200 shadow-xs hover:bg-green-100 transition flex items-center gap-1.5 font-bold"
+        >
+          <span>📲 {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[1]}</span>
         </a>
         <a 
           href={`mailto:${IDENTIDAD_ESCUELA.contactoDirecto.email}`}

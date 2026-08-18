@@ -108,6 +108,7 @@ const basePath = "/letrasyvocesdetabasco";
                 alt="Animalia Literaria" 
                 class="w-full h-full object-cover"
                 loading="lazy"
+                onerror="this.src='/letrasyvocesdetabasco/assets/portadas/portada_animalialiteraria.png'"
               />
               <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/book:opacity-100 transition flex items-center justify-center p-1 text-center">
                 <span class="text-[8px] font-title font-bold text-white uppercase">2026</span>
@@ -119,6 +120,7 @@ const basePath = "/letrasyvocesdetabasco";
                 alt="A Corazón Abierto" 
                 class="w-full h-full object-cover"
                 loading="lazy"
+                onerror="this.src='/letrasyvocesdetabasco/assets/portadas/portada_acorazonabierto.png'"
               />
               <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/book:opacity-100 transition flex items-center justify-center p-1 text-center">
                 <span class="text-[8px] font-title font-bold text-white uppercase">2026</span>
@@ -130,6 +132,7 @@ const basePath = "/letrasyvocesdetabasco";
                 alt="Tardes Tabasqueñas" 
                 class="w-full h-full object-cover"
                 loading="lazy"
+                onerror="this.src='/letrasyvocesdetabasco/assets/portadas/portada_tardes_tabasquenas.jpg'"
               />
               <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/book:opacity-100 transition flex items-center justify-center p-1 text-center">
                 <span class="text-[8px] font-title font-bold text-white uppercase">2025</span>
@@ -281,7 +284,7 @@ const basePath = "/letrasyvocesdetabasco";
           </div>
 
           <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
-            Consulte el acta constitutiva de 1987, la cronología por periodos directivos, los estatutos vigentes y la Mesa Directiva 2026–2029.
+            Consulte la trayectoria fundacional de 1987, la cronología por periodos directivos, los estatutos vigentes y la Mesa Directiva 2026–2029.
           </p>
 
           <div class="p-3 rounded-2xl bg-[#F5EFE6] border border-[#E6DCCE] text-xs font-sans text-gray-700">
@@ -315,20 +318,20 @@ const basePath = "/letrasyvocesdetabasco";
 
           <div>
             <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
-              Certámenes, Descargas & Rifa 2026
+              Convocatorias, Descargas & Rifa 2026
             </h3>
             <p class="text-xs sm:text-sm font-serif italic text-[#B8860B] mt-1">
-              Gran Rifa Pro-Fondos ($100 MXN) e Iniciativas
+              Nuevos Socios, Directorio de Concursos y Rifa Pro-Fondos
             </p>
           </div>
 
           <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
-            Descargue estatutos y formatos en PDF, consulte las bases del Certamen «Un Soneto por Sor Juana» o adquiera su boleto de la Rifa Pro-Fondos.
+            Descargue estatutos y formatos oficiales, postúlese como nuevo socio LVT o consulte el directorio de certámenes literarios y adquiera su boleto de la Rifa Pro-Fondos.
           </p>
 
           <div class="grid grid-cols-2 gap-2 pt-1 text-xs font-title">
-            <a href={`${basePath}/descargas`} class="p-2 rounded-xl bg-[#F5EFE6] hover:bg-[#EF7B38]/10 text-center font-bold text-[#222222] transition">
-              📥 Descargas PDF
+            <a href={`${basePath}/descargas#convocatorias`} class="p-2 rounded-xl bg-[#F5EFE6] hover:bg-[#EF7B38]/10 text-center font-bold text-[#222222] transition">
+              ✍️ Convocatorias
             </a>
             <a href={`${basePath}/#contacto`} class="p-2 rounded-xl bg-green-50 hover:bg-green-100 text-center font-bold text-green-800 transition">
               🎟️ Rifa ($100 MXN)
@@ -342,7 +345,7 @@ const basePath = "/letrasyvocesdetabasco";
             href={`${basePath}/descargas`} 
             class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider shadow-xs hover:scale-102 transition"
           >
-            <span>Ver Descargas</span>
+            <span>Ver Convocatorias & Descargas</span>
             <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>

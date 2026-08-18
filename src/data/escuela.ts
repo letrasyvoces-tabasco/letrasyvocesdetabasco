@@ -69,8 +69,8 @@ export const IDENTIDAD_ESCUELA = {
     secciones: ["Poesía", "Narrativa", "Investigación", "Ensayo"]
   },
   contactoDirecto: {
-    telefonos: ["220 588 9391"],
-    telefonosClean: ["522205889391"],
+    telefonos: ["99 32 64 75 02", "99 31 46 73 90"],
+    telefonosClean: ["529932647502", "529931467390"],
     email: "egorosiglo21@gmail.com",
     facebook: "Diplomados \"José Gorostiza\"",
     facebookUrl: "https://www.facebook.com/search/top?q=Diplomados%20Jos%C3%A9%20Gorostiza",
