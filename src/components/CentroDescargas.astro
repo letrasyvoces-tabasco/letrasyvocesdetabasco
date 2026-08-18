@@ -1,130 +1,135 @@
 ---
-// CentroDescargas.astro - Centro de Documentación Oficial, Estatutos y Sala de Prensa LVT
+// CentroDescargas.astro - Centro de Formatos Oficiales, Guías Editoriales y Recursos Públicos LVT
 const basePath = "/letrasyvocesdetabasco";
 ---
 
-<section id="descargas" class="py-14 sm:py-16 bg-white border-b border-editorial-border">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="descargas" class="py-14 sm:py-16 bg-[#FDFBF7] text-[#222222] border-b border-[#E6DCCE]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
     
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-editorial-warm border border-editorial-border text-terracota font-title text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mb-3 shadow-subtle">
-        <span class="w-2 h-2 rounded-full bg-terracota"></span>
-        <span>Transparencia & Sala de Documentos</span>
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EF7B38]/10 border border-[#EF7B38]/20 text-[#EF7B38] font-title text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-[#EF7B38]"></span>
+        <span>Formatos Oficiales & Recursos para Autores</span>
       </div>
-      <h2 class="font-title text-2xl sm:text-3xl lg:text-4xl font-black text-carbon">
-        Centro de Documentación y Descargas
+      <h2 class="font-title text-2xl sm:text-4xl lg:text-5xl font-black text-[#222222] tracking-tight">
+        Centro de Formatos y <span class="text-[#EF7B38]">Recursos</span>
       </h2>
-      <p class="text-xs sm:text-sm text-gray-600 mt-2 font-serif italic leading-relaxed">
-        Acceso público a la normativa estatutaria, formatos de dictaminación, convocatorias vigentes y materiales institucionales.
+      <p class="text-xs sm:text-sm md:text-base text-[#555555] font-serif italic leading-relaxed">
+        Acceso público a formatos de postulación, guías de estilo para antologías, convocatorias vigentes y materiales para medios de comunicación.
       </p>
-      <div class="w-20 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
+      <div class="w-16 h-0.5 bg-[#EF7B38] mx-auto rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- Documento 1: Estatutos Oficiales -->
-      <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-red-100 text-red-800 text-[10px] font-title font-bold uppercase tracking-widest">
-              PDF Oficial
+      <!-- Recurso 1: Solicitud de Ingreso Gremial -->
+      <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E6DCCE] shadow-subtle hover:shadow-xl hover:border-[#EF7B38] transition-all flex flex-col justify-between group">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-full bg-green-100 text-green-800 text-[10px] font-title font-bold uppercase tracking-wider">
+              Afiliación
             </span>
-            <span class="text-xs text-gray-400 font-mono">931 KB</span>
+            <span class="text-xs text-gray-400 font-mono">Oficial LVT</span>
           </div>
-          <h3 class="font-serif text-xl font-bold text-carbon mb-2">Estatutos Sociales (Versión Pública)</h3>
-          <p class="text-xs text-gray-600 font-light leading-relaxed mb-4">
-            Normativa interna, derechos y obligaciones de los socios, estructura directiva y régimen asociativo de la asociación.
+          <h3 class="font-title text-lg font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+            Solicitud de Ingreso Gremial
+          </h3>
+          <p class="text-xs text-[#555555] font-sans leading-relaxed">
+            Formato oficial de postulación para escritoras y escritores interesados en incorporarse como socios de Letras y Voces de Tabasco, A.C.
           </p>
         </div>
-        <a 
-          href={`${basePath}/assets/docs/Estatutos_Oficiales_LVT.pdf`} 
-          download="Estatutos_Oficiales_LVT.pdf"
-          class="w-full py-3 rounded-2xl bg-white border border-editorial-border text-carbon hover:bg-terracota hover:text-white hover:border-terracota font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-subtle inline-flex items-center justify-center gap-2"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-          </svg>
-          <span>Descargar Estatutos</span>
-        </a>
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE]">
+          <a 
+            href="https://wa.me/529932647502?text=Hola%20Secretar%C3%ADa%20General%20LVT,%20solicito%20el%20formato%20oficial%20para%20postularme%20como%20nuevo%20socio." 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full py-2.5 rounded-xl bg-green-600 hover:bg-green-700 text-white font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-xs inline-flex items-center justify-center gap-1.5"
+          >
+            <span>Solicitar Formato</span>
+            <span>→</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Documento 2: Convocatoria 2026 -->
-      <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-terracota/15 text-terracota text-[10px] font-title font-bold uppercase tracking-widest">
-              Bases 2026
+      <!-- Recurso 2: Guía de Criterios Editoriales -->
+      <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E6DCCE] shadow-subtle hover:shadow-xl hover:border-[#EF7B38] transition-all flex flex-col justify-between group">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-full bg-[#EF7B38]/15 text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider">
+              Editorial
             </span>
-            <span class="text-xs text-gray-400 font-mono">288 KB</span>
+            <span class="text-xs text-gray-400 font-mono">Guía de Estilo</span>
           </div>
-          <h3 class="font-serif text-xl font-bold text-carbon mb-2">Convocatoria Antología 2026</h3>
-          <p class="text-xs text-gray-600 font-light leading-relaxed mb-4">
-            Requisitos de formato, extensión de textos poéticos y narrativos, fechas límite de recepción y criterios del jurado.
+          <h3 class="font-title text-lg font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+            Criterios de Publicación
+          </h3>
+          <p class="text-xs text-[#555555] font-sans leading-relaxed">
+            Pautas formales, métrica, tipografía, extensión y requisitos de entrega de manuscritos para antologías colectivas del Fondo Editorial.
           </p>
         </div>
-        <a 
-          href="https://wa.me/522205889391?text=Deseo%20recibir%20las%20bases%20completas%20en%20PDF%20de%20la%20Convocatoria%202026" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-full py-3 rounded-2xl bg-white border border-editorial-border text-carbon hover:bg-terracota hover:text-white hover:border-terracota font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-subtle inline-flex items-center justify-center gap-2"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-          <span>Solicitar Bases PDF</span>
-        </a>
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE]">
+          <a 
+            href={`${basePath}/publicaciones`} 
+            class="w-full py-2.5 rounded-xl bg-white border border-[#E6DCCE] text-[#222222] hover:bg-[#EF7B38] hover:text-white hover:border-[#EF7B38] font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-xs inline-flex items-center justify-center gap-1.5"
+          >
+            <span>Ver Publicaciones</span>
+            <span>→</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Documento 3: Solicitud de Afiliación -->
-      <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-dorado/20 text-dorado text-[10px] font-title font-bold uppercase tracking-widest">
-              Formato
+      <!-- Recurso 3: Convocatorias y Certámenes -->
+      <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E6DCCE] shadow-subtle hover:shadow-xl hover:border-[#EF7B38] transition-all flex flex-col justify-between group">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-full bg-[#C59B27]/20 text-[#B8860B] text-[10px] font-title font-bold uppercase tracking-wider">
+              Convocatorias
             </span>
-            <span class="text-xs text-gray-400 font-mono">Oficial</span>
+            <span class="text-xs text-gray-400 font-mono">Bases 2026</span>
           </div>
-          <h3 class="font-serif text-xl font-bold text-carbon mb-2">Solicitud de Ingreso Gremial</h3>
-          <p class="text-xs text-gray-600 font-light leading-relaxed mb-4">
-            Plantilla para postulantes a nuevos socios, carta de motivos, semblanza curricular y registro de muestras de obra.
+          <h3 class="font-title text-lg font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+            Bases de Convocatorias
+          </h3>
+          <p class="text-xs text-[#555555] font-sans leading-relaxed">
+            Consulte las bases de participación de Nuevos Socios, estado de Animalia Literaria en imprenta y directorio de certámenes literarios.
           </p>
         </div>
-        <a 
-          href="https://wa.me/522205889391?text=Hola%20Secretar%C3%ADa%20General%20LVT,%20solicito%20el%20formato%20oficial%20para%20postularme%20como%20socio%20de%20Letras%20y%20Voces%20de%20Tabasco." 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-full py-3 rounded-2xl bg-white border border-editorial-border text-carbon hover:bg-terracota hover:text-white hover:border-terracota font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-subtle inline-flex items-center justify-center gap-2"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-          </svg>
-          <span>Solicitar Formato</span>
-        </a>
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE]">
+          <a 
+            href={`${basePath}/descargas#convocatorias`} 
+            class="w-full py-2.5 rounded-xl bg-[#222222] hover:bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-xs inline-flex items-center justify-center gap-1.5"
+          >
+            <span>Ver Convocatorias</span>
+            <span>→</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Documento 4: Dossier de Prensa -->
-      <div class="bg-editorial p-7 rounded-3xl border border-editorial-border shadow-subtle hover:shadow-elevated hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-[10px] font-title font-bold uppercase tracking-widest">
-              Sala de Prensa
+      <!-- Recurso 4: Dossier de Prensa & Medios -->
+      <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E6DCCE] shadow-subtle hover:shadow-xl hover:border-[#EF7B38] transition-all flex flex-col justify-between group">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[10px] font-title font-bold uppercase tracking-wider">
+              Prensa
             </span>
-            <span class="text-xs text-gray-400 font-mono">Dossier</span>
+            <span class="text-xs text-gray-400 font-mono">Institucional</span>
           </div>
-          <h3 class="font-serif text-xl font-bold text-carbon mb-2">Dossier de Prensa & Medios</h3>
-          <p class="text-xs text-gray-600 font-light leading-relaxed mb-4">
-            Semblanza institucional, cronología de 38 años de publicaciones, logotipos vectoriales de alta resolución y contactos oficiales.
+          <h3 class="font-title text-lg font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+            Dossier de Prensa & Medios
+          </h3>
+          <p class="text-xs text-[#555555] font-sans leading-relaxed">
+            Semblanza institucional de 39 años de trayectoria, logotipos oficiales vectoriales e información de contacto para coberturas culturales.
           </p>
         </div>
-        <a 
-          href="mailto:lvt.correo@gmail.com?subject=Solicitud%20de%20Dossier%20de%20Prensa%20LVT" 
-          class="w-full py-3 rounded-2xl bg-white border border-editorial-border text-carbon hover:bg-terracota hover:text-white hover:border-terracota font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-subtle inline-flex items-center justify-center gap-2"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          <span>Solicitar por Correo</span>
-        </a>
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE]">
+          <a 
+            href="mailto:lvt.correo@gmail.com?subject=Solicitud%20de%20Dossier%20de%20Prensa%20LVT" 
+            class="w-full py-2.5 rounded-xl bg-white border border-[#E6DCCE] text-[#222222] hover:bg-[#EF7B38] hover:text-white hover:border-[#EF7B38] font-title text-xs font-bold uppercase tracking-wider transition text-center shadow-xs inline-flex items-center justify-center gap-1.5"
+          >
+            <span>Solicitar por Correo</span>
+            <span>✉️</span>
+          </a>
+        </div>
       </div>
 
     </div>

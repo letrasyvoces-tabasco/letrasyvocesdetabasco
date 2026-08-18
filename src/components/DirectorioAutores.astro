@@ -1,6 +1,7 @@
 ---
 // DirectorioAutores.astro - Directorio Oficial de Autores, Fundadores y Socios de LVT
 import { PADRON_AUTORES } from '../data/autores';
+const basePath = "/letrasyvocesdetabasco";
 ---
 
 <section id="autores" class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#E6DCCE]">
@@ -131,7 +132,7 @@ import { PADRON_AUTORES } from '../data/autores';
         La Sociedad de Escritores Letras y Voces de Tabasco, A.C. abre sus puertas a escritoras, escritores, poetas y ensayistas con obra inédita o publicada en el sureste de México.
       </p>
       <a 
-        href="#contacto" 
+        href={`${basePath}/#contacto`} 
         class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#222222] text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-[#EF7B38] transition shadow-sm"
       >
         <span>Solicitar Información de Afiliación</span>

@@ -1,56 +1,55 @@
 ---
-// Footer.astro - Pie de Página Oficial LVT con Logotipo Vectorial Blanco
+// Footer.astro - Pie de Página Oficial LVT con Enlaces Canónicos Absolutos y Logotipo Oficial
 const basePath = "/letrasyvocesdetabasco";
 ---
 
-<footer class="bg-carbon text-gray-400 py-16 border-t border-carbon-border">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-center border-b border-carbon-border pb-12 mb-8 gap-8">
+<footer class="bg-[#1C1814] text-gray-400 py-14 sm:py-16 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    
+    <div class="flex flex-col lg:flex-row justify-between items-center border-b border-gray-800 pb-10 gap-8">
       
-      <div class="flex items-center space-x-4">
+      <!-- Identidad y Logotipo -->
+      <a href={`${basePath}/`} class="flex items-center space-x-3.5 group">
         <img 
           src={`${basePath}/assets/logos/LVT Logo Iso 6 Blanco Relleno.svg`} 
           alt="Isotipo Oficial LVT" 
-          class="h-12 w-auto object-contain" 
+          class="h-11 sm:h-12 w-auto object-contain bg-black/40 p-1.5 rounded-xl border border-gray-700 group-hover:scale-105 transition duration-200" 
           onerror="this.src='/letrasyvocesdetabasco/assets/logo.svg'" 
         />
         <div class="text-left">
-          <span class="font-serif text-xl font-bold text-white block">Sociedad de Escritores Letras y Voces de Tabasco, A.C.</span>
-          <span class="text-xs text-gray-400 font-light">Institución Cultural Autónoma • Villahermosa, Tabasco, México</span>
+          <span class="font-serif text-lg sm:text-xl font-bold text-white block leading-tight">
+            Sociedad de Escritores Letras y Voces de Tabasco, A.C.
+          </span>
+          <span class="text-[11px] sm:text-xs text-gray-400 font-light block">
+            Institución Cultural Autónoma • Villahermosa, Tabasco, México
+          </span>
         </div>
+      </a>
+
+      <!-- Enlaces Canónicos Absolutos Funcionales en Móvil y Web -->
+      <div class="flex flex-wrap justify-center lg:justify-end gap-x-5 gap-y-2.5 text-xs font-title font-bold uppercase tracking-wider text-gray-300">
+        <a href={`${basePath}/`} class="hover:text-[#EF7B38] transition-colors py-1">Inicio</a>
+        <a href={`${basePath}/escuela`} class="hover:text-[#EF7B38] transition-colors py-1 text-[#EF7B38]">Escuela Gorostiza</a>
+        <a href={`${basePath}/publicaciones`} class="hover:text-[#EF7B38] transition-colors py-1">Publicaciones</a>
+        <a href={`${basePath}/audioteca`} class="hover:text-[#EF7B38] transition-colors py-1">Audioteca</a>
+        <a href={`${basePath}/autores`} class="hover:text-[#EF7B38] transition-colors py-1">Autores</a>
+        <a href={`${basePath}/historia`} class="hover:text-[#EF7B38] transition-colors py-1">Semblanza</a>
+        <a href={`${basePath}/historia#directiva`} class="hover:text-[#EF7B38] transition-colors py-1">Directiva</a>
+        <a href={`${basePath}/descargas#convocatorias`} class="hover:text-[#EF7B38] transition-colors py-1">Convocatorias</a>
+        <a href={`${basePath}/descargas#galeria`} class="hover:text-[#EF7B38] transition-colors py-1">Eventos</a>
+        <a href={`${basePath}/descargas`} class="hover:text-[#EF7B38] transition-colors py-1">Descargas</a>
+        <a href={`${basePath}/#contacto`} class="hover:text-[#EF7B38] transition-colors py-1 text-[#F5DEB3]">Contacto</a>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-6 text-xs font-title font-bold uppercase tracking-wider text-gray-300">
-        <a href="#inicio" class="hover:text-terracota transition-colors">Inicio</a>
-        <a href="#quienes-somos" class="hover:text-terracota transition-colors">Semblanza</a>
-        <a href="#antologias" class="hover:text-terracota transition-colors">Publicaciones</a>
-        <a href="#convocatorias" class="hover:text-terracota transition-colors">Convocatorias</a>
-        <a href="#galeria" class="hover:text-terracota transition-colors">Eventos</a>
-        <a href="#rifa" class="hover:text-terracota transition-colors">Rifa 2026</a>
-        <a href="#directiva" class="hover:text-terracota transition-colors">Directiva</a>
-        <a href="#contacto" class="hover:text-terracota transition-colors">Contacto</a>
-      </div>
     </div>
 
-    <div class="text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4">
+    <!-- Créditos y Derechos -->
+    <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-4 text-center sm:text-left font-sans">
       <p>&copy; 2026 Sociedad de Escritores Letras y Voces de Tabasco, A.C. Todos los derechos reservados.</p>
-      <p class="font-serif italic text-base text-gray-300">
-        Cordialmente, Sociedad de Escritores Letras y Voces de Tabasco, A.C.
+      <p class="font-serif italic text-sm text-[#F5DEB3]">
+        «Preservamos la palabra, impulsamos la lírica del Sureste.»
       </p>
     </div>
+
   </div>
 </footer>
-
-<script>
-  // Script de Navegación Móvil y Transiciones Suaves
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-    });
-  }
-</script>
