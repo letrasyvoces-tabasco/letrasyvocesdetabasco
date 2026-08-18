@@ -42,8 +42,9 @@ export const IDENTIDAD_ESCUELA = {
   primerDirector: "Arq. Mario de Lille Fuentes",
   direccionesDestacadas: [
     { nombre: "Arq. Mario de Lille Fuentes", periodo: "Director Fundador (2001)" },
-    { nombre: "Mtra. Guadalupe Azuara Forcelledo", periodo: "Directora Académica e Investigadora" },
-    { nombre: "Mtra. Liliana Chuzeville Córdoba", periodo: "Directora General Actual" }
+    { nombre: "Mtra. Guadalupe Azuara Forcelledo", periodo: "Directora Histórica e Investigadora" },
+    { nombre: "Mtra. Liliana Chuzeville Córdoba", periodo: "Directora General Actual" },
+    { nombre: "Mtra. Rebeca Díaz Suárez", periodo: "Directora Académica Actual" }
   ],
   alianzaUjat: {
     vigencia: "+24 años ininterrumpidos",
@@ -68,8 +69,8 @@ export const IDENTIDAD_ESCUELA = {
     secciones: ["Poesía", "Narrativa", "Investigación", "Ensayo"]
   },
   contactoDirecto: {
-    telefonos: ["99 32 64 75 02", "99 31 46 73 90"],
-    telefonosClean: ["529932647502", "529931467390"],
+    telefonos: ["220 588 9391"],
+    telefonosClean: ["522205889391"],
     email: "egorosiglo21@gmail.com",
     facebook: "Diplomados \"José Gorostiza\"",
     facebookUrl: "https://www.facebook.com/search/top?q=Diplomados%20Jos%C3%A9%20Gorostiza",
@@ -333,8 +334,14 @@ export const CLAUSTRO_DOCENTE_HISTORICO: Docente[] = [
   {
     nombre: 'Mtra. Liliana Chuzeville Córdoba',
     cargo: 'Directora General Actual & Consejera de Cultura',
-    trayectoria: 'Licenciada en Criminología, gestora cultural distinguida con las «Palmas de Oro» y «México en tus manos». Coordinadora general de convenios.',
-    materias: 'Creación Literaria, Narrativa y Coordinación de Proyectos.'
+    trayectoria: 'Licenciada en Criminología, titular de la Comisión de Honor y Justicia de LVT, distinguida con las «Palmas de Oro» y «México en tus manos».',
+    materias: 'Creación Literaria, Narrativa, Gestión y Coordinación de Proyectos.'
+  },
+  {
+    nombre: 'Mtra. Rebeca Díaz Suárez',
+    cargo: 'Directora Académica & Catedrática de Creación Lírica',
+    trayectoria: 'Poeta, ensayista, expresidenta de LVT y formadora de generaciones literarias en el Sureste de México.',
+    materias: 'Creación Poética, Apreciación Literaria, Métrica y Declamación.'
   },
   {
     nombre: 'Fernando Nieto Cadena',
@@ -347,11 +354,5 @@ export const CLAUSTRO_DOCENTE_HISTORICO: Docente[] = [
     cargo: 'Catedrático e Investigador UJAT (Desde 2002)',
     trayectoria: 'Licenciado en Lenguas y Literaturas Hispánicas y docente-investigador de la Universidad Juárez Autónoma de Tabasco.',
     materias: 'Ortografía, Sintaxis, Gramática Superior y Redacción.'
-  },
-  {
-    nombre: 'Rebeca Díaz Suárez',
-    cargo: 'Catedrática y Miembro del Cuerpo Directivo',
-    trayectoria: 'Poeta, docente, promotora cultural y miembro del claustro académico colegiado de la institución.',
-    materias: 'Creación Poética, Apreciación Literaria y Declamación.'
   }
 ];

@@ -1,5 +1,5 @@
 ---
-// Hero.astro - Pórtico Editorial Proporcionado, Alto Contraste y Navegación Ejecutiva LVT
+// Hero.astro - Pórtico Editorial Proporcionado, Tipografía Legible y Navegación Ejecutiva LVT
 const basePath = "/letrasyvocesdetabasco";
 ---
 
@@ -51,46 +51,46 @@ const basePath = "/letrasyvocesdetabasco";
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
     
     <!-- Cintillo de Novedades -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#C59B27]/40 bg-[#1C1814]/90 text-[#F5DEB3] text-[10px] sm:text-xs font-title font-bold tracking-wider uppercase mb-3 shadow-md backdrop-blur-md">
+    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-[#C59B27]/40 bg-[#1C1814]/90 text-[#F5DEB3] text-xs sm:text-sm font-title font-bold tracking-wider uppercase mb-3 shadow-md backdrop-blur-md">
       <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span>
       <span id="hero-live-announcement" class="transition-opacity duration-300">
         XXXIX Aniversario (1987 – 2026) · Sociedad de Escritores LVT
       </span>
     </div>
 
-    <!-- Título Principal Proporcionado -->
-    <div class="min-h-[70px] sm:min-h-[90px] md:min-h-[110px] flex items-center justify-center">
-      <h1 id="hero-phrase" class="font-serif text-2xl sm:text-4xl md:text-5xl font-normal text-white max-w-4xl leading-tight tracking-tight drop-shadow-lg transition-all duration-500">
+    <!-- Título Principal Proporcionado y Altamente Legible -->
+    <div class="min-h-[75px] sm:min-h-[95px] md:min-h-[120px] flex items-center justify-center">
+      <h1 id="hero-phrase" class="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-white max-w-4xl leading-tight tracking-tight drop-shadow-lg transition-all duration-500">
         Preservamos la palabra,<br />
         <span class="italic font-light text-[#EF7B38]">impulsamos la lírica del Sureste.</span>
       </h1>
     </div>
 
     <!-- Subtítulo -->
-    <p class="text-xs sm:text-sm md:text-base font-light text-gray-300 max-w-2xl leading-relaxed mt-2 mb-5 drop-shadow-sm">
+    <p class="text-sm sm:text-base md:text-lg font-light text-gray-200 max-w-2xl leading-relaxed mt-2 mb-5 drop-shadow-sm">
       Institución civil fundada en 1987 para cultivar la creación literaria, coordinar ediciones colectivas de excelencia y difundir el patrimonio cultural de Tabasco.
     </p>
 
     <!-- Botones de Acción -->
-    <div class="flex flex-wrap gap-2.5 sm:gap-3 justify-center w-full max-w-2xl mb-6">
+    <div class="flex flex-wrap gap-3 justify-center w-full max-w-2xl mb-6">
       <a 
         href={`${basePath}/publicaciones`} 
-        class="inline-flex justify-center items-center px-5 py-2.5 rounded-full bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider shadow-lg hover:scale-102 transition duration-200 gap-1.5 cursor-pointer"
+        class="inline-flex justify-center items-center px-6 py-3 rounded-full bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-102 transition duration-200 gap-2 cursor-pointer"
       >
         <span>Explorar Catálogo Editorial</span>
-        <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
 
       <a 
         href={`${basePath}/escuela`} 
-        class="inline-flex justify-center items-center px-5 py-2.5 rounded-full border border-[#EF7B38]/60 bg-[#1C1814]/90 hover:bg-[#EF7B38]/20 text-[#EF7B38] font-title text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-md hover:scale-102 transition duration-200 gap-1.5 cursor-pointer"
+        class="inline-flex justify-center items-center px-6 py-3 rounded-full border border-[#EF7B38]/60 bg-[#1C1814]/90 hover:bg-[#EF7B38]/20 text-[#EF7B38] font-title text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md shadow-md hover:scale-102 transition duration-200 gap-1.5 cursor-pointer"
       >
         <span>🎓 Escuela Gorostiza (10 Diplomados)</span>
       </a>
 
       <a 
         href={`${basePath}/audioteca`} 
-        class="inline-flex justify-center items-center px-5 py-2.5 rounded-full border border-[#C59B27]/60 bg-[#1C1814]/90 hover:bg-[#C59B27]/20 text-[#F5DEB3] font-title text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-md hover:scale-102 transition duration-200 gap-1.5 cursor-pointer"
+        class="inline-flex justify-center items-center px-6 py-3 rounded-full border border-[#C59B27]/60 bg-[#1C1814]/90 hover:bg-[#C59B27]/20 text-[#F5DEB3] font-title text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md shadow-md hover:scale-102 transition duration-200 gap-1.5 cursor-pointer"
       >
         <span>🎙️ Audioteca (14 Obras Nativas)</span>
       </a>
@@ -98,28 +98,28 @@ const basePath = "/letrasyvocesdetabasco";
 
     <!-- Showcase Interactivo: 4 Ejes Fundamentales (Compacto y en Pantalla) -->
     <div class="w-full max-w-5xl mb-6 text-left">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
         
         <!-- Eje 1: Nueva Antología 2026 -->
         <a 
           href={`${basePath}/publicaciones`} 
-          class="hero-pillar-card p-3.5 rounded-xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#EF7B38] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
+          class="hero-pillar-card p-4 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#EF7B38] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
         >
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <div class="flex justify-between items-center">
-              <span class="px-2 py-0.5 rounded-full bg-[#EF7B38]/20 text-[#EF7B38] text-[9px] font-title font-bold uppercase">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#EF7B38]/20 text-[#EF7B38] text-[10px] font-title font-bold uppercase">
                 En Prensa 2026
               </span>
-              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+              <span class="text-sm text-gray-400 group-hover:text-white transition">↗</span>
             </div>
-            <h4 class="font-title font-bold text-xs sm:text-sm text-white group-hover:text-[#EF7B38] transition">
+            <h4 class="font-title font-bold text-sm sm:text-base text-white group-hover:text-[#EF7B38] transition">
               «Animalia Literaria»
             </h4>
-            <p class="text-[11px] text-gray-400 font-serif italic line-clamp-2">
+            <p class="text-xs text-gray-300 font-serif italic line-clamp-2">
               16 plumas tabasqueñas en diálogo con la fauna y la selva del Sureste.
             </p>
           </div>
-          <div class="mt-2 pt-1.5 border-t border-gray-800/80 text-[9px] font-title font-bold text-[#F5DEB3] uppercase">
+          <div class="mt-3 pt-2 border-t border-gray-800/80 text-[10px] sm:text-xs font-title font-bold text-[#F5DEB3] uppercase">
             Ver 5 Antologías Oficiales
           </div>
         </a>
@@ -127,23 +127,23 @@ const basePath = "/letrasyvocesdetabasco";
         <!-- Eje 2: Escuela Gorostiza -->
         <a 
           href={`${basePath}/escuela`} 
-          class="hero-pillar-card p-3.5 rounded-xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#EF7B38] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
+          class="hero-pillar-card p-4 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#EF7B38] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
         >
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <div class="flex justify-between items-center">
-              <span class="px-2 py-0.5 rounded-full bg-[#EF7B38]/20 text-[#EF7B38] text-[9px] font-title font-bold uppercase">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#EF7B38]/20 text-[#EF7B38] text-[10px] font-title font-bold uppercase">
                 Validez UJAT
               </span>
-              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+              <span class="text-sm text-gray-400 group-hover:text-white transition">↗</span>
             </div>
-            <h4 class="font-title font-bold text-xs sm:text-sm text-white group-hover:text-[#EF7B38] transition">
+            <h4 class="font-title font-bold text-sm sm:text-base text-white group-hover:text-[#EF7B38] transition">
               Escuela Gorostiza
             </h4>
-            <p class="text-[11px] text-gray-400 font-serif italic line-clamp-2">
+            <p class="text-xs text-gray-300 font-serif italic line-clamp-2">
               10 Diplomados, 7 Cursos y Talleres continuos presenciales y en línea.
             </p>
           </div>
-          <div class="mt-2 pt-1.5 border-t border-gray-800/80 text-[9px] font-title font-bold text-[#F5DEB3] uppercase">
+          <div class="mt-3 pt-2 border-t border-gray-800/80 text-[10px] sm:text-xs font-title font-bold text-[#F5DEB3] uppercase">
             Consultar Oferta 2026
           </div>
         </a>
@@ -151,23 +151,23 @@ const basePath = "/letrasyvocesdetabasco";
         <!-- Eje 3: Audioteca Patrimonial -->
         <a 
           href={`${basePath}/audioteca`} 
-          class="hero-pillar-card p-3.5 rounded-xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#C59B27] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
+          class="hero-pillar-card p-4 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#C59B27] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
         >
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <div class="flex justify-between items-center">
-              <span class="px-2 py-0.5 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[9px] font-title font-bold uppercase">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[10px] font-title font-bold uppercase">
                 14 Obras MP3
               </span>
-              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+              <span class="text-sm text-gray-400 group-hover:text-white transition">↗</span>
             </div>
-            <h4 class="font-title font-bold text-xs sm:text-sm text-white group-hover:text-[#C59B27] transition">
+            <h4 class="font-title font-bold text-sm sm:text-base text-white group-hover:text-[#C59B27] transition">
               Audioteca Lírica
             </h4>
-            <p class="text-[11px] text-gray-400 font-serif italic line-clamp-2">
+            <p class="text-xs text-gray-300 font-serif italic line-clamp-2">
               Grabaciones de Girondo, Rulfo, García Lorca, Sabines y Cortázar.
             </p>
           </div>
-          <div class="mt-2 pt-1.5 border-t border-gray-800/80 text-[9px] font-title font-bold text-[#F5DEB3] uppercase">
+          <div class="mt-3 pt-2 border-t border-gray-800/80 text-[10px] sm:text-xs font-title font-bold text-[#F5DEB3] uppercase">
             Escuchar Reproductores
           </div>
         </a>
@@ -175,23 +175,23 @@ const basePath = "/letrasyvocesdetabasco";
         <!-- Eje 4: Certamen Sor Juana -->
         <a 
           href={`${basePath}/#convocatorias`} 
-          class="hero-pillar-card p-3.5 rounded-xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#C59B27] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
+          class="hero-pillar-card p-4 rounded-2xl bg-[#1C1814]/90 border border-[#3A2E26] hover:border-[#C59B27] transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 backdrop-blur-md"
         >
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <div class="flex justify-between items-center">
-              <span class="px-2 py-0.5 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[9px] font-title font-bold uppercase">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[10px] font-title font-bold uppercase">
                 Convocatoria
               </span>
-              <span class="text-xs text-gray-500 group-hover:text-white transition">↗</span>
+              <span class="text-sm text-gray-400 group-hover:text-white transition">↗</span>
             </div>
-            <h4 class="font-title font-bold text-xs sm:text-sm text-white group-hover:text-[#C59B27] transition">
+            <h4 class="font-title font-bold text-sm sm:text-base text-white group-hover:text-[#C59B27] transition">
               Un Soneto por Sor Juana
             </h4>
-            <p class="text-[11px] text-gray-400 font-serif italic line-clamp-2">
+            <p class="text-xs text-gray-300 font-serif italic line-clamp-2">
               Certamen estatal permanente con diploma de honor y publicación de plica.
             </p>
           </div>
-          <div class="mt-2 pt-1.5 border-t border-gray-800/80 text-[9px] font-title font-bold text-[#F5DEB3] uppercase">
+          <div class="mt-3 pt-2 border-t border-gray-800/80 text-[10px] sm:text-xs font-title font-bold text-[#F5DEB3] uppercase">
             Bases & Formato
           </div>
         </a>
@@ -200,22 +200,22 @@ const basePath = "/letrasyvocesdetabasco";
     </div>
 
     <!-- Métricas Institucionales Compactas -->
-    <div class="pt-4 border-t border-gray-800/80 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 w-full max-w-3xl text-center">
-      <div class="bg-[#1C1814]/70 py-2.5 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
-        <span class="block font-serif text-xl sm:text-2xl font-bold text-[#EF7B38]">+38</span>
-        <span class="text-[9px] sm:text-[10px] font-title font-semibold tracking-wider text-gray-300 uppercase">Años de Trayectoria</span>
+    <div class="pt-4 border-t border-gray-800/80 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-3xl text-center">
+      <div class="bg-[#1C1814]/70 py-3 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
+        <span class="block font-serif text-2xl sm:text-3xl font-bold text-[#EF7B38]">+38</span>
+        <span class="text-[10px] sm:text-xs font-title font-semibold tracking-wider text-gray-200 uppercase">Años de Trayectoria</span>
       </div>
-      <div class="bg-[#1C1814]/70 py-2.5 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
-        <span class="block font-serif text-xl sm:text-2xl font-bold text-white">+100</span>
-        <span class="text-[9px] sm:text-[10px] font-title font-semibold tracking-wider text-gray-300 uppercase">Escritores Históricos</span>
+      <div class="bg-[#1C1814]/70 py-3 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
+        <span class="block font-serif text-2xl sm:text-3xl font-bold text-white">+100</span>
+        <span class="text-[10px] sm:text-xs font-title font-semibold tracking-wider text-gray-200 uppercase">Escritores Históricos</span>
       </div>
-      <div class="bg-[#1C1814]/70 py-2.5 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
-        <span class="block font-serif text-xl sm:text-2xl font-bold text-[#F5DEB3]">+25</span>
-        <span class="text-[9px] sm:text-[10px] font-title font-semibold tracking-wider text-gray-300 uppercase">Obras Editadas</span>
+      <div class="bg-[#1C1814]/70 py-3 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
+        <span class="block font-serif text-2xl sm:text-3xl font-bold text-[#F5DEB3]">+25</span>
+        <span class="text-[10px] sm:text-xs font-title font-semibold tracking-wider text-gray-200 uppercase">Obras Editadas</span>
       </div>
-      <div class="bg-[#1C1814]/70 py-2.5 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
-        <span class="block font-serif text-xl sm:text-2xl font-bold text-white">100%</span>
-        <span class="text-[9px] sm:text-[10px] font-title font-semibold tracking-wider text-gray-300 uppercase">Autonomía Gremial</span>
+      <div class="bg-[#1C1814]/70 py-3 px-3 rounded-xl border border-gray-800/80 backdrop-blur-sm">
+        <span class="block font-serif text-2xl sm:text-3xl font-bold text-white">100%</span>
+        <span class="text-[10px] sm:text-xs font-title font-semibold tracking-wider text-gray-200 uppercase">Autonomía Gremial</span>
       </div>
     </div>
 

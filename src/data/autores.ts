@@ -76,12 +76,12 @@ export const PADRON_AUTORES: Autor[] = [
     id: 'rebeca-diaz-suarez',
     nombre: 'Rebeca Díaz Suárez',
     tratamiento: 'Mtra.',
-    rolGremial: 'Expresidenta LVT · Poeta y Promotora Cultural',
+    rolGremial: 'Directora Académica Escuela Gorostiza · Expresidenta LVT · Catedrática',
     categoria: 'Mesa Directiva & Socios Activos',
     generoPrincipal: 'Poesía',
-    semblanza: 'Destacada expresidenta de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., catedrática y promotora lírica. Autora en «La Mujer en el Siglo XXI» con el célebre texto «Mujer en 3D».',
+    semblanza: 'Destacada expresidenta de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., Directora Académica de la Escuela de Escritores «José Gorostiza», catedrática y promotora lírica. Autora de «Mujer en 3D».',
     obraRepresentativa: '«Mujer en 3D»',
-    antologiasParticipadas: ['La Mujer en el Siglo XXI', 'Memorias Líricas LVT'],
+    antologiasParticipadas: ['La Mujer en el Siglo XXI', 'Memorias Líricas LVT', 'Animalia Literaria'],
     destacado: true
   },
   {
@@ -112,10 +112,10 @@ export const PADRON_AUTORES: Autor[] = [
     id: 'liliana-chuzeville-cordoba',
     nombre: 'Liliana Chuzeville Córdoba',
     tratamiento: 'Lic.',
-    rolGremial: 'Directora Escuela Gorostiza · Delegada Emérita LVT',
+    rolGremial: 'Comisión de Honor y Justicia LVT (2026–2029) · Directora General Escuela Gorostiza',
     categoria: 'Mesa Directiva & Socios Activos',
     generoPrincipal: 'Narrativa',
-    semblanza: 'Licenciada en Criminología, Directora General de la Escuela de Escritores «José Gorostiza» y Consejera Consultiva de Cultura. Distinguida con las «Palmas de Oro» y «México en tus manos».',
+    semblanza: 'Licenciada en Criminología, Titular de la Comisión de Honor y Justicia de LVT y Directora General de la Escuela de Escritores «José Gorostiza». Distinguida con las «Palmas de Oro» y «México en tus manos».',
     obraRepresentativa: '«Viaje entre cuentos y canciones»',
     antologiasParticipadas: ['Animalia Literaria (Prólogo)', 'Amarellus', 'Tardes Tabasqueñas', 'La Mujer en el Siglo XXI'],
     destacado: true
