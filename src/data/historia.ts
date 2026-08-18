@@ -8,10 +8,10 @@ export interface GestionHistorica {
 export const CRONOLOGIA_DIRECTIVA: GestionHistorica[] = [
   {
     periodo: '1987 – 1994',
-    liderazgo: 'Mesa Directiva Fundacional (Arq. Mario de Lille Fuentes, Teodosio García Ruiz, Carmen Luna Pérez, Jorge Priego Martínez, Vicente Gómez Montero, Jesús de Dios)',
+    liderazgo: 'Mesa Directiva Fundacional (Arq. Mario de Lille Fuentes (†), Teodosio García Ruiz (†), Carmen Luna Pérez, Jorge Priego Martínez, Vicente Gómez Montero (†), Jesús de Dios (†))',
     descripcion: 'Constitución legal de la asociación civil en Villahermosa, formalizando el espacio autónomo para el gremio, estructurando la red estatal de talleres y consolidando la representatividad de los escritores.',
     hitos: [
-      'Constitución legal de la asociación civil en 1987, encabezada por el Arq. Mario de Lille Fuentes y el núcleo de escritores pioneros.',
+      'Constitución legal de la asociación civil en 1987, encabezada por el Arq. Mario de Lille Fuentes (†) y el núcleo de escritores pioneros.',
       'Estructuración de talleres literarios municipales autónomos y espacios de debate estético.',
       'Primeras gestiones de coedición con la Universidad Juárez Autónoma de Tabasco (UJAT) y el ICT.'
     ]
@@ -58,7 +58,7 @@ export const CRONOLOGIA_DIRECTIVA: GestionHistorica[] = [
   },
   {
     periodo: '2016 – 2025',
-    liderazgo: 'Presidencias de Elí Manuel Austria Hernández y Mtra. Pragedis Hernández García (Presidencia Interina e Institucional)',
+    liderazgo: 'Presidencias de Elí Manuel Austria Hernández y Mtra. Pragedis Hernández García',
     descripcion: 'Consolidación de proyectos editoriales, fortalecimiento de la equidad de género, rescate de lenguas originarias y preservación del fondo bibliográfico.',
     hitos: [
       'Gestión directiva de Elí Manuel Austria Hernández y posterior presidencia de la Mtra. Pragedis Hernández García.',
@@ -74,7 +74,7 @@ export const CRONOLOGIA_DIRECTIVA: GestionHistorica[] = [
     hitos: [
       'Presidencia y representación legal del Lic. Juan David Pérez Cabrera.',
       'Secretaría General a cargo de Eva Guadalupe Pineda Cruz y Tesorería por Ana Laura Hernández Jiménez.',
-      'Comisión de Honor y Justicia a cargo de la Mtra. Liliana Chuzeville Córdoba.',
+      'Comisión de Honor y Justicia a cargo de la Mtra. Liliana Chuzeville Córdoba y la Mtra. Pragedis Hernández García.',
       'Fondo editorial activo con «Animalia Literaria» (en imprenta) y lanzamiento de «Plantae Literaria».'
     ]
   }
@@ -82,12 +82,12 @@ export const CRONOLOGIA_DIRECTIVA: GestionHistorica[] = [
 
 export const CUADRO_FUNDADORES = [
   { 
-    nombre: 'Arq. Mario de Lille Fuentes', 
+    nombre: 'Arq. Mario de Lille Fuentes (†)', 
     rol: 'Pilar Fundador & Primer Director', 
     detalle: 'Arquitecto, novelista, cuentista, poeta y dramaturgo. Figura tutelar de la asociación y fundador de la Escuela de Escritores "José Gorostiza".' 
   },
   { 
-    nombre: 'Teodosio García Ruiz', 
+    nombre: 'Teodosio García Ruiz (†)', 
     rol: 'Miembro Fundador', 
     detalle: 'Poeta y ensayista, autor de "Sin lugar a dudas", pilar formativo del taller literario inicial.' 
   },
@@ -102,12 +102,12 @@ export const CUADRO_FUNDADORES = [
     detalle: 'Historiador, cronista emérito de Villahermosa e intelectual fundamental de las tradiciones tabasqueñas.' 
   },
   { 
-    nombre: 'Vicente Gómez Montero', 
+    nombre: 'Vicente Gómez Montero (†)', 
     rol: 'Miembro Fundador', 
     detalle: 'Narrador, dramaturgo y ensayista, autor de "Las puertas del infierno" y baluarte escénico.' 
   },
   { 
-    nombre: 'Jesús de Dios ("Chucho de Dios")', 
+    nombre: 'Jesús de Dios («Chucho de Dios») (†)', 
     rol: 'Miembro Fundador', 
     detalle: 'Poeta y promotor cultural de entrañable memoria cívica en el gremio literario del Sureste.' 
   },
