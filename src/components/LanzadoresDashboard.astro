@@ -1,0 +1,354 @@
+---
+// LanzadoresDashboard.astro - Pabellones Interactivos y Lanzadores Ejecutivos 3D para la Página de Inicio
+const basePath = "/letrasyvocesdetabasco";
+---
+
+<section id="pabellones" class="py-14 sm:py-18 bg-[#FDFBF7] text-[#222222] border-b border-[#E6DCCE] relative overflow-hidden">
+  
+  <!-- Patrón de Fondo Sutil -->
+  <div class="absolute inset-0 bg-[radial-gradient(#EF7B38_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.04] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+    
+    <!-- Encabezado de la Portada / Resumen Ejecutivo -->
+    <div class="text-center max-w-3xl mx-auto space-y-2.5">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EF7B38]/10 border border-[#EF7B38]/20 text-[#EF7B38] font-title text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+        <span>🏛️ Ecosistema Cultural & Gremial de Tabasco</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-title font-black text-[#222222] tracking-tight">
+        Explora Nuestras Áreas y <span class="text-[#EF7B38]">Proyectos</span>
+      </h2>
+      <p class="font-serif italic text-sm sm:text-base text-[#555555] max-w-2xl mx-auto leading-relaxed">
+        Selecciona cualquier pabellón para acceder al acervo especializado, diplomados curriculares, audioteca o memorias de nuestra institución.
+      </p>
+      <div class="w-16 h-0.5 bg-[#EF7B38] mx-auto rounded-full mt-2"></div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- GRILLA PRINCIPAL DE PABELLONES INTERACTIVOS 3D                    -->
+    <!-- ================================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      
+      <!-- =============================================================== -->
+      <!-- PABELLÓN 1: ESCUELA DE ESCRITORES «JOSÉ GOROSTIZA»              -->
+      <!-- =============================================================== -->
+      <div class="pabellon-card bg-white rounded-3xl p-6 sm:p-7 border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-[#EF7B38]/20 to-[#EF7B38]/10 text-[#EF7B38] text-[10px] sm:text-xs font-title font-bold uppercase tracking-wider">
+              🎓 Filial Académica Oficial
+            </span>
+            <span class="text-xs font-title font-bold text-gray-400 group-hover:text-[#EF7B38] transition">Validez UJAT</span>
+          </div>
+
+          <div>
+            <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+              Escuela de Escritores «José Gorostiza»
+            </h3>
+            <p class="text-xs sm:text-sm font-serif italic text-[#B8860B] mt-1">
+              «Creada por escritores, para escritores» (Desde 2001)
+            </p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+            Formación especializada con aval curricular universitario. 10 Diplomados actualizados, 7 cursos continuos y talleres presenciales y en línea.
+          </p>
+
+          <!-- Badges de Destacados -->
+          <div class="grid grid-cols-2 gap-2 pt-1 text-[11px] font-title">
+            <div class="p-2 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE] text-gray-700">
+              <span class="font-bold block text-[#EF7B38]">10 Diplomados</span>
+              <span class="text-[10px] text-gray-500">Creación, Redacción, Periodismo</span>
+            </div>
+            <div class="p-2 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE] text-gray-700">
+              <span class="font-bold block text-[#222222]">7 Cursos</span>
+              <span class="text-[10px] text-gray-500">Cuento, Poesía, Novela, Teatro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+          <span class="text-xs text-gray-400 font-serif italic">Dir: Mtra. Liliana Chuzeville</span>
+          <a 
+            href={`${basePath}/escuela`} 
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider shadow-xs hover:scale-102 transition"
+          >
+            <span>Ver Escuela</span>
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- =============================================================== -->
+      <!-- PABELLÓN 2: CATÁLOGO EDITORIAL & ANTOLOGÍAS (EFECTO LIBRO 3D)   -->
+      <!-- =============================================================== -->
+      <div class="pabellon-card bg-white rounded-3xl p-6 sm:p-7 border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="px-3 py-1 rounded-full bg-[#C59B27]/15 text-[#B8860B] text-[10px] sm:text-xs font-title font-bold uppercase tracking-wider">
+              📚 Fondo Editorial Oficial
+            </span>
+            <span class="text-xs font-mono text-gray-400">INDAUTOR & ISBN</span>
+          </div>
+
+          <div>
+            <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+              Antologías & Catálogo Editorial
+            </h3>
+            <p class="text-xs sm:text-sm font-serif italic text-[#B8860B] mt-1">
+              5 Obras Insignia con Portadas Reales
+            </p>
+          </div>
+
+          <!-- Showcase Visual 3D de Portadas Miniatura -->
+          <div class="grid grid-cols-3 gap-2 py-1">
+            <div class="book-3d-card group/book relative aspect-[3/4] rounded-lg overflow-hidden shadow-md border border-[#E6DCCE] transition-transform duration-300 group-hover:scale-105">
+              <img 
+                src={`${basePath}/assets/portadas/animalia_literaria_2026.png`} 
+                alt="Animalia Literaria" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/book:opacity-100 transition flex items-center justify-center p-1 text-center">
+                <span class="text-[8px] font-title font-bold text-white uppercase">2026</span>
+              </div>
+            </div>
+            <div class="book-3d-card group/book relative aspect-[3/4] rounded-lg overflow-hidden shadow-md border border-[#E6DCCE] transition-transform duration-300 group-hover:scale-105">
+              <img 
+                src={`${basePath}/assets/portadas/a_corazon_abierto_2026.png`} 
+                alt="A Corazón Abierto" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/book:opacity-100 transition flex items-center justify-center p-1 text-center">
+                <span class="text-[8px] font-title font-bold text-white uppercase">2026</span>
+              </div>
+            </div>
+            <div class="book-3d-card group/book relative aspect-[3/4] rounded-lg overflow-hidden shadow-md border border-[#E6DCCE] transition-transform duration-300 group-hover:scale-105">
+              <img 
+                src={`${basePath}/assets/portadas/tardes_tabasquenas_2025.png`} 
+                alt="Tardes Tabasqueñas" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/book:opacity-100 transition flex items-center justify-center p-1 text-center">
+                <span class="text-[8px] font-title font-bold text-white uppercase">2025</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+            Consulte fichas bibliográficas completas, prólogos, índices legales y visores de lectura interactiva.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+          <span class="text-xs text-gray-400 font-serif italic">+25 Títulos Históricos</span>
+          <a 
+            href={`${basePath}/publicaciones`} 
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#222222] hover:bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider shadow-xs hover:scale-102 transition"
+          >
+            <span>Ver Catálogo</span>
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- =============================================================== -->
+      <!-- PABELLÓN 3: AUDIOTECA LÍRICA PATRIMONIAL (14 OBRAS MP3)         -->
+      <!-- =============================================================== -->
+      <div class="pabellon-card bg-gradient-to-br from-[#1C1814] to-[#25201B] rounded-3xl p-6 sm:p-7 border border-[#3A2E26] shadow-elevated hover:border-[#EF7B38] hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between text-white group">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="px-3 py-1 rounded-full bg-[#C59B27]/20 text-[#F5DEB3] text-[10px] sm:text-xs font-title font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-pulse"></span>
+              <span>🎙️ Fonoteca Patrimonial</span>
+            </span>
+            <span class="text-xs font-title font-bold text-[#EF7B38]">14 Obras MP3</span>
+          </div>
+
+          <div>
+            <h3 class="text-xl sm:text-2xl font-title font-bold text-white group-hover:text-[#EF7B38] transition leading-snug">
+              Voces y Poesía de Nuestra Historia
+            </h3>
+            <p class="text-xs sm:text-sm font-serif italic text-gray-300 mt-1">
+              Reproductores sonoros nativos en alta fidelidad
+            </p>
+          </div>
+
+          <!-- Teaser de Audio con Animación de Onda Sonora -->
+          <div class="p-3.5 rounded-2xl bg-black/50 border border-[#3A2E26] space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-title font-bold text-[#F5DEB3]">Oliverio Girondo: «Espantapájaros»</span>
+              <span class="text-[10px] text-gray-400 font-mono">Pista #1</span>
+            </div>
+            
+            <!-- Onda Sonora Animada -->
+            <div class="flex items-center gap-1 h-6">
+              <span class="w-1 bg-[#EF7B38] rounded-full h-3 animate-[pulse_1s_infinite]"></span>
+              <span class="w-1 bg-[#EF7B38] rounded-full h-5 animate-[pulse_1.2s_infinite]"></span>
+              <span class="w-1 bg-[#C59B27] rounded-full h-2 animate-[pulse_0.8s_infinite]"></span>
+              <span class="w-1 bg-[#EF7B38] rounded-full h-6 animate-[pulse_1.5s_infinite]"></span>
+              <span class="w-1 bg-[#C59B27] rounded-full h-4 animate-[pulse_0.9s_infinite]"></span>
+              <span class="w-1 bg-[#EF7B38] rounded-full h-2 animate-[pulse_1.1s_infinite]"></span>
+              <span class="w-1 bg-[#EF7B38] rounded-full h-5 animate-[pulse_1.3s_infinite]"></span>
+              <span class="w-1 bg-[#C59B27] rounded-full h-3 animate-[pulse_0.7s_infinite]"></span>
+              <span class="text-[10px] text-gray-400 ml-2 font-serif italic">Girondo, Rulfo, Lorca, Sabines, Neruda...</span>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-gray-300 font-sans leading-relaxed">
+            Escuche las grabaciones históricas sincronizadas con la lectura del texto lírico integral.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-gray-800 flex items-center justify-between">
+          <span class="text-xs text-gray-400 font-serif italic">Audio nativo 100% libre</span>
+          <a 
+            href={`${basePath}/audioteca`} 
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider shadow-md hover:scale-102 transition"
+          >
+            <span>Escuchar Fonoteca</span>
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- =============================================================== -->
+      <!-- PABELLÓN 4: PADRÓN OFICIAL DE ESCRITORES & FUNDADORES           -->
+      <!-- =============================================================== -->
+      <div class="pabellon-card bg-white rounded-3xl p-6 sm:p-7 border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="px-3 py-1 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[10px] sm:text-xs font-title font-bold uppercase tracking-wider">
+              ✍️ Padrón Autoral LVT
+            </span>
+            <span class="text-xs font-mono text-gray-400">28 Fichas Tipadas</span>
+          </div>
+
+          <div>
+            <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+              Plumas y Creadores de Tabasco
+            </h3>
+            <p class="text-xs sm:text-sm font-serif italic text-[#B8860B] mt-1">
+              Fundadores, Maestras y Autores Contemporáneos
+            </p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+            Directorio colegiado con el Arq. Mario de Lille Fuentes, Vicente Gómez Montero, Mtra. Rebeca Díaz Suárez, Mtra. Liliana Chuzeville y el claustro de escritores.
+          </p>
+
+          <div class="flex items-center gap-2 pt-1">
+            <span class="px-2 py-1 rounded-lg bg-[#F5EFE6] text-[10px] font-title font-bold text-gray-700">Poesía</span>
+            <span class="px-2 py-1 rounded-lg bg-[#F5EFE6] text-[10px] font-title font-bold text-gray-700">Narrativa</span>
+            <span class="px-2 py-1 rounded-lg bg-[#F5EFE6] text-[10px] font-title font-bold text-gray-700">Dramaturgia</span>
+            <span class="px-2 py-1 rounded-lg bg-[#F5EFE6] text-[10px] font-title font-bold text-gray-700">Ensayo</span>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+          <span class="text-xs text-gray-400 font-serif italic">Buscador en tiempo real</span>
+          <a 
+            href={`${basePath}/autores`} 
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#222222] hover:bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider shadow-xs hover:scale-102 transition"
+          >
+            <span>Ver Directorio</span>
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- =============================================================== -->
+      <!-- PABELLÓN 5: MEMORIA HISTÓRICA 1987-2026 & GOBERNANZA            -->
+      <!-- =============================================================== -->
+      <div class="pabellon-card bg-white rounded-3xl p-6 sm:p-7 border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="px-3 py-1 rounded-full bg-[#F5EFE6] text-[#222222] text-[10px] sm:text-xs font-title font-bold uppercase tracking-wider">
+              📜 39 Años de Trayectoria
+            </span>
+            <span class="text-xs font-bold text-[#EF7B38]">1987 – 2026</span>
+          </div>
+
+          <div>
+            <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+              Historia, Fundadores & Mesa Directiva
+            </h3>
+            <p class="text-xs sm:text-sm font-serif italic text-[#B8860B] mt-1">
+              Gobernanza Constitucional & Solvencia Jurídica
+            </p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+            Consulte el acta constitutiva de 1987, la cronología por periodos directivos, los estatutos vigentes y la Mesa Directiva 2026–2029.
+          </p>
+
+          <div class="p-3 rounded-2xl bg-[#F5EFE6] border border-[#E6DCCE] text-xs font-sans text-gray-700">
+            <strong>Mesa Directiva:</strong> Lic. Juan David Pérez Cabrera, Mtra. Eva Guadalupe Pineda Cruz, Ana Laura Hernández Jiménez y Mtra. Liliana Chuzeville Córdoba.
+          </div>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+          <span class="text-xs text-gray-400 font-serif italic">Certeza Jurídica A.C.</span>
+          <a 
+            href={`${basePath}/historia`} 
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#222222] hover:bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider shadow-xs hover:scale-102 transition"
+          >
+            <span>Ver Historia</span>
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- =============================================================== -->
+      <!-- PABELLÓN 6: COMUNIDAD, DESCARGAS & RIFA PRO-FONDOS              -->
+      <!-- =============================================================== -->
+      <div class="pabellon-card bg-white rounded-3xl p-6 sm:p-7 border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-800 text-[10px] sm:text-xs font-title font-bold uppercase tracking-wider">
+              ✨ Participación Ciudadana
+            </span>
+            <span class="text-xs font-title font-bold text-[#EF7B38]">Rifa & Convocatorias</span>
+          </div>
+
+          <div>
+            <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] group-hover:text-[#EF7B38] transition leading-snug">
+              Certámenes, Descargas & Rifa 2026
+            </h3>
+            <p class="text-xs sm:text-sm font-serif italic text-[#B8860B] mt-1">
+              Gran Rifa Pro-Fondos ($100 MXN) e Iniciativas
+            </p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
+            Descargue estatutos y formatos en PDF, consulte las bases del Certamen «Un Soneto por Sor Juana» o adquiera su boleto de la Rifa Pro-Fondos.
+          </p>
+
+          <div class="grid grid-cols-2 gap-2 pt-1 text-xs font-title">
+            <a href={`${basePath}/descargas`} class="p-2 rounded-xl bg-[#F5EFE6] hover:bg-[#EF7B38]/10 text-center font-bold text-[#222222] transition">
+              📥 Descargas PDF
+            </a>
+            <a href={`${basePath}/#contacto`} class="p-2 rounded-xl bg-green-50 hover:bg-green-100 text-center font-bold text-green-800 transition">
+              🎟️ Rifa ($100 MXN)
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-[#E6DCCE] flex items-center justify-between">
+          <span class="text-xs text-gray-400 font-serif italic">Formatos abiertos</span>
+          <a 
+            href={`${basePath}/descargas`} 
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#EF7B38] hover:bg-[#D96620] text-white font-title text-xs font-bold uppercase tracking-wider shadow-xs hover:scale-102 transition"
+          >
+            <span>Ver Descargas</span>
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

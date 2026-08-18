@@ -1,22 +1,11 @@
 ---
+// src/pages/index.astro - Pórtico Editorial y Portal de Bienvenida Autónomo LVT
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import Semblanza from '../components/Semblanza.astro';
-import CronologiaFundacional from '../components/CronologiaFundacional.astro';
-import EscuelaGorostiza from '../components/EscuelaGorostiza.astro';
-import SolvenciaInstitucional from '../components/SolvenciaInstitucional.astro';
-import Publicaciones from '../components/Publicaciones.astro';
-import VocesDeTabasco from '../components/VocesDeTabasco.astro';
-import DirectorioAutores from '../components/DirectorioAutores.astro';
-import CentroDescargas from '../components/CentroDescargas.astro';
-import ProcesoMembresia from '../components/ProcesoMembresia.astro';
-import Convocatorias from '../components/Convocatorias.astro';
-import GaleriaEventos from '../components/GaleriaEventos.astro';
+import LanzadoresDashboard from '../components/LanzadoresDashboard.astro';
 import RifaInteractiva from '../components/RifaInteractiva.astro';
-import MesaDirectiva from '../components/MesaDirectiva.astro';
 import Contacto from '../components/Contacto.astro';
-import ReadingModal from '../components/ReadingModal.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 ---
@@ -25,23 +14,18 @@ import '../styles/global.css';
   <Navbar />
   
   <main>
+    <!-- 1. Pórtico de Bienvenida Editorial -->
     <Hero />
-    <Semblanza />
-    <CronologiaFundacional />
-    <EscuelaGorostiza />
-    <SolvenciaInstitucional />
-    <Publicaciones />
-    <VocesDeTabasco />
-    <DirectorioAutores />
-    <CentroDescargas />
-    <ProcesoMembresia />
-    <Convocatorias />
-    <GaleriaEventos />
+    
+    <!-- 2. Pabellones y Lanzadores Interactivos 3D a cada Área Especializada -->
+    <LanzadoresDashboard />
+
+    <!-- 3. Rifa Pro-Fondos Conmemorativa -->
     <RifaInteractiva />
-    <MesaDirectiva />
+
+    <!-- 4. Secretaría General, Correspondencia y Buzón Directo -->
     <Contacto />
   </main>
 
-  <ReadingModal />
   <Footer />
 </BaseLayout>
