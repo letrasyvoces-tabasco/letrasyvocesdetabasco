@@ -121,13 +121,25 @@ export const PADRON_AUTORES: Autor[] = [
     destacado: true
   },
   {
+    id: 'eli-manuel-austria-hernandez',
+    nombre: 'Elí Manuel Austria Hernández',
+    tratamiento: 'Lic.',
+    rolGremial: 'Expresidente LVT · Autor y Compilador',
+    categoria: 'Mesa Directiva & Socios Activos',
+    generoPrincipal: 'Narrativa',
+    semblanza: 'Expresidente de la Sociedad de Escritores «Letras y Voces de Tabasco», A.C. Compilador de la magna antología conmemorativa «Tardes Tabasqueñas de Ópalos y Topacios» (2025).',
+    obraRepresentativa: '«Tardes Tabasqueñas de Ópalos y Topacios» (Compilador)',
+    antologiasParticipadas: ['Tardes Tabasqueñas de Ópalos y Topacios'],
+    destacado: true
+  },
+  {
     id: 'anais-guadalupe-arias-perez',
     nombre: 'Anaís Guadalupe Arias Pérez',
     tratamiento: 'Mtra.',
-    rolGremial: 'Expresidenta LVT · Gestora Cultural y Autora',
-    categoria: 'Mesa Directiva & Socios Activos',
+    rolGremial: 'Autora, Poeta y Gestora Cultural LVT',
+    categoria: 'Plumas Contemporáneas',
     generoPrincipal: 'Poesía',
-    semblanza: 'Expresidenta de LVT, destacada por consolidar certámenes literarios y proyectos de inclusión comunitaria. Revisa y participa activamente en antologías de la asociación.',
+    semblanza: 'Poeta y gestora cultural tabasqueña. Participante activa en antologías y proyectos literarios comunitarios de la asociación.',
     obraRepresentativa: '«Mujer estrella»',
     antologiasParticipadas: ['La Mujer en el Siglo XXI', 'Tardes Tabasqueñas de Ópalos y Topacios'],
     destacado: false

@@ -5,7 +5,8 @@ import {
   DIPLOMADOS_GOROSTIZA, 
   CURSOS_CONTINUOS_GOROSTIZA,
   TALLERES_LIBRES_ESCUELA, 
-  CLAUSTRO_DOCENTE_HISTORICO 
+  PIONEROS_Y_REFERENTES_EEJG,
+  DIRECTIVAS_ACTUALES_EEJG
 } from '../data/escuela';
 
 const basePath = "/letrasyvocesdetabasco";
@@ -21,11 +22,11 @@ const basePath = "/letrasyvocesdetabasco";
     <div class="text-center max-w-4xl mx-auto space-y-3">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EF7B38]/15 border border-[#EF7B38]/30 text-[#EF7B38] font-title text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
         <span class="w-2 h-2 rounded-full bg-[#EF7B38] animate-ping"></span>
-        <span>Única Filial Académica Oficial de LVT, A.C. · Fundada en Septiembre de 2001</span>
+        <span>Única Filial Académica Oficial de LVT, A.C. · Fundada en Septiembre de 2001 (EEJG)</span>
       </div>
 
       <h2 class="text-2xl sm:text-4xl lg:text-5xl font-title font-black text-[#222222] tracking-tight">
-        Escuela de Escritores <span class="text-[#EF7B38]">«José Gorostiza»</span>
+        Escuela de Escritores <span class="text-[#EF7B38]">«José Gorostiza»</span> (EEJG)
       </h2>
 
       <p class="font-serif italic text-base sm:text-xl text-[#B8860B] font-semibold">
@@ -39,23 +40,23 @@ const basePath = "/letrasyvocesdetabasco";
       <!-- Ficha de Contacto Rápido del Cartel Oficial 2026 -->
       <div class="flex flex-wrap justify-center items-center gap-3 pt-3 text-xs sm:text-sm font-title">
         <span class="px-3.5 py-1.5 bg-white rounded-xl border border-[#E6DCCE] shadow-xs text-gray-700">
-          📍 Villahermosa, Tabasco (Presencial y En Línea)
+          📍 Villahermosa, Tabasco (Presencial y En Línea · 50% Teoría / 50% Práctica)
         </span>
         <a 
-          href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[0]}?text=Hola%20Escuela%20Gorostiza,%20deseo%20informes%20de%20los%20diplomados%20y%20cursos.`}
+          href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[0]}?text=Hola%20Mtra.%20Liliana%20Chuzeville,%20deseo%20informes%20de%20la%20Escuela%20Gorostiza.`}
           target="_blank"
           rel="noopener"
           class="px-3.5 py-1.5 bg-green-50 text-green-800 rounded-xl border border-green-200 shadow-xs hover:bg-green-100 transition flex items-center gap-1.5 font-bold"
         >
-          <span>📲 WhatsApp: {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[0]}</span>
+          <span>📲 WhatsApp Dir. General: {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[0]}</span>
         </a>
         <a 
-          href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[1]}?text=Hola%20Escuela%20Gorostiza,%20deseo%20informes%20de%20los%20diplomados%20y%20cursos.`}
+          href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[1]}?text=Hola%20Mtra.%20Rebeca%20D%C3%ADaz,%20deseo%20información%20académica%20de%20la%20Escuela%20Gorostiza.`}
           target="_blank"
           rel="noopener"
           class="px-3.5 py-1.5 bg-green-50 text-green-800 rounded-xl border border-green-200 shadow-xs hover:bg-green-100 transition flex items-center gap-1.5 font-bold"
         >
-          <span>📲 {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[1]}</span>
+          <span>📲 WhatsApp Dir. Académica: {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[1]}</span>
         </a>
         <a 
           href={`mailto:${IDENTIDAD_ESCUELA.contactoDirecto.email}`}
@@ -69,59 +70,22 @@ const basePath = "/letrasyvocesdetabasco";
     </div>
 
     <!-- ================================================================= -->
-    <!-- 2. DIRECTIVAS DE LA ESCUELA: LILIANA Y REBECA                     -->
+    <!-- 2. DIRECTIVAS DE LA ESCUELA: LILIANA (1ª) Y REBECA (2ª)           -->
     <!-- ================================================================= -->
     <div class="space-y-4">
       <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Liderazgo y Gestión Colegiada</span>
-        <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222]">Dirección de la Escuela de Escritores</h3>
+        <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222]">Dirección de la Escuela de Escritores (EEJG)</h3>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         
-        <!-- 1. Tarjeta: Directora Académica (Mtra. Rebeca Díaz Suárez) - PRIMERA -->
-        <div class="bg-white rounded-3xl border border-[#E6DCCE] shadow-subtle hover:shadow-elevated transition-all overflow-hidden flex flex-col sm:flex-row group">
-          <div class="sm:w-44 aspect-[4/5] sm:aspect-auto overflow-hidden bg-editorial-warm relative shrink-0">
-            <img 
-              src={`${basePath}/assets/escuela/rebeca_diaz_suarez.png`} 
-              alt="Mtra. Rebeca Díaz Suárez - Directora Académica" 
-              class="w-full h-full object-cover object-center grayscale contrast-110 group-hover:scale-103 transition duration-500"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent sm:hidden"></div>
-          </div>
-          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
-            <div>
-              <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider inline-block mb-1">
-                Directora Académica
-              </span>
-              <h4 class="font-serif text-lg sm:text-xl font-bold text-[#222222] leading-snug">
-                Mtra. Rebeca Díaz Suárez
-              </h4>
-              <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed mt-1.5">
-                Poeta, ensayista, promotora cultural y expresidenta de LVT. Catedrática titular de creación lírica, métrica, apreciación literaria y coordinación curricular.
-              </p>
-            </div>
-            <div class="pt-3 border-t border-[#E6DCCE] flex items-center justify-between">
-              <span class="text-[10px] font-serif italic text-[#B8860B]">Pilar Pedagógico</span>
-              <a 
-                href="https://wa.me/529931467390?text=Hola%20Mtra.%20Rebeca%20D%C3%ADaz,%20deseo%20informaci%C3%B3n%20acad%C3%A9mica%20de%20la%20Escuela%20Gorostiza." 
-                target="_blank" 
-                rel="noopener" 
-                class="px-3 py-1 bg-green-50 hover:bg-green-100 text-green-800 border border-green-200 rounded-lg text-xs font-title font-bold transition flex items-center gap-1"
-              >
-                <span>📲 9931467390</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Tarjeta: Directora General (Mtra. Liliana Chuzeville Córdoba) - SEGUNDA -->
+        <!-- 1. Tarjeta: Directora General (Mtra. Liliana Chuzeville Córdoba) - PRIMERA -->
         <div class="bg-white rounded-3xl border border-[#E6DCCE] shadow-subtle hover:shadow-elevated transition-all overflow-hidden flex flex-col sm:flex-row group">
           <div class="sm:w-44 aspect-[4/5] sm:aspect-auto overflow-hidden bg-editorial-warm relative shrink-0">
             <img 
               src={`${basePath}/assets/escuela/liliana_chuzeville_cordoba.png`} 
-              alt="Mtra. Liliana Chuzeville Córdoba - Directora General" 
+              alt="Mtra. Liliana Chuzeville Córdoba - Directora General EEJG" 
               class="w-full h-full object-cover object-center grayscale contrast-110 group-hover:scale-103 transition duration-500"
               loading="lazy"
             />
@@ -130,13 +94,13 @@ const basePath = "/letrasyvocesdetabasco";
           <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
             <div>
               <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider inline-block mb-1">
-                Directora General
+                Directora General (EEJG)
               </span>
               <h4 class="font-serif text-lg sm:text-xl font-bold text-[#222222] leading-snug">
                 Mtra. Liliana Chuzeville Córdoba
               </h4>
               <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed mt-1.5">
-                Licenciada en Criminología, gestora cultural y titular de la Comisión de Honor y Justicia de LVT. Coordinadora general de los convenios con la UJAT y certámenes.
+                Licenciada en Criminología, gestora cultural y titular de la Comisión de Honor y Justicia de LVT. Coordinadora general de los convenios interinstitucionales con la UJAT y certámenes.
               </p>
             </div>
             <div class="pt-3 border-t border-[#E6DCCE] flex items-center justify-between">
@@ -148,6 +112,43 @@ const basePath = "/letrasyvocesdetabasco";
                 class="px-3 py-1 bg-green-50 hover:bg-green-100 text-green-800 border border-green-200 rounded-lg text-xs font-title font-bold transition flex items-center gap-1"
               >
                 <span>📲 9932647502</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Tarjeta: Directora Académica (Mtra. Rebeca Díaz Suárez) - SEGUNDA -->
+        <div class="bg-white rounded-3xl border border-[#E6DCCE] shadow-subtle hover:shadow-elevated transition-all overflow-hidden flex flex-col sm:flex-row group">
+          <div class="sm:w-44 aspect-[4/5] sm:aspect-auto overflow-hidden bg-editorial-warm relative shrink-0">
+            <img 
+              src={`${basePath}/assets/escuela/rebeca_diaz_suarez.png`} 
+              alt="Mtra. Rebeca Díaz Suárez - Directora Académica EEJG" 
+              class="w-full h-full object-cover object-center grayscale contrast-110 group-hover:scale-103 transition duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent sm:hidden"></div>
+          </div>
+          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider inline-block mb-1">
+                Directora Académica (EEJG)
+              </span>
+              <h4 class="font-serif text-lg sm:text-xl font-bold text-[#222222] leading-snug">
+                Mtra. Rebeca Díaz Suárez
+              </h4>
+              <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed mt-1.5">
+                Poeta, ensayista, promotora cultural y expresidenta de LVT. Catedrática titular de creación lírica, métrica, apreciación literaria y coordinación curricular pedagógica.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#E6DCCE] flex items-center justify-between">
+              <span class="text-[10px] font-serif italic text-[#B8860B]">Pilar Pedagógico</span>
+              <a 
+                href="https://wa.me/529931467390?text=Hola%20Mtra.%20Rebeca%20D%C3%ADaz,%20deseo%20informaci%C3%B3n%20acad%C3%A9mica%20de%20la%20Escuela%20Gorostiza." 
+                target="_blank" 
+                rel="noopener" 
+                class="px-3 py-1 bg-green-50 hover:bg-green-100 text-green-800 border border-green-200 rounded-lg text-xs font-title font-bold transition flex items-center gap-1"
+              >
+                <span>📲 9931467390</span>
               </a>
             </div>
           </div>
@@ -182,16 +183,16 @@ const basePath = "/letrasyvocesdetabasco";
           </p>
 
           <p class="font-sans text-xs sm:text-sm text-[#555555] leading-relaxed">
-            Su primer director y rector pedagógico fue el insigne <strong class="text-[#222222]">Arquitecto Mario de Lille Fuentes</strong> —novelista, dramaturgo, poeta y pilar fundador primordial de LVT—, quien estructuró los planes de estudio, la metodología de taller colegiado y la visión formativa que ha marcado a más de dos décadas de egresados.
+            Su primer director y rector pedagógico fue el insigne <strong class="text-[#222222]">Arquitecto Mario de Lille Fuentes (†)</strong> —novelista, dramaturgo, poeta y pilar fundador primordial de LVT—, quien estructuró los planes de estudio, la metodología de taller colegiado y la visión formativa que ha marcado a más de dos décadas de egresados.
           </p>
 
           <div class="pt-2 border-t border-[#E6DCCE] space-y-2">
             <span class="text-[11px] font-title font-bold uppercase text-[#EF7B38] tracking-wider block">
-              Cuadro Directivo en su Historia:
+              Pioneros y Directivos Históricos de la Escuela:
             </span>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-title">
               <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]">
-                <div class="font-bold text-[#222222]">Arq. Mario de Lille</div>
+                <div class="font-bold text-[#222222]">Arq. Mario de Lille (†)</div>
                 <div class="text-[10px] text-gray-500">Fundador (2001)</div>
               </div>
               <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]">
@@ -199,12 +200,12 @@ const basePath = "/letrasyvocesdetabasco";
                 <div class="text-[10px] text-gray-500">Directora Histórica</div>
               </div>
               <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]">
-                <div class="font-bold text-[#222222]">Mtra. L. Chuzeville</div>
-                <div class="text-[10px] text-gray-500">Directora General</div>
+                <div class="font-bold text-[#222222]">Lic. M. Palacios</div>
+                <div class="text-[10px] text-gray-500">Pionero Fundador</div>
               </div>
               <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE]">
-                <div class="font-bold text-[#222222]">Mtra. R. Díaz Suárez</div>
-                <div class="text-[10px] text-gray-500">Directora Académica</div>
+                <div class="font-bold text-[#222222]">Mtra. L. Chuzeville</div>
+                <div class="text-[10px] text-gray-500">Directora General</div>
               </div>
             </div>
           </div>
@@ -258,11 +259,11 @@ const basePath = "/letrasyvocesdetabasco";
       
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-3 border-b border-[#E6DCCE]">
         <div>
-          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Oferta Académica Continua (Cartel 2026)</span>
-          <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] mt-0.5">10 Diplomados con Aval Institucional</h3>
+          <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Oferta Académica Estandarizada (Cartel 2026)</span>
+          <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] mt-0.5">10 Diplomados con Aval Curricular (120 Horas)</h3>
         </div>
         <div class="flex items-center gap-2 text-xs sm:text-sm font-title text-[#555555]">
-          <span>📋 Modalidad: <strong>Presencial / En Línea</strong></span>
+          <span>📋 Metodología: <strong>50% Teoría / 50% Práctica</strong> · Presencial y En Línea</span>
         </div>
       </div>
 
@@ -276,8 +277,8 @@ const basePath = "/letrasyvocesdetabasco";
                 <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[10px] font-title font-bold uppercase tracking-wider">
                   Diplomado #{index + 1}
                 </span>
-                <span class="text-[11px] font-mono text-gray-500">
-                  {d.duracion}
+                <span class="text-[11px] font-mono text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md font-bold">
+                  {d.duracion} · {d.enfoque}
                 </span>
               </div>
 
@@ -324,7 +325,7 @@ const basePath = "/letrasyvocesdetabasco";
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-2">
         <div>
           <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Formación Temática Breve</span>
-          <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] mt-0.5">7 Cursos Continuos</h3>
+          <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222] mt-0.5">7 Cursos Continuos (120 Horas · 50% Teoría / 50% Práctica)</h3>
         </div>
         <span class="text-xs sm:text-sm font-serif italic text-gray-500">Impartidos permanentemente a lo largo del año</span>
       </div>
@@ -334,13 +335,13 @@ const basePath = "/letrasyvocesdetabasco";
           <div class="p-4 rounded-2xl bg-white border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition flex flex-col justify-between space-y-3">
             <div class="space-y-1.5">
               <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#EF7B38] text-[9px] font-title font-bold uppercase">
-                Curso Continuo
+                Curso Continuo · 120 Horas
               </span>
               <h4 class="font-title font-bold text-sm text-[#222222]">{c.nombre}</h4>
               <p class="text-xs font-sans text-gray-600 leading-relaxed">{c.descripcion}</p>
             </div>
             <a 
-              href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[1]}?text=Hola,%20deseo%20información%20sobre%20el%20${encodeURIComponent(c.nombre)}.`}
+              href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[0]}?text=Hola,%20deseo%20información%20sobre%20el%20${encodeURIComponent(c.nombre)}.`}
               target="_blank"
               rel="noopener"
               class="text-[11px] font-title font-bold uppercase text-[#EF7B38] hover:text-[#D96620] transition-colors block text-right pt-2 border-t border-[#E6DCCE]"
@@ -375,26 +376,26 @@ const basePath = "/letrasyvocesdetabasco";
     </div>
 
     <!-- ================================================================= -->
-    <!-- 6. CLAUSTRO DOCENTE                                               -->
+    <!-- 6. PIONEROS Y REFERENTES HISTÓRICOS TUTELARES                     -->
     <!-- ================================================================= -->
-    <div id="claustro" class="space-y-6 pt-6 border-t border-[#E6DCCE]">
+    <div id="pioneros" class="space-y-6 pt-6 border-t border-[#E6DCCE]">
       <div class="text-center max-w-2xl mx-auto space-y-1.5">
-        <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Cuerpo Colegiado</span>
-        <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222]">Claustro Docente y Maestros Históricos</h3>
+        <span class="text-xs font-title font-bold uppercase tracking-widest text-[#EF7B38]">Memoria e Identidad</span>
+        <h3 class="text-xl sm:text-2xl font-title font-bold text-[#222222]">Pioneros y Referentes Históricos Tutelares (EEJG)</h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {CLAUSTRO_DOCENTE_HISTORICO.map((docente) => (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {PIONEROS_Y_REFERENTES_EEJG.map((pionero) => (
           <div class="bg-white p-5 rounded-2xl border border-[#E6DCCE] shadow-subtle hover:border-[#EF7B38] transition flex flex-col justify-between space-y-2.5">
             <div class="space-y-1.5">
               <span class="px-2.5 py-0.5 rounded-full bg-[#F5EFE6] text-[#EF7B38] text-[9px] font-title font-bold uppercase tracking-wider inline-block">
-                {docente.cargo}
+                {pionero.rol}
               </span>
-              <h4 class="text-sm font-title font-bold text-[#222222]">{docente.nombre}</h4>
-              <p class="text-xs font-serif italic text-[#555555] leading-relaxed">{docente.trayectoria}</p>
+              <h4 class="text-sm font-title font-bold text-[#222222]">{pionero.nombre}</h4>
+              <p class="text-xs font-serif italic text-[#555555] leading-relaxed">{pionero.trayectoria}</p>
             </div>
             <div class="pt-2 border-t border-[#E6DCCE] text-xs text-[#777777] font-sans">
-              <strong class="text-[#222222] font-semibold">Cátedras:</strong> {docente.materias}
+              <strong class="text-[#222222] font-semibold">Legado:</strong> {pionero.legado}
             </div>
           </div>
         ))}
@@ -427,11 +428,11 @@ const basePath = "/letrasyvocesdetabasco";
             <h4 class="font-title font-bold text-sm sm:text-base text-[#222222]">Informes e Inscripciones Directas</h4>
           </div>
           <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed mt-1">
-            Atención personalizada de la coordinación académica:
+            Atención personalizada de la dirección de la escuela:
           </p>
           <div class="mt-2 space-y-1 text-xs sm:text-sm">
-            <div>📞 <strong>Tel / WhatsApp 1:</strong> {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[0]}</div>
-            <div>📞 <strong>Tel / WhatsApp 2:</strong> {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[1]}</div>
+            <div>📞 <strong>Dir. General (Liliana Chuzeville):</strong> {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[0]}</div>
+            <div>📞 <strong>Dir. Académica (Rebeca Díaz):</strong> {IDENTIDAD_ESCUELA.contactoDirecto.telefonos[1]}</div>
             <div>✉️ <strong>Correo:</strong> {IDENTIDAD_ESCUELA.contactoDirecto.email}</div>
             <div>🌐 <strong>Facebook:</strong> {IDENTIDAD_ESCUELA.contactoDirecto.facebook}</div>
           </div>
@@ -439,20 +440,20 @@ const basePath = "/letrasyvocesdetabasco";
 
         <div class="flex flex-wrap gap-2.5 pt-2">
           <a 
-            href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[0]}?text=Hola,%20deseo%20informes%20e%20inscripción%20para%20la%20Escuela%20de%20Escritores%20Gorostiza.`}
+            href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[0]}?text=Hola%20Mtra.%20Liliana%20Chuzeville,%20deseo%20informes%20de%20la%20Escuela%20de%20Escritores%20Gorostiza.`}
             target="_blank"
             rel="noopener noreferrer"
             class="px-4 py-2 rounded-xl bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-[#D96620] transition shadow-xs"
           >
-            WhatsApp ({IDENTIDAD_ESCUELA.contactoDirecto.telefonos[0]})
+            Dir. General ({IDENTIDAD_ESCUELA.contactoDirecto.telefonos[0]})
           </a>
           <a 
-            href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[1]}?text=Hola,%20deseo%20informes%20para%20la%20Escuela%20de%20Escritores.`}
+            href={`https://wa.me/${IDENTIDAD_ESCUELA.contactoDirecto.telefonosClean[1]}?text=Hola%20Mtra.%20Rebeca%20Díaz,%20deseo%20informes%20académicos%20para%20la%20Escuela%20de%20Escritores.`}
             target="_blank"
             rel="noopener noreferrer"
             class="px-4 py-2 rounded-xl bg-[#222222] text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-[#EF7B38] transition shadow-xs"
           >
-            WhatsApp ({IDENTIDAD_ESCUELA.contactoDirecto.telefonos[1]})
+            Dir. Académica ({IDENTIDAD_ESCUELA.contactoDirecto.telefonos[1]})
           </a>
         </div>
       </div>

@@ -57,14 +57,25 @@ export const CRONOLOGIA_DIRECTIVA: GestionHistorica[] = [
     ]
   },
   {
-    periodo: '2017 – Presente',
-    liderazgo: 'Mesas Directivas Contemporáneas (Representaciones de Anaís Arias Pérez, Rebeca Díaz Suárez y Mesa Directiva 2026-2029)',
-    descripcion: 'Enfoque en equidad de género, rescate de lenguas originarias y transformación digital integral.',
+    periodo: '2016 – 2025',
+    liderazgo: 'Presidencias de Elí Manuel Austria Hernández y Mtra. Pragedis Hernández García (Presidencia Interina e Institucional)',
+    descripcion: 'Consolidación de proyectos editoriales, fortalecimiento de la equidad de género, rescate de lenguas originarias y preservación del fondo bibliográfico.',
     hitos: [
-      'Celebración del 32º Aniversario (2019) en la Sala Antonio Ocampo (Magno homenaje al Arq. Mario de Lille Fuentes y conferencia magistral de Daniel Baruc Espinal).',
-      'Celebración del 36º Aniversario (2023) en Galería Jaguar Despertado con "La Mujer del Siglo XXI" y mesas sobre lenguas maternas.',
-      'Edición de antologías colectivas «Animalia Literaria» (2026) y convocatorias de creación lírica.',
-      'Publicación de la antología de egresados "Escuela con sus plumas de ceiba" (2024).'
+      'Gestión directiva de Elí Manuel Austria Hernández y posterior presidencia de la Mtra. Pragedis Hernández García.',
+      'Celebración del 32º Aniversario (2019) en la Sala Antonio Ocampo (Magno homenaje al Arq. Mario de Lille Fuentes).',
+      'Celebración del 36º Aniversario (2023) en Galería Jaguar Despertado con "La Mujer del Siglo XXI" y mesas sobre lenguas originarias.',
+      'Edición de antologías colectivas «Tardes Tabasqueñas de Ópalos y Topacios» (2025) y «Animalia Literaria» (2026).'
+    ]
+  },
+  {
+    periodo: '2026 – 2029',
+    liderazgo: 'Mesa Directiva 2026–2029 (Presidencia del Lic. Juan David Pérez Cabrera)',
+    descripcion: 'Periodo estatutario actual: Transformación digital del gremio, lanzamiento del portal institucional, reactivación editorial de «Animalia Literaria» y «Plantae Literaria», e impulso a la Escuela de Escritores «José Gorostiza» (EEJG).',
+    hitos: [
+      'Presidencia y representación legal del Lic. Juan David Pérez Cabrera.',
+      'Secretaría General a cargo de Eva Guadalupe Pineda Cruz y Tesorería por Ana Laura Hernández Jiménez.',
+      'Comisión de Honor y Justicia a cargo de la Mtra. Liliana Chuzeville Córdoba.',
+      'Fondo editorial activo con «Animalia Literaria» (en imprenta) y lanzamiento de «Plantae Literaria».'
     ]
   }
 ];
