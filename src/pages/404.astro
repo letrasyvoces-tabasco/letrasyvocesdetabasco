@@ -35,7 +35,7 @@ import '../styles/global.css';
           Volver al Inicio
         </a>
         <a 
-          href="/escuela" 
+          href="/EEJG" 
           class="touch-target-48 px-6 py-3 rounded-2xl bg-paper-warm text-ink border border-paper-border font-swiss text-xs font-bold uppercase tracking-wider hover:bg-paper-card shadow-subtle transition active:scale-95"
         >
           Escuela Gorostiza
@@ -59,9 +59,9 @@ import '../styles/global.css';
       var path = window.location.pathname;
       var lower = path.toLowerCase().replace(/\/$/, "");
       
-      // Si el usuario intentó entrar a /eejg o /eejg/ o /escuela
+      // Si el usuario intentó entrar a /eejg o /escuela
       if (lower === "/eejg" || lower === "/escuela") {
-        window.location.replace("/escuela/");
+        window.location.replace("/EEJG");
         return;
       }
       
