@@ -2,181 +2,170 @@
 // Contacto.astro - Secretaría General, Vinculación, Correspondencia Oficial y Datos Bancarios
 ---
 
-<section id="contacto" class="py-14 sm:py-16 bg-white">
+<section id="contacto" class="py-16 sm:py-20 bg-paper border-b border-paper-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <span class="text-[10px] sm:text-[11px] font-title font-bold text-terracota uppercase tracking-widest block mb-2">Canal Oficial de Correspondencia</span>
-      <h2 class="font-title text-2xl sm:text-3xl lg:text-4xl font-black text-carbon">Secretaría General & Vinculación</h2>
-      <p class="text-xs sm:text-sm text-gray-600 mt-2 font-serif italic">
-        Correspondencia oficial: <a href="mailto:lvt.correo@gmail.com" class="text-terracota font-bold hover:underline">lvt.correo@gmail.com</a>
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-[11px] font-swiss font-bold text-cacao uppercase tracking-widest block mb-2">Canal Oficial de Correspondencia</span>
+      <h2 class="font-monograph text-3xl sm:text-4xl lg:text-5xl font-normal text-ink">Secretaría General & Vinculación</h2>
+      <p class="text-sm sm:text-base text-ink-muted mt-2 font-serif italic">
+        Buzón institucional oficial: <a href="mailto:contacto@letrasyvocesdetabasco.org" class="text-cacao font-bold hover:underline">contacto@letrasyvocesdetabasco.org</a>
       </p>
-      <div class="w-16 h-0.5 bg-terracota mx-auto mt-4 rounded-full"></div>
+      <div class="french-rule max-w-xs mx-auto"><span>⁂</span></div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-12">
       
       <!-- Formulario Directo -->
-      <div class="bg-editorial p-8 sm:p-10 rounded-3xl border border-editorial-border shadow-subtle">
-        <h3 class="font-serif text-2xl font-bold text-carbon mb-6">Envío de Mensaje Directo</h3>
+      <div class="bg-paper-card p-7 sm:p-10 rounded-3xl border border-paper-border shadow-subtle">
+        <h3 class="font-monograph text-2xl font-bold text-ink mb-6">Envío de Mensaje Directo</h3>
         
         <form id="contact-form" class="space-y-4">
           <div>
-            <label for="nombre" class="block text-[11px] font-title font-bold uppercase tracking-wider text-gray-600 mb-1">Nombre Completo *</label>
+            <label for="nombre" class="block text-[11px] font-swiss font-bold uppercase tracking-wider text-ink-muted mb-1.5">Nombre Completo *</label>
             <input 
               type="text" 
               id="nombre" 
               name="nombre" 
               required 
               placeholder="Ej. Dr. Mario Cruz" 
-              class="w-full px-4 py-3.5 rounded-2xl border border-editorial-border focus:outline-none focus:border-terracota focus:ring-1 focus:ring-terracota bg-white text-sm"
+              class="w-full px-4 py-3 rounded-2xl border border-paper-border focus:outline-none focus:border-cacao focus:ring-1 focus:ring-cacao bg-paper text-sm text-ink"
             />
           </div>
 
           <div>
-            <label for="correo" class="block text-[11px] font-title font-bold uppercase tracking-wider text-gray-600 mb-1">Correo Electrónico *</label>
+            <label for="correo" class="block text-[11px] font-swiss font-bold uppercase tracking-wider text-ink-muted mb-1.5">Correo Electrónico *</label>
             <input 
               type="email" 
               id="correo" 
               name="correo" 
               required 
               placeholder="correo@ejemplo.com" 
-              class="w-full px-4 py-3.5 rounded-2xl border border-editorial-border focus:outline-none focus:border-terracota focus:ring-1 focus:ring-terracota bg-white text-sm"
+              class="w-full px-4 py-3 rounded-2xl border border-paper-border focus:outline-none focus:border-cacao focus:ring-1 focus:ring-cacao bg-paper text-sm text-ink"
             />
           </div>
 
           <div>
-            <label for="asunto" class="block text-[11px] font-title font-bold uppercase tracking-wider text-gray-600 mb-1">Asunto de Interés *</label>
+            <label for="asunto" class="block text-[11px] font-swiss font-bold uppercase tracking-wider text-ink-muted mb-1.5">Destino / Asunto de Interés *</label>
             <select 
               id="asunto" 
               name="asunto" 
-              class="w-full px-4 py-3.5 rounded-2xl border border-editorial-border focus:outline-none focus:border-terracota focus:ring-1 focus:ring-terracota bg-white text-sm text-gray-800"
+              class="w-full px-4 py-3 rounded-2xl border border-paper-border focus:outline-none focus:border-cacao focus:ring-1 focus:ring-cacao bg-paper text-sm text-ink"
             >
-              <option>Postulación a Convocatoria de Nuevos Socios 2026</option>
-              <option>Informes sobre «Animalia Literaria»</option>
-              <option>Adquisición de libro «A corazón abierto»</option>
-              <option>Iniciativa Pro-Fondos · Rifa 2026</option>
-              <option>Consulta Institucional / Mesa Directiva</option>
+              <option value="secretaria@letrasyvocesdetabasco.org">Secretaría General (secretaria@letrasyvocesdetabasco.org)</option>
+              <option value="presidencia@letrasyvocesdetabasco.org">Presidencia (presidencia@letrasyvocesdetabasco.org)</option>
+              <option value="contacto@letrasyvocesdetabasco.org">Informes Generales & Convocatorias (contacto@letrasyvocesdetabasco.org)</option>
+              <option value="contacto@letrasyvocesdetabasco.org">Fondo Editorial & Ejemplares</option>
             </select>
           </div>
 
           <div>
-            <label for="mensaje" class="block text-[11px] font-title font-bold uppercase tracking-wider text-gray-600 mb-1">Mensaje *</label>
+            <label for="mensaje" class="block text-[11px] font-swiss font-bold uppercase tracking-wider text-ink-muted mb-1.5">Mensaje *</label>
             <textarea 
               id="mensaje" 
               name="mensaje" 
               rows="4" 
               required 
               placeholder="Escriba aquí su mensaje..." 
-              class="w-full px-4 py-3.5 rounded-2xl border border-editorial-border focus:outline-none focus:border-terracota focus:ring-1 focus:ring-terracota bg-white text-sm"
+              class="w-full px-4 py-3 rounded-2xl border border-paper-border focus:outline-none focus:border-cacao focus:ring-1 focus:ring-cacao bg-paper text-sm text-ink"
             ></textarea>
           </div>
 
           <button 
             type="submit" 
-            class="w-full py-4 rounded-full bg-terracota text-white font-title text-xs font-bold uppercase tracking-wider hover:bg-terracota-hover shadow-subtle hover:shadow-elevated transition duration-200"
+            class="touch-target-48 w-full py-3.5 rounded-2xl bg-cacao text-white font-swiss text-xs font-bold uppercase tracking-wider hover:bg-cacao-dark shadow-subtle hover:shadow-elevated active:scale-95 transition duration-200"
           >
-            Enviar a lvt.correo@gmail.com
+            Enviar Mensaje Institucional
           </button>
         </form>
 
         <div id="form-success" class="hidden mt-4 p-4 rounded-2xl bg-green-50 border border-green-200 text-green-900 text-xs text-center font-medium">
-          ¡Gracias por comunicarse! Su mensaje ha sido preparado para la Secretaría General (<a href="mailto:lvt.correo@gmail.com" class="underline font-bold">lvt.correo@gmail.com</a>).
+          ¡Gracias por comunicarse! Su mensaje ha sido preparado para la Secretaría General (<a href="mailto:secretaria@letrasyvocesdetabasco.org" class="underline font-bold">secretaria@letrasyvocesdetabasco.org</a>).
         </div>
       </div>
 
-      <!-- Datos Legales, Seguridad Bancaria y Redes -->
+      <!-- Datos Legales, Correos Oficiales y Seguridad Bancaria -->
       <div class="space-y-6 flex flex-col justify-between">
-        <div class="bg-editorial p-8 sm:p-10 rounded-3xl border border-editorial-border shadow-subtle space-y-5">
-          <h4 class="font-serif text-2xl font-bold text-carbon">Datos Institucionales & Seguridad Bancaria</h4>
+        
+        <!-- Correos Oficiales LVT -->
+        <div class="bg-paper-card p-6 sm:p-8 rounded-3xl border border-paper-border shadow-subtle space-y-4">
+          <h4 class="font-monograph text-xl font-bold text-ink">Buzones Oficiales de Correspondencia</h4>
           
-          <div class="space-y-4 text-xs text-gray-700">
+          <div class="space-y-3 text-xs">
+            <div class="p-3.5 rounded-2xl bg-paper-warm border border-paper-border flex items-center justify-between">
+              <div>
+                <span class="block font-swiss font-bold text-ink text-[11px] uppercase">Presidencia LVT</span>
+                <a href="mailto:presidencia@letrasyvocesdetabasco.org" class="text-cacao font-semibold hover:underline">presidencia@letrasyvocesdetabasco.org</a>
+              </div>
+              <span class="text-[10px] text-ink-faint font-mono">Oficial</span>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-paper-warm border border-paper-border flex items-center justify-between">
+              <div>
+                <span class="block font-swiss font-bold text-ink text-[11px] uppercase">Secretaría General</span>
+                <a href="mailto:secretaria@letrasyvocesdetabasco.org" class="text-cacao font-semibold hover:underline">secretaria@letrasyvocesdetabasco.org</a>
+              </div>
+              <span class="text-[10px] text-ink-faint font-mono">Oficial</span>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-paper-warm border border-paper-border flex items-center justify-between">
+              <div>
+                <span class="block font-swiss font-bold text-ink text-[11px] uppercase">Contacto General</span>
+                <a href="mailto:contacto@letrasyvocesdetabasco.org" class="text-cacao font-semibold hover:underline">contacto@letrasyvocesdetabasco.org</a>
+              </div>
+              <span class="text-[10px] text-ink-faint font-mono">Oficial</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Datos Institucionales -->
+        <div class="bg-paper-card p-6 sm:p-8 rounded-3xl border border-paper-border shadow-subtle space-y-4">
+          <h4 class="font-monograph text-xl font-bold text-ink">Datos Institucionales & WhatsApp</h4>
+          
+          <div class="space-y-3 text-xs text-ink-muted">
             <div>
-              <strong class="block font-title uppercase tracking-wider text-[10px] text-gray-400">Razón Social:</strong>
+              <strong class="block font-swiss uppercase tracking-wider text-[10px] text-ink-faint">Razón Social:</strong>
               Sociedad de Escritores Letras y Voces de Tabasco, A.C.
             </div>
             <div>
-              <strong class="block font-title uppercase tracking-wider text-[10px] text-gray-400">Sede Principal:</strong>
+              <strong class="block font-swiss uppercase tracking-wider text-[10px] text-ink-faint">Sede Principal:</strong>
               Villahermosa, Tabasco, México.
             </div>
             <div>
-              <strong class="block font-title uppercase tracking-wider text-[10px] text-gray-400">Correo Electrónico Oficial:</strong>
-              <a href="mailto:lvt.correo@gmail.com" class="text-terracota font-bold hover:underline text-sm">lvt.correo@gmail.com</a>
-            </div>
-            <div>
-              <strong class="block font-title uppercase tracking-wider text-[10px] text-gray-400">Atención Directa y WhatsApp:</strong>
-              <a href="https://wa.me/522205889391" target="_blank" rel="noopener noreferrer" class="text-green-700 font-bold hover:underline text-sm flex items-center gap-2 mt-0.5">
-                <span>+52 220 588 9391</span>
-                <span class="text-[9px] bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-title uppercase font-bold">WhatsApp Oficial LVT</span>
-              </a>
-            </div>
-            <div class="pt-3 border-t border-editorial-border">
-              <strong class="block font-title uppercase tracking-wider text-[10px] text-gray-400 mb-1">Aportaciones y Transferencias Bancarias (SPEI):</strong>
-              <p class="text-[11px] text-gray-600 font-light leading-relaxed">
-                Por control administrativo y seguridad institucional, las instrucciones de depósito y transferencia vía CLABE interbancaria SPEI se proporcionan de manera personalizada y privada al confirmar su solicitud vía WhatsApp oficial o al correo institucional.
-              </p>
+              <strong class="block font-swiss uppercase tracking-wider text-[10px] text-ink-faint">Línea Oficial WhatsApp LVT:</strong>
+              <a href="https://wa.me/522205889391" target="_blank" rel="noopener noreferrer" class="text-cacao font-bold hover:underline">+52 220 588 9391</a>
             </div>
           </div>
         </div>
 
-        <!-- Enlaces Redes Oficiales -->
-        <div class="bg-editorial p-8 rounded-3xl border border-editorial-border shadow-subtle">
-          <h4 class="font-serif text-xl font-bold text-carbon mb-3">Redes y Canales Oficiales</h4>
-          <div class="flex flex-wrap gap-3">
-            <a 
-              href="https://wa.me/522205889391" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-editorial-border text-green-700 hover:border-green-600 text-xs font-title font-bold uppercase transition shadow-subtle"
-            >
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-              <span>WhatsApp</span>
-            </a>
-            <a 
-              href="https://www.facebook.com/letrayvoces.tabasco/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-editorial-border text-carbon hover:text-terracota text-xs font-title font-bold uppercase transition shadow-subtle"
-            >
-              <svg class="w-4 h-4 fill-current text-[#1877F2]" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              <span>Facebook</span>
-            </a>
-            <a 
-              href="https://www.instagram.com/letrasyvoces.tabasco/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-editorial-border text-carbon hover:text-terracota text-xs font-title font-bold uppercase transition shadow-subtle"
-            >
-              <svg class="w-4 h-4 fill-current text-[#E1306C]" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              <span>Instagram</span>
-            </a>
-          </div>
-        </div>
       </div>
 
     </div>
+
   </div>
 </section>
 
 <script>
-  // Manejador del Formulario de Correspondencia
-  const contactForm = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const successBox = document.getElementById('form-success');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+  if (form && successBox) {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       const nombre = (document.getElementById('nombre') as HTMLInputElement).value;
-      const asunto = (document.getElementById('asunto') as HTMLSelectElement).value;
-      const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement).value;
       const correo = (document.getElementById('correo') as HTMLInputElement).value;
-      
-      const mailtoUrl = `mailto:lvt.correo@gmail.com?subject=${encodeURIComponent(asunto + ' - ' + nombre)}&body=${encodeURIComponent('Nombre: ' + nombre + '\nCorreo: ' + correo + '\n\nMensaje:\n' + mensaje)}`;
-      window.location.href = mailtoUrl;
+      const asuntoSelect = (document.getElementById('asunto') as HTMLSelectElement);
+      const targetEmail = asuntoSelect.value || 'contacto@letrasyvocesdetabasco.org';
+      const asuntoText = asuntoSelect.options[asuntoSelect.selectedIndex].text;
+      const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement).value;
 
-      if (formSuccess) {
-        formSuccess.classList.remove('hidden');
-      }
+      const subject = encodeURIComponent(`[LVT Portal] ${asuntoText} - ${nombre}`);
+      const body = encodeURIComponent(`Nombre: ${nombre}\nCorreo de contacto: ${correo}\nAsunto: ${asuntoText}\n\nMensaje:\n${mensaje}`);
+      
+      window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+      
+      successBox.classList.remove('hidden');
+      form.reset();
     });
   }
 </script>

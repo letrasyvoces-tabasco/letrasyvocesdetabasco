@@ -1,6 +1,6 @@
 ---
 // Navbar.astro - Barra de Navegación Institucional con Menús Desplegables de Escritorio y Lanzador Táctil Móvil
-const basePath = "/letrasyvocesdetabasco";
+const basePath = "";
 ---
 
 <header class="fixed top-0 left-0 right-0 z-40 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#E6DCCE] transition-all duration-300 shadow-xs">
@@ -13,7 +13,7 @@ const basePath = "/letrasyvocesdetabasco";
           src={`${basePath}/assets/logos/LVT Logo Hor 1 Original.svg`} 
           alt="Sociedad de Escritores Letras y Voces de Tabasco, A.C." 
           class="h-9 sm:h-11 w-auto object-contain group-hover:scale-102 transition duration-200"
-          onerror="this.src='/letrasyvocesdetabasco/assets/logos/LVT Logo Hor 1 Original.png'" 
+          onerror="this.src='/assets/logos/LVT Logo Hor 1 Original.png'" 
         />
       </a>
 
@@ -48,9 +48,9 @@ const basePath = "/letrasyvocesdetabasco";
           </div>
         </div>
 
-        <!-- 2. Menú Desplegable: Escuela Gorostiza -->
+        <!-- 2. Menú Desplegable: Escuela Gorostiza (EEJG) -->
         <div class="relative group">
-          <a href={`${basePath}/escuela`} class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[#EF7B38] font-bold hover:bg-[#F5EFE6] transition-colors">
+          <a href={`${basePath}/EEJG`} class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[#EF7B38] font-bold hover:bg-[#F5EFE6] transition-colors">
             <span>Escuela Gorostiza</span>
             <svg class="w-3.5 h-3.5 text-[#EF7B38] group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -58,16 +58,16 @@ const basePath = "/letrasyvocesdetabasco";
           </a>
           <div class="absolute left-0 top-full pt-1.5 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div class="bg-white rounded-2xl p-2 border border-[#E6DCCE] shadow-2xl text-left normal-case space-y-1">
-              <a href={`${basePath}/escuela`} class="block px-3 py-2 rounded-xl bg-[#F5EFE6] text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider transition">
-                🎓 Portal Académico 2026
+              <a href={`${basePath}/EEJG`} class="block px-3 py-2 rounded-xl bg-[#F5EFE6] text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider transition">
+                🎓 Portal Académico EEJG 2026
               </a>
-              <a href={`${basePath}/escuela#diplomados`} class="block px-3 py-2 rounded-xl hover:bg-[#FDFBF7] hover:text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider text-[#222222] transition">
-                📋 10 Diplomados Actualizados
+              <a href={`${basePath}/EEJG#diplomados`} class="block px-3 py-2 rounded-xl hover:bg-[#FDFBF7] hover:text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider text-[#222222] transition">
+                📋 10 Diplomados (120 Horas)
               </a>
-              <a href={`${basePath}/escuela#cursos`} class="block px-3 py-2 rounded-xl hover:bg-[#FDFBF7] hover:text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider text-[#222222] transition">
+              <a href={`${basePath}/EEJG#cursos`} class="block px-3 py-2 rounded-xl hover:bg-[#FDFBF7] hover:text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider text-[#222222] transition">
                 ✍️ 7 Cursos Continuos & Talleres
               </a>
-              <a href={`${basePath}/escuela#claustro`} class="block px-3 py-2 rounded-xl hover:bg-[#FDFBF7] hover:text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider text-[#222222] transition">
+              <a href={`${basePath}/EEJG#pioneros`} class="block px-3 py-2 rounded-xl hover:bg-[#FDFBF7] hover:text-[#EF7B38] text-xs font-title font-bold uppercase tracking-wider text-[#222222] transition">
                 🧑‍🏫 Claustro & Mtra. Liliana y Rebeca
               </a>
             </div>

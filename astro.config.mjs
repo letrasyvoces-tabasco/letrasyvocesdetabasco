@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://letrasyvocesdetabasco.github.io',
-  base: '/letrasyvocesdetabasco',
+  site: 'https://letrasyvocesdetabasco.org',
+  base: '/',
   trailingSlash: 'ignore',
   output: 'static',
   integrations: [tailwind({

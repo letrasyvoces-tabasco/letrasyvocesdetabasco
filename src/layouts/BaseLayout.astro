@@ -9,18 +9,18 @@ interface Props {
 
 const {
   title = "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
-  description = "Portal oficial de la Sociedad de Escritores Letras y Voces de Tabasco, A.C. Difusión literaria, fondo editorial, fonoteca de poesía, convocatorias y gobernanza cultural en el sureste mexicano.",
+  description = "Portal oficial de la Sociedad de Escritores Letras y Voces de Tabasco, A.C. Difusión literaria, fondo editorial, fonoteca de poesía, Escuela de Escritores «José Gorostiza» (EEJG), convocatorias y gobernanza cultural en el sureste mexicano.",
   image = "/assets/branding/lvt_og_banner.jpg",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyvocesdetabasco.github.io");
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyvocesdetabasco.org");
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -50,35 +50,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyv
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
 
-    <!-- Tipografías Oficiales del Manual de Marca LVT -->
+    <!-- Tipografías Oficiales & Alta Gama Editorial -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Datos Estructurados Schema.org (Asociación Cultural) -->
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "NGO",
-        "name": "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
-        "alternateName": "Letras y Voces de Tabasco",
-        "url": "https://letrasyvocesdetabasco.github.io",
-        "logo": "https://letrasyvocesdetabasco.github.io/assets/branding/logo_lvt.svg",
-        "email": "lvt.correo@gmail.com",
-        "sameAs": [
-          "https://web.facebook.com/profile.php?id=100063472631282"
-        ],
-        "description": "Asociación civil dedicada a la promoción literaria, edición de antologías y preservación cultural en el estado de Tabasco, México."
-      }
-    </script>
+    <slot name="head" />
   </head>
-  <body class="bg-editorial text-carbon font-sans antialiased selection:bg-terracota selection:text-white min-h-screen flex flex-col">
-    <slot />
-    
-    <!-- Menú Móvil Táctil Global Independiente del Header -->
+  <body class="bg-paper text-ink font-serif antialiased selection:bg-cacao selection:text-white min-h-screen flex flex-col justify-between">
+    <div class="relative flex-1 flex flex-col">
+      <slot />
+    </div>
+
+    <!-- Menú Desplegable Táctil Móvil Centralizado -->
     <MobileDrawer />
   </body>
 </html>
