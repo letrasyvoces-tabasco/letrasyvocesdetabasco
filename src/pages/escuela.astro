@@ -1,5 +1,5 @@
 ---
-// src/pages/escuela.astro - Redirección y compatibilidad para la ruta canónica /EEJG
+// src/pages/escuela.astro - Portal Académico Oficial de la Escuela de Escritores «José Gorostiza» (EEJG)
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import EscuelaGorostiza from '../components/EscuelaGorostiza.astro';
@@ -9,24 +9,21 @@ import '../styles/global.css';
 
 <BaseLayout 
   title="Escuela de Escritores «José Gorostiza» (EEJG) · Filial Académica Oficial de LVT, A.C."
-  description="Oferta académica 2026: 10 Diplomados, 7 Cursos y Talleres continuos con aval académico UJAT."
+  description="Oferta académica 2026: 10 Diplomados, 7 Cursos y Talleres continuos en Creación Literaria, Redacción Profesional y Periodismo Cultural con aval académico UJAT."
 >
-  <head slot="head">
-    <meta http-equiv="refresh" content="0;url=/EEJG" />
-    <link rel="canonical" href="https://letrasyvocesdetabasco.org/EEJG" />
-  </head>
-
   <Navbar />
 
   <main class="pt-16 sm:pt-20">
-    <div class="bg-[#F5EFE6] border-b border-[#E6DCCE] py-3">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-title uppercase tracking-wider text-gray-500">
-        <a href="/" class="hover:text-[#EF7B38] transition">Inicio</a>
+    <!-- Migas de pan / Breadcrumb -->
+    <div class="bg-paper-warm border-b border-paper-border py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-swiss uppercase tracking-wider text-ink-muted">
+        <a href="/" class="hover:text-cacao transition">Inicio</a>
         <span>/</span>
-        <a href="/EEJG" class="text-[#EF7B38] font-bold">Redirigiendo a /EEJG...</a>
+        <span class="text-cacao font-bold">Escuela de Escritores «José Gorostiza» (EEJG)</span>
       </div>
     </div>
 
+    <!-- Contenido Modular de la Escuela -->
     <EscuelaGorostiza />
   </main>
 
