@@ -10,7 +10,7 @@ interface Props {
 const {
   title = "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
   description = "Portal oficial de la Sociedad de Escritores Letras y Voces de Tabasco, A.C. Difusión literaria, fondo editorial, fonoteca de poesía, Escuela de Escritores «José Gorostiza» (EEJG), convocatorias y gobernanza cultural en el sureste mexicano.",
-  image = "/assets/branding/lvt_og_banner.jpg",
+  image = "/assets/galeria/evento_cacao_01.jpg",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyvocesdetabasco.org");
@@ -24,7 +24,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyv
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="icon" type="image/svg+xml" href="/assets/branding/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logos/LVT Logo Iso 1 Original.svg" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primarios SEO -->
@@ -50,13 +50,39 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyv
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
 
-    <!-- Tipografías Oficiales & Alta Gama Editorial -->
+    <!-- Tipografías Oficiales & Alta Gama Editorial con display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Datos Estructurados Schema.org (Organización Cultural & Educativa) -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": ["NGO", "EducationalOrganization"],
+        "name": "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
+        "alternateName": "Letras y Voces de Tabasco",
+        "url": "https://letrasyvocesdetabasco.org",
+        "logo": "https://letrasyvocesdetabasco.org/assets/logos/LVT Logo Hor 1 Original.svg",
+        "email": "contacto@letrasyvocesdetabasco.org",
+        "telephone": "+522205889391",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Centenario Instituto Juárez s/n, Colonia Reforma",
+          "addressLocality": "Villahermosa",
+          "addressRegion": "Tabasco",
+          "postalCode": "86080",
+          "addressCountry": "MX"
+        },
+        "sameAs": [
+          "https://web.facebook.com/profile.php?id=100063472631282"
+        ],
+        "description": "Asociación civil fundada en 1987 dedicada a la promoción literaria, docencia especializada en la Escuela de Escritores «José Gorostiza» (EEJG), edición de antologías y preservación patrimonial en el Sureste de México."
+      }
+    </script>
 
     <slot name="head" />
   </head>
