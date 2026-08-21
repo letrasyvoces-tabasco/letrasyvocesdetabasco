@@ -72,12 +72,12 @@ const basePath = "";
     </p>
 
     <!-- Botones de Acción Editorial con Feedback Táctil de 48px -->
-    <div class="flex flex-wrap gap-3.5 justify-center w-full max-w-3xl mb-10">
+    <div class="flex flex-wrap gap-3.5 justify-center w-full max-w-3xl mb-12">
       <a 
         href={`${basePath}/publicaciones`} 
         class="touch-target-48 inline-flex items-center px-7 py-3 rounded-2xl bg-cacao hover:bg-cacao-dark text-white font-swiss text-xs sm:text-sm font-bold uppercase tracking-wider shadow-elevated hover:scale-102 active:scale-95 transition duration-200 gap-2 cursor-pointer border border-cacao-light/20"
       >
-        <span>Fondo Editorial 2026</span>
+        <span>Catálogo Editorial</span>
         <svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
 
@@ -85,135 +85,32 @@ const basePath = "";
         href={`${basePath}/EEJG`} 
         class="touch-target-48 inline-flex items-center px-6 py-3 rounded-2xl border border-white/20 bg-white/[0.06] hover:bg-white/[0.12] text-white font-swiss text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md shadow-subtle hover:scale-102 active:scale-95 transition duration-200 gap-2 cursor-pointer"
       >
-        <span>Escuela Gorostiza (EEJG)</span>
+        <span>Escuela de Escritores</span>
       </a>
 
       <a 
-        href={`${basePath}/audioteca`} 
-        class="touch-target-48 inline-flex items-center px-6 py-3 rounded-2xl border border-oro/40 bg-oro/10 hover:bg-oro/20 text-oro-bright font-swiss text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md shadow-subtle hover:scale-102 active:scale-95 transition duration-200 gap-2 cursor-pointer"
+        href={`${basePath}/#rifa`} 
+        class="touch-target-48 inline-flex items-center px-6 py-3 rounded-2xl border border-oro/40 bg-oro/15 hover:bg-oro/25 text-oro-bright font-swiss text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md shadow-subtle hover:scale-102 active:scale-95 transition duration-200 gap-2 cursor-pointer"
       >
-        <span>Audioteca (14 Obras)</span>
+        <span>Gran Rifa Cultural 🎟️</span>
       </a>
     </div>
 
-    <!-- 4 Tomos / Pilares Bento Interactivas con Spotlight Border -->
-    <div class="w-full max-w-5xl mb-8 text-left">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <!-- Eje 1: Nueva Antología 2026 -->
-        <a 
-          href={`${basePath}/publicaciones`} 
-          class="hero-pillar-card p-5 rounded-3xl bg-ink-card/90 border border-white/10 hover:border-cacao transition-all duration-300 shadow-elevated flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
-        >
-          <div class="space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="px-2.5 py-0.5 rounded-full bg-cacao/20 text-cacao-light text-[10px] font-swiss font-bold uppercase tracking-wider border border-cacao/30">
-                En Imprenta
-              </span>
-              <span class="text-sm text-gray-400 group-hover:text-cacao-light transition font-mono">01 ↗</span>
-            </div>
-            <h4 class="font-monograph text-lg sm:text-xl font-bold text-white group-hover:text-cacao-light transition">
-              «Animalia Literaria»
-            </h4>
-            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
-              16 plumas tabasqueñas en diálogo con la fauna y la selva del Sureste.
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-[11px] font-swiss font-bold text-oro-bright uppercase tracking-wider">
-            Ver 5 Antologías
-          </div>
-        </a>
-
-        <!-- Eje 2: Escuela Gorostiza (EEJG) -->
-        <a 
-          href={`${basePath}/EEJG`} 
-          class="hero-pillar-card p-5 rounded-3xl bg-ink-card/90 border border-white/10 hover:border-cacao transition-all duration-300 shadow-elevated flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
-        >
-          <div class="space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="px-2.5 py-0.5 rounded-full bg-cacao/20 text-cacao-light text-[10px] font-swiss font-bold uppercase tracking-wider border border-cacao/30">
-                Validez UJAT
-              </span>
-              <span class="text-sm text-gray-400 group-hover:text-cacao-light transition font-mono">02 ↗</span>
-            </div>
-            <h4 class="font-monograph text-lg sm:text-xl font-bold text-white group-hover:text-cacao-light transition">
-              Escuela Gorostiza
-            </h4>
-            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
-              10 Diplomados (120h) y 7 Cursos continuos con 50% Teoría / 50% Taller.
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-[11px] font-swiss font-bold text-oro-bright uppercase tracking-wider">
-            Consultar Oferta 2026
-          </div>
-        </a>
-
-        <!-- Eje 3: Audioteca Patrimonial -->
-        <a 
-          href={`${basePath}/audioteca`} 
-          class="hero-pillar-card p-5 rounded-3xl bg-ink-card/90 border border-white/10 hover:border-oro transition-all duration-300 shadow-elevated flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
-        >
-          <div class="space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="px-2.5 py-0.5 rounded-full bg-oro/20 text-oro-bright text-[10px] font-swiss font-bold uppercase tracking-wider border border-oro/30">
-                14 Obras MP3
-              </span>
-              <span class="text-sm text-gray-400 group-hover:text-oro-bright transition font-mono">03 ↗</span>
-            </div>
-            <h4 class="font-monograph text-lg sm:text-xl font-bold text-white group-hover:text-oro-bright transition">
-              Audioteca Lírica
-            </h4>
-            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
-              Grabaciones sonoras de Girondo, Rulfo, García Lorca, Sabines y Cortázar.
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-[11px] font-swiss font-bold text-oro-bright uppercase tracking-wider">
-            Escuchar Fonoteca
-          </div>
-        </a>
-
-        <!-- Eje 4: Convocatorias & Nuevos Socios -->
-        <a 
-          href={`${basePath}/descargas#convocatorias`} 
-          class="hero-pillar-card p-5 rounded-3xl bg-ink-card/90 border border-white/10 hover:border-cacao transition-all duration-300 shadow-elevated flex flex-col justify-between group hover:-translate-y-1 backdrop-blur-md"
-        >
-          <div class="space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="px-2.5 py-0.5 rounded-full bg-green-900/40 text-green-300 text-[10px] font-swiss font-bold uppercase tracking-wider border border-green-500/30">
-                Convocatoria
-              </span>
-              <span class="text-sm text-gray-400 group-hover:text-green-300 transition font-mono">04 ↗</span>
-            </div>
-            <h4 class="font-monograph text-lg sm:text-xl font-bold text-white group-hover:text-green-300 transition">
-              Nuevos Socios LVT
-            </h4>
-            <p class="text-xs text-gray-400 font-serif italic line-clamp-2">
-              Proceso abierto de afiliación gremial y certámenes literarios estatales.
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-[11px] font-swiss font-bold text-oro-bright uppercase tracking-wider">
-            Bases & Formatos
-          </div>
-        </a>
-
-      </div>
-    </div>
-
     <!-- HUD de Métricas Institucionales Flotante -->
-    <div class="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-3xl text-center">
-      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm">
-        <span class="block font-monograph text-2xl sm:text-3xl font-bold text-cacao-light">+38</span>
-        <span class="text-[10px] sm:text-xs font-swiss font-semibold tracking-wider text-gray-300 uppercase">Años de Historia</span>
+    <div class="pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-4xl text-center">
+      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-cacao/40 transition">
+        <span class="block font-monograph text-2xl sm:text-3xl font-bold text-cacao-light">+39</span>
+        <span class="text-[10px] sm:text-xs font-swiss font-semibold tracking-wider text-gray-300 uppercase">Años de Historia (1987-2026)</span>
       </div>
-      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm">
+      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-oro/40 transition">
         <span class="block font-monograph text-2xl sm:text-3xl font-bold text-white">+100</span>
-        <span class="text-[10px] sm:text-xs font-swiss font-semibold tracking-wider text-gray-300 uppercase">Plumas Tutelares</span>
+        <span class="text-[10px] sm:text-xs font-swiss font-semibold tracking-wider text-gray-300 uppercase">Plumas en Padrón</span>
       </div>
-      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm">
+      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-oro/40 transition">
         <span class="block font-monograph text-2xl sm:text-3xl font-bold text-oro-bright">+25</span>
         <span class="text-[10px] sm:text-xs font-swiss font-semibold tracking-wider text-gray-300 uppercase">Obras Editadas</span>
       </div>
-      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm">
+      <div class="bg-white/[0.04] py-3.5 px-3 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-cacao/40 transition">
         <span class="block font-monograph text-2xl sm:text-3xl font-bold text-white">100%</span>
         <span class="text-[10px] sm:text-xs font-swiss font-semibold tracking-wider text-gray-300 uppercase">Autonomía Gremial</span>
       </div>

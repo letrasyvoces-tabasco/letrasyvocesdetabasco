@@ -57,11 +57,11 @@ export const PADRON_AUTORES: Autor[] = [
   {
     id: 'liliana-chuzeville-cordoba',
     nombre: 'Liliana Chuzeville Córdoba',
-    tratamiento: 'Mtra.',
-    rolGremial: 'Comisión de Honor y Justicia LVT (2026–2029) · Expresidenta LVT · Dir. General EEJG',
+    tratamiento: 'Dra.',
+    rolGremial: 'Comisión de Honor y Justicia LVT (2026–2029) · Delegada Emérita LVT · Dir. General EEJG',
     categoria: 'Mesa Directiva & Socios Activos',
     generoPrincipal: 'Narrativa',
-    semblanza: 'Licenciada en Criminología, Expresidenta de LVT, titular de la Comisión de Honor y Justicia de LVT y Directora General de la Escuela de Escritores «José Gorostiza». Distinguida con las «Palmas de Oro» y «México en tus manos».',
+    semblanza: 'Doctora en Criminología, Expresidenta de LVT, titular de la Comisión de Honor y Justicia, Delegada Emérita de la Sociedad de Escritores y Directora General de la Escuela de Escritores «José Gorostiza». Distinguida con las «Palmas de Oro» y «México en tus manos».',
     obraRepresentativa: '«Viaje entre cuentos y canciones»',
     antologiasParticipadas: ['Animalia Literaria (Prólogo)', 'Amarellus', 'Tardes Tabasqueñas', 'La Mujer en el Siglo XXI'],
     destacado: true
@@ -105,8 +105,7 @@ export const PADRON_AUTORES: Autor[] = [
   {
     id: 'paulina-pineda',
     nombre: 'Paulina Pineda',
-    tratamiento: 'Lic.',
-    rolGremial: 'Socia Activa LVT · Escritora y Promotora',
+    rolGremial: 'Socia Activa LVT · Escritora y Promotora Cultural',
     categoria: 'Mesa Directiva & Socios Activos',
     generoPrincipal: 'Poesía',
     semblanza: 'Escritora y miembro activo acreditado de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., participante en lecturas líricas, asambleas, talleres y proyectos editoriales colegiados del gremio.',
@@ -145,11 +144,11 @@ export const PADRON_AUTORES: Autor[] = [
   {
     id: 'rebeca-diaz-suarez',
     nombre: 'Rebeca Díaz Suárez',
-    tratamiento: 'Mtra.',
-    rolGremial: 'Expresidenta LVT (2013–2016) · Directora Académica EEJG',
+    tratamiento: 'Dra.',
+    rolGremial: 'Expresidenta LVT (2013–2016) · Coordinación de Admisiones EEJG',
     categoria: 'Expresidentes & Fundadores Históricos',
     generoPrincipal: 'Poesía',
-    semblanza: 'Destacada expresidenta de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., Directora Académica de la Escuela de Escritores «José Gorostiza» (EEJG), catedrática y formadora de generaciones literarias en el Sureste de México.',
+    semblanza: 'Doctora, destacada expresidenta de la Sociedad de Escritores Letras y Voces de Tabasco, A.C., Coordinadora de Admisiones de la Escuela de Escritores «José Gorostiza» (EEJG), catedrática y formadora de generaciones literarias en el Sureste de México.',
     obraRepresentativa: '«Mujer en 3D»',
     antologiasParticipadas: ['La Mujer en el Siglo XXI', 'Memorias Líricas LVT', 'Proyecto Babel', 'Animalia Literaria'],
     destacado: true

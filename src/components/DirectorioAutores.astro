@@ -2,6 +2,17 @@
 // DirectorioAutores.astro - Directorio Oficial de Autores, Fundadores y Socios de LVT
 import { PADRON_AUTORES } from '../data/autores';
 const basePath = "";
+
+const FOTOS_AUTORES: Record<string, string> = {
+  'juan-david-perez-cabrera': '/assets/directiva/juan_david_perez_cabrera.jpg',
+  'eva-guadalupe-pineda-cruz': '/assets/directiva/eva_guadalupe_pineda_cruz.jpg',
+  'ana-laura-hernandez-jimenez': '/assets/directiva/ana_laura_hernandez_jimenez.jpg',
+  'liliana-chuzeville-cordoba': '/assets/directiva/liliana_chuzeville_cordoba.png',
+  'pragedis-hernandez-garcia': '/assets/directiva/pragedis_hernandez_garcia.png',
+  'juan-manuel-canepa-bertolini': '/assets/autores/juan_manuel_canepa.png',
+  'maria-de-los-angeles-cervantes': '/assets/autores/maria_cervantes.png',
+  'rebeca-diaz-suarez': '/assets/directiva/rebeca_diaz_suarez.png',
+};
 ---
 
 <section id="autores" class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#E6DCCE]">
@@ -66,6 +77,7 @@ const basePath = "";
         else if (autor.categoria.includes("Mesa Directiva")) filterCat = "directiva";
 
         const genreLower = autor.generoPrincipal.toLowerCase();
+        const fotoAutor = FOTOS_AUTORES[autor.id];
 
         return (
           <div 
@@ -85,14 +97,31 @@ const basePath = "";
                 </span>
               </div>
 
-              <h3 class="font-title text-xl font-black text-[#222222] mb-1">
-                {autor.tratamiento && <span class="text-[#EF7B38] font-normal text-base mr-1">{autor.tratamiento}</span>}
-                {autor.nombre}
-              </h3>
-              
-              <span class="text-xs text-[#B8860B] font-title font-semibold block mb-3 leading-snug">
-                {autor.rolGremial}
-              </span>
+              <div class="flex items-start gap-3.5 mb-2">
+                {fotoAutor ? (
+                  <div class="w-13 h-13 rounded-xl overflow-hidden bg-[#F5EFE6] shrink-0 border border-[#E6DCCE]">
+                    <img 
+                      src={`${basePath}${fotoAutor}`} 
+                      alt={autor.nombre} 
+                      class="w-full h-full object-cover grayscale contrast-110"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div class="w-13 h-13 rounded-xl bg-[#F5EFE6] border border-[#E6DCCE] shrink-0 flex items-center justify-center font-title font-bold text-sm text-[#EF7B38]">
+                    {autor.nombre.split(' ').map(n => n[0]).slice(0, 2).join('')}
+                  </div>
+                )}
+                <div>
+                  <h3 class="font-title text-lg font-black text-[#222222] leading-tight">
+                    {autor.tratamiento && <span class="text-[#EF7B38] font-normal text-sm mr-1">{autor.tratamiento}</span>}
+                    {autor.nombre}
+                  </h3>
+                  <span class="text-[11px] text-[#B8860B] font-title font-semibold block mt-0.5 leading-tight">
+                    {autor.rolGremial}
+                  </span>
+                </div>
+              </div>
 
               <p class="text-xs text-gray-600 font-sans leading-relaxed">
                 {autor.semblanza}

@@ -24,7 +24,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyv
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="icon" type="image/svg+xml" href="/assets/logos/LVT Logo Iso 1 Original.svg" />
+    
+    <!-- Favicons Oficiales LVT Multi-Navegador -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#FAF7F0" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primarios SEO -->
@@ -66,7 +71,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyv
         "name": "Sociedad de Escritores Letras y Voces de Tabasco, A.C.",
         "alternateName": "Letras y Voces de Tabasco",
         "url": "https://letrasyvocesdetabasco.org",
-        "logo": "https://letrasyvocesdetabasco.org/assets/logos/LVT Logo Hor 1 Original.svg",
+        "logo": "https://letrasyvocesdetabasco.org/assets/logos/LVT%20Logo%20Hor%201%20Original.svg",
+        "image": "https://letrasyvocesdetabasco.org/assets/galeria/evento_cacao_01.jpg",
         "email": "contacto@letrasyvocesdetabasco.org",
         "telephone": "+522205889391",
         "address": {
@@ -78,7 +84,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://letrasyv
           "addressCountry": "MX"
         },
         "sameAs": [
-          "https://web.facebook.com/profile.php?id=100063472631282"
+          "https://web.facebook.com/profile.php?id=100063472631282",
+          "https://www.instagram.com/letrasyvoces.tabasco/"
         ],
         "description": "Asociación civil fundada en 1987 dedicada a la promoción literaria, docencia especializada en la Escuela de Escritores «José Gorostiza» (EEJG), edición de antologías y preservación patrimonial en el Sureste de México."
       }

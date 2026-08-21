@@ -280,3 +280,17 @@ const porcentajeProgreso = Math.round((totalOcupados / totalBoletos) * 100);
     }
   });
 </script>
+
+<style>
+  .num-btn {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .num-btn.selected {
+    background: linear-gradient(135deg, #B84E20 0%, #8F3812 100%) !important;
+    border-color: #C4973B !important;
+    color: #FFFFFF !important;
+    transform: scale(1.08);
+    box-shadow: 0 6px 18px rgba(184, 78, 32, 0.45);
+    z-index: 10;
+  }
+</style>
