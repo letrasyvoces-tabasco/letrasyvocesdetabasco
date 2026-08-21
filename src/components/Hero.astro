@@ -8,25 +8,39 @@ const basePath = "";
   <!-- 1. CAPAS ATMOSFÉRICAS Y CANVAS AMBIENTAL -->
   <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
     
-    <!-- Escena 1: Encuentros y Eventos Culturales LVT -->
+    <!-- Escena 1: Presentación «A corazón abierto» (Casa Cacao y Chocolate) -->
     <div 
       id="hero-bg-1" 
-      class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-20 scale-102 transform"
+      class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-25 scale-102 transform"
       style={`background-image: url('${basePath}/assets/galeria/evento_cacao_01.jpg');`}
     ></div>
 
-    <!-- Escena 2: Acervo y Colecciones Editoriales -->
+    <!-- Escena 2: Escuela de Escritores «José Gorostiza» (Conversatorio DACSyH UJAT) -->
     <div 
       id="hero-bg-2" 
       class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-102 transform"
-      style={`background-image: url('${basePath}/assets/galeria/evento_cacao_03.jpg');`}
+      style={`background-image: url('${basePath}/assets/escuela/galeria/conversatorio_mesa.jpg');`}
     ></div>
 
-    <!-- Escena 3: Escuela de Escritores «José Gorostiza» y Claustro -->
+    <!-- Escena 3: 38° Aniversario Institucional LVT (Foto Grupal) -->
     <div 
       id="hero-bg-3" 
       class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-102 transform"
-      style={`background-image: url('${basePath}/assets/galeria/evento_cacao_05.jpg');`}
+      style={`background-image: url('${basePath}/assets/galeria/eventos/aniversario_38_lvt.jpg');`}
+    ></div>
+
+    <!-- Escena 4: Presentación «Tardes Tabasqueñas de Ópalos y Topacios» -->
+    <div 
+      id="hero-bg-4" 
+      class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-102 transform"
+      style={`background-image: url('${basePath}/assets/galeria/eventos/presentacion_tardes_opalos_grupal.jpg');`}
+    ></div>
+
+    <!-- Escena 5: Graduación y Antología de Egresados «Plumas de Ceiba» -->
+    <div 
+      id="hero-bg-5" 
+      class="hero-bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-102 transform"
+      style={`background-image: url('${basePath}/assets/escuela/galeria/plumas_ceiba_expositores_1.jpg');`}
     ></div>
 
     <!-- Gradientes de Contraste Óptimo -->
@@ -120,23 +134,19 @@ const basePath = "";
 </section>
 
 <script>
-  // 1. Carrusel de Fondos con Transición Suave
-  const bgSlides = [
-    document.getElementById('hero-bg-1'),
-    document.getElementById('hero-bg-2'),
-    document.getElementById('hero-bg-3')
-  ];
+  // 1. Carrusel de Fondos con Transición Suave de Todas las Escenas
+  const bgSlides = Array.from(document.querySelectorAll('.hero-bg-slide'));
   let currentBgIdx = 0;
 
-  if (bgSlides[0] && bgSlides[1] && bgSlides[2]) {
+  if (bgSlides.length > 0) {
     setInterval(() => {
-      bgSlides[currentBgIdx]?.classList.remove('opacity-20');
+      bgSlides[currentBgIdx]?.classList.remove('opacity-25');
       bgSlides[currentBgIdx]?.classList.add('opacity-0');
       
       currentBgIdx = (currentBgIdx + 1) % bgSlides.length;
       
       bgSlides[currentBgIdx]?.classList.remove('opacity-0');
-      bgSlides[currentBgIdx]?.classList.add('opacity-20');
+      bgSlides[currentBgIdx]?.classList.add('opacity-25');
     }, 6000);
   }
 

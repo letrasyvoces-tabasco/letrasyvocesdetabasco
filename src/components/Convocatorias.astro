@@ -91,7 +91,7 @@ export const RECURSOS_ESCRITORES = [
     <!-- ================================================================= -->
     <!-- 1. CONVOCATORIAS OFICIALES DE LETRAS Y VOCES DE TABASCO           -->
     <!-- ================================================================= -->
-    <div class="space-y-8">
+    <div id="convocatoria-socios" class="space-y-8">
       
       <div class="flex items-center gap-3 pb-2 border-b border-[#E6DCCE]">
         <span class="text-xl">🏛️</span>
@@ -102,44 +102,71 @@ export const RECURSOS_ESCRITORES = [
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
         
-        <!-- A. CONVOCATORIA EN CURSO: NUEVOS SOCIOS LVT -->
-        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-green-300 shadow-subtle flex flex-col justify-between space-y-4 hover:shadow-xl hover:border-green-500 transition-all group">
+        <!-- A. CONVOCATORIA EN CURSO: NUEVOS SOCIOS LVT 2026 -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-green-400 shadow-elevated flex flex-col justify-between space-y-4 hover:shadow-2xl hover:border-green-600 transition-all group relative">
           <div class="space-y-3">
             <div class="flex justify-between items-center">
-              <span class="px-3 py-1 rounded-full bg-green-100 text-green-800 text-[10px] font-title font-bold uppercase tracking-wider animate-pulse">
-                ● En Curso / Vigente
+              <span class="px-3 py-1 rounded-full bg-green-100 text-green-800 text-[10px] font-title font-bold uppercase tracking-wider animate-pulse border border-green-300">
+                ● Convocatoria Vigente 2026
               </span>
-              <span class="text-[10px] font-mono text-gray-500">Membresía LVT</span>
+              <span class="text-[10px] font-mono text-gray-500 font-bold">Hasta 1 Octubre 2026</span>
             </div>
 
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-editorial-warm border border-[#E6DCCE] relative">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-editorial-warm border border-[#E6DCCE] relative shadow-inner">
               <img 
-                src={`${basePath}/assets/convocatorias/nuevos_socios.jpg`} 
-                alt="Convocatoria Nuevos Socios LVT" 
+                src={`${basePath}/assets/convocatorias/convocatoria_nuevos_socios_2026.jpg`} 
+                alt="Convocatoria Abierta para Nuevos Socios 2026 - Letras y Voces de Tabasco, A.C." 
                 class="w-full h-full object-cover object-top group-hover:scale-103 transition duration-500"
                 loading="lazy"
               />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                <span class="text-white text-xs font-title font-bold">Toca para ampliar cartel</span>
+              </div>
             </div>
 
-            <h4 class="font-title font-bold text-lg text-[#222222] leading-snug">
-              Convocatoria de Nuevos Socios y Miembros
+            <h4 class="font-title font-black text-xl text-[#222222] leading-tight">
+              Convocatoria Abierta para Nuevos Socios (2026)
             </h4>
 
-            <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
-              Invitación abierta a poetas, narradores, ensayistas, dramaturgos y promotores culturales a integrarse formalmente a la Sociedad de Escritores «Letras y Voces de Tabasco», A.C.
+            <p class="font-serif italic text-xs text-[#B8860B]">
+              «¡Haz escuchar tu voz! Únete a la comunidad literaria de Tabasco.»
             </p>
+
+            <p class="text-xs text-gray-600 font-sans leading-relaxed">
+              La Mesa Directiva convoca a escritoras, escritores, poetas, narradores, ensayistas, investigadores y promotores culturales a integrarse como miembros activos de nuestra asociación.
+            </p>
+
+            <!-- Requisitos Clave -->
+            <div class="bg-[#F5EFE6] p-3.5 rounded-xl border border-[#E6DCCE] text-xs space-y-1.5 font-sans">
+              <strong class="font-title text-[11px] uppercase tracking-wider text-[#EF7B38] block">Documentación Requerida:</strong>
+              <ul class="space-y-1 text-gray-700 list-disc list-inside text-[11px]">
+                <li><strong>Carta de Motivos:</strong> Escrito breve de postulación.</li>
+                <li><strong>Semblanza / CV:</strong> Trayectoria o intereses creativos.</li>
+                <li><strong>Muestra de Obra:</strong> Poesía, cuento, ensayo o novela.</li>
+              </ul>
+              <div class="pt-1.5 border-t border-[#E6DCCE] text-[10px] text-gray-500">
+                📍 <strong>Recepción:</strong> <span class="font-mono text-gray-700">lvt.correo@gmail.com</span> o Taller Sabatino en Librería Universitaria UJAT.
+              </div>
+            </div>
           </div>
 
-          <div class="pt-4 border-t border-[#E6DCCE] flex items-center justify-between">
-            <span class="text-xs font-serif italic text-gray-500">Recepción permanente</span>
-            <a 
-              href="https://wa.me/522205889391?text=Hola%20Secretar%C3%ADa%20General%20LVT,%20deseo%20postularme%20como%20Nuevo%20Socio%20de%20Letras%20y%20Voces%20de%20Tabasco." 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-xs"
-            >
-              Postularme →
-            </a>
+          <div class="pt-4 border-t border-[#E6DCCE] space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <a 
+                href={`${basePath}/assets/convocatorias/convocatoria_nuevos_socios_2026.jpg`} 
+                download="Convocatoria_Nuevos_Socios_LVT_2026.jpg"
+                class="px-3.5 py-2 rounded-xl bg-white border border-[#E6DCCE] text-[#222222] hover:text-[#EF7B38] font-title text-[11px] font-bold uppercase tracking-wider transition shadow-xs flex items-center gap-1"
+                title="Descargar convocatoria oficial en alta resolución"
+              >
+                <span>📥 Descargar Cartel</span>
+              </a>
+              <a 
+                href="mailto:lvt.correo@gmail.com?subject=Postulaci%C3%B3n%20para%20Nuevo%20Socio%20LVT%202026&body=Estimada%20Mesa%20Directiva%20de%20Letras%20y%20Voces%20de%20Tabasco,%20A.C.:%0A%0AAdjunto%20mi%20expediente%20(Carta%20de%20motivos,%20Semblanza%20y%20Muestra%20de%20obra)%20para%20mi%20postulaci%C3%B3n%20como%20Nuevo%20Socio.%0A%0ANombre:%0ATel%C3%A9fono:%0ACiudad:" 
+                class="px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-xs flex items-center gap-1"
+              >
+                <span>Postularme →</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -153,26 +180,42 @@ export const RECURSOS_ESCRITORES = [
               <span class="text-[10px] font-mono text-gray-500">Antología Oficial</span>
             </div>
 
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-editorial-warm border border-[#E6DCCE] relative">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-editorial-warm border border-[#E6DCCE] relative shadow-inner">
               <img 
-                src={`${basePath}/assets/convocatorias/animalia_literaria.jpg`} 
-                alt="Convocatoria Animalia Literaria" 
+                src={`${basePath}/assets/convocatorias/convocatoria_animalia_literaria_2026.jpg`} 
+                alt="Convocatoria Antología Animalia Literaria 2026 - LVT, A.C." 
                 class="w-full h-full object-cover object-top group-hover:scale-103 transition duration-500"
                 loading="lazy"
               />
             </div>
 
-            <h4 class="font-title font-bold text-lg text-[#222222] leading-snug">
+            <h4 class="font-title font-black text-xl text-[#222222] leading-tight">
               Antología «Animalia Literaria» (2026)
             </h4>
 
-            <p class="text-xs sm:text-sm text-[#555555] font-sans leading-relaxed">
-              Fase de convocatoria concluida exitosamente. El volumen colectivo reúne a 16 plumas destacadas de Tabasco y actualmente se encuentra en <strong>proceso de prensas e imprenta</strong> para su presentación oficial.
+            <p class="font-serif italic text-xs text-[#B8860B]">
+              «Por la difusión de la palabra · Animales de México»
             </p>
+
+            <p class="text-xs text-gray-600 font-sans leading-relaxed">
+              Fase de recepción concluida con gran éxito de participación. La antología reúne a 16 plumas destacadas de Tabasco en torno a la fauna endémica, mítica y cotidiana de México.
+            </p>
+
+            <div class="bg-[#F5EFE6] p-3 rounded-xl border border-[#E6DCCE] text-[11px] text-gray-600 space-y-1">
+              <div>📖 <strong>Categorías:</strong> Cuento y Poesía de fauna mexicana.</div>
+              <div>✨ <strong>Estado Actual:</strong> Cuidado de edición e imprenta para su presentación oficial.</div>
+            </div>
           </div>
 
-          <div class="pt-4 border-t border-[#E6DCCE] flex items-center justify-between">
-            <span class="text-xs font-serif italic text-[#B8860B]">Próxima presentación</span>
+          <div class="pt-4 border-t border-[#E6DCCE] flex items-center justify-between text-xs">
+            <a 
+              href={`${basePath}/assets/convocatorias/convocatoria_animalia_literaria_2026.jpg`} 
+              download="Convocatoria_Animalia_Literaria_2026.jpg"
+              class="px-3.5 py-2 rounded-xl bg-white border border-[#E6DCCE] text-[#222222] hover:text-[#EF7B38] font-title text-[11px] font-bold uppercase tracking-wider transition shadow-xs flex items-center gap-1"
+              title="Descargar cartel de la convocatoria"
+            >
+              <span>📥 Descargar Cartel</span>
+            </a>
             <a 
               href={`${basePath}/publicaciones`} 
               class="px-4 py-2 rounded-xl bg-[#222222] hover:bg-[#EF7B38] text-white font-title text-xs font-bold uppercase tracking-wider transition shadow-xs"
@@ -192,13 +235,13 @@ export const RECURSOS_ESCRITORES = [
               <span class="text-[10px] font-mono text-gray-400">Edición Futura</span>
             </div>
 
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-black/60 border border-[#3A2E26] relative flex flex-col items-center justify-center p-4 text-center">
-              <span class="text-3xl mb-1">🌿📖</span>
-              <span class="font-title font-bold text-sm text-[#F5DEB3] uppercase">Plantae Literaria</span>
-              <span class="text-[10px] text-gray-400 font-serif italic mt-1">Homenaje lírico y narrativo a la flora del Sureste</span>
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-black/60 border border-[#3A2E26] relative flex flex-col items-center justify-center p-6 text-center">
+              <span class="text-4xl mb-2">🌿📖</span>
+              <span class="font-title font-bold text-base text-[#F5DEB3] uppercase">Plantae Literaria</span>
+              <span class="text-xs text-gray-400 font-serif italic mt-1">Homenaje lírico y narrativo a la flora del Sureste</span>
             </div>
 
-            <h4 class="font-title font-bold text-lg text-white leading-snug">
+            <h4 class="font-title font-bold text-xl text-white leading-snug">
               Antología «Plantae Literaria»
             </h4>
 
@@ -208,11 +251,11 @@ export const RECURSOS_ESCRITORES = [
           </div>
 
           <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
-            <span class="text-xs font-serif italic text-gray-400">Lanzamiento próximo mes</span>
+            <span class="text-xs font-serif italic text-gray-400">Próximamente</span>
             <a 
               href="https://wa.me/522205889391?text=Deseo%20notificaciones%20cuando%20se%20abra%20la%20convocatoria%20de%20Plantae%20Literaria." 
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="px-4 py-2 rounded-xl bg-[#C59B27] hover:bg-[#B8860B] text-black font-title text-xs font-bold uppercase tracking-wider transition shadow-xs"
             >
               Notificarme →
