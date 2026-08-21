@@ -60,7 +60,7 @@ export const IDENTIDAD_ESCUELA = {
   ],
   direccionActual: [
     { 
-      nombre: "Mtra. Liliana Chuzeville Córdoba", 
+      nombre: "Dra. Liliana Chuzeville Córdoba", 
       cargo: "Directora General",
       jerarquia: 1,
       telefono: "99 32 64 75 02",
@@ -68,7 +68,7 @@ export const IDENTIDAD_ESCUELA = {
       email: "egorosiglo21@gmail.com"
     },
     { 
-      nombre: "Mtra. Rebeca Díaz Suárez", 
+      nombre: "Dra. Rebeca Díaz Suárez", 
       cargo: "Directora Académica",
       jerarquia: 2,
       telefono: "99 31 46 73 90",
@@ -79,7 +79,7 @@ export const IDENTIDAD_ESCUELA = {
   alianzaUjat: {
     vigencia: "+24 años ininterrumpidos",
     rectorFirmante: "Lic. Guillermo Narváez Osorio",
-    directoraFirmante: "Mtra. Liliana Chuzeville Córdoba",
+    directoraFirmante: "Dra. Liliana Chuzeville Córdoba",
     beneficios: [
       "Aval académico formal y curricular en todos los diplomados.",
       "Descuento preferencial del 25% al 30% para estudiantes, docentes y trabajadores UJAT.",
@@ -121,7 +121,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'redaccion-profesional',
     nombre: 'Diplomado en Redacción Profesional',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 4,
@@ -137,7 +137,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'creacion-literaria',
     nombre: 'Diplomado en Formación y Creación Literaria',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 6,
@@ -155,7 +155,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'periodismo-cultural',
     nombre: 'Diplomado en Periodismo Cultural',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 11,
@@ -191,7 +191,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'gestion-promocion-cultural',
     nombre: 'Diplomado en Gestión y Promoción Cultural',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 4,
@@ -207,7 +207,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'guion-dramaturgia-tv-podcast',
     nombre: 'Diplomado en Guion: Dramaturgia, TV y Podcast',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 5,
@@ -224,7 +224,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'oratoria',
     nombre: 'Diplomado en Oratoria',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 4,
@@ -240,7 +240,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'declamacion-poesia-coral',
     nombre: 'Diplomado en Declamación y Poesía Coral',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 4,
@@ -256,7 +256,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'produccion-editorial-diseno-grafico',
     nombre: 'Diplomado en Producción Editorial y Diseño Gráfico',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 4,
@@ -272,7 +272,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'copywriters-booktubers-contenidos',
     nombre: 'Diplomado en Copywriters, Booktubers y Contenidos',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 4,
@@ -288,7 +288,7 @@ export const DIPLOMADOS_GOROSTIZA: Diplomado[] = [
   {
     id: 'concepciones-sobre-la-lectura',
     nombre: 'Diplomado en Concepciones sobre la Lectura',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     modulosCount: 4,
@@ -307,7 +307,7 @@ export const CURSOS_CONTINUOS_GOROSTIZA: CursoContinuo[] = [
   {
     id: 'curso-redaccion',
     nombre: 'Curso de Redacción',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     descripcion: 'Estructuración clara de párrafos, conectores lógicos, coherencia y adecuación de textos para el ámbito laboral y académico.',
@@ -316,7 +316,7 @@ export const CURSOS_CONTINUOS_GOROSTIZA: CursoContinuo[] = [
   {
     id: 'curso-ortografia',
     nombre: 'Curso de Ortografía',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     descripcion: 'Actualización sobre normas de la RAE, reglas de acentuación diacrítica, grafías dudosas y signos de puntuación.',
@@ -325,7 +325,7 @@ export const CURSOS_CONTINUOS_GOROSTIZA: CursoContinuo[] = [
   {
     id: 'curso-lectura',
     nombre: 'Curso de Lectura Comprensiva y Crítica',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     descripcion: 'Desarrollo de habilidades de análisis textual, decodificación de niveles de significado y pensamiento crítico.',
@@ -334,7 +334,7 @@ export const CURSOS_CONTINUOS_GOROSTIZA: CursoContinuo[] = [
   {
     id: 'curso-cuento',
     nombre: 'Curso de Cuento',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     descripcion: 'Taller de escritura de relato breve y minificción: conflicto, tensión narrativa, atmósfera y finales sorpresivos.',
@@ -343,7 +343,7 @@ export const CURSOS_CONTINUOS_GOROSTIZA: CursoContinuo[] = [
   {
     id: 'curso-poesia',
     nombre: 'Curso de Poesía',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     descripcion: 'Exploración del ritmo, imágenes líricas, metáforas, métrica clásica y verso libre con ejercicios semanales de taller.',
@@ -352,7 +352,7 @@ export const CURSOS_CONTINUOS_GOROSTIZA: CursoContinuo[] = [
   {
     id: 'curso-novela',
     nombre: 'Curso de Novela',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     descripcion: 'Planificación de obras de largo aliento: argumento, tramas paralelas, psicología de personajes y arcos dramáticos.',
@@ -361,7 +361,7 @@ export const CURSOS_CONTINUOS_GOROSTIZA: CursoContinuo[] = [
   {
     id: 'curso-teatro',
     nombre: 'Curso de Teatro y Dramaturgia',
-    duracion: '120 Horas',
+    duracion: 'Aval Curricular',
     modalidad: 'Presencial y En Línea',
     enfoque: '50% Teoría / 50% Práctica',
     descripcion: 'Escritura dramática para la escena viva: acotaciones, diálogos, conflicto escénico y construcción de monólogos.',
@@ -401,21 +401,21 @@ export const PIONEROS_Y_REFERENTES_EEJG: ReferenteHistorico[] = [
     nombre: 'Fernando Nieto Cadena (†)',
     rol: 'Maestro y Referente Histórico de Periodismo y Literatura',
     trayectoria: 'Poeta y psicólogo; formador fundamental de la Escuela de Escritores en las cátedras de Periodismo Cultural y Taller de Ensayo.',
-    legado: 'Maestro Emérito de la primera etapa formativa de la EEJG.'
+    legado: 'Maestro Emérito de la primera etapa formativa de la Escuela de Escritores.'
   }
 ];
 
 export const DIRECTIVAS_ACTUALES_EEJG: DirectivoActual[] = [
   {
-    nombre: 'Mtra. Liliana Chuzeville Córdoba',
-    cargo: 'Directora General Actual (EEJG) & Comisión de Honor y Justicia LVT',
+    nombre: 'Dra. Liliana Chuzeville Córdoba',
+    cargo: 'Directora General & Comisión de Honor y Justicia LVT',
     trayectoria: 'Licenciada en Criminología, titular de la Comisión de Honor y Justicia de LVT, distinguida con las «Palmas de Oro» y «México en tus manos». Coordinadora general de convenios interinstitucionales.',
     materias: 'Creación Literaria, Narrativa, Gestión y Coordinación Institucional.',
     contacto: '99 32 64 75 02'
   },
   {
-    nombre: 'Mtra. Rebeca Díaz Suárez',
-    cargo: 'Directora Académica Actual (EEJG) & Expresidenta LVT',
+    nombre: 'Dra. Rebeca Díaz Suárez',
+    cargo: 'Directora Académica & Expresidenta LVT',
     trayectoria: 'Poeta, ensayista, expresidenta de LVT y formadora de generaciones literarias en el Sureste de México.',
     materias: 'Creación Poética, Apreciación Literaria, Métrica y Declamación.',
     contacto: '99 31 46 73 90'
