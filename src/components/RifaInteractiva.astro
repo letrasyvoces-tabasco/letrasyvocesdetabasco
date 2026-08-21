@@ -74,38 +74,52 @@ const porcentajeProgreso = Math.round((totalOcupados / totalBoletosDobles) * 100
       </div>
     </div>
 
-    <!-- Bloque de los 3 Premios Oficiales -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {premios.map((premio, idx) => (
-        <div class={`bg-white rounded-3xl p-6 sm:p-7 border ${idx === 0 ? 'border-[#EF7B38] shadow-elevated ring-2 ring-[#EF7B38]/10' : 'border-[#E6DCCE] shadow-subtle'} hover:border-[#EF7B38] transition-all flex flex-col justify-between relative`}>
-          {idx === 0 && (
-            <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[#EF7B38] text-white text-[10px] font-title font-bold uppercase tracking-wider shadow-sm">
-              Premio Mayor
+    <!-- Bloque de los 3 Premios Oficiales (En Definición por la Directiva) -->
+    <div class="space-y-4">
+      <div class="text-center">
+        <span class="text-xs font-title font-semibold uppercase tracking-wider text-[#EF7B38] bg-[#EF7B38]/10 px-3 py-1 rounded-full">
+          🎁 3 Premios Oficiales · Sorteo con Lotería Nacional
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {premios.map((premio, idx) => (
+          <div class={`bg-white rounded-3xl p-6 sm:p-7 border ${idx === 0 ? 'border-[#EF7B38] shadow-elevated ring-2 ring-[#EF7B38]/10' : 'border-[#E6DCCE] shadow-subtle'} hover:border-[#EF7B38] transition-all flex flex-col justify-between relative`}>
+            {idx === 0 && (
+              <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[#EF7B38] text-white text-[10px] font-title font-bold uppercase tracking-wider shadow-sm">
+                Premio Mayor
+              </div>
+            )}
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-3xl">{premio.icono}</span>
+                <span class="text-[11px] font-title font-bold uppercase tracking-wider text-[#B8860B] bg-[#B8860B]/10 px-2.5 py-1 rounded-lg">
+                  {premio.lugar}
+                </span>
+              </div>
+
+              <h3 class="font-title font-bold text-base sm:text-lg text-[#222222] leading-snug">
+                {premio.titulo}
+              </h3>
+
+              <p class="text-xs text-[#555555] font-sans leading-relaxed">
+                {premio.descripcion}
+              </p>
             </div>
-          )}
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-3xl">{premio.icono}</span>
-              <span class="text-[11px] font-title font-bold uppercase tracking-wider text-[#B8860B] bg-[#B8860B]/10 px-2.5 py-1 rounded-lg">
-                {premio.lugar}
-              </span>
+
+            <div class="pt-4 mt-4 border-t border-[#F5EFE6] text-[11px] text-gray-400 font-sans flex items-center justify-between">
+              <span>Sorteo Lotería Nacional</span>
+              <span class="font-bold text-[#222222]">Últimos 2 dígitos</span>
             </div>
-
-            <h3 class="font-title font-bold text-base sm:text-lg text-[#222222] leading-snug">
-              {premio.titulo}
-            </h3>
-
-            <p class="text-xs text-[#555555] font-sans leading-relaxed">
-              {premio.descripcion}
-            </p>
           </div>
+        ))}
+      </div>
 
-          <div class="pt-4 mt-4 border-t border-[#F5EFE6] text-[11px] text-gray-400 font-sans flex items-center justify-between">
-            <span>Sorteo Lotería Nacional</span>
-            <span class="font-bold text-[#222222]">Últimos 2 dígitos</span>
-          </div>
-        </div>
-      ))}
+      <div class="text-center">
+        <p class="text-xs font-serif italic text-gray-500 max-w-xl mx-auto">
+          * Los detalles y especificaciones completas de los tres premios serán dados a conocer formalmente a través de nuestros canales oficiales antes de la fecha del sorteo.
+        </p>
+      </div>
     </div>
 
     <!-- Barra de Progreso y Estadísticas -->

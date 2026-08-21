@@ -5,21 +5,21 @@
   "sorteo_institucion": "Lotería Nacional de México (Con base en los últimos 2 dígitos de los premios mayores)",
   "premios": [
     {
-      "lugar": "1° Primer Premio (Premio Mayor)",
-      "titulo": "Colección Magna del Fondo Editorial LVT + Pase de Honor",
-      "descripcion": "Colección completa de todas las antologías y obras impresas de Letras y Voces de Tabasco (incluyendo ejemplares conmemorativos), reconocimiento de Mecenas Cultural y pase de honor a todos los recitales y eventos magnos.",
+      "lugar": "1° Lugar · Premio Mayor",
+      "titulo": "1° Gran Premio Mayor",
+      "descripcion": "Correspondiente al Premio Mayor del sorteo de la Lotería Nacional. Los detalles específicos del premio se darán a conocer próximamente por la directiva.",
       "icono": "🥇"
     },
     {
-      "lugar": "2° Segundo Premio (Segundo Lugar)",
-      "titulo": "Paquete Coleccionista de Antologías Poéticas y Narrativas",
-      "descripcion": "Lote exclusivo de antologías poéticas y de narrativa tabasqueña («Tardes Tabasqueñas de Ópalos y Topacios», «A corazón abierto», «Leyendas y Voces») y membresía anual a talleres.",
+      "lugar": "2° Lugar · Segundo Premio",
+      "titulo": "2° Premio Oficial",
+      "descripcion": "Correspondiente al Segundo Lugar del sorteo de la Lotería Nacional. Los detalles específicos del premio se darán a conocer próximamente.",
       "icono": "🥈"
     },
     {
-      "lugar": "3° Tercer Premio (Tercer Lugar)",
-      "titulo": "Paquete de Novedades Editoriales & Obras Autografiadas",
-      "descripcion": "Selección de novedades editoriales y libros conmemorativos con dedicatoria y firma autógrafa de autores y directivas de la Sociedad de Escritores.",
+      "lugar": "3° Lugar · Tercer Premio",
+      "titulo": "3° Premio Oficial",
+      "descripcion": "Correspondiente al Tercer Lugar del sorteo de la Lotería Nacional. Los detalles específicos del premio se darán a conocer próximamente.",
       "icono": "🥉"
     }
   ],
