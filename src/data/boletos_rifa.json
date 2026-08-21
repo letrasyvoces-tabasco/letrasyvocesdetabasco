@@ -1,42 +1,51 @@
 {
   "precio_boleto": 100,
-  "meta_boletos": 100,
-  "premio_principal": "Colección Completa del Fondo Editorial LVT (Obras Impresas y Antologías) + Reconocimiento de Mecenas Cultural",
-  "fecha_sorteo": "Enlace directo con el Sorteo Mayor de la Lotería Nacional (Diciembre 2026)",
+  "total_boletos_dobles": 50,
+  "total_numeros": 100,
+  "sorteo_institucion": "Lotería Nacional de México (Con base en los últimos 2 dígitos de los premios mayores)",
+  "premios": [
+    {
+      "lugar": "1° Primer Premio (Premio Mayor)",
+      "titulo": "Colección Magna del Fondo Editorial LVT + Pase de Honor",
+      "descripcion": "Colección completa de todas las antologías y obras impresas de Letras y Voces de Tabasco (incluyendo ejemplares conmemorativos), reconocimiento de Mecenas Cultural y pase de honor a todos los recitales y eventos magnos.",
+      "icono": "🥇"
+    },
+    {
+      "lugar": "2° Segundo Premio (Segundo Lugar)",
+      "titulo": "Paquete Coleccionista de Antologías Poéticas y Narrativas",
+      "descripcion": "Lote exclusivo de antologías poéticas y de narrativa tabasqueña («Tardes Tabasqueñas de Ópalos y Topacios», «A corazón abierto», «Leyendas y Voces») y membresía anual a talleres.",
+      "icono": "🥈"
+    },
+    {
+      "lugar": "3° Tercer Premio (Tercer Lugar)",
+      "titulo": "Paquete de Novedades Editoriales & Obras Autografiadas",
+      "descripcion": "Selección de novedades editoriales y libros conmemorativos con dedicatoria y firma autógrafa de autores y directivas de la Sociedad de Escritores.",
+      "icono": "🥉"
+    }
+  ],
   "boletos_ocupados": {
-    "00": {
+    "1": {
       "estado": "Pagado",
+      "numeros": ["00", "50"],
       "participante": "Participante Registrado en Notion",
       "fecha": "2026-08-16"
     },
-    "01": {
-      "estado": "Pagado",
-      "participante": "Participante Registrado en Notion",
-      "fecha": "2026-08-16"
-    },
-    "05": {
+    "5": {
       "estado": "Apartado",
+      "numeros": ["04", "54"],
       "participante": "Participante Registrado en Notion",
       "fecha": "2026-08-16"
     },
-    "07": {
+    "12": {
       "estado": "Pagado",
+      "numeros": ["11", "61"],
       "participante": "Sociedad Civil Pro-Cultura",
       "fecha": "2026-08-16"
     },
-    "13": {
+    "25": {
       "estado": "Apartado",
+      "numeros": ["24", "74"],
       "participante": "Miembro Afiliado LVT",
-      "fecha": "2026-08-16"
-    },
-    "24": {
-      "estado": "Pagado",
-      "participante": "Patrocinador Editorial UJAT",
-      "fecha": "2026-08-16"
-    },
-    "77": {
-      "estado": "Apartado",
-      "participante": "Lector Amigo de las Letras",
       "fecha": "2026-08-16"
     }
   }
